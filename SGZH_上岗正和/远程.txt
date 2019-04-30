@@ -1,0 +1,17 @@
+港务集团Vpn
+
+服务器：http://vpn.tczhxg.com
+
+用户名：yehx
+
+密码：123123123y
+
+
+远程桌面地址：caiwu.tczhxg.com
+
+用户名：administrator
+
+密码：qwe123123
+
+ip地址：172.28.30.7
+计算机名：ibmserver4

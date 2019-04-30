@@ -1,0 +1,1193 @@
+USE [UFDATA_101_2013]
+GO
+/****** Object:  StoredProcedure [dbo].[_GetSalesMonth]    Script Date: 09/10/2014 22:01:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+--		drop table #SaleMonth
+
+
+--		exec _GetSalesMonth '2014','重庆办'
+
+-----------------------------
+--唐辉
+--2014-9-6
+--获得销售分析数据（按月份）
+-----------------------------
+
+
+ALTER Proc [dbo].[_GetSalesMonth](@iYear varchar(4),@DepName varchar(50))
+as
+
+set nocount on
+
+--declare @iYear varchar(4)
+--set @iYear = '2014'
+--declare @DepName varchar(50)
+--set @DepName = '北京办'
+
+
+--101
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvName
+	,sum(iQuantity) as iQty1,SUM(iMoney) as iMoney1
+	,null as iQty2,null as iMoney2
+	,null as iQty3,null as iMoney3
+	,null as iQty4,null as iMoney4
+	,null as iQty5,null as iMoney5
+	,null as iQty6,null as iMoney6
+	,null as iQty7,null as iMoney7
+	,null as iQty8,null as iMoney8
+	,null as iQty9,null as iMoney9
+	,null as iQty10,null as iMoney10
+	,null as iQty11,null as iMoney11
+	,null as iQty12,null as iMoney12
+into #SaleMonth	
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-1-1' and a.dDate <= @iYear + '-1-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvName
+
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-2-1' and a.dDate < @iYear + '-3-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty3 = b.iQty,iMoney3 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-3-1' and a.dDate <= @iYear + '-3-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty4 = b.iQty,iMoney4 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-4-1' and a.dDate <= @iYear + '-4-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty5 = b.iQty,iMoney5 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-5-1' and a.dDate <= @iYear + '-5-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty6 = b.iQty,iMoney6 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-6-1' and a.dDate< @iYear + '-6-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty7 = b.iQty,iMoney7 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-7-1' and a.dDate< @iYear + '-7-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty8 = b.iQty,iMoney8 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-8-1' and a.dDate< @iYear + '-8-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty9 = b.iQty,iMoney9 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-9-1' and a.dDate< @iYear + '-9-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+update #SaleMonth set iQty10 = b.iQty,iMoney10 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-10-1' and a.dDate< @iYear + '-10-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty11 = b.iQty,iMoney11 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-11-1' and a.dDate< @iYear + '-11-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty12 = b.iQty,iMoney12 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-12-1' and a.dDate< @iYear + '-12-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+--102
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-1-1' and a.dDate < @iYear + '-2-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-2-1' and a.dDate < @iYear + '-3-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty3 = b.iQty,iMoney3 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-3-1' and a.dDate <= @iYear + '-3-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty4 = b.iQty,iMoney4 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-4-1' and a.dDate <= @iYear + '-4-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty5 = b.iQty,iMoney5 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-5-1' and a.dDate <= @iYear + '-5-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty6 = b.iQty,iMoney6 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-6-1' and a.dDate< @iYear + '-6-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty7 = b.iQty,iMoney7 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-7-1' and a.dDate< @iYear + '-7-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty8 = b.iQty,iMoney8 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-8-1' and a.dDate< @iYear + '-8-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty9 = b.iQty,iMoney9 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-9-1' and a.dDate< @iYear + '-9-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+update #SaleMonth set iQty10 = b.iQty,iMoney10 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-10-1' and a.dDate< @iYear + '-10-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty11 = b.iQty,iMoney11 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-11-1' and a.dDate< @iYear + '-11-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty12 = b.iQty,iMoney12 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-12-1' and a.dDate< @iYear + '-12-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+
+--UFDATA_103_2014
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-1-1' and a.dDate < @iYear + '-2-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-2-1' and a.dDate < @iYear + '-3-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty3 = b.iQty,iMoney3 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-3-1' and a.dDate <= @iYear + '-3-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty4 = b.iQty,iMoney4 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-4-1' and a.dDate <= @iYear + '-4-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty5 = b.iQty,iMoney5 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-5-1' and a.dDate <= @iYear + '-5-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty6 = b.iQty,iMoney6 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-6-1' and a.dDate< @iYear + '-6-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty7 = b.iQty,iMoney7 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-7-1' and a.dDate< @iYear + '-7-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty8 = b.iQty,iMoney8 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-8-1' and a.dDate< @iYear + '-8-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty9 = b.iQty,iMoney9 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-9-1' and a.dDate< @iYear + '-9-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+update #SaleMonth set iQty10 = b.iQty,iMoney10 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-10-1' and a.dDate< @iYear + '-10-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty11 = b.iQty,iMoney11 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-11-1' and a.dDate< @iYear + '-11-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty12 = b.iQty,iMoney12 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-12-1' and a.dDate< @iYear + '-12-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+
+--UFDATA_104_2014
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-1-1' and a.dDate < @iYear + '-2-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-2-1' and a.dDate < @iYear + '-3-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty3 = b.iQty,iMoney3 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-3-1' and a.dDate <= @iYear + '-3-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty4 = b.iQty,iMoney4 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-4-1' and a.dDate <= @iYear + '-4-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty5 = b.iQty,iMoney5 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-5-1' and a.dDate <= @iYear + '-5-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty6 = b.iQty,iMoney6 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-6-1' and a.dDate< @iYear + '-6-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty7 = b.iQty,iMoney7 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-7-1' and a.dDate< @iYear + '-7-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty8 = b.iQty,iMoney8 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-8-1' and a.dDate< @iYear + '-8-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty9 = b.iQty,iMoney9 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-9-1' and a.dDate< @iYear + '-9-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+update #SaleMonth set iQty10 = b.iQty,iMoney10 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-10-1' and a.dDate< @iYear + '-10-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty11 = b.iQty,iMoney11 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-11-1' and a.dDate< @iYear + '-11-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty12 = b.iQty,iMoney12 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-12-1' and a.dDate< @iYear + '-12-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+--UFDATA_201_2014
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-1-1' and a.dDate < @iYear + '-2-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty2 = b.iQty,iMoney2 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-2-1' and a.dDate < @iYear + '-3-1'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty3 = b.iQty,iMoney3 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-3-1' and a.dDate <= @iYear + '-3-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty4 = b.iQty,iMoney4 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-4-1' and a.dDate <= @iYear + '-4-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty5 = b.iQty,iMoney5 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-5-1' and a.dDate <= @iYear + '-5-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty6 = b.iQty,iMoney6 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-6-1' and a.dDate< @iYear + '-6-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty7 = b.iQty,iMoney7 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-7-1' and a.dDate< @iYear + '-7-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+update #SaleMonth set iQty8 = b.iQty,iMoney8 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-8-1' and a.dDate< @iYear + '-8-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty9 = b.iQty,iMoney9 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-9-1' and a.dDate< @iYear + '-9-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+update #SaleMonth set iQty10 = b.iQty,iMoney10 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-10-1' and a.dDate< @iYear + '-10-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty11 = b.iQty,iMoney11 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-11-1' and a.dDate< @iYear + '-11-30'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+update #SaleMonth set iQty12 = b.iQty,iMoney12 = b.iMoney
+from
+(
+select c.cDepMemo,d.cInvDefine10,e.cInvCName,b.cInvCode,b.cInvName
+	,sum(iQuantity) as iQty,SUM(iMoney) as iMoney
+from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+	inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+	and c.cDepMemo = @DepName
+	and a.dDate >= @iYear + '-12-1' and a.dDate< @iYear + '-12-31'
+	--and d.cInvDefine10 = '感光胶'
+group by c.cDepMemo,d.cInvDefine10,e.cInvCName,e.cInvCCode,b.cInvCode,b.cInvName
+) b 
+where b.cDepMemo = #SaleMonth.cDepMemo and b.cInvName = #SaleMonth.cInvName
+
+
+
+
+select cDepMemo as 部门,cInvDefine10 as 品名1,cInvCName as 品名2,cInvName as 品名3
+	,sum(iQty1) as iQty1,sum(iMoney1) as iMoney1
+	,sum(iQty2) as iQty2,sum(iMoney2) as iMoney2
+	,sum(iQty3) as iQty3,sum(iMoney3) as iMoney3
+	,sum(iQty4) as iQty4,sum(iMoney4) as iMoney4
+	,sum(iQty5) as iQty5,sum(iMoney5) as iMoney5
+	,sum(iQty6) as iQty6,sum(iMoney6) as iMoney6
+	,sum(iQty7) as iQty7,sum(iMoney7) as iMoney7
+	,sum(iQty8) as iQty8,sum(iMoney8) as iMoney8
+	,sum(iQty9) as iQty9,sum(iMoney9) as iMoney9
+	,sum(iQty10) as iQty10,sum(iMoney10) as iMoney10
+	,sum(iQty11) as iQty11,sum(iMoney11) as iMoney11
+	,sum(iQty12) as iQty12,sum(iMoney12) as iMoney12
+from #SaleMonth
+group by cDepMemo,cInvDefine10,cInvCName,cInvName 
+order by cDepMemo,cInvDefine10,cInvCName,cInvName

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sServerTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="sServerTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sServerTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sUpdatePwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOldPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sUpdatePwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUpdatePwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSave工序流转">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSave工序流转Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSave工序流转Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRD产品入库">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUfNAme" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRD产品入库Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRD产品入库Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s生产订单产品工序">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWorkIDs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s生产订单产品工序Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s生产订单产品工序Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s标准工序">
+        <s:complexType />
+      </s:element>
+      <s:element name="s标准工序Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s标准工序Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtGetBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtGetBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtGetBarCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtBarCode执行统计">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtBarCode执行统计Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode执行统计Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtWorkIDs执行统计">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lWorkIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtWorkIDs执行统计Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtWorkIDs执行统计Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt帐套">
+        <s:complexType />
+      </s:element>
+      <s:element name="dt帐套Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt帐套Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtWareHouse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtWareHouseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtWareHouseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtrd_style">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUfName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtrd_styleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtrd_styleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="sServerTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:sServerTime" />
+  </wsdl:message>
+  <wsdl:message name="sServerTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:sServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:sLogin" />
+  </wsdl:message>
+  <wsdl:message name="sLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:sLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="sUpdatePwdSoapIn">
+    <wsdl:part name="parameters" element="tns:sUpdatePwd" />
+  </wsdl:message>
+  <wsdl:message name="sUpdatePwdSoapOut">
+    <wsdl:part name="parameters" element="tns:sUpdatePwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSave工序流转SoapIn">
+    <wsdl:part name="parameters" element="tns:sSave工序流转" />
+  </wsdl:message>
+  <wsdl:message name="sSave工序流转SoapOut">
+    <wsdl:part name="parameters" element="tns:sSave工序流转Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRD产品入库SoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRD产品入库" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRD产品入库SoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRD产品入库Response" />
+  </wsdl:message>
+  <wsdl:message name="s生产订单产品工序SoapIn">
+    <wsdl:part name="parameters" element="tns:s生产订单产品工序" />
+  </wsdl:message>
+  <wsdl:message name="s生产订单产品工序SoapOut">
+    <wsdl:part name="parameters" element="tns:s生产订单产品工序Response" />
+  </wsdl:message>
+  <wsdl:message name="s标准工序SoapIn">
+    <wsdl:part name="parameters" element="tns:s标准工序" />
+  </wsdl:message>
+  <wsdl:message name="s标准工序SoapOut">
+    <wsdl:part name="parameters" element="tns:s标准工序Response" />
+  </wsdl:message>
+  <wsdl:message name="dtGetBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:dtGetBarCode" />
+  </wsdl:message>
+  <wsdl:message name="dtGetBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:dtGetBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtBarCode执行统计SoapIn">
+    <wsdl:part name="parameters" element="tns:dtBarCode执行统计" />
+  </wsdl:message>
+  <wsdl:message name="dtBarCode执行统计SoapOut">
+    <wsdl:part name="parameters" element="tns:dtBarCode执行统计Response" />
+  </wsdl:message>
+  <wsdl:message name="dtWorkIDs执行统计SoapIn">
+    <wsdl:part name="parameters" element="tns:dtWorkIDs执行统计" />
+  </wsdl:message>
+  <wsdl:message name="dtWorkIDs执行统计SoapOut">
+    <wsdl:part name="parameters" element="tns:dtWorkIDs执行统计Response" />
+  </wsdl:message>
+  <wsdl:message name="dt帐套SoapIn">
+    <wsdl:part name="parameters" element="tns:dt帐套" />
+  </wsdl:message>
+  <wsdl:message name="dt帐套SoapOut">
+    <wsdl:part name="parameters" element="tns:dt帐套Response" />
+  </wsdl:message>
+  <wsdl:message name="dtWareHouseSoapIn">
+    <wsdl:part name="parameters" element="tns:dtWareHouse" />
+  </wsdl:message>
+  <wsdl:message name="dtWareHouseSoapOut">
+    <wsdl:part name="parameters" element="tns:dtWareHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtrd_styleSoapIn">
+    <wsdl:part name="parameters" element="tns:dtrd_style" />
+  </wsdl:message>
+  <wsdl:message name="dtrd_styleSoapOut">
+    <wsdl:part name="parameters" element="tns:dtrd_styleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsBarCodeSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <wsdl:input message="tns:sServerTimeSoapIn" />
+      <wsdl:output message="tns:sServerTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <wsdl:input message="tns:sLoginSoapIn" />
+      <wsdl:output message="tns:sLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <wsdl:input message="tns:sUpdatePwdSoapIn" />
+      <wsdl:output message="tns:sUpdatePwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSave工序流转">
+      <wsdl:input message="tns:sSave工序流转SoapIn" />
+      <wsdl:output message="tns:sSave工序流转SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRD产品入库">
+      <wsdl:input message="tns:sSaveRD产品入库SoapIn" />
+      <wsdl:output message="tns:sSaveRD产品入库SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s生产订单产品工序">
+      <wsdl:input message="tns:s生产订单产品工序SoapIn" />
+      <wsdl:output message="tns:s生产订单产品工序SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s标准工序">
+      <wsdl:input message="tns:s标准工序SoapIn" />
+      <wsdl:output message="tns:s标准工序SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtGetBarCode">
+      <wsdl:input message="tns:dtGetBarCodeSoapIn" />
+      <wsdl:output message="tns:dtGetBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtBarCode执行统计">
+      <wsdl:input message="tns:dtBarCode执行统计SoapIn" />
+      <wsdl:output message="tns:dtBarCode执行统计SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtWorkIDs执行统计">
+      <wsdl:input message="tns:dtWorkIDs执行统计SoapIn" />
+      <wsdl:output message="tns:dtWorkIDs执行统计SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt帐套">
+      <wsdl:input message="tns:dt帐套SoapIn" />
+      <wsdl:output message="tns:dt帐套SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtWareHouse">
+      <wsdl:input message="tns:dtWareHouseSoapIn" />
+      <wsdl:output message="tns:dtWareHouseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtrd_style">
+      <wsdl:input message="tns:dtrd_styleSoapIn" />
+      <wsdl:output message="tns:dtrd_styleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsBarCodeSoap" type="tns:WsBarCodeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <soap:operation soapAction="http://tempuri.org/sServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <soap:operation soapAction="http://tempuri.org/sLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <soap:operation soapAction="http://tempuri.org/sUpdatePwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSave工序流转">
+      <soap:operation soapAction="http://tempuri.org/sSave工序流转" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRD产品入库">
+      <soap:operation soapAction="http://tempuri.org/sSaveRD产品入库" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s生产订单产品工序">
+      <soap:operation soapAction="http://tempuri.org/s生产订单产品工序" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s标准工序">
+      <soap:operation soapAction="http://tempuri.org/s标准工序" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtGetBarCode">
+      <soap:operation soapAction="http://tempuri.org/dtGetBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtBarCode执行统计">
+      <soap:operation soapAction="http://tempuri.org/dtBarCode执行统计" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtWorkIDs执行统计">
+      <soap:operation soapAction="http://tempuri.org/dtWorkIDs执行统计" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt帐套">
+      <soap:operation soapAction="http://tempuri.org/dt帐套" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtWareHouse">
+      <soap:operation soapAction="http://tempuri.org/dtWareHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtrd_style">
+      <soap:operation soapAction="http://tempuri.org/dtrd_style" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsBarCodeSoap12" type="tns:WsBarCodeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <soap12:operation soapAction="http://tempuri.org/sServerTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <soap12:operation soapAction="http://tempuri.org/sLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <soap12:operation soapAction="http://tempuri.org/sUpdatePwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSave工序流转">
+      <soap12:operation soapAction="http://tempuri.org/sSave工序流转" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRD产品入库">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRD产品入库" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s生产订单产品工序">
+      <soap12:operation soapAction="http://tempuri.org/s生产订单产品工序" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s标准工序">
+      <soap12:operation soapAction="http://tempuri.org/s标准工序" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtGetBarCode">
+      <soap12:operation soapAction="http://tempuri.org/dtGetBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtBarCode执行统计">
+      <soap12:operation soapAction="http://tempuri.org/dtBarCode执行统计" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtWorkIDs执行统计">
+      <soap12:operation soapAction="http://tempuri.org/dtWorkIDs执行统计" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt帐套">
+      <soap12:operation soapAction="http://tempuri.org/dt帐套" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtWareHouse">
+      <soap12:operation soapAction="http://tempuri.org/dtWareHouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtrd_style">
+      <soap12:operation soapAction="http://tempuri.org/dtrd_style" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsBarCode">
+    <wsdl:port name="WsBarCodeSoap" binding="tns:WsBarCodeSoap">
+      <soap:address location="http://192.168.150.1/webTTJM/DBScanForCheck.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsBarCodeSoap12" binding="tns:WsBarCodeSoap12">
+      <soap12:address location="http://192.168.150.1/webTTJM/DBScanForCheck.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

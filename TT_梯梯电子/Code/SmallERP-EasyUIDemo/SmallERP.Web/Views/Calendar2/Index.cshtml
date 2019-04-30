@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            var actionUrl = {
+                GetList: '/Calendar2/GetList',
+            }
+
+            function reloadData() {
+                $('#grid').datagrid('load', {
+                    filterName: $('#queryName').val()
+                });
+            }
+            // grid工具栏添加按钮
+            $('#grid').datagrid({
+                url: actionUrl.GetList,
+                queryParams: { filterName: $('#queryName').val() },
+                toolbar: [{
+                    iconCls: 'icon-import',
+                    text: '保存',
+                    handler: function () {
+                        // 设置当前window的标题及icon
+
+                        $('#Id').val('');
+
+                        $('#win_edit').window({
+                            title: '添加',
+                            iconCls: 'icon-import'
+                        });
+                        // 重置form，弹出window
+                        $('#form_edit').form('reset');
+                        $('#win_edit').window('open');
+                    }
+                }
+                ],
+                columns: [
+                    [
+                        { field: 'sVersion1', title: '开始日期', width: 80, },
+                        { field: 'sVersion1', title: '结束日期', width: 80, },
+                        { field: 'sVersion1', title: '备注', width: 80, },
+                    ]
+                ],
+            });
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            $('#btnReset').click(function () {
+                $('#queryName').textbox('reset');
+                reloadData();
+            });
+        });
+
+        Date.prototype.format = function (fmt) { //author: meizz
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>年：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryYear" id="queryYear" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;"  title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false">
+        </table>
+    </div>
+</body>

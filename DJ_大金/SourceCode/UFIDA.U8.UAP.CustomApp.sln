@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U8.UAP.CustomApp.Entrance", "UFIDA.U8.UAP.CustomApp.Entrance\UFIDA.U8.UAP.CustomApp.Entrance.csproj", "{7DD748DC-8251-447E-A4D7-10F400BE70B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U8.UAP.CustomApp.ControlForm", "UFIDA.U8.UAP.CustomApp.ControlForm\UFIDA.U8.UAP.CustomApp.ControlForm.csproj", "{D57AC05B-60E2-4174-9B56-1480A0B64D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U8.UAP.CustomApp.MetaData", "UFIDA.U8.UAP.CustomApp.MetaData\UFIDA.U8.UAP.CustomApp.MetaData.csproj", "{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "UFIDA.U8.UAP.CustomApp.Testing\WindowsFormsApplication1.csproj", "{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.BaseClass", "TH.BaseClass\TH.BaseClass.csproj", "{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UFIDA.U8.UAP.CustomApp.ControlForm\\UFIDA.U8.UAP.CustomApp.ControlForm.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = UFIDA.U8.UAP.CustomApp.ControlForm\\
+		SccProjectUniqueName2 = UFIDA.U8.UAP.CustomApp.Entrance\\UFIDA.U8.UAP.CustomApp.Entrance.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = UFIDA.U8.UAP.CustomApp.Entrance\\
+		SccProjectUniqueName3 = UFIDA.U8.UAP.CustomApp.MetaData\\UFIDA.U8.UAP.CustomApp.MetaData.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = UFIDA.U8.UAP.CustomApp.MetaData\\
+		SccProjectUniqueName4 = UFIDA.U8.UAP.CustomApp.Testing\\WindowsFormsApplication1.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = UFIDA.U8.UAP.CustomApp.Testing\\
+		SccProjectUniqueName5 = TH.BaseClass\\TH.BaseClass.csproj
+		SccProjectName5 = \u0022$/ETS_恩特斯/UFIDA.U8.UAP.CustomApp.root/UFIDA.U8.UAP.CustomApp/TH.BaseClass\u0022,\u0020LHFCAAAA
+		SccLocalPath5 = TH.BaseClass
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Debug|x86.ActiveCfg = Debug|x86
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Debug|x86.Build.0 = Debug|x86
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Release|x86.ActiveCfg = Release|x86
+		{7DD748DC-8251-447E-A4D7-10F400BE70B6}.Release|x86.Build.0 = Release|x86
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Debug|x86.ActiveCfg = Debug|x86
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Debug|x86.Build.0 = Debug|x86
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Release|x86.ActiveCfg = Release|x86
+		{D57AC05B-60E2-4174-9B56-1480A0B64D1C}.Release|x86.Build.0 = Release|x86
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Debug|x86.ActiveCfg = Debug|x86
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Debug|x86.Build.0 = Debug|x86
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Release|x86.ActiveCfg = Release|x86
+		{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}.Release|x86.Build.0 = Release|x86
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Debug|x86.ActiveCfg = Debug|x86
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Debug|x86.Build.0 = Debug|x86
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Release|x86.ActiveCfg = Release|x86
+		{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}.Release|x86.Build.0 = Release|x86
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|x86.ActiveCfg = Debug|x86
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|x86.Build.0 = Debug|x86
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|x86.ActiveCfg = Release|x86
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "SmartDeviceCab", "SmartDeviceCab\SmartDeviceCab.vddproj", "{D35AFFC7-6E4E-40BF-8FB2-96A9806C559C}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SmartDeviceCab\\SmartDeviceCab.vddproj
+		SccProjectName1 = \u0022$/HTJC_汇通金诚/BarCode.root/SmartDeviceCab\u0022,\u0020UJECAAAA
+		SccLocalPath1 = ..\\..
+		SccProjectFilePathRelativizedFromConnection1 = WinCESetup\\BarCode\\SmartDeviceCab\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D35AFFC7-6E4E-40BF-8FB2-96A9806C559C}.Debug|Default.ActiveCfg = Debug
+		{D35AFFC7-6E4E-40BF-8FB2-96A9806C559C}.Debug|Default.Build.0 = Debug
+		{D35AFFC7-6E4E-40BF-8FB2-96A9806C559C}.Release|Default.ActiveCfg = Release
+		{D35AFFC7-6E4E-40BF-8FB2-96A9806C559C}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

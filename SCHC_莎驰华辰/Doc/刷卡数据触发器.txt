@@ -1,0 +1,54 @@
+
+--刷卡数据触发器
+
+CREATE trigger  [dbo].[trig_hr_tm_OriCardData] on [dbo].[hr_tm_OriCardData]
+	for update
+as
+/*
+刷卡
+一 加班时间20：00，实际打卡时间20：05显示异常
+1. 根据审核触发单据获得刷卡时间
+2. 判断有无当天的加班单（没有直接结束）
+3. 有加班单则获得加班结束时间
+4. 判断有无大于加班结束时间的刷卡数据，没有结束
+5.	有大于的加班结束时间的刷卡数据，则自动生成一个加班结束时间的刷卡数据
+
+*/
+--set nocount on
+
+declare @uRecordId uniqueidentifier
+declare @cAuditorNum varchar(50)
+declare @刷卡时间 datetime
+select @uRecordId = uRecordId ,@cAuditorNum = isnull(cAuditorNum,'') ,@刷卡时间 = dDateTime from inserted 
+
+if @cAuditorNum = '' 
+	return
+
+declare curList cursor
+        for
+            select   uRecordId 
+            from    hr_tm_OriCardData
+			where CONVERT(VARCHAR(10),dDateTime,120) = CONVERT(VARCHAR(10),@刷卡时间,120)
+
+        open curList 
+        fetch next from curList into @uRecordId
+        while @@FETCH_STATUS = 0
+
+		begin
+			if(@cAuditorNum <> '')
+			begin
+				exec _Proc_刷新签卡数据 @uRecordId
+			end
+
+			fetch next from curList into @uRecordId
+		end
+
+        close curList
+        deallocate  curList
+
+--		select *	from    hr_tm_SignCardData
+--		delete _Temp
+GO
+
+
+

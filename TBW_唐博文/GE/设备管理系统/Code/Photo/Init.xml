@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Init>
+    <!-- 配置在线拍照使用哪个网页保存图片-->
+    <PostURL>SavePhoto.ashx</PostURL>
+</Init>

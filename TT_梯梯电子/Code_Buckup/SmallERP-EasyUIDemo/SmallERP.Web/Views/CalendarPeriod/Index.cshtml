@@ -1,0 +1,366 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            //初始化查询筛选设置
+            $('#queryName').textbox('setValue', new Date().getFullYear());
+
+            //url定向
+            var actionUrl = {
+                GetList: '/CalendarPeriod/GetList',
+                Update: '/CalendarPeriod/Update',
+            }
+
+            //重新加载grid
+            function reloadData() {
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+                $('#grid').datagrid('load', { 
+                    filterName: $('#queryName').val() 
+                });
+            }
+
+            // grid工具栏添加按钮
+            $('#grid').datagrid({
+                url: actionUrl.GetList,
+                queryParams: { filterName: $('#queryName').val() },
+                toolbar: [{
+                    iconCls: 'icon-save',
+                    text: 'Save',
+                    handler: function () {
+                        endEditing();
+                        var rows = $('#grid').datagrid('getRows');
+                        if (rows == null) {
+                            $.messager.alert('Message', '没有需要保存的行。');
+                            return false;
+                        }
+                        var arrs = new Array();
+                        for (var i = 0; i < rows.length; i++) {
+                            var arr = {};
+                            arr["iID"] = StringFormatter(rows[i].iID);
+                            arr["iYear"] = StringFormatter(rows[i].iYear);
+                            arr["iMonth"] = StringFormatter(rows[i].iMonth);
+                            arr["dtmStart"] = DateTimeFormatter(rows[i].dtmStart);
+                            arr["dtmEnd"] = DateTimeFormatter(rows[i].dtmEnd);
+                            arr["iWeek1"] = DateTimeFormatter(rows[i].iWeek1);
+                            arr["iWeek2"] = DateTimeFormatter(rows[i].iWeek2);
+                            arr["iWeek3"] = DateTimeFormatter(rows[i].iWeek3);
+                            arr["iWeek4"] = DateTimeFormatter(rows[i].iWeek4);
+                            arr["iWeek5"] = DateTimeFormatter(rows[i].iWeek5);
+
+                            if (arr["dtmStart"] == "") {
+                                $.messager.alert('信息', (i + 1) + "行开始日期不等于空");
+                                return false;
+                            }
+                            if (arr["dtmStart"] > arr["dtmEnd"]) {
+                                $.messager.alert('信息', (i + 1) + "行结束日期不可早于开始日期");
+                                return false;
+                            }
+                            arrs[i] = arr;
+                        }
+                        $.messager.confirm('提示', '确认是否要保存年度期间登记？', function (r) {
+                            if (r) {
+                                $.ajax({
+                                    type: "post",
+                                    url: actionUrl.Update,
+                                    cache: false,
+                                    data: { "grid": "[" + JSON.stringify(arrs) + "]" },
+                                    datatype: "json",
+                                    async: false,
+                                    success: function (data) {
+                                        if (data["Result"] === "1") {
+                                            $.messager.alert('信息', data["Msg"]);
+                                            reloadData();
+                                            $('#grid').datagrid('clearSelections');
+                                        } else {
+                                            $.messager.alert('信息', data["Msg"]);
+                                        }
+                                    }
+                                });
+                            }
+                        });
+
+                    }
+                }
+                ],
+                columns: [
+                    [
+                        { field: 'iYear', title: '年', width: 80, },
+                        { field: 'iMonth', title: '月', width: 80, },
+                        {
+                            field: 'dtmStart', title: '月开始', width: 120,
+                            formatter: function(value,row,index) {
+                                return DateTimeFormatter(value);
+                            },
+                            editor:'datebox',
+                        },
+                        {
+                            field: 'dtmEnd', title: '月结束', width: 120,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            },
+                            editor: 'datebox',
+                        },
+                        {
+                            field: 'dtmStart_1', title: '月工作日第一天', width: 80,
+                            formatter: function (value, row, index) {
+                                return addDate(DateTimeFormatter(row.dtmStart),1);
+                            }
+                        },
+                        {
+                            field: 'iWeek1', title: '第一周', width: 100,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            }
+                        },
+                        {
+                            field: 'iWeek2', title: '第二周', width: 100,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            }
+                        },
+                        {
+                            field: 'iWeek3', title: '第三周', width: 100,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            }
+                        },
+                        {
+                            field: 'iWeek4', title: '第四周', width: 100,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            }
+                        },
+                        {
+                            field: 'iWeek5', title: '第五周', width: 100,
+                            formatter: function (value, row, index) {
+                                return DateTimeFormatter(value);
+                            }
+                        },
+                        { field: 'iSave', title: 'iSave', width: 100, hidden: true },
+                    ]
+                ],
+            });
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            //初始化按钮
+            $('#btnReset').click(function () {
+                $('#queryName').textbox('reset');
+                reloadData();
+            });
+        });
+
+        //格式化日期
+        function DateTimeFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            if (value.length == 10) {
+                return value;
+            }
+            try{
+                value = value.substr(1, value.length - 2);
+                var obj = eval('(' + "{Date: new " + value + "}" + ')');
+                var dateValue = obj["Date"];
+                return dateValue.format("yyyy-mm-dd");
+            }
+            catch(e){
+                return "";
+            }
+        }
+
+        //格式化日期
+        Date.prototype.format = function (fmt) { 
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        //格式化字符串
+        function StringFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            return value;
+        }
+
+        //修改单元格扩展
+        $.extend($.fn.datagrid.methods, {
+            editCell: function (jq, param) {
+                return jq.each(function () {
+                    var opts = $(this).datagrid('options');
+                    var fields = $(this).datagrid('getColumnFields', true).concat($(this).datagrid('getColumnFields'));
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor1 = col.editor;
+                        if (fields[i] != param.field) {
+                            col.editor = null;
+                        }
+                    }
+                    $(this).datagrid('beginEdit', param.index);
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor = col.editor1;
+                    }
+                });
+            }
+        });
+
+        //修改行号
+        var editIndex = undefined;
+        //修改栏位
+        var editCol = undefined;
+        //数据发生改变时触发
+        function endEditing() {
+            if (editIndex == undefined) { return true }
+            if ($('#grid').datagrid('validateRow', editIndex)) {// 检测  数据是否发生 改变
+                //start数据发生改变时设置
+                var sd = DateTimeFormatter($('#grid').datagrid('getRows')[editIndex]['dtmStart']);
+                var sd_c = $('#grid').datagrid('getEditor', { index: editIndex, field: 'dtmStart' });
+                if (sd_c != null) {
+                    var sd_t = $(sd_c.target).datebox('getValue');
+                    if (sd != sd_t) {
+                        sd = sd_t;
+                        $('#grid').datagrid('getRows')[editIndex]['iSave'] = "update";
+                    }
+                }
+
+                var ed = DateTimeFormatter($('#grid').datagrid('getRows')[editIndex]['dtmEnd']);
+                var ed_c = $('#grid').datagrid('getEditor', { index: editIndex, field: 'dtmEnd' });
+                if (ed_c != null) {
+                    var ed_t = $(ed_c.target).datebox('getValue');
+                    if (ed != ed_t) {
+                        ed = ed_t;
+                        $('#grid').datagrid('getRows')[editIndex]['iSave'] = "update";
+                    }
+                }
+
+                if(sd!="" && ed!=""){
+
+                    var iWeek1=addDate(sd,1);
+                    var iWeek2=addDate(sd,1+7);
+                    var iWeek3=addDate(sd,1+7*2);
+                    var iWeek4=addDate(sd,1+7*3);
+                    var iWeek5=addDate(sd,1+7*4);
+                    if(iWeek5>ed){
+                        iWeek5="";
+                    }
+
+                    $('#grid').datagrid('getRows')[editIndex]['dtmStart_1'] = iWeek1;
+                    $('#grid').datagrid('getRows')[editIndex]['iWeek1'] = iWeek1;
+                    $('#grid').datagrid('getRows')[editIndex]['iWeek2'] = iWeek2;
+                    $('#grid').datagrid('getRows')[editIndex]['iWeek3'] = iWeek3;
+                    $('#grid').datagrid('getRows')[editIndex]['iWeek4'] = iWeek4;
+                    $('#grid').datagrid('getRows')[editIndex]['iWeek5'] = iWeek5;
+                    $('#grid').datagrid('endEdit', editIndex);// 触发 onAfterEdit  方法
+                }
+                //end数据发生改变时设置
+                editIndex = undefined;
+                editCol=undefined;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //点击单元格变更
+        function onClickCell(index, field, data) {
+            if (endEditing()) {
+                $('#grid').datagrid('selectRow', index)
+                        .datagrid('editCell', { index: index, field: field, data: data });
+                editCol = field;
+                editIndex = index;
+            }
+        }
+
+        //datagrid 时间控件编辑器扩展
+        $.extend($.fn.datagrid.defaults.editors, {
+            datebox: {// datebox就是你要自定义editor的名称
+                init: function (container, options) {
+                    var input = $('<input class="easyuidatebox" style="width:100px">').appendTo(container);
+                    return input.datebox({
+                        formatter: function (date) {
+                            return new Date(date).format("yyyy-mm-dd");
+                        }
+                    });
+                },
+                getValue: function (target) {
+                    return $(target).datebox("getValue");
+                },
+                setValue: function (target, value) {
+                    $(target).datebox("setValue", DateTimeFormatter(value));
+                },
+                resize: function (target, width) {
+                    var input = $(target);
+                    if ($.boxModel == true) {
+                        input.width(width - (input.outerWidth() - input.width()));
+                    } else {
+                        input.width(width);
+                    }
+                }
+            }
+        });
+
+        // 日期，在原有日期基础上，增加days天数，默认增加1天
+        function addDate(date, days) {
+            if (days == undefined || days == '') {
+                days = 1;
+            }
+            var date = new Date(date);
+            date.setDate(date.getDate() + days);
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            return date.getFullYear() + '-' + getFormatDate(month) + '-' + getFormatDate(day);
+        }
+
+        // 日期月份/天的显示，如果是1位数，则在前面加上'0'
+        function getFormatDate(arg) {
+            if (arg == undefined || arg == '') {
+                return '';
+            }
+
+            var re = arg + '';
+            if (re.length < 2) {
+                re = '0' + re;
+            }
+
+            return re;
+        }
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>年：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryName" id="queryName" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true,onClickCell: onClickCell"></table>
+    </div>
+</body>

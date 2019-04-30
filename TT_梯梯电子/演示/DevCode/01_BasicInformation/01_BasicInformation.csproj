@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BasicInformation</RootNamespace>
+    <AssemblyName>BasicInformation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\out\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v11.2.Wizard, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v11.2.Designer, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.2.Extensions, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.2.UI, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsGetInvPrice.cs" />
+    <Compile Include="FrmStockOrderAuditGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderAuditGrade.Designer.cs">
+      <DependentUpon>FrmStockOrderAuditGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm压铸件评审档案.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm压铸件评审档案.designer.cs">
+      <DependentUpon>Frm压铸件评审档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProProcess_Formula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProProcess_Formula.Designer.cs">
+      <DependentUpon>FrmProProcess_Formula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWorkProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWorkProcess.designer.cs">
+      <DependentUpon>FrmWorkProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmProProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProProcess.designer.cs">
+      <DependentUpon>FrmProProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMachine.designer.cs">
+      <DependentUpon>FrmMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProWood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProWood.designer.cs">
+      <DependentUpon>FrmProWood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产部员工人数.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产部员工人数.designer.cs">
+      <DependentUpon>Frm生产部员工人数.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm物料允许BOM核查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm物料允许BOM核查.designer.cs">
+      <DependentUpon>Frm物料允许BOM核查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm委外计划执行核查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm委外计划执行核查.designer.cs">
+      <DependentUpon>Frm委外计划执行核查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm委外计划执行核查明细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm委外计划执行核查明细.designer.cs">
+      <DependentUpon>Frm委外计划执行核查明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm委外计划尾数核查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm委外计划尾数核查.designer.cs">
+      <DependentUpon>Frm委外计划尾数核查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm开发需求列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm开发需求列表.designer.cs">
+      <DependentUpon>Frm开发需求列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm程序优化建议.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm程序优化建议.designer.cs">
+      <DependentUpon>Frm程序优化建议.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm单据价格核查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm单据价格核查.designer.cs">
+      <DependentUpon>Frm单据价格核查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventory_Define.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventory_Define.designer.cs">
+      <DependentUpon>FrmInventory_Define.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\Frm工序检查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\Frm工序检查.designer.cs">
+      <DependentUpon>Frm工序检查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\Frm产品入库倒冲检查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\Frm产品入库倒冲检查.designer.cs">
+      <DependentUpon>Frm产品入库倒冲检查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\Frm订单评审原始数据.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\Frm订单评审原始数据.designer.cs">
+      <DependentUpon>Frm订单评审原始数据.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmStockOrderAuditGrade.resx">
+      <DependentUpon>FrmStockOrderAuditGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm压铸件评审档案.resx">
+      <DependentUpon>Frm压铸件评审档案.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProProcess_Formula.resx">
+      <DependentUpon>FrmProProcess_Formula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWorkProcess.resx">
+      <DependentUpon>FrmWorkProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProProcess.resx">
+      <DependentUpon>FrmProProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMachine.resx">
+      <DependentUpon>FrmMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProWood.resx">
+      <DependentUpon>FrmProWood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产部员工人数.resx">
+      <DependentUpon>Frm生产部员工人数.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm物料允许BOM核查.resx">
+      <DependentUpon>Frm物料允许BOM核查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm委外计划执行核查.resx">
+      <DependentUpon>Frm委外计划执行核查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm委外计划执行核查明细.resx">
+      <DependentUpon>Frm委外计划执行核查明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm委外计划尾数核查.resx">
+      <DependentUpon>Frm委外计划尾数核查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm开发需求列表.resx">
+      <DependentUpon>Frm开发需求列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm程序优化建议.resx">
+      <DependentUpon>Frm程序优化建议.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm单据价格核查.resx">
+      <DependentUpon>Frm单据价格核查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="FrmInventory_Define.resx">
+      <DependentUpon>FrmInventory_Define.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\Frm工序检查.resx">
+      <DependentUpon>Frm工序检查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\Frm产品入库倒冲检查.resx">
+      <DependentUpon>Frm产品入库倒冲检查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\Frm订单评审原始数据.resx">
+      <DependentUpon>Frm订单评审原始数据.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\20_Purchase\20_Purchase.csproj">
+      <Project>{A5F65471-087C-4808-91CA-8D5DAFC54A70}</Project>
+      <Name>20_Purchase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrameBaseFunction\FrameBaseFunction.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>FrameBaseFunction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            //url定向
+            var actionUrl = {
+                GetList: '/PO/GetList',
+                GetVersion: '/PO/GetVersionList',
+                GetPlanner: '/PO/GetPlanner',
+                GetGroup: '/PO/GetProductGroupList',
+            }
+            $(document).ready(function () {
+                //加载版本
+                $('#queryVersion').combobox({
+                    url: actionUrl.GetVersion,
+                    valueField: 'iID',
+                    textField: 'iText',
+                    onLoadSuccess: function () { //加载完成后,设置选中第一项
+                        var val = $(this).combobox("getData");
+                        for (var item in val[0]) {
+                            if (item == "iID") {
+                                $(this).combobox("select", val[0][item]);
+                            }
+                        }
+                        getList();
+                    },
+                });
+
+                //加载计划员
+                $('#queryGroup').combobox({
+                    url: actionUrl.GetPlanner,
+                    valueField: 'iID',
+                    textField: 'iText'
+                });
+
+                //加载项目组
+                $('#queryGroup').combobox({
+                    url: actionUrl.GetGroup,
+                    valueField: 'iID',
+                    textField: 'iText',
+                    multiple: true,//设置可以多选
+                    formatter: function (row) { //formatter方法就是实现了在每个下拉选项前面增加checkbox框的方法
+                        var opts = $(this).combobox('options');
+                        return '<input type="checkbox" class="combobox-checkbox">' + row[opts.textField] + '</input>'
+                    },
+                    onLoadSuccess: function () {  //下拉框数据加载成功调用
+                        var opts = $(this).combobox('options');
+                        var target = this;
+                        var values = $(target).combobox('getValues');//获取选中的值的values
+                        $.map(values, function (value) {
+                            var el = opts.finder.getEl(target, value);
+                            el.find('input.combobox-checkbox')._propAttr('checked', true);
+                        })
+                    },
+                    onSelect: function (row) { //选中一个选项时调用
+                        var opts = $(this).combobox('options');
+                        //获取选中的值的values
+                        $("#queryGroup").val($(this).combobox('getValues'));
+
+                        //设置选中值所对应的复选框为选中状态
+                        var el = opts.finder.getEl(this, row[opts.valueField]);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    },
+                    onUnselect: function (row) {//不选中一个选项时调用
+                        var opts = $(this).combobox('options');
+                        //获取选中的值的values
+                        $("#queryGroup").val($(this).combobox('getValues'));
+
+                        var el = opts.finder.getEl(this, row[opts.valueField]);
+                        el.find('input.combobox-checkbox')._propAttr('checked', false);
+                    }
+                });
+
+                // 查询按钮
+                $('#btnQuery').click(function () {
+                    reloadData();
+                });
+
+                //初始化按钮
+                $('#btnReset').click(function () {
+                    $('#queryVersion').textbox('reset');
+                    $('#queryPlanner').combobox('reset');
+                    $('#queryGroup').combobox('reset');
+                    reloadData();
+                });
+            });
+            
+
+            //重新加载grid
+            function reloadData() {
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+                $('#grid').datagrid('load', {
+                    queryVersion: $('#queryVersion').val(),
+                    queryPlanner: $('#queryPlanner').combobox('getValue'),
+                    queryGroup: $('#queryGroup').combobox('getValue')
+                });
+            }
+            function getList() {
+                // grid工具栏添加按钮
+                $('#grid').datagrid({
+                    url: actionUrl.GetList,
+                    pagination: true,//分页
+                    pageSize: 500,
+                    pageList: [500, 1000, 1500, 2000],
+                    queryParams: {
+                        queryVersion: $('#queryVersion').val(),
+                        queryPlanner: $('#queryPlanner').combobox('getValue'),
+                        queryGroup: $('#queryGroup').combobox('getValue')
+                    },
+                    toolbar: [
+                    ],
+                    columns: [[
+                        { field: 'iItemNO', title: '物料编码', width: 120, },
+                        { field: 'fQTY', title: '订单数量', width: 80, },
+                        { field: 'fOpenQTY', title: '未到货数量', width: 80, },
+                        {
+                            field: 'dDate', title: '单据日期', width: 120,
+                        },
+                        {
+                            field: 'dtmRequirement', title: '需求日期', width: 120,
+                        },
+                        {
+                            field: 'dtmDuedate', title: '供应商回复日期', width: 120,
+                        },
+                        {
+                            field: 'dtmCommitdate', title: '完成日期', width: 120,
+                        },
+                        { field: 'sPONo', title: '订单号', width: 100, },
+                        { field: 'POLine', title: '单据行号', width: 100, },
+                        { field: 'sBuyer', title: '采购', width: 100, },
+                        { field: 'sProductGroup', title: '项目组', width: 100, },
+                    ]],
+                });
+            }
+        });
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>版本：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryVersion" id="queryVersion" />
+                </td>
+                <td>计划员：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryPlanner" id="queryPlanner" >
+                </td>
+                <td>项目组：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryGroup" id="queryGroup" editable="false">
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true"></table>
+    </div>
+</body>

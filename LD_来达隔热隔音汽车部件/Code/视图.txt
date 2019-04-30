@@ -1,0 +1,25 @@
+
+ALTER view [dbo].[_GetDispatchList]
+as
+
+select b.AutoID,a.cCusCode as 客户编码,cus.cCusName as 客户名称,a.cDLCode as 发货单号
+	,convert(char(10),a.dDate,102) as 发货日期
+	,cusInv.cCusInvCode as 客户料号
+	,inv.cInvDefine6 as 包装内零件数
+	,cast(isnull(inv.iInvWeight,0) as decimal(16,6)) * cast(isnull(inv.cInvDefine6,0) as decimal(16,6)) as 净重
+	,isnull(inv.cInvDefine4,0)  as 包装重量
+	,cast(isnull(inv.iInvWeight,0) as decimal(16,6)) * cast(isnull(inv.cInvDefine6,0) as decimal(16,6)) + isnull(inv.cInvDefine4,0) as 毛重
+	,cus.cCusDefine1 as 供应商编号,cast(null as varchar(10)) as 箱号流水
+	,cus.cCusAddress as 送货地址
+	,b.cBatch as 批号
+	,b.cInvCode as 存货编码,inv.cInvName as 存货名称,inv.cinvStd as 规格型号,inv.cInvDefine7 as 小包装规格
+	,case when cast(isnull(inv.cInvDefine6,0) as decimal(16,6)) <> 0 then  CEILING(isnull(b.iQuantity,0) / cast(isnull(inv.cInvDefine6,0) as decimal(16,6))) else null end as 箱数
+	,invex.cidefine6 as 版本,cast(b.iQuantity as decimal(16,2)) as 发货单数量,b.cSoCode as 表体销售订单号,comp.cComUnitName as 计量单位
+from DispatchList a inner join DispatchLists b on a.dlid = b.dlid
+	inner join Customer cus on cus.cCusCode = a.cCusCode
+	inner join Inventory inv on inv.cInvCode = b.cInvCode
+	inner join Warehouse wh on wh.cWhCode = b.cWhCode
+	left join CusInvContrapose cusInv on cusInv.cCusCode = a.cCusCode and cusInv.cInvCode = b.cInvCode
+	left join Inventory_extradefine invex on inv.cInvCode = invex.cInvCode
+	left join ComputationUnit  comp on comp.cComunitCode = inv.cComUnitCode 
+

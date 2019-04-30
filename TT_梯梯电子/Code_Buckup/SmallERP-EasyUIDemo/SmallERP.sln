@@ -1,0 +1,118 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Web", "SmallERP.Web\SmallERP.Web.csproj", "{76896166-FFF0-4F91-A311-AD02141432F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Entity", "SmallERP.Entity\SmallERP.Entity.csproj", "{ECA88BA2-79FF-4861-9A05-B25CB912D202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.DataAccess", "SmallERP.DataAccess\SmallERP.DataAccess.csproj", "{80DD938C-3299-43C1-B532-BCCCD7CAECA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Business", "SmallERP.Business\SmallERP.Business.csproj", "{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Api", "SmallERP.Api\SmallERP.Api.csproj", "{81567EBA-75DF-4358-A1A4-29F60FD6C3ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Domain", "SmallERP.Domain\SmallERP.Domain.csproj", "{60780769-1F31-4D82-B788-40DA7629FBEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.DBUtility", "SmallERP.DBUtility\SmallERP.DBUtility.csproj", "{DE729FBA-A050-40A3-AE20-380D3A39263F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallERP.Common", "SmallERP.Common\SmallERP.Common.csproj", "{24216C39-0517-4AA0-9AA5-BAB29B60D3FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.3rdParty", "00.3rdParty", "{9345EE99-53A8-47D7-9EAF-FBE072A90736}"
+	ProjectSection(SolutionItems) = preProject
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\AutoMapper.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\AutoMapper.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\AutoMapper.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\AutoMapper.xml
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\ChnCharInfo.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\ChnCharInfo.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\log4net.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\log4net.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\log4net.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\log4net.xml
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Newtonsoft.Json.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Newtonsoft.Json.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Newtonsoft.Json.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Newtonsoft.Json.xml
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\ThoughtWorks.QRCode.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\ThoughtWorks.QRCode.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Base", "01.Base", "{59F5BC36-EE4D-45A6-999F-DD704A8C1429}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Project", "02.Project", "{7A30D003-B2E1-4AE6-B34A-56292DCC8A5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Web", "03.Web", "{4D62EED0-C249-4E46-9B15-3351E6560A56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspose", "Aspose", "{97385A78-5E8D-4117-B15C-30F329319B4B}"
+	ProjectSection(SolutionItems) = preProject
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.BarCode.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.BarCode.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.BarCode.XML = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.BarCode.XML
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Cells.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Cells.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Cells.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Cells.xml
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.OCR.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.OCR.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.OCR.XML = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.OCR.XML
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Pdf.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Pdf.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Pdf.XML = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Pdf.XML
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Slides.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Slides.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Slides.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Slides.xml
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Words.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Words.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Words.xml = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\Aspose\Aspose.Words.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbProvider", "DbProvider", "{4BEA2F29-0852-4B7C-864A-4B4A8D08D325}"
+	ProjectSection(SolutionItems) = preProject
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\MySql.Data.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\MySql.Data.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\Npgsql.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\Npgsql.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\Oracle.ManagedDataAccess.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\Oracle.ManagedDataAccess.dll
+		..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\System.Data.SQLite.dll = ..\TTPortal\New\TTSZPortal\TTSZPortal.Web\bin\DbProvider\System.Data.SQLite.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76896166-FFF0-4F91-A311-AD02141432F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76896166-FFF0-4F91-A311-AD02141432F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76896166-FFF0-4F91-A311-AD02141432F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76896166-FFF0-4F91-A311-AD02141432F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA88BA2-79FF-4861-9A05-B25CB912D202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA88BA2-79FF-4861-9A05-B25CB912D202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA88BA2-79FF-4861-9A05-B25CB912D202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA88BA2-79FF-4861-9A05-B25CB912D202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DD938C-3299-43C1-B532-BCCCD7CAECA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DD938C-3299-43C1-B532-BCCCD7CAECA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DD938C-3299-43C1-B532-BCCCD7CAECA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DD938C-3299-43C1-B532-BCCCD7CAECA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81567EBA-75DF-4358-A1A4-29F60FD6C3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81567EBA-75DF-4358-A1A4-29F60FD6C3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81567EBA-75DF-4358-A1A4-29F60FD6C3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81567EBA-75DF-4358-A1A4-29F60FD6C3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60780769-1F31-4D82-B788-40DA7629FBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60780769-1F31-4D82-B788-40DA7629FBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60780769-1F31-4D82-B788-40DA7629FBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60780769-1F31-4D82-B788-40DA7629FBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE729FBA-A050-40A3-AE20-380D3A39263F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE729FBA-A050-40A3-AE20-380D3A39263F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE729FBA-A050-40A3-AE20-380D3A39263F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE729FBA-A050-40A3-AE20-380D3A39263F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24216C39-0517-4AA0-9AA5-BAB29B60D3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24216C39-0517-4AA0-9AA5-BAB29B60D3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24216C39-0517-4AA0-9AA5-BAB29B60D3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24216C39-0517-4AA0-9AA5-BAB29B60D3FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97385A78-5E8D-4117-B15C-30F329319B4B} = {9345EE99-53A8-47D7-9EAF-FBE072A90736}
+		{4BEA2F29-0852-4B7C-864A-4B4A8D08D325} = {9345EE99-53A8-47D7-9EAF-FBE072A90736}
+		{81567EBA-75DF-4358-A1A4-29F60FD6C3ED} = {59F5BC36-EE4D-45A6-999F-DD704A8C1429}
+		{24216C39-0517-4AA0-9AA5-BAB29B60D3FA} = {59F5BC36-EE4D-45A6-999F-DD704A8C1429}
+		{DE729FBA-A050-40A3-AE20-380D3A39263F} = {59F5BC36-EE4D-45A6-999F-DD704A8C1429}
+		{C35E6E4A-D079-4F4C-A06D-FCF7570B81BB} = {7A30D003-B2E1-4AE6-B34A-56292DCC8A5D}
+		{80DD938C-3299-43C1-B532-BCCCD7CAECA1} = {7A30D003-B2E1-4AE6-B34A-56292DCC8A5D}
+		{ECA88BA2-79FF-4861-9A05-B25CB912D202} = {7A30D003-B2E1-4AE6-B34A-56292DCC8A5D}
+		{60780769-1F31-4D82-B788-40DA7629FBEA} = {4D62EED0-C249-4E46-9B15-3351E6560A56}
+		{76896166-FFF0-4F91-A311-AD02141432F3} = {4D62EED0-C249-4E46-9B15-3351E6560A56}
+	EndGlobalSection
+EndGlobal

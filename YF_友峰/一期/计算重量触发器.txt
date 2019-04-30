@@ -1,0 +1,104 @@
+USE [UFDATA_222_2012]
+GO
+/****** Object:  Trigger [dbo].[_TH_CountQTY]    Script Date: 08/08/2014 09:00:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER TRIGGER [dbo].[_TH_CountQTY]
+on [dbo].[SO_SODetails]
+for insert,update
+as
+
+declare @尺寸 nvarchar(200)
+declare @密度 nvarchar(200)
+declare @语句 nvarchar(800)
+declare @件数 nvarchar(200)
+declare @autoID nvarchar(20)
+declare @材料类型 nvarchar(20)
+declare @长度 decimal(16,6)
+declare @重量 decimal(16,6)
+
+
+select @autoID = autoID from inserted
+select @autoID = cast(a.AutoID as varchar(10)),@件数=a.cDefine34,@尺寸=a.cDefine28,@密度=a.cDefine33,@材料类型 = isnull(b.cInvDefine4 ,'')
+from SO_SODetails a inner join Inventory b on a.cInvCode = b.cInvCode
+where AutoID = @autoID
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_ta]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_ta
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_tb]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_tb
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_TAC]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_TAC
+
+	create table TH_ta 
+	( 
+		id int, 
+		id_value varchar(30) 
+	) 
+
+
+if(@材料类型 = '棒')
+begin
+-- 棒子体积计算方式
+	
+	
+	insert into TH_ta 
+	select  1 ,@尺寸
+
+	select 
+	top 4000 ix = identity(int, 1, 1) 
+	into TH_tb 
+	from sys.objects a, sys.objects b 
+
+	select 
+		id, id_value = substring(id_value,ix,charindex('*',id_value + '*',ix) - ix) ,ROW_NUMBER() OVER(ORDER BY a.id) AS rowNumber
+	into TH_TAC
+	FROM TH_ta as A, TH_tb as B 
+	WHERE SUBSTRING( '*' + id_value, ix, 1) = '*' 
+
+	declare @直径 decimal(16,6)
+
+	select @直径 = id_value from TH_TAC where rowNumber = 1
+	select @长度 = id_value from TH_TAC where rowNumber = 2
+	set @长度 = @长度 + 5
+	set @重量 =CAST(cast(@件数 as decimal(16,6)) * cast(@密度 as decimal(16,6)) * 3.14 * (@直径/2)* (@直径/2) * @长度 /1000000 as decimal(16,2))
+
+	update SO_SODetails set cDefine22 = cast(cast(@重量 as varchar(50)) as decimal(16,2)) where AutoID = @autoID
+end
+else
+begin
+	insert into TH_ta 
+	select  1 ,@尺寸
+
+	select 
+	top 4000 ix = identity(int, 1, 1) 
+	into TH_tb 
+	from sys.objects a, sys.objects b 
+
+	select 
+		id, id_value = substring(id_value,ix,charindex('*',id_value + '*',ix) - ix) ,ROW_NUMBER() OVER(ORDER BY a.id) AS rowNumber
+	into TH_TAC
+	FROM TH_ta as A, TH_tb as B 
+	WHERE SUBSTRING( '*' + id_value, ix, 1) = '*' 
+
+	declare @厚度 decimal(16,6)
+	declare @宽度 decimal(16,6)
+
+
+	select @厚度 = id_value from TH_TAC where rowNumber = 1
+	select @宽度 = id_value from TH_TAC where rowNumber = 2
+	select @长度 = id_value from TH_TAC where rowNumber = 3
+
+	
+	set @长度 = @长度 + 5
+	set @宽度 = @宽度 + 5
+	set @重量 = cast(cast(@件数 as decimal(16,6)) * cast(@密度 as decimal(16,6)) * @厚度 * @宽度 * @长度 /1000000 as decimal(16,2))
+	
+	update SO_SODetails set cDefine22 = cast(@重量 as decimal(16,2)) where AutoID = @autoID
+end
+exec sp_executesql @语句

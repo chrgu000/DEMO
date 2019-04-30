@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[产品原价分析汇总](
+	[物料编码] [nvarchar](50) NOT NULL,
+	[物料名称] [nvarchar](50) NULL,
+	[英文名称] [nvarchar](50) NULL,
+	[规格型号] [nvarchar](50) NULL,
+	[计量单位] [nvarchar](50) NULL,
+	[物料类别] [nvarchar](50) NULL,
+	[发票最高单价] [numeric](18, 2) NULL,
+	[发票最低单价] [numeric](18, 2) NULL,
+	[参考成本] [numeric](18, 2) NULL,
+	[供应商最高单价] [numeric](18, 2) NULL,
+	[供应商最低单价] [numeric](18, 2) NULL,
+	[SysCreateDate] [datetime] NULL,
+ CONSTRAINT [PK_产品原价分析汇总] PRIMARY KEY CLUSTERED 
+(
+	[物料编码] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[产品原价分析汇总] ADD  CONSTRAINT [DF_产品原价分析汇总_SysCreateDate]  DEFAULT (getdate()) FOR [SysCreateDate]
+GO

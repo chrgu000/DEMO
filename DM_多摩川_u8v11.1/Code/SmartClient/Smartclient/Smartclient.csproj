@@ -1,0 +1,451 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F0CB293-E8FC-425C-9A07-1195306E50B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Smartclient</RootNamespace>
+    <AssemblyName>Smartclient</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>条形码货位管理</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>demo.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Honeywell.DataCollection.WinCE.Common, Version=2.107.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\out\Honeywell.DataCollection.WinCE.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.DataCollection.WinCE.Decoding, Version=2.107.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\out\Honeywell.DataCollection.WinCE.Decoding.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransVouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransVouch.Designer.cs">
+      <DependentUpon>FrmTransVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWebURL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWebURL.Designer.cs">
+      <DependentUpon>FrmWebURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoneyWellBarCode.cs" />
+    <Compile Include="MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransVouch.resx">
+      <DependentUpon>FrmTransVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWebURL.resx">
+      <DependentUpon>FrmWebURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBarCodeInvalid.resx">
+      <DependentUpon>FrmBarCodeInvalid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBarCodeInvalidList.resx">
+      <DependentUpon>FrmBarCodeInvalidList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord01.resx">
+      <DependentUpon>FrmRdrecord01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord01List.resx">
+      <DependentUpon>FrmRdrecord01List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord01BarCodeList.resx">
+      <DependentUpon>FrmRdrecord01BarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord11.resx">
+      <DependentUpon>FrmRdrecord11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord11BarCodeList.resx">
+      <DependentUpon>FrmRdrecord11BarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord11List.resx">
+      <DependentUpon>FrmRdrecord11List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransVouchBarCodeList.resx">
+      <DependentUpon>FrmTransVouchBarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransVouchList.resx">
+      <DependentUpon>FrmTransVouchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckVouch.resx">
+      <DependentUpon>FrmCheckVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckVouchBarCodeList.resx">
+      <DependentUpon>FrmCheckVouchBarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckVouchList.resx">
+      <DependentUpon>FrmCheckVouchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBoxList.resx">
+      <DependentUpon>FrmBoxList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBox.resx">
+      <DependentUpon>FrmBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnBox.resx">
+      <DependentUpon>FrmUnBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnBoxList.resx">
+      <DependentUpon>FrmUnBoxList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord10.resx">
+      <DependentUpon>FrmRdrecord10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord10BarCodeList.resx">
+      <DependentUpon>FrmRdrecord10BarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord10List.resx">
+      <DependentUpon>FrmRdrecord10List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatchList.resx">
+      <DependentUpon>FrmDispatchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatchListBarCodeList.resx">
+      <DependentUpon>FrmDispatchListBarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDispatchListList.resx">
+      <DependentUpon>FrmDispatchListList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBarCodeAdjust.resx">
+      <DependentUpon>FrmBarCodeAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord09.resx">
+      <DependentUpon>FrmRdrecord09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord09BarCodeList.resx">
+      <DependentUpon>FrmRdrecord09BarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord09List.resx">
+      <DependentUpon>FrmRdrecord09List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord08.resx">
+      <DependentUpon>FrmRdrecord08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord08BarCodeList.resx">
+      <DependentUpon>FrmRdrecord08BarCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRdrecord08List.resx">
+      <DependentUpon>FrmRdrecord08List.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePwd.Designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBarCodeInvalid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBarCodeInvalid.Designer.cs">
+      <DependentUpon>FrmBarCodeInvalid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBarCodeInvalidList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBarCodeInvalidList.Designer.cs">
+      <DependentUpon>FrmBarCodeInvalidList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord01.Designer.cs">
+      <DependentUpon>FrmRdrecord01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord01List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord01List.Designer.cs">
+      <DependentUpon>FrmRdrecord01List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord01BarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord01BarCodeList.Designer.cs">
+      <DependentUpon>FrmRdrecord01BarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord11.Designer.cs">
+      <DependentUpon>FrmRdrecord11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord11BarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord11BarCodeList.Designer.cs">
+      <DependentUpon>FrmRdrecord11BarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord11List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord11List.Designer.cs">
+      <DependentUpon>FrmRdrecord11List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransVouchBarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransVouchBarCodeList.Designer.cs">
+      <DependentUpon>FrmTransVouchBarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransVouchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransVouchList.Designer.cs">
+      <DependentUpon>FrmTransVouchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckVouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckVouch.Designer.cs">
+      <DependentUpon>FrmCheckVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckVouchBarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckVouchBarCodeList.Designer.cs">
+      <DependentUpon>FrmCheckVouchBarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckVouchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckVouchList.Designer.cs">
+      <DependentUpon>FrmCheckVouchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBoxList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBoxList.Designer.cs">
+      <DependentUpon>FrmBoxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBox.Designer.cs">
+      <DependentUpon>FrmBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnBox.Designer.cs">
+      <DependentUpon>FrmUnBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnBoxList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnBoxList.Designer.cs">
+      <DependentUpon>FrmUnBoxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord10.Designer.cs">
+      <DependentUpon>FrmRdrecord10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord10BarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord10BarCodeList.Designer.cs">
+      <DependentUpon>FrmRdrecord10BarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord10List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord10List.Designer.cs">
+      <DependentUpon>FrmRdrecord10List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatchList.Designer.cs">
+      <DependentUpon>FrmDispatchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatchListBarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatchListBarCodeList.Designer.cs">
+      <DependentUpon>FrmDispatchListBarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDispatchListList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDispatchListList.Designer.cs">
+      <DependentUpon>FrmDispatchListList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBarCodeAdjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBarCodeAdjust.Designer.cs">
+      <DependentUpon>FrmBarCodeAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord09.Designer.cs">
+      <DependentUpon>FrmRdrecord09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord09BarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord09BarCodeList.Designer.cs">
+      <DependentUpon>FrmRdrecord09BarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord09List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord09List.Designer.cs">
+      <DependentUpon>FrmRdrecord09List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord08.Designer.cs">
+      <DependentUpon>FrmRdrecord08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord08BarCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord08BarCodeList.Designer.cs">
+      <DependentUpon>FrmRdrecord08BarCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRdrecord08List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRdrecord08List.Designer.cs">
+      <DependentUpon>FrmRdrecord08List.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="demo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TH.Smart.BaseClass\TH.Smart.BaseClass.csproj">
+      <Project>{B3BA5934-13F0-4E05-A963-20273C373009}</Project>
+      <Name>TH.Smart.BaseClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TH.Smart.WebService.WSDBScanForCheck\TH.Smart.WebService.csproj">
+      <Project>{E85D0D6A-CA3B-4E3E-99DF-B76B291BDCDD}</Project>
+      <Name>TH.Smart.WebService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

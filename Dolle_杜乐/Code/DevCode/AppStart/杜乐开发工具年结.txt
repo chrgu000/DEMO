@@ -1,0 +1,325 @@
+
+use UFDLImport
+go
+
+-- omplanday 需要调整语句中的年度数字
+-- workplan  2014年年结时年度未能转新年度，重点关注一下，通过语句 update WorkPlan set accyear = '2014' where  AccYear = '2013' and dtmplan >=  '2014-1-1' 解决
+
+
+
+
+begin tran 	
+
+declare @OldYear varchar(4) set @OldYear = '2013'
+declare @NewYear varchar(4) set @NewYear = '2014'
+
+declare @OldYearAcc varchar(20) set @OldYearAcc = 'UFDATA_200_' + @OldYear
+declare @NewYearAcc varchar(20) set @NewYearAcc = 'UFDATA_200_' + @NewYear
+
+
+----不需要年结的表:
+----dbo._Code						(不需要年结)
+----dbo._Form						(不需要年结)
+----dbo._FormBtnInfo				(不需要年结)
+----dbo._GridViewInfo--del20140114	测试无用后删除
+----dbo._MailTemp					(不需要年结)
+----dbo._RoleInfo					(不需要年结)
+----dbo._RoleRight					(不需要年结)
+----dbo._Table_TempTH				(不需要年结)	(临时表)
+
+----表列信息（需要手工更改区分帐套）
+--	insert into dbo._TableColInfo(TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,COLUMN_Text,DATA_TYPE,COLLATION_ADD)
+--	select @NewYearAcc,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,COLUMN_Text,DATA_TYPE,COLLATION_ADD from _TableColInfo 
+--	WHERE TABLE_CATALOG = @OldYearAcc
+
+----dbo._UserInfo					(不需要年结)
+----dbo._UserRoleInfo				(不需要年结)
+
+
+----用户帐号帐套权限
+--	insert into _UserUFAcc(vchrUserID,vchrUFAcc) 
+--	select vchrUserID,@NewYearAcc from _UserUFAcc where vchrUFAcc = @OldYearAcc
+
+----供应商帐号信息
+--	insert into _vendUid select uid,vendcode,bvend,semail,poaduditgrade,accid,@NewYear from _vendUid where accyear = @OldYear
+
+----dbo.A							(不需要年结)	用途未知
+
+----  物料审核等级(暂时不年结，测试通过后纳入不需要参与年结范畴 2014-1-14)
+----	insert into AuditGrade(auditgrade,audittype,cinvcode,accid,accyear) select auditgrade,audittype,cinvcode,accid,'2011' from AuditGrade where accyear = '1900'
+
+----dbo.Bac_OMBack					(不需要年结)
+	
+----dbo.DepartmentMatchup			(不需要年结)	貌似没有用到
+
+----dbo.EmployeeInfo(暂定不用年结20140114)
+
+----FacilityInfo					(不需要年结)
+
+----委外计划表体
+--	insert into OM_MODetails_Import( MODetailsID, accid, accyear, ReturnDate1, ReturnDate2, ReturnAudit, ReturnAuditDate, ReturnAuditUID, ReturnApply, ReturnAuditCount, bAgain, 
+--						  ReturnRemark, bLock, Locker, LockDate)
+--	select MODetailsID, accid, @NewYear, ReturnDate1, ReturnDate2, ReturnAudit, ReturnAuditDate, ReturnAuditUID, ReturnApply, ReturnAuditCount, bAgain, 
+--						  ReturnRemark, bLock, Locker, LockDate
+--	from OM_MODetails_Import
+--	where accyear = @OldYear
+
+
+
+----委外计划年结（需要区分帐套年度）
+--	insert into OMPlan(
+--		iID,bChoose, DemandId, PartId, SoType, SoDId, SoId, SoCode, SoSeq, PlanCode, DueDate, StartDate, DueDate2, StartDate2, LUSD, LUCD, PlanQty, 
+--	  CrdQty, SupplyType, SchId, Ufts, ManualFlag, DelFlag, ModifyFlag, ProjectId, FirmDate, FirmUser, Status, SrpSoDId, SrpSoType, OnHand, OnOrder, 
+--	  OnAllocate, InvCode, InvAddCode, InvName, InvStd, ComUnitCode, ComUnitName, IsRem, Police, Free1, Free2, Free3, Free4, Free5, Free6, Free7, 
+--	  Free8, Free9, Free10, MinQty, MulQty, FixQty, SafeQty, PlannerName, Planner, InvDefine1, InvDefine2, InvDefine3, InvDefine4, InvDefine5, InvDefine6, 
+--	  InvDefine7, InvDefine8, InvDefine9, InvDefine10, InvDefine11, InvDefine12, InvDefine13, InvDefine14, InvDefine15, InvDefine16, BasEngineerFigNo, 
+--	  OrderQty, AccID, AccYear, bClosed, bUsed, bAllBatchCreate, cVenCode, iTaxPrice, iTaxRate, iUnitPrice, bSave, SvaeUID, SaveDate, bAudit, AuditUID, 
+--	  AuditDate, bBeSure, BeSureUID, BeSureDate, dVenPlanDate, dVenCloseDate, ClosedUID, ClosedDate, bImport, ImportUID, ImportDate,StartFlag,Remark)
+--	select  	
+--		iID,bChoose, DemandId, PartId, SoType, SoDId, SoId, SoCode, SoSeq, PlanCode, DueDate, StartDate, DueDate2, StartDate2, LUSD, LUCD, PlanQty, 
+--	  CrdQty, SupplyType, SchId, null, ManualFlag, DelFlag, ModifyFlag, ProjectId, FirmDate, FirmUser, Status, SrpSoDId, SrpSoType, OnHand, OnOrder, 
+--	  OnAllocate, InvCode, InvAddCode, InvName, InvStd, ComUnitCode, ComUnitName, IsRem, Police, Free1, Free2, Free3, Free4, Free5, Free6, Free7, 
+--	  Free8, Free9, Free10, MinQty, MulQty, FixQty, SafeQty, PlannerName, Planner, InvDefine1, InvDefine2, InvDefine3, InvDefine4, InvDefine5, InvDefine6, 
+--	  InvDefine7, InvDefine8, InvDefine9, InvDefine10, InvDefine11, InvDefine12, InvDefine13, InvDefine14, InvDefine15, InvDefine16, BasEngineerFigNo, 
+--	  OrderQty, accid, @NewYear, bClosed, bUsed, bAllBatchCreate, cVenCode, iTaxPrice, iTaxRate, iUnitPrice, bSave, SvaeUID, SaveDate, bAudit, AuditUID, 
+--	  AuditDate, bBeSure, BeSureUID, BeSureDate, dVenPlanDate, dVenCloseDate, ClosedUID, ClosedDate, bImport, ImportUID, ImportDate,iID,Remark
+--	from dbo.OMPlan
+--	where accyear = @OldYear
+
+
+
+----OMPlan附加表
+--	insert into OMPlan_Import(OMPlanID, Qty, OM_MODetailsID, UserID, dDate, intAudit, accid, accyear)
+--	select   OMPlanID, Qty, OM_MODetailsID, UserID, dDate, intAudit, accid, @NewYear from OMPlan_Import where accyear = @OldYear
+
+----OMPlanDay(将新年度的数据年度信息改过来
+--update omplanday set accyear = @NewYear where cCode like '14%'
+
+
+----OMPlanDay_Import(不需要年结)
+----OMPlanDay_Info(不需要年结)
+
+----采购供应商确认,锁定
+--	insert into PO_Podetails_Import(PO_PodetailsID, accid, accyear, ReturnDate1, ReturnDate2, ReturnAudit, ReturnAuditDate, ReturnAuditUID, ReturnApply, ReturnAuditCount, bAgain,bLock,Locker,LockDate)
+--	select PO_PodetailsID, accid, @NewYear, ReturnDate1, ReturnDate2, ReturnAudit, ReturnAuditDate, ReturnAuditUID, ReturnApply, ReturnAuditCount, bAgain ,bLock,Locker,LockDate
+--	from PO_Podetails_Import where accyear = @OldYear
+
+----采购订单审批流
+--	insert into PO_Pomain_Import(accid,accyear,poid,auditstate,audituid,auditdate)
+--	select accid,@NewYear,poid,auditstate,audituid,auditdate from PO_Pomain_Import where accyear = @OldYear
+
+----
+--	insert into PU_AppVouchs_Import(PU_AppVouchID, AccID, accyear, PO_PodetailsID, iQty, iNum, iU8Import)
+--	SELECT     PU_AppVouchID, AccID,  @NewYear, PO_PodetailsID, iQty, iNum, iU8Import
+--	FROM         PU_AppVouchs_Import
+--	where AccYear =  @OldYear
+
+----QCBase1(表暂时未用)
+
+----RdinOMOrder(表暂时未用)
+
+----供应商对账（采购/委外）
+--	insert into Records_Import
+--	SELECT     RDId, accid, @NewYear, qty, price, bAudit, MODetailsID, Saver, Auditer
+--	FROM         Records_Import
+--	WHERE     (accyear = @OldYear)
+
+----StockOrderAudit		(不需要年结)
+----T_ManhourVouch		(不需要年结)
+----tableA				(不需要年结) -- 其他系统所用表，用途未知
+
+----供应商价格
+--	insert into VendPrice(Vend, cInvCode, Price, Remark, Type, accid, accyear, DateEdit) 
+--	select Vend, cInvCode, Price, Remark, Type, accid, @NewYear, DateEdit from VendPrice
+--	where accyear = @OldYear
+
+----WorkDepment(不需要年结)
+
+----WorkingProcedure(不需要年结)
+
+----工序转移，将一月份的数据的年度刷成新帐套年度即可omplan
+--	update WorkPlan set accyear = @NewYear where  (AccYear = @OldYear) and dtmplan >=  @OldYear + cast('-1-1' as varchar(4))
+
+---- WorkPlanDetail(工序转移,仅需要结转WorkPlan表)
+
+---- WorkPlanDetailDefective(工序转移,仅需要结转WorkPlan表)
+
+----开发默认值表(不需要年结,用途未知)
+
+------------------------------------------------------------
+
+
+
+if @@error<>0 --判断出现错误回滚事物
+begin
+	rollback tran --开始执行事务的回滚
+end
+else
+begin
+	commit tran 
+end	
+
+
+
+--use XWSystemDB_DL
+--go
+
+--begin tran 
+
+
+----dbo._a					(不需要年结)	用户按钮操作日志
+----dbo._BtnBaseInfo		(不需要年结)	
+----dbo._Code				(不需要年结)	
+/*
+dbo._Form
+dbo._FormBtnInfo
+dbo._LookUpDate
+dbo._LookUpType
+dbo._ReportList		暂时未用
+dbo._RoleInfo
+dbo._RoleRight
+
+*/
+----表列信息（需要手工更改区分帐套）
+--	insert into dbo._TableColInfo(TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,COLUMN_Text,DATA_TYPE,COLLATION_ADD)
+--	select @NewYearAcc,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,COLUMN_Text,DATA_TYPE,COLLATION_ADD from _TableColInfo 
+--	WHERE TABLE_CATALOG = @OldYearAcc
+/*
+dbo._TH_CURRQTY
+dbo._UserInfo
+dbo._UserRoleInfo
+
+dbo._V_OM_MODetails(待验证，表在U8中)
+dbo._V_OM_MOMain(待验证，表在U8中)
+dbo._V_OM_MOMaterials(待验证，表在U8中)
+
+dbo.bomTemp
+dbo.InvProcess
+dbo.ItemInfo
+dbo.Machine
+dbo.ProProcess
+dbo.ProProcess1		(怀疑是余霞在导入数据时的过度表）
+dbo.ProProcessCopy	(怀疑是余霞在导入数据时的过度表）
+dbo.TH_调整采购日期20130423
+dbo.TH_生产最长天数
+dbo.TMPUF_939096218_heron939495570_DOLLEVS05
+dbo.WorkPerson
+dbo.WorkPlant
+dbo.WorkProcess
+dbo.采购委外物料归属部门
+dbo.采集器文件版本信息
+dbo.产品班组工时
+dbo.程序优化建议
+dbo.存货货位对照表(未使用)
+dbo.订单评审表体
+dbo.订单评审表头
+dbo.订单评审运算1
+dbo.订单评审运算2
+dbo.订单评审运算3
+dbo.订单评审运算原始数据
+dbo.订单评审展开时间
+dbo.定时任务表
+dbo.供应商存货价格列表
+dbo.木制品档案
+dbo.设备日登记
+dbo.生产部人员日登记
+dbo.生产部员工人数
+dbo.生产计划
+dbo.生产计划明细
+dbo.生产日计划
+dbo.生产日计划物料计算临时表
+dbo.生产日计划物料计算临时表2
+dbo.生产手工计划
+dbo.外销订单总表
+dbo.文件版本信息
+*/
+
+--if @@error<>0 --判断出现错误回滚事物
+--begin
+--	rollback tran --开始执行事务的回滚
+--end
+--else
+--begin
+--	commit tran 
+--end	
+
+
+use ufdata_200_2014
+go 	
+	
+	
+---- 创建存储过程
+	
+---- _GetOMPlanDay	(创建存储过程，并：ufdata_200_2012改为ufdata_200_2013 ; 2012改为2013)
+
+---- _GetProcessOrder (直接创建存储过程)
+
+---- _Get采购外协刷新下一班组计划员信息(直接创建存储过程)
+
+---- _GetStockOrder(直接创建存储过程)
+
+---- _Get供需分析(直接创建存储过程)
+
+---- _Get刷新出货周(直接创建存储过程)
+
+---- _Get委外日计划查询(直接创建存储过程)
+
+---- _Get已下销售未生单物料分析(直接创建存储过程)
+
+---- _V_OM_MODetails 视图在新帐套创建，并增加新年度表
+
+---- _V_OM_MOMain 视图在新帐套创建，并增加新年度表
+
+---- _V_OM_MOMaterials 视图在新帐套创建，并增加新年度表 
+
+---- 调整登录按钮中，年度信息将“if (d1 < Convert.ToDateTime("2012-1-1"))” 修改为 “if (d1 < Convert.ToDateTime("2013-1-1"))”，并更新
+
+
+----创建视图 _V_OM_MODetails
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[_V_OM_MODetails]'))
+DROP VIEW [dbo].[_V_OM_MODetails]
+GO
+
+CREATE view [dbo].[_V_OM_MODetails]
+as
+select *,2012 as accyear from ufdata_200_2012..OM_MODetails where MODetailsID not in (select MODetailsID from ufdata_200_2013..OM_MODetails)
+union 
+select *,2013 as accyear from ufdata_200_2013..OM_MODetails where MODetailsID not in (select MODetailsID from ufdata_200_2014..OM_MODetails)
+union
+select *,2014 as accyear from ufdata_200_2014..OM_MODetails 
+
+
+----创建视图 _V_OM_MOMain
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[_V_OM_MOMain]'))
+DROP VIEW [dbo].[_V_OM_MOMain]
+GO
+
+CREATE view [dbo].[_V_OM_MOMain]
+as
+select *,2012 as accyear from ufdata_200_2012..OM_MOMain where MOID not in (select MOID from ufdata_200_2013..OM_MOMain)
+union 
+select *,2013 as accyear from ufdata_200_2013..OM_MOMain where MOID not in (select MOID from ufdata_200_2014..OM_MOMain)
+union
+select *,2014 as accyear from ufdata_200_2014..OM_MOMain 
+
+
+
+----创建视图 _V_OM_MOMaterials
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[_V_OM_MOMaterials]'))
+DROP VIEW [dbo].[_V_OM_MOMaterials]
+GO
+
+CREATE view [dbo].[_V_OM_MOMaterials] 
+as
+select *,2012 as accyear from ufdata_200_2012..OM_MOMaterials where MOMaterialsID not in (select MOMaterialsID from ufdata_200_2013..OM_MOMaterials )
+union 
+select *,2013 as accyear from ufdata_200_2013..OM_MOMaterials where MOMaterialsID not in (select MOMaterialsID from ufdata_200_2014..OM_MOMaterials )
+union 
+select *,2014 as accyear from ufdata_200_2014..OM_MOMaterials 
+
+
+----设定定时任务
+
+
+---执行一次，否则订单评审不能使用
+-- exec _Get已下销售未生单物料分析  '200',@NewYear

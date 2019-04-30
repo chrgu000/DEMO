@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertVendor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertVendorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertVendorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_IN_All">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_IN_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApCloseBill_IN_AllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_IN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_INResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApCloseBill_INResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_OUT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApCloseBill_OUTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApCloseBill_OUTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProCostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCustomer" />
+  </wsdl:message>
+  <wsdl:message name="InsertCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertVendorSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertVendor" />
+  </wsdl:message>
+  <wsdl:message name="InsertVendorSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertItemSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertItem" />
+  </wsdl:message>
+  <wsdl:message name="InsertItemSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_IN_AllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_IN_All" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_IN_AllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_IN_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_INSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_IN" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_INSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_INResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_OUTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_OUT" />
+  </wsdl:message>
+  <wsdl:message name="GetApCloseBill_OUTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApCloseBill_OUTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProCostSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProCost" />
+  </wsdl:message>
+  <wsdl:message name="GetProCostSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProCostResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input message="tns:InsertCustomerSoapIn" />
+      <wsdl:output message="tns:InsertCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVendor">
+      <wsdl:input message="tns:InsertVendorSoapIn" />
+      <wsdl:output message="tns:InsertVendorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertItem">
+      <wsdl:input message="tns:InsertItemSoapIn" />
+      <wsdl:output message="tns:InsertItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN_All">
+      <wsdl:input message="tns:GetApCloseBill_IN_AllSoapIn" />
+      <wsdl:output message="tns:GetApCloseBill_IN_AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN">
+      <wsdl:input message="tns:GetApCloseBill_INSoapIn" />
+      <wsdl:output message="tns:GetApCloseBill_INSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_OUT">
+      <wsdl:input message="tns:GetApCloseBill_OUTSoapIn" />
+      <wsdl:output message="tns:GetApCloseBill_OUTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProCost">
+      <wsdl:input message="tns:GetProCostSoapIn" />
+      <wsdl:output message="tns:GetProCostSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBWebServiceSoap" type="tns:DBWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <soap:operation soapAction="http://tempuri.org/InsertCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVendor">
+      <soap:operation soapAction="http://tempuri.org/InsertVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertItem">
+      <soap:operation soapAction="http://tempuri.org/InsertItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN_All">
+      <soap:operation soapAction="http://tempuri.org/GetApCloseBill_IN_All" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN">
+      <soap:operation soapAction="http://tempuri.org/GetApCloseBill_IN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_OUT">
+      <soap:operation soapAction="http://tempuri.org/GetApCloseBill_OUT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProCost">
+      <soap:operation soapAction="http://tempuri.org/GetProCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBWebServiceSoap12" type="tns:DBWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <soap12:operation soapAction="http://tempuri.org/InsertCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVendor">
+      <soap12:operation soapAction="http://tempuri.org/InsertVendor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertItem">
+      <soap12:operation soapAction="http://tempuri.org/InsertItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN_All">
+      <soap12:operation soapAction="http://tempuri.org/GetApCloseBill_IN_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_IN">
+      <soap12:operation soapAction="http://tempuri.org/GetApCloseBill_IN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApCloseBill_OUT">
+      <soap12:operation soapAction="http://tempuri.org/GetApCloseBill_OUT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProCost">
+      <soap12:operation soapAction="http://tempuri.org/GetProCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBWebService">
+    <wsdl:port name="DBWebServiceSoap" binding="tns:DBWebServiceSoap">
+      <soap:address location="http://localhost:7766/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBWebServiceSoap12" binding="tns:DBWebServiceSoap12">
+      <soap12:address location="http://localhost:7766/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

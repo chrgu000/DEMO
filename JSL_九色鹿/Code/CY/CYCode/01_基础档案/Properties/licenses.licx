@@ -1,0 +1,6 @@
+DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Registration.LicenseHelper, DevExpress.Registration, Version=12.2.4.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd
+DevExpressReg.LicensePatcher, DevExpressReg, Version=11.1.8.32665, Culture=neutral, PublicKeyToken=d6ff4ebaea2d8ac4

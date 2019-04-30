@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDLL", "ImportDLL\ImportDLL.csproj", "{ADE10146-2AFF-46D7-A633-4AC7489084D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameBaseFunction", "FrameBaseFunction\FrameBaseFunction.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "上传更新文件", "自动更新\上传更新文件.csproj", "{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppStart", "AppStart\AppStart.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "友峰开料工具", "信息化管理系统\友峰开料工具.csproj", "{9CE0720D-195C-43DE-B3CE-369CE7DE0611}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppStart\\AppStart.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = AppStart\\
+		SccProjectUniqueName2 = FrameBaseFunction\\FrameBaseFunction.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = FrameBaseFunction\\
+		SccProjectUniqueName3 = ImportDLL\\ImportDLL.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = ImportDLL\\
+		SccProjectUniqueName4 = 信息化管理系统\\友峰开料工具.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = 信息化管理系统\\
+		SccProjectUniqueName5 = 自动更新\\上传更新文件.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = 自动更新\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|x86.ActiveCfg = Release|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|x86.ActiveCfg = Debug|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|x86.Build.0 = Debug|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|x86.ActiveCfg = Release|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|x86.Build.0 = Release|x86
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|x86.ActiveCfg = Release|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE0720D-195C-43DE-B3CE-369CE7DE0611}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

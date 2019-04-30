@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "AttachmentView";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@model SmallERP.Web.Controllers.CommonController.AttachmentViewEntity
+@section CSS{
+    <style type="text/css">
+        .table-border {
+            border-top: 1px solid #C7E6CE;
+            border-left: 1px solid #C7E6CE;
+        }
+
+            .table-border td {
+                border-bottom: 1px solid #C7E6CE;
+                border-right: 1px solid #C7E6CE;
+                padding: 5px;
+            }
+
+        .tabler-border td select {
+            border: 1px solid #95B8E7;
+        }
+
+        .bgred {
+            background-color: red;
+        }
+
+        .media {
+            margin:0 auto;
+        }
+    </style>
+}
+<body class="easyui-layout">
+
+    <!-- Attachment区域 -->
+    <div data-options="region:'center'" style="padding:2px;" border="false">
+        <div style="text-align:center; padding-top:10px;">
+            @switch (Model.ExtensionName.ToLower())
+            {
+                case "pdf":
+                    <a class="media" href="@Model.FilePath"></a>
+                    break;
+                case "jpg":
+                    <img src="@Model.FilePath" alt="@Model.FileName" title="@Model.FileName" class="media" />
+                    break;
+                default:
+                    break;
+            }
+        </div>
+
+    </div>
+
+</body>
+@section JS{
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Scripts/jquery.media.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        
+        $('a.media').media({ width: 800, height: 800 });
+
+    });
+
+
+
+
+    </script>
+}
+
+
+

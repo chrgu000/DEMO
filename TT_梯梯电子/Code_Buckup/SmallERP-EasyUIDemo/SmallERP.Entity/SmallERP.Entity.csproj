@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECA88BA2-79FF-4861-9A05-B25CB912D202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmallERP.Entity</RootNamespace>
+    <AssemblyName>SmallERP.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminEntity.cs" />
+    <Compile Include="TK_Trialkitting_ErrorInfoEntity.cs" />
+    <Compile Include="TK_Trialkit_PartTempEntity.cs" />
+    <Compile Include="TK_Trialkit_Trial_UploadEntity.cs" />
+    <Compile Include="TK_Base_ItemNo_ExcludeEntity.cs" />
+    <Compile Include="TK_CurrentStockEntity.cs" />
+    <Compile Include="TK_BOMEntity.cs" />
+    <Compile Include="TK_ListEntity.cs" />
+    <Compile Include="TK_Base_ItemNo_CycleEntity.cs" />
+    <Compile Include="TK_WOEntity.cs" />
+    <Compile Include="TK_POEntity.cs" />
+    <Compile Include="TK_NetRequirementEntity.cs" />
+    <Compile Include="TK_PeriodEntity.cs" />
+    <Compile Include="TK_Base_Calendar_DayoffEntity.cs" />
+    <Compile Include="TK_TrialkittingsEntity.cs" />
+    <Compile Include="TK_TrialkittingEntity.cs" />
+    <Compile Include="TK_Base_CalendarPeriodEntity.cs" />
+    <Compile Include="PADEntity.cs" />
+    <Compile Include="PMGatingEntity.cs" />
+    <Compile Include="MenuEntity.cs" />
+    <Compile Include="CurrentStockEntity.cs" />
+    <Compile Include="BuyerGatingEntity.cs" />
+    <Compile Include="PermissionEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CycleEntity.cs" />
+    <Compile Include="RoleEntity.cs" />
+    <Compile Include="t_business_parmsEntity.cs" />
+    <Compile Include="t_common_attachmentEntity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

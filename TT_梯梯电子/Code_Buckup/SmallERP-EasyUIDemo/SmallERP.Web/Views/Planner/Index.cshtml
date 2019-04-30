@@ -1,0 +1,1205 @@
+﻿@{
+    ViewBag.Title = "Planner";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+    <script src="~/Scripts/jgxLoader.js"></script>
+    <script type="text/javascript">
+
+        //路径地址
+        var actionUrl = {
+            GetList: '/Planner/GetList',
+            GetQty: '/Planner/GetQty',
+            Update: '/Planner/Update',
+            GetVersion: '/Planner/GetVersionList',
+            GetVersionResult: '/Planner/GetVersionResultList',
+            GetPlanner: '/Planner/GetPlanner',
+            GetGroup: '/Planner/GetProductGroupList',
+            GetUpload: '/Planner/ImportData',
+            GetDownload: '/Planner/Download',
+            GetDownloadPAD: '/Planner/DownloadPAD',
+            GetDownloadExcel: '/Planner/DownloadExcel',
+            GetErrList: '/Planner/GetErrList',
+            //GetIsQuery: '/Planner/GetIsQuery',
+            GetQueryList: '/Planner/GetQueryList',
+            GetNetQtyList: '/Planner/GetNetQtyList',
+            Synchronize: '/Planner/Synchronize',
+            Getchktype: '/Planner/GetchktypeList',
+            GetReorderpolicy: '/Planner/GetReorderpolicy',
+        };
+
+        $(document).ready(function () {
+            //加载版本
+            $('#queryVersion').combobox({
+                url: actionUrl.GetVersion,
+                valueField: 'iID',
+                textField: 'iText',
+                //onLoadSuccess: function () { //加载完成后,设置选中第一项
+                //    var val = $(this).combobox("getData");
+                //    for (var item in val[0]) {
+                //        if (item == "iID") {
+                //            $(this).combobox("select", val[0][item]);
+                //        }
+                //    }
+                //},
+            });
+
+            //加载项目组
+            $('#queryGroup').combobox({
+                url: actionUrl.GetGroup,
+                valueField: 'iID',
+                textField: 'iText',
+                multiple: true,//设置可以多选
+                formatter: function (row) { //formatter方法就是实现了在每个下拉选项前面增加checkbox框的方法
+                    var opts = $(this).combobox('options');
+                    return '<input type="checkbox" class="combobox-checkbox">' + row[opts.textField] + '</input>'
+                },
+                onLoadSuccess: function () {  //下拉框数据加载成功调用
+                    var opts = $(this).combobox('options');
+                    var target = this;
+                    var values = $(target).combobox('getValues');//获取选中的值的values
+                    $.map(values, function (value) {
+                        var el = opts.finder.getEl(target, value);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    })
+                },
+                onSelect: function (row) { //选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryGroup").val($(this).combobox('getValues'));
+
+                    //设置选中值所对应的复选框为选中状态
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', true);
+                },
+                onUnselect: function (row) {//不选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryGroup").val($(this).combobox('getValues'));
+
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', false);
+                }
+            });
+
+            //加载计划员
+            $('#queryPlanner').combobox({
+                url: actionUrl.GetPlanner,
+                valueField: 'iID',
+                textField: 'iText',
+            });
+            
+            //加载查询属性
+            $('#qyReorderpolicy').combobox({
+                url: actionUrl.GetReorderpolicy,
+                valueField: 'iID',
+                textField: 'iText',
+                onChange: function (n, o) {
+                    getList();
+                }
+            });
+
+            //弹出查询框
+            $('#btnQuery_Sel').click(function () {
+                //alert($('#queryVersion').val());
+                $('#win_query').window('open');
+            });
+
+            //点击查询
+            $('#btnQuery').click(function () {
+                getQueryList();
+            });
+
+            ////点击查询
+            //$('#btnQuery_Excel').click(function () {
+            //    doDownLoad("/Planner/DownloadPAD?qyVersion=00-20181203&qyGroup=ACCURAY&qyPlanner=&qyReorderpolicy=");
+            //});
+            
+            //点击清除
+            $('#btnReload').click(function () {
+                $('#queryPlanner').combobox('reset');
+                $('#queryGroup').combobox('clear');
+                //$('#queryGroup').val('');
+                $('#queryGroup').combobox('clear');//清空选中项
+                $('#queryGroup').val('');
+                $('#queryGroup').combobox('loadData', {});
+                $('#queryGroup').combobox('reload');
+
+                $('#queryName').textbox('reset');
+                $('#queryVersion').combobox('reset');
+                $('#queryDate1').datebox('reset');
+                $('#queryDate2').datebox('reset');
+                getList();
+            });
+
+            getQueryList();
+            
+            var sVerTrialkitting = request("sVerTrialkitting");
+            if (sVerTrialkitting != "") {
+                $('#qyVersion').html(sVerTrialkitting);
+            }
+            getList();
+
+            $('#querychktype').combobox({
+                url: actionUrl.Getchktype,
+                valueField: 'iID',
+                textField: 'iText',
+                onLoadSuccess: function () { //加载完成后,val[0]写死设置选中第一项
+                    var val = $(this).combobox("getData");
+                    for (var item in val[1]) {
+                        if (item == "id") {
+                            $(this).combobox("select", val[0][item]);
+                        }
+                    }
+                }
+            });
+
+            $('#queryVersionResult').combobox({
+                url: actionUrl.GetVersionResult,
+                valueField: 'iID',
+                textField: 'iText',
+                onLoadSuccess: function () { //加载完成后,val[0]写死设置选中第一项
+                    var val = $(this).combobox("getData");
+                    for (var item in val[1]) {
+                        if (item == "id") {
+                            $(this).combobox("select", val[0][item]);
+                        }
+                    }
+                }
+            });
+        });
+
+        function getList() {
+
+            $('#grid').datagrid('loadData', { total: 0, rows: [] });
+            var Period01;
+            var Period02;
+            var Period03;
+            var Period04;
+            var Period05;
+            var Period06;
+            var Period07;
+            var Period08;
+            var Period09;
+            var Period10;
+            var Period11;
+            var Period12;
+            var Period13;
+            var Period14;
+            var Period15;
+            var Period16;
+            var Period17;
+            $.ajax({
+                type: "get",
+                url: actionUrl.GetQty,
+                cache: false,
+                data: { qyVersion: $('#qyVersion').html() },
+                datatype: "json",
+                async: false,
+                success: function (data) {
+                    $.each(data, function (index, result) {
+                        Period01 = DateTimeFormatter(data[index].Period01);
+                        Period02 = DateTimeFormatter(data[index].Period02);
+                        Period03 = DateTimeFormatter(data[index].Period03);
+                        Period04 = DateTimeFormatter(data[index].Period04);
+                        Period05 = DateTimeFormatter(data[index].Period05);
+                        Period06 = DateTimeFormatter(data[index].Period06);
+                        Period07 = DateTimeFormatter(data[index].Period07);
+                        Period08 = DateTimeFormatter(data[index].Period08);
+                        Period09 = DateTimeFormatter(data[index].Period09);
+                        Period10 = DateTimeFormatter(data[index].Period10);
+                        Period11 = DateTimeFormatter(data[index].Period11);
+                        Period12 = DateTimeFormatter(data[index].Period12);
+                        Period13 = DateTimeFormatter(data[index].Period13);
+                        Period14 = DateTimeFormatter(data[index].Period14);
+                        Period15 = DateTimeFormatter(data[index].Period15);
+                        Period16 = DateTimeFormatter(data[index].Period16);
+                        Period17 = DateTimeFormatter(data[index].Period17);
+                    });
+                }
+            });
+
+            $('#grid').datagrid({
+                url: actionUrl.GetList,
+                queryParams: {
+                    qyVersion: $('#qyVersion').html(),
+                    qyGroup: $('#qyGroup').html(),
+                    qyPlanner: $('#qyPlanner').html(),
+                    qyReorderpolicy: $('#qyReorderpolicy').combobox('getValue'),
+                },
+                loadMsg: 'loading...',
+                remoteSort: true,
+                sortName: 'cInvCode',
+                sortOrder: 'asc',
+                pagination: true,
+                singleSelect: true,
+                collapsible: true,
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500,3000, 5000, 10000],
+                rowStyler: function (index, row) {
+                },
+                onLoadSuccess: function () {
+                    $(this).datagrid('enableDnd');
+                },
+                //onClickCell:function(rowIndex, field, val){//双击单元格监听器 
+                //    $(this).datagrid('beginEdit',rowIndex);//开启编辑
+                //    var ed = $(this).datagrid('getEditor', {index:rowIndex,field:field});//获取当前编辑器
+                //    $(ed.target).focus();//获取焦点
+                //},
+                columns: [
+                    [
+                        //{ field: 'iID', title: 'iID', width: 150, align: 'center', rowspan: 2, hidden: true },
+                        //{ field: 'GUID', title: 'GUID', width: 150, align: 'center', rowspan: 2, hidden: true },
+                        //{ field: 'sTKVersion', title: 'sTKVersion', width: 150, align: 'center', rowspan: 2, hidden: true },
+                        { field: 'cInvCode', title: '制造件编码', width: 150, align: 'center', rowspan: 2 },
+                        
+                        { field: 'Planner', title: 'Plan Code', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'CommidityCode', title: 'CommidityCode', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'Reorderpolicy', title: '属性', width: 80, align: 'center', rowspan: 2 },
+                        //{ field: 'BOM层级', title: 'BOM层级', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'ProdGroup', title: '项目组', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'DayWO', title: '加工周期', width: 80, align: 'center', rowspan: 2 },
+                        {
+                            field: 'NetQty', title: 'Net Qty', width: 80, align: 'center', rowspan: 2,
+                            formatter: function (value, row, index) {
+                                var cInvCode = row.cInvCode;
+                                var Planner = row.Planner;
+                                var ProdGroup = row.ProdGroup;
+                                if (cInvCode == null) {
+                                    cInvCode = "";
+                                }
+                                if (Planner == null) {
+                                    Planner = "";
+                                }
+                                if (ProdGroup == null) {
+                                    ProdGroup = "";
+                                }
+                                var btn = '<a class="editcls" onclick="editRow(\'' + row.cInvCode + '\',\'' + Planner + '\',\'' + ProdGroup + '\')" href="javascript:void(0)">' + value + '</a>';
+                                //alert(btn);
+                                return btn;
+                            }
+                        },
+                        { field: 'QtyCurr', title: '库存', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'NCOUNT', title: '齐套数', width: 80, align: 'center', rowspan: 2 },
+                        { field: 'NotNCOUNT', title: '未齐套', width: 80, align: 'center', rowspan: 2 },
+                       
+                        { field: 'QtyWO', title: '工单量', width: 80, align: 'center', rowspan: 2 },
+                        { title: "Week1" },
+                        { title: "Week2" },
+                        { title: "Week3" },
+                        { title: "Week4" },
+                        { title: "Week5" },
+                        { title: "Week6" },
+                        { title: "Week7" },
+                        { title: "Week8" },
+                        { title: "Week9" },
+                        { title: "Week10" },
+                        { title: "Week11" },
+                        { title: "Week12" },
+                        { title: "Week13" },
+                        { title: "Month1" },
+                        { title: "Month2" },
+                        { title: "Month3" },
+                        { title: "Month4" },
+                    ],
+                    [
+                        {
+                            field: 'Period01', title: Period01, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period01 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period01;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period02', title: Period02, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period02 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period02;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period03', title: Period03, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period03 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period03;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period04', title: Period04, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period04 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period04;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period05', title: Period05, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period05 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period05;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period06', title: Period06, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period06 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period06;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period07', title: Period07, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period07 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period07;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period08', title: Period08, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period08 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period08;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period09', title: Period09, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period09 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period09;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period10', title: Period10, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period10 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period10;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period11', title: Period11, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period11 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period11;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period12', title: Period12, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period12 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period12;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period13', title: Period13, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period13 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period13;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period14', title: Period14, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period14 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period14;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period15', title: Period15, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period15 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period15;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period16', title: Period16, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period16 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period16;
+                                }
+                            }
+                        },
+                        {
+                            field: 'Period17', title: Period17, width: 150, align: 'center', editor: { type: 'numberbox', options: { precision: 2 } },
+                            formatter: function (value, row, index) {
+                                if (row.Period17 == 0) {
+                                    return '';
+                                }
+                                else {
+                                    return row.Period17;
+                                }
+                            }
+                        },
+                    ],
+                ],
+                toolbar: [
+                    //{
+                    //iconCls: 'icon-import',
+                    //text: '上传计算模板',
+                    //handler: function () {
+                        
+                    //}
+                    //}, '-',
+                    {
+                        iconCls: 'icon-sync',
+                        text: '同步',
+                        handler: function () {
+                            $.messager.confirm('提示', '确认是否要同步？', function (r) {
+                                if (r) {
+                                    $.ajax({
+                                        type: "post",
+                                        url: actionUrl.Synchronize,
+                                        cache: false,
+                                        data: {},
+                                        datatype: "json",
+                                        async: false,
+                                        success: function (data) {
+                                            if (data["Result"] === "1") {
+                                                $.messager.alert('信息', data["Msg"]);
+                                                getList();
+                                                $('#grid').datagrid('clearSelections');
+                                            } else {
+                                                $.messager.alert('信息', data["Msg"]);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    }, '-',{
+                    iconCls: 'icon-tip',
+                    text: '计算',
+                    handler: function () {
+                        var iUpload_Type = $('#querychktype').combobox('getValue');
+                        if (iUpload_Type == "0") {
+                            var qyVersion = $('#qyVersion').html();
+                            if (qyVersion == "") {
+                                $.messager.alert('Message', '未选择版本，不可按页面调整计算。');
+                                return false;
+                            }
+                            endEditing();
+                            var rows = $('#grid').datagrid('getRows');
+                            if (rows == null) {
+                                $.messager.alert('Message', '没有需要保存的行。');
+                                return false;
+                            }
+                            var arrs = new Array();
+                            for (var i = 0; i < rows.length; i++) {
+                                if (rows[i].Reorderpolicy === "MPS") {
+                                    var arr = {};
+                                    arr["sTKVersion"] = rows[i].sTKVersion;
+                                    arr["Planner"] = rows[i].Planner;
+                                    arr["dDate"] = DateTimeFormatter(rows[i].dDate);
+                                    arr["cInvCode"] = rows[i].cInvCode;
+                                    arr["NetQty"] = rows[i].NetQty;
+                                    arr["Reorderpolicy"] = rows[i].Reorderpolicy;
+                                    arr["ProdGroup"] = rows[i].ProdGroup;
+                                    arr["DayWO"] = rows[i].DayWO;
+                                    arr["QtyCurr"] = rows[i].QtyCurr;
+                                    arr["QtyWO"] = rows[i].QtyWO;
+
+                                    arr["Period01"] = rows[i].Period01;
+                                    arr["Period02"] = rows[i].Period02;
+                                    arr["Period03"] = rows[i].Period03;
+                                    arr["Period04"] = rows[i].Period04;
+                                    arr["Period05"] = rows[i].Period05;
+                                    arr["Period06"] = rows[i].Period06;
+                                    arr["Period07"] = rows[i].Period07;
+                                    arr["Period08"] = rows[i].Period08;
+                                    arr["Period09"] = rows[i].Period09;
+                                    arr["Period10"] = rows[i].Period10;
+                                    arr["Period11"] = rows[i].Period11;
+                                    arr["Period12"] = rows[i].Period12;
+                                    arr["Period13"] = rows[i].Period13;
+                                    arr["Period14"] = rows[i].Period14;
+                                    arr["Period15"] = rows[i].Period15;
+                                    arr["Period16"] = rows[i].Period16;
+                                    arr["Period17"] = rows[i].Period17;
+
+                                    arrs[i] = arr;
+                                }
+                            }
+                            $.messager.confirm('提示', '确认是否要计算？', function (r) {
+                                if (r) {
+                                    $.ajax({
+                                        type: "post",
+                                        url: actionUrl.Update,
+                                        cache: false,
+                                        data: { "grid": "[" + JSON.stringify(arrs) + "]", "Remark": $('#txtRemark').val(), "qyVersion": $('#qyVersion').val() },
+                                        datatype: "json",
+                                        async: false,
+                                        success: function (data) {
+                                            if (data["Result"] === "1") {
+                                                $.messager.alert('信息', data["Msg"]);
+                                                getList();
+                                                $('#grid').datagrid('clearSelections');
+
+                                                $.messager.confirm('提示', '确认是否要转到List？', function (r) {
+                                                    if (r) {
+                                                        window.parent.addTab("List", "/List/Index?IsCreateUid=true", '');
+                                                    }
+                                                });
+
+                                            } else {
+                                                $.messager.alert('信息', data["Msg"]);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        } else if (iUpload_Type == "3" || iUpload_Type == "1" || iUpload_Type == "2") {
+                            $('#uploadtype').val("0");
+                            $('#win_upload').dialog({ title: '上传计算模板' });
+                            var sTKVersion_Contrast = $('#queryVersionResult').combobox('getValue');
+                            if (iUpload_Type == "2" && sTKVersion_Contrast == "") {
+                                $.messager.alert('信息', "上传余量数据计算时必须同时选择对比版本！");
+                                return;
+                            }
+                            $('#msg').html("");
+                            $('#win_upload').window('open');
+                        }
+                        else {
+                            $.messager.alert('信息', "必须选择计算类别！");
+                        }
+                    }
+                }, '-', {
+                    iconCls: 'icon-export',
+                    text: '导出Excel',
+                    handler: function () {
+                        var qyVersion = $('#qyVersion').html();
+                        var qyGroup = $('#qyGroup').html();
+                        var qyPlanner = $('#qyPlanner').html();
+                        var qyReorderpolicy = $('#qyReorderpolicy').combobox('getValue');
+                        doDownLoad(actionUrl.GetDownloadExcel + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner + "&qyReorderpolicy=" + qyReorderpolicy,0);
+                        //$('#iframe_file').attr('src', actionUrl.GetDownloadExcel + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner + "&qyReorderpolicy=" + qyReorderpolicy);
+                    }
+                }, '-', {
+                    iconCls: 'icon-export',
+                    text: '导出PAD-计划',
+                    handler: function () {
+                        var qyVersion = $('#qyVersion').html();
+                        var qyGroup = $('#qyGroup').html();
+                        var qyPlanner = $('#qyPlanner').html();
+                        var qyReorderpolicy = $('#qyReorderpolicy').combobox('getValue');
+                        if (qyVersion == "") {
+                            $.messager.alert('信息', "需选择版本号！");
+                            return;
+                        }
+                        //if (qyGroup == "") {
+                        //    $.messager.alert('信息', "需选择项目组！");
+                        //    return;
+                        //}
+                        doDownLoad(actionUrl.GetDownloadPAD + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner + "&qyReorderpolicy=" + qyReorderpolicy + "&isNetQty=false",1);
+                        //$('#iframe_file').attr('src', actionUrl.GetDownloadPAD + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner+ "&qyReorderpolicy=" + qyReorderpolicy);
+                    }
+                }, '-', {
+                    iconCls: 'icon-export',
+                    text: '导出PAD-需求',
+                    handler: function () {
+                        var qyVersion = $('#qyVersion').html();
+                        var qyGroup = $('#qyGroup').html();
+                        var qyPlanner = $('#qyPlanner').html();
+                        var qyReorderpolicy = $('#qyReorderpolicy').combobox('getValue');
+                        if (qyVersion == "") {
+                            $.messager.alert('信息', "需选择版本号！");
+                            return;
+                        }
+                        //if (qyGroup == "") {
+                        //    $.messager.alert('信息', "需选择项目组！");
+                        //    return;
+                        //}
+                        doDownLoad(actionUrl.GetDownloadPAD + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner + "&qyReorderpolicy=" + qyReorderpolicy + "&isNetQty=true",2);
+                        //$('#iframe_file').attr('src', actionUrl.GetDownloadPAD + "?qyVersion=" + qyVersion + "&qyGroup=" + qyGroup + "&qyPlanner=" + qyPlanner+ "&qyReorderpolicy=" + qyReorderpolicy);
+                    }
+                }]
+            });
+        }
+
+        function DateTimeFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            if (value.length == 10) {
+                return value;
+            }
+            value = value.substr(1, value.length - 2);
+            var obj = eval('(' + "{Date: new " + value + "}" + ')');
+            var dateValue = obj["Date"];
+            return dateValue.format("yyyy-mm-dd");
+        }
+
+        Date.prototype.format = function (fmt) { //author: meizz
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        $.extend($.fn.datagrid.methods, {
+            editCell: function (jq, param) {
+                return jq.each(function () {
+                    var opts = $(this).datagrid('options');
+                    var fields = $(this).datagrid('getColumnFields', true).concat($(this).datagrid('getColumnFields'));
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor1 = col.editor;
+                        if (fields[i] != param.field) {//循环所有单元格，如果不是选中单元格去除修改框
+                            col.editor = null;
+                        }
+                        else {
+                            //alert(fields[i]);
+                            //$(col.target).focus();//获取焦点
+                            //var ed = $(this).datagrid('getEditor', { index: editIndex, field: field });//获取当前编辑器
+                            //$(ed.target).focus();//获取焦点
+                            //var productid = col[i];
+                            //$(col.editor1.target).focus();
+                        }
+                    }
+                    $(this).datagrid('beginEdit', param.index);
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor = col.editor1;
+                    }
+                });
+            }
+        });
+
+        var editIndex = undefined;
+        function endEditing() {
+            if (editIndex == undefined) { return true }
+            if ($('#grid').datagrid('validateRow', editIndex)) {// 检测  数据是否发生 改变
+                $('#grid').datagrid('endEdit', editIndex);// 触发 onAfterEdit  方法
+                editIndex = undefined;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function onClickCell(index, field, data) {
+            if (endEditing()) {
+                $('#grid').datagrid('selectRow', index)
+                        .datagrid('editCell', { index: index, field: field, data: data });
+                editIndex = index;
+                focusEditor(field);//获得焦点
+            }
+        }
+
+        function focusEditor(field) {
+            //console.log(field);
+            var editor = $('#grid').datagrid('getEditor', { index: editIndex, field: field });
+            if (editor) {
+                //$(editor).find("input").focus();
+                editor.target.focus();
+                editor.target.next('span').find('input').focus();
+                editor.target.next('span').find('input').select();
+                //$(editor.target[0]).focus();
+                //$(editor.target).focus().bind('blur', function () {
+                //    alert("什么时候取消了 事件？？？？");
+                //});
+
+            } else {
+                var editors = $('#grid').datagrid('getEditors', editIndex);
+                if (editors.length) {
+                    editors[0].target.focus();
+                }
+            }
+        }
+
+        // 日期，在原有日期基础上，增加days天数，默认增加1天
+        function addDate(date, days) {
+            if (days == undefined || days == '') {
+                days = 1;
+            }
+            var date = new Date(date);
+            date.setDate(date.getDate() + days);
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            return date.getFullYear() + '-' + getFormatDate(month) + '-' + getFormatDate(day);
+        }
+
+        // 日期月份/天的显示，如果是1位数，则在前面加上'0'
+        function getFormatDate(arg) {
+            if (arg == undefined || arg == '') {
+                return '';
+            }
+
+            var re = arg + '';
+            if (re.length < 2) {
+                re = '0' + re;
+            }
+
+            return re;
+        }
+
+        //点击Net Qty查询
+        function editRow(Toplevel,Planner,ProdGroup) {
+            $('#win_edit').window('open');
+            // grid工具栏添加按钮
+            $('#grid_details').datagrid({
+                url: actionUrl.GetNetQtyList,
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500, 1000, 1500, 2000],
+                queryParams: {
+                    filterName: Toplevel,
+                    queryVersion: $('#qyVersion').html(),
+                    queryGroup: ProdGroup,
+                    queryPlanner: Planner
+                },
+                toolbar: [
+                ],
+                columns: [[
+                    { field: 'sPartID', title: 'Demand Code', width: 150, },
+                    { field: 'dtmRequirement', title: 'Requirement Data', width: 150, },
+                    { field: 'fQTY', title: 'Qty', width: 80, },
+                ]],
+            });
+        }
+
+        //错误数据列表
+        function getErrList() {
+            var version = $('#txtVersion').val();
+            if (version == "") {
+                $.messager.alert('信息', "查询版本号不可为空");
+                return false;
+            }
+            $('#grid_err').datagrid('loadData', { total: 0, rows: [] });
+            $('#grid_err').datagrid({
+                url: actionUrl.GetErrList,
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500, 1000, 1500, 2000],
+                queryParams: { filterName: version },
+                toolbar: [
+                ],
+                columns: [[
+                    { field: 'sErr', title: 'Error', width: 150, },
+                ]],
+            });
+            $('#win_err').window('open');
+        }
+
+        //查询结果列表
+        function getQueryList() {
+            var queryPlanner = $('#queryPlanner').combobox('getValue');
+            var queryGroup = $('#queryGroup').val();
+            var queryVersion = $('#queryVersion').combobox('getValue');
+            var queryDate1 = $('#queryDate1').datebox('getValue');
+            var queryDate2 = $('#queryDate2').datebox('getValue');
+
+            $('#grid_query').datagrid('loadData', { total: 0, rows: [] });
+            $('#grid_query').datagrid({
+                url: actionUrl.GetQueryList,
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500, 1000, 1500, 2000],
+                queryParams: {
+                    queryPlanner: queryPlanner,
+                    queryGroup: queryGroup,
+                    queryVersion: queryVersion,
+                    queryDate1: queryDate1,
+                    queryDate2: queryDate2
+                },
+                toolbar: [
+                ],
+                columns: [[
+                    { field: 'sTKVersion', title: '版本号', width: 150, },
+                    { field: 'dtmCreate', title: '日期', width: 150, },
+                    { field: 'ProdGroup', title: '项目组', width: 150, },
+                    { field: 'Remark', title: '备注', width: 150, },
+                ]],
+                onDblClickRow: function (index, row) {
+                    //alert($('#queryGroup').val());
+                    $('#qyPlanner').html($('#queryPlanner').combobox('getValue'));
+                    $('#qyGroup').html($('#queryGroup').val());
+                    $('#qyVersion').html(row.sTKVersion);
+                    $('#txtRemark').html(row.Remark);
+                    getList();
+                    $('#win_query').window('close');
+                }
+            });
+
+        }
+
+        //上传
+        function btn_importdata() {
+            var iUpload_Type = $('#querychktype').combobox('getValue');//上传类型
+            var sTKVersion_Contrast = $('#queryVersionResult').combobox('getValue');
+            var sTKVersion = $('#qyVersion').val();
+            var iTK_Type = "0";
+            var uploadtype = $('#uploadtype').val();
+            var remark = $('#txtRemark').val();
+
+            if (iUpload_Type != "2") {
+                sTKVersion_Contrast = "";
+            }
+            $('#msg').html("");
+            var path = $("#uploadFile").val();
+            if (!path) {
+                $.messager.alert('信息', "请选择要上传的文件！");
+                return;
+            }
+            loadingstatus = "loading";
+            $('#msg').append("<br>执行中,这可能需要一些时间,请耐心等待....</br>");
+            $('#msg').append("<br>如果检测到有错误的请您按照提示排查处理后重新导入....</br>");
+            $.ajaxFileUpload({
+                url: actionUrl.GetUpload + "?iUpload_Type=" + iUpload_Type
+                    + "&sTKVersion_Contrast=" + sTKVersion_Contrast
+                    + "&sTKVersion=" + sTKVersion
+                    + "&iTK_Type=" + iTK_Type
+                    + "&uploadtype=" + uploadtype 
+                    + "&remark=" + remark + "",
+                secureuri: false,
+                fileElementId: 'uploadFile',
+                dataType: 'json',
+                success: function (data) {
+                    if (data["Result"] === "1") {
+                        $('#msg').append("<br>上传成功....</br>");
+                        $.messager.confirm('提示', '确认是否要转到List？', function (r) {
+                            if (r) {
+                                window.parent.addTab("Main Trial Kitting Queue", "/List/Index?IsCreateUid=true", '');
+                            }
+                        });
+                    } else {
+                        $.messager.alert('信息', data["Msg"]);
+                    }
+                }
+            });
+
+        }
+
+        //下载模板
+        function btn_exportdata() {
+            
+            //$.ajax({
+            //    type: "post",
+            //    url: actionUrl.GetDownload,
+            //    cache: false,
+            //    data: {},
+            //    datatype: "json",
+            //    async: false,
+            //    success: function (data) {
+            //    }
+            //});
+            $('#iframe_file').attr('src', actionUrl.GetDownload + "?uploadtype=" + $('#uploadtype').val());
+        }
+
+        function request(paras) {
+            var url = location.href;
+            var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+            var paraObj = {}
+            for (i = 0; j = paraString[i]; i++) {
+                paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+            }
+            var returnValue = paraObj[paras.toLowerCase()];
+            if (typeof (returnValue) == "undefined") {
+                return "";
+            } else {
+                return returnValue;
+            }
+        }
+
+        function doDownLoad(url,type) {
+            $.messager.progress({
+                title: '请稍后',
+                msg: '加载中...'
+            });
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);    // 也可以使用POST方式，根据接口
+            xhr.responseType = "blob";  // 返回类型blob
+            // 定义请求完成的处理函数，请求前也可以增加加载框/禁用下载按钮逻辑
+            xhr.onload = function () {
+                // 请求完成
+                if (this.status === 200) {
+                    // 返回200
+                    var blob = this.response;
+                    var reader = new FileReader();
+                    reader.readAsDataURL(blob);  // 转换为base64，可以直接放入a表情href
+                    reader.onload = function (e) {
+                        // 转换完成，创建一个a标签用于下载
+                        var a = document.createElement('a');
+                        if (type == 0) {
+                            a.download = "导出Excel"+'.xlsx';
+                        } else if (type == 1) {
+                            a.download = "导出PAD-计划" + '.xlsx';
+                        }
+                        else if (type == 2) {
+                            a.download = "导出PAD-需求" + '.xlsx';
+                        }
+                        
+                        a.href = e.target.result;
+                        $("body").append(a);  // 修复firefox中无法触发click
+                        a.click();
+                        $(a).remove();
+                        $.messager.progress('close');
+                    }
+                }
+            };
+            // 发送ajax请求
+            xhr.send()
+
+                //$.ajax({
+                //    type: "get",
+                //    url: url,
+                //    beforeSend: function () {
+                //        $.messager.progress({
+                //            title: '请稍后',
+                //            msg: '加载中...'
+                //        });
+                //    },
+                //    success: function (msg) {
+                //        $.messager.progress('close');
+                //    },
+                //    error: function (e, jqxhr, settings, exception) {
+                //        $.messager.progress('close');
+                //    }
+            //});
+
+            //alert(url);
+            //$.messager.progress({
+            //    title: '请稍后',
+            //    msg: '加载中...'
+            //});
+            //$('#iframe_load').attr("src", url);
+            //mm();
+
+            //$('#iframe_load').attr("src", url);
+        }
+
+        function mm() {
+            if ($('#iframe_load').context.readyState == "complete") {
+                //alert("已经加载完毕");
+                $.messager.progress('close');
+                setTimeout("mm()", 100);
+            }
+            else {
+                setTimeout("mm()", 100);
+            }
+            //if ($iFrame.readyState == "complete") {
+            //    alert("已经加载完毕");
+            //}
+            //else {
+            //    setTimeout("mm()", 100);
+            //}
+        }
+    </script>
+}
+
+<body class="easyui-layout">
+    <!-- 查询条件 -->
+    <div data-options="region:'north'" >
+        <form id="queryform" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <a id="btnQuery_Sel" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                        @*<a id="btnQuery_Excel" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Export to Excel</a>
+                        <a id="btnQuery_PAD" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Export to PAD</a>*@
+                    </td>
+
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td width="50px">版本：</td>
+                    <td width="15%">
+                        <label id="qyVersion"></label>
+                    </td>
+                    <td width="50px">计划员：</td>
+                    <td width="15%">
+                        <label id="qyPlanner"></label>
+                    </td>
+                    <td width="50px">项目组：</td>
+                    <td width="15%">
+                        <label id="qyGroup"></label>
+                    </td>
+                    <td width="50px">备注：</td>
+                    <td width="15%">
+                        <input class="easyui-textbox" type="text" id="txtRemark" name="txtRemark" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width="50px">类别：</td>
+                    <td width="15%">
+                        <input class="easyui-combobox" name="querychktype" id="querychktype" />
+                    </td>
+                    <td width="50px">对比版本：</td>
+                    <td width="15%">
+                        <input class="easyui-combobox" name="queryVersionResult" id="queryVersionResult" />
+                    </td>
+                    <td width="50px">属性</td>
+                    <td width="15%">
+                        <input class="easyui-combobox" name="qyReorderpolicy" id="qyReorderpolicy" />
+                    </td>
+                    <td width="50px"></td>
+                    <td width="15%">
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 列表 -->
+    
+    <div data-options="region:'center'" >
+        <iframe id="iframe_load" name="iframe_load" src="" style="display: none;"></iframe>
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true,onClickCell: onClickCell">
+        </table>
+    </div>
+
+    <!-- 错误数据列表 -->
+    <div id="win_err" class="easyui-dialog" title="错误数据列表" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false,iconCls:'icon-add'" style="width:500px;height:380px;padding:10px;">
+        <table id="grid_err" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true,onClickCell: onClickCell"></table>
+    </div>
+
+    <!-- 查询结果列表 -->
+    <div id="win_query" class="easyui-dialog" title="查询列表" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false,iconCls:'icon-add'" style="width:700px;height:500px;padding:10px;">
+        <table>
+            <tr>
+                <td>版本：</td>
+                <td>
+                    <input class="easyui-combobox" type="text" name="queryVersion" id="queryVersion" />
+                </td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    <a id="btnQuery" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                </td>
+            </tr>
+            <tr>
+                <td>开始日期：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate1" id="queryDate1" />
+                </td>
+                <td>结束日期：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate2" id="queryDate2" />
+                </td>
+                <td>
+                    <a id="btnReload" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px;">Reset</a>
+                </td>
+            </tr>
+            <tr>
+                <td>计划员：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryPlanner" id="queryPlanner">
+                </td>
+                <td>项目组：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryGroup" id="queryGroup" editable="false">
+                </td>
+                <td>
+                    
+                    
+                </td>
+
+            </tr>
+        </table>
+        <table id="grid_query" class="easyui-datagrid" style="border-bottom: none; height: 350px;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,onClickCell: onClickCell"></table>
+    </div>
+    
+    <!-- 弹窗 （添加） -->
+    <div id="win_upload" class="easyui-dialog" title="上传文件" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false,iconCls:'icon-add'" style="width:320px;height:380px;padding:10px;">
+        <div class="formHead">
+            <div class="mcp_container">
+                <div class="col-xs-8 mcp-form-item" style="padding:10px;">
+                    <input type="hidden" id="uploadtype" name="uploadtype" class="easyui-linkbutton" />
+                    <input id="uploadFile" name="uploadFile" type="file" class="easyui-linkbutton"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                </div>
+                <div class="col-xs-4 mcp-form-item" >
+                    <div class="btn-group">
+                        <a id="lr-choose" onclick="btn_importdata()" class="easyui-linkbutton" style="margin-right:20px;">开始导入</a>
+                        <a id="lr-import" onclick="btn_exportdata()" class="easyui-linkbutton">下载模板</a>
+                        <iframe id="iframe_file" src="" style="display: none;"></iframe>
+                    </div>
+                </div>
+                <div id="msg">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹窗 （添加、编辑） -->
+    <div id="win_edit" class="easyui-window" title="明细" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false" style="width:500px;height:500px;padding:10px;">
+        <table id="grid_details" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,fit:true,collapsible:false"></table>
+    </div>
+
+    
+</body>

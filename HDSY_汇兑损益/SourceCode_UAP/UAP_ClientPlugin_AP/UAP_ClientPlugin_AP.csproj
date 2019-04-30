@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UAP_ClientPlugin_AP</RootNamespace>
+    <AssemblyName>UAP_ClientPlugin_AP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\U8SOFT\UAP\RUNTIME\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.U8Login, Version=1.14.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>D:\U8SOFT\Interop\Interop.U8Login.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.U8RefService">
+      <HintPath>D:\U8SOFT\Interop\Interop.U8RefService.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.UFGeneralFilter">
+      <HintPath>D:\U8SOFT\Interop\Interop.UFGeneralFilter.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.U8.Framework.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\U8SOFT\Framework\UFIDA.U8.Framework.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.Portal.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\u8soft\portal\UFIDA.U8.Portal.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.Portal.Proxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\u8soft\portal\UFIDA.U8.Portal.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.UAP.Common">
+      <HintPath>D:\U8SOFT\UAP\UFIDA.U8.UAP.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.UAP.UI.Runtime.Common">
+      <HintPath>D:\U8SOFT\UAP\Runtime\UFIDA.U8.UAP.UI.Runtime.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.UAP.UI.Runtime.List">
+      <HintPath>D:\U8SOFT\UAP\Runtime\UFIDA.U8.UAP.UI.Runtime.List.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.UAP.UI.Runtime.List.Metas">
+      <HintPath>D:\U8SOFT\UAP\Runtime\UFIDA.U8.UAP.UI.Runtime.List.Metas.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.UAP.UI.Runtime.Model">
+      <HintPath>D:\U8SOFT\UAP\Runtime\UFIDA.U8.UAP.UI.Runtime.Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BtnAP_UnAudit.cs" />
+    <Compile Include="BtnAP_CreateAccountingDocument.cs" />
+    <Compile Include="BtnAP_ReadData.cs" />
+    <Compile Include="CsClientPlugin.cs" />
+    <Compile Include="Dal\GL_accvouch.cs" />
+    <Compile Include="Dal\Model\GL_accvouch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TH.BaseClass\TH.BaseClass.csproj">
+      <Project>{01862d7a-15a2-4b4f-9c25-df91c7383bb8}</Project>
+      <Name>TH.BaseClass</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

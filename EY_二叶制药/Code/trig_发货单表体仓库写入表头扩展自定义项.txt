@@ -1,0 +1,32 @@
+--------------------------------------------------------------------------------
+---------DispatchList 发货单
+---------唐辉
+---------2015-7-1
+---------发货单审核时将表体仓库写入表头扩展自定义项
+--------------------------------------------------------------------------------
+
+
+
+ALTER TRIGGER [dbo].[Trig_DispatchList_Update]
+   ON  [dbo].[DispatchList]
+   for update
+AS 
+BEGIN
+	
+	
+	declare @cWhName varchar(60)
+	declare @DLID int
+
+select @DLID = a.DLID,@cWhName = d.cWhName
+from DispatchList a 
+	inner join DispatchLists b on a.dlid = b.dlid
+	inner join inserted c on a.dlid = c.dlid
+	inner join Warehouse d on b.cWhcode = d.cwhcode
+	
+if Exists(select * from DispatchList_extradefine where dlid = @DLID)
+	update DispatchList_extradefine set chdefine4 = @cWhName  where dlid = @DLID
+else
+	insert into DispatchList_extradefine(DLID,chdefine4)
+	values(@DLID,@cWhName)
+	
+END

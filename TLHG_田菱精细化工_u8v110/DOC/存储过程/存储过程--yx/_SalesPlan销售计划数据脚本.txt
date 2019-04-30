@@ -1,0 +1,25 @@
+if exists (select * from sysobjects where id = OBJECT_ID('[_SalesPlan]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [_SalesPlan]
+
+CREATE TABLE [_SalesPlan] (
+[cDepCode] [nvarchar]  (50) NOT NULL,
+[cInvCCode] [nvarchar]  (50) NOT NULL,
+[cInvCode] [nvarchar]  (100) NOT NULL,
+[iyear] [int]  NOT NULL,
+[iMonth] [int]  NOT NULL,
+[iQuantity] [decimal]  (18,6) NULL,
+[iMoney] [decimal]  (18,6) NULL)
+
+ALTER TABLE [_SalesPlan] WITH NOCHECK ADD  CONSTRAINT [PK__SalesPlan] PRIMARY KEY  NONCLUSTERED ( [cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth] )
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,2,100.000000,22.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,4,100.000000,44.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,5,100.000000,55.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,7,100.000000,77.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,8,100.000000,88.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,10,100.000000,111.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,11,100.000000,222.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2013,12,100.000000,333.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2014,1,100.000000,11.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2014,3,100.000000,33.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2014,6,100.000000,66.000000)
+INSERT [_SalesPlan] ([cDepCode],[cInvCCode],[cInvCode],[iyear],[iMonth],[iQuantity],[iMoney]) VALUES ( N'1801',N'90201',N'902013010001B',2014,9,100.000000,99.000000)

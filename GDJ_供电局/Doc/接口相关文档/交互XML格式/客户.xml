@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Customer>
+    <AccID>新吴城</AccID>
+    <cCusCode>2501</cCusCode>
+    <cCusName>test001</cCusName>
+    <cCCCode>01</cCCCode>
+    <cCCName>系统内客户</cCCName>
+  </Customer>
+  <Customer>
+    <AccID>新吴城</AccID>
+    <cCusCode>2502</cCusCode>
+    <cCusName>test002</cCusName>
+    <cCCCode>01</cCCCode>
+    <cCCName>系统内客户</cCCName>
+  </Customer>
+  <Customer>
+    <AccID>新吴城</AccID>
+    <cCusCode>2503</cCusCode>
+    <cCusName>test003</cCusName>
+    <cCCCode>01</cCCCode>
+    <cCCName>系统内客户</cCCName>
+  </Customer>
+  <Customer>
+    <AccID>电建公司</AccID>
+    <cCusCode>2503</cCusCode>
+    <cCusName>test003</cCusName>
+    <cCCCode>1</cCCCode>
+    <cCCName>系统内客户</cCCName>
+  </Customer>
+</NewDataSet>

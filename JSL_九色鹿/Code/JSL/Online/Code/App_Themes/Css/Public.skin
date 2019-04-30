@@ -1,0 +1,15 @@
+﻿<asp:FileUpload runat="server" CssClass="file" />
+<asp:Image runat="server" CssClass="image"/>
+<asp:Panel runat="server" CssClass="panel" Width="100%"/>
+<yyc:SmartGridView runat="server" CellPadding="0" CellSpacing="0" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" PageSize="20" MouseOverCssClass="OverRow" CssClass="SmartGridView"  EnableEmptyContentRender="True">
+    <ClientButtons>
+        <yyc:ClientButton BoundCommandName="Sort" Position="First" AttributeKey="onclick" AttributeValue="return true" />
+    </ClientButtons>
+    <SmartSorting AllowSortTip="True" />
+    <HeaderStyle CssClass="HeaderRow" />
+    <CustomPagerSettings PagingMode="Webabcd" TextFormat="每页{0}条/共{1}条&#160;&#160;&#160;&#160;第{2}页/共{3}页&#160;&#160;&#160;&#160;&#160;&#160;" />
+    <PagerSettings Position="Bottom" PageButtonCount="7" FirstPageText="首页" PreviousPageText="上一页" NextPageText="下一页" LastPageText="末页" />
+</yyc:SmartGridView>
+<asp:GridView runat="server" CssClass="SmartGridView"  CellPadding="0" CellSpacing="0" ></asp:GridView>
+<asp:Table runat="server" CssClass="SmartGridView" CellPadding="0" CellSpacing="0">
+</asp:Table>

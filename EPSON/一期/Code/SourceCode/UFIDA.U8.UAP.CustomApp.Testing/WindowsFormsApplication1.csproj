@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04AE2CF7-879B-4BEC-8A20-037B9F7FD6E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货确认.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货确认.Designer.cs">
+      <DependentUpon>Frm发货确认.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\Frm发货确认.resx">
+      <DependentUpon>Frm发货确认.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmProcess.resx">
+      <DependentUpon>FrmProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmInvProcess.resx">
+      <DependentUpon>FrmInvProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmSystemSet.resx">
+      <DependentUpon>FrmSystemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\frmSaleBillVouch.resx">
+      <DependentUpon>frmSaleBillVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\frmPurBillVouch.resx">
+      <DependentUpon>frmPurBillVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmPayment.resx">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmImportSaleOrder.resx">
+      <DependentUpon>FrmImportSaleOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmInvProcessPrice.resx">
+      <DependentUpon>FrmInvProcessPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRoutingInfo.resx">
+      <DependentUpon>FrmRoutingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmCreditLine.resx">
+      <DependentUpon>FrmCreditLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmPrintBarLabel.resx">
+      <DependentUpon>FrmPrintBarLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmBarSeparate.resx">
+      <DependentUpon>FrmBarSeparate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmBraclose.resx">
+      <DependentUpon>FrmBraclose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmPrintFlowCard.resx">
+      <DependentUpon>FrmPrintFlowCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmPlatingProcess.resx">
+      <DependentUpon>FrmPlatingProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmProcessList.resx">
+      <DependentUpon>FrmProcessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmBarTransfer.resx">
+      <DependentUpon>FrmBarTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\Frm发货.resx">
+      <DependentUpon>Frm发货.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmProLine.resx">
+      <DependentUpon>FrmProLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\Frm销售设置.resx">
+      <DependentUpon>Frm销售设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmBarAdjust.resx">
+      <DependentUpon>FrmBarAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepBarcodeAverage.resx">
+      <DependentUpon>FrmRepBarcodeAverage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepBarcodeDetail.resx">
+      <DependentUpon>FrmRepBarcodeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\Frm采购设置.resx">
+      <DependentUpon>Frm采购设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmBarCodeStatus.resx">
+      <DependentUpon>FrmBarCodeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\Frm发货编辑.resx">
+      <DependentUpon>Frm发货编辑.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\frmSaleBillVouchCSV.resx">
+      <DependentUpon>frmSaleBillVouchCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepWatchWip.resx">
+      <DependentUpon>FrmRepWatchWip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepSTFG.resx">
+      <DependentUpon>FrmRepSTFG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepWatchWipOS.resx">
+      <DependentUpon>FrmRepWatchWipOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="测试窗体\FrmRepSTFGOS.resx">
+      <DependentUpon>FrmRepSTFGOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="测试窗体\FrmProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmProcess.Designer.cs">
+      <DependentUpon>FrmProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmInvProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmInvProcess.Designer.cs">
+      <DependentUpon>FrmInvProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmSystemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmSystemSet.Designer.cs">
+      <DependentUpon>FrmSystemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\frmSaleBillVouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\frmSaleBillVouch.Designer.cs">
+      <DependentUpon>frmSaleBillVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\frmPurBillVouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\frmPurBillVouch.Designer.cs">
+      <DependentUpon>frmPurBillVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmPayment.Designer.cs">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmImportSaleOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmImportSaleOrder.Designer.cs">
+      <DependentUpon>FrmImportSaleOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmInvProcessPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmInvProcessPrice.Designer.cs">
+      <DependentUpon>FrmInvProcessPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRoutingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRoutingInfo.Designer.cs">
+      <DependentUpon>FrmRoutingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmCreditLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmCreditLine.Designer.cs">
+      <DependentUpon>FrmCreditLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmPrintBarLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmPrintBarLabel.Designer.cs">
+      <DependentUpon>FrmPrintBarLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarSeparate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarSeparate.Designer.cs">
+      <DependentUpon>FrmBarSeparate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmBraclose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmBraclose.Designer.cs">
+      <DependentUpon>FrmBraclose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmPrintFlowCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmPrintFlowCard.Designer.cs">
+      <DependentUpon>FrmPrintFlowCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmPlatingProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmPlatingProcess.Designer.cs">
+      <DependentUpon>FrmPlatingProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmProcessList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmProcessList.Designer.cs">
+      <DependentUpon>FrmProcessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarTransfer.Designer.cs">
+      <DependentUpon>FrmBarTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货.Designer.cs">
+      <DependentUpon>Frm发货.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmProLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmProLine.Designer.cs">
+      <DependentUpon>FrmProLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\Frm销售设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\Frm销售设置.Designer.cs">
+      <DependentUpon>Frm销售设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarAdjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarAdjust.Designer.cs">
+      <DependentUpon>FrmBarAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepBarcodeAverage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepBarcodeAverage.Designer.cs">
+      <DependentUpon>FrmRepBarcodeAverage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepBarcodeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepBarcodeDetail.Designer.cs">
+      <DependentUpon>FrmRepBarcodeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\Frm采购设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\Frm采购设置.Designer.cs">
+      <DependentUpon>Frm采购设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarCodeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmBarCodeStatus.Designer.cs">
+      <DependentUpon>FrmBarCodeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货编辑.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\Frm发货编辑.Designer.cs">
+      <DependentUpon>Frm发货编辑.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\frmSaleBillVouchCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\frmSaleBillVouchCSV.Designer.cs">
+      <DependentUpon>frmSaleBillVouchCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepWatchWip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepWatchWip.Designer.cs">
+      <DependentUpon>FrmRepWatchWip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepSTFG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepSTFG.Designer.cs">
+      <DependentUpon>FrmRepSTFG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepWatchWipOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepWatchWipOS.Designer.cs">
+      <DependentUpon>FrmRepWatchWipOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepSTFGOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试窗体\FrmRepSTFGOS.Designer.cs">
+      <DependentUpon>FrmRepSTFGOS.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TH.BaseClass\TH.BaseClass.csproj">
+      <Project>{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}</Project>
+      <Name>TH.BaseClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U8.UAP.CustomApp.ControlForm\UFIDA.U8.UAP.CustomApp.ControlForm.csproj">
+      <Project>{D57AC05B-60E2-4174-9B56-1480A0B64D1C}</Project>
+      <Name>UFIDA.U8.UAP.CustomApp.ControlForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U8.UAP.CustomApp.MetaData\UFIDA.U8.UAP.CustomApp.MetaData.csproj">
+      <Project>{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}</Project>
+      <Name>UFIDA.U8.UAP.CustomApp.MetaData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

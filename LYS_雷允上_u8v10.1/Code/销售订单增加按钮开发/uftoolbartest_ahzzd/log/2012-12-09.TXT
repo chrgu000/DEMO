@@ -1,0 +1,1914 @@
+11:56:53   Function:->Init is true   
+11:56:53   msbar.buttons(1).Key   add
+11:56:53   msbar.buttons(1).Caption   增加
+11:56:53   msbar.buttons(2).Key   print
+11:56:53   msbar.buttons(2).Caption   打印
+11:56:53   msbar.buttons(3).Key   modify
+11:56:53   msbar.buttons(3).Caption   修改
+11:56:53   msbar.buttons(4).Key   preview
+11:56:53   msbar.buttons(4).Caption   预览
+11:56:53   msbar.buttons(5).Key   delete
+11:56:53   msbar.buttons(5).Caption   删除
+11:56:54   msbar.buttons(6).Key   output
+11:56:54   msbar.buttons(6).Caption   输出
+11:56:54   msbar.buttons(7).Key   outputandemail
+11:56:54   msbar.buttons(7).Caption   邮件
+11:56:54   msbar.buttons(8).Key   refervouch
+11:56:54   msbar.buttons(8).Caption   生单
+11:56:54   msbar.buttons(9).Key   tofirst
+11:56:54   msbar.buttons(9).Caption   首张
+11:56:54   msbar.buttons(10).Key   copy
+11:56:54   msbar.buttons(10).Caption   复制
+11:56:54   msbar.buttons(11).Key   toprevious
+11:56:54   msbar.buttons(11).Caption   上张
+11:56:54   msbar.buttons(12).Key   tonext
+11:56:54   msbar.buttons(12).Caption   下张
+11:56:54   msbar.buttons(13).Key   draft
+11:56:54   msbar.buttons(13).Caption   草稿
+11:56:54   msbar.buttons(14).Key   tolast
+11:56:54   msbar.buttons(14).Caption   末张
+11:56:54   msbar.buttons(15).Key   release
+11:56:54   msbar.buttons(15).Caption   释放
+11:56:54   msbar.buttons(16).Key   template
+11:56:54   msbar.buttons(16).Caption   模板
+11:56:54   msbar.buttons(17).Key   save
+11:56:54   msbar.buttons(17).Caption   保存
+11:56:54   msbar.buttons(18).Key   _CUSTDEFbtntest
+11:56:54   msbar.buttons(18).Caption   测试
+11:56:54   msbar.buttons(19).Key   cancel
+11:56:54   msbar.buttons(19).Caption   放弃
+11:56:54   msbar.buttons(20).Key   resubmit
+11:56:54   msbar.buttons(20).Caption   重新提交
+11:56:54   msbar.buttons(21).Key   submit
+11:56:54   msbar.buttons(21).Caption   提交
+11:56:54   msbar.buttons(22).Key   unsubmit
+11:56:54   msbar.buttons(22).Caption   撤销
+11:56:54   msbar.buttons(23).Key   verify
+11:56:54   msbar.buttons(23).Caption   审核
+11:56:54   msbar.buttons(24).Key   unverify
+11:56:54   msbar.buttons(24).Caption   弃审
+11:56:54   msbar.buttons(25).Key   viewverify
+11:56:54   msbar.buttons(25).Caption   查审
+11:56:54   msbar.buttons(26).Key   closeorder
+11:56:54   msbar.buttons(26).Caption   关闭
+11:56:54   msbar.buttons(27).Key   openorder
+11:56:54   msbar.buttons(27).Caption   打开
+11:56:54   msbar.buttons(28).Key   lock
+11:56:54   msbar.buttons(28).Caption   锁定
+11:56:54   msbar.buttons(29).Key   checkstock
+11:56:54   msbar.buttons(29).Caption   可用量
+11:56:54   msbar.buttons(30).Key   unlock
+11:56:54   msbar.buttons(30).Caption   解锁
+11:56:54   msbar.buttons(31).Key   changeorder
+11:56:54   msbar.buttons(31).Caption   变更
+11:56:54   msbar.buttons(32).Key   addline
+11:56:54   msbar.buttons(32).Caption   增行
+11:56:54   msbar.buttons(33).Key   delline
+11:56:54   msbar.buttons(33).Caption   删行
+11:56:54   msbar.buttons(34).Key   insertline
+11:56:54   msbar.buttons(34).Caption   插行
+11:56:54   msbar.buttons(35).Key   fetchprice
+11:56:54   msbar.buttons(35).Caption   取价
+11:56:54   msbar.buttons(36).Key   attached
+11:56:54   msbar.buttons(36).Caption   附件
+11:56:54   msbar.buttons(37).Key   formatsetup
+11:56:54   msbar.buttons(37).Caption   格式设置
+11:56:54   msbar.buttons(38).Key   savelayout
+11:56:54   msbar.buttons(38).Caption   保存布局
+11:56:54   msbar.buttons(39).Key   pricehistory
+11:56:54   msbar.buttons(39).Caption   价格
+11:56:54   msbar.buttons(40).Key   locate
+11:56:54   msbar.buttons(40).Caption   定位
+11:56:54   msbar.buttons(41).Key   refresh
+11:56:54   msbar.buttons(41).Caption   刷新
+11:56:54   msbar.buttons(42).Key   billrelation
+11:56:54   msbar.buttons(42).Caption   关联查询
+11:56:54   msbar.buttons(43).Key   help
+11:56:54   msbar.buttons(43).Caption   帮助
+11:57:23   Function:->Init is true   
+11:57:23   msbar.buttons(1).Key   add
+11:57:23   msbar.buttons(1).Caption   增加
+11:57:23   msbar.buttons(2).Key   print
+11:57:23   msbar.buttons(2).Caption   打印
+11:57:23   msbar.buttons(3).Key   modify
+11:57:23   msbar.buttons(3).Caption   修改
+11:57:23   msbar.buttons(4).Key   preview
+11:57:23   msbar.buttons(4).Caption   预览
+11:57:23   msbar.buttons(5).Key   delete
+11:57:23   msbar.buttons(5).Caption   删除
+11:57:23   msbar.buttons(6).Key   output
+11:57:23   msbar.buttons(6).Caption   输出
+11:57:23   msbar.buttons(7).Key   outputandemail
+11:57:23   msbar.buttons(7).Caption   邮件
+11:57:23   msbar.buttons(8).Key   refervouch
+11:57:23   msbar.buttons(8).Caption   生单
+11:57:23   msbar.buttons(9).Key   tofirst
+11:57:23   msbar.buttons(9).Caption   首张
+11:57:23   msbar.buttons(10).Key   copy
+11:57:23   msbar.buttons(10).Caption   复制
+11:57:23   msbar.buttons(11).Key   toprevious
+11:57:23   msbar.buttons(11).Caption   上张
+11:57:23   msbar.buttons(12).Key   tonext
+11:57:23   msbar.buttons(12).Caption   下张
+11:57:23   msbar.buttons(13).Key   draft
+11:57:23   msbar.buttons(13).Caption   草稿
+11:57:23   msbar.buttons(14).Key   tolast
+11:57:23   msbar.buttons(14).Caption   末张
+11:57:23   msbar.buttons(15).Key   release
+11:57:23   msbar.buttons(15).Caption   释放
+11:57:23   msbar.buttons(16).Key   template
+11:57:23   msbar.buttons(16).Caption   模板
+11:57:23   msbar.buttons(17).Key   save
+11:57:23   msbar.buttons(17).Caption   保存
+11:57:23   msbar.buttons(18).Key   _CUSTDEFbtntest
+11:57:23   msbar.buttons(18).Caption   测试
+11:57:23   msbar.buttons(19).Key   cancel
+11:57:23   msbar.buttons(19).Caption   放弃
+11:57:23   msbar.buttons(20).Key   resubmit
+11:57:23   msbar.buttons(20).Caption   重新提交
+11:57:23   msbar.buttons(21).Key   submit
+11:57:23   msbar.buttons(21).Caption   提交
+11:57:23   msbar.buttons(22).Key   unsubmit
+11:57:23   msbar.buttons(22).Caption   撤销
+11:57:23   msbar.buttons(23).Key   verify
+11:57:23   msbar.buttons(23).Caption   审核
+11:57:23   msbar.buttons(24).Key   unverify
+11:57:23   msbar.buttons(24).Caption   弃审
+11:57:23   msbar.buttons(25).Key   viewverify
+11:57:23   msbar.buttons(25).Caption   查审
+11:57:23   msbar.buttons(26).Key   closeorder
+11:57:23   msbar.buttons(26).Caption   关闭
+11:57:23   msbar.buttons(27).Key   openorder
+11:57:23   msbar.buttons(27).Caption   打开
+11:57:23   msbar.buttons(28).Key   lock
+11:57:23   msbar.buttons(28).Caption   锁定
+11:57:23   msbar.buttons(29).Key   checkstock
+11:57:23   msbar.buttons(29).Caption   可用量
+11:57:23   msbar.buttons(30).Key   unlock
+11:57:23   msbar.buttons(30).Caption   解锁
+11:57:23   msbar.buttons(31).Key   changeorder
+11:57:23   msbar.buttons(31).Caption   变更
+11:57:23   msbar.buttons(32).Key   addline
+11:57:23   msbar.buttons(32).Caption   增行
+11:57:23   msbar.buttons(33).Key   delline
+11:57:23   msbar.buttons(33).Caption   删行
+11:57:23   msbar.buttons(34).Key   insertline
+11:57:23   msbar.buttons(34).Caption   插行
+11:57:23   msbar.buttons(35).Key   fetchprice
+11:57:23   msbar.buttons(35).Caption   取价
+11:57:23   msbar.buttons(36).Key   attached
+11:57:23   msbar.buttons(36).Caption   附件
+11:57:23   msbar.buttons(37).Key   formatsetup
+11:57:23   msbar.buttons(37).Caption   格式设置
+11:57:23   msbar.buttons(38).Key   savelayout
+11:57:23   msbar.buttons(38).Caption   保存布局
+11:57:23   msbar.buttons(39).Key   pricehistory
+11:57:23   msbar.buttons(39).Caption   价格
+11:57:23   msbar.buttons(40).Key   locate
+11:57:23   msbar.buttons(40).Caption   定位
+11:57:23   msbar.buttons(41).Key   refresh
+11:57:23   msbar.buttons(41).Caption   刷新
+11:57:23   msbar.buttons(42).Key   billrelation
+11:57:23   msbar.buttons(42).Caption   关联查询
+11:57:23   msbar.buttons(43).Key   help
+11:57:23   msbar.buttons(43).Caption   帮助
+11:57:28   Function:->RunCommand is true   
+11:57:28   objLogin.cAcc_Id    001
+11:57:28   objForm.Name    frmBillVouchNew
+11:57:52   domh: <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA          domb:  <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA
+11:57:52   headertext name dreleasedate    Value:
+11:57:52   headertext name breturnflag    Value:
+11:57:52   headertext name zdsum    Value:
+11:57:52   headertext name isumx    Value:
+11:57:52   headertext name ivtid    Value:
+11:57:52   headertext name ccuspersoncode    Value:
+11:57:52   headertext name bmustbook    Value:
+11:57:52   headertext name fbookratio    Value:
+11:57:52   headertext name fbooksum    Value:
+11:57:52   headertext name fbooknatsum    Value:
+11:57:52   headertext name fgbooknatsum    Value:
+11:57:52   headertext name fgbooksum    Value:
+11:57:52   headertext name ccuscode    Value:
+11:57:52   headertext name cstcode    Value:
+11:57:52   headertext name cpersoncode    Value:
+11:57:52   headertext name ccusphone    Value:
+11:57:52   headertext name cdepcode    Value:
+11:57:52   headertext name csccode    Value:
+11:57:52   headertext name cpaycode    Value:
+11:57:52   headertext name ccusname    Value:
+11:57:52   headertext name iarmoney    Value:
+11:57:52   headertext name csocode    Value:
+11:57:52   headertext name ddate    Value:
+11:57:52   headertext name cbustype    Value:
+11:57:52   headertext name ccusoaddress    Value:
+11:57:52   headertext name cpayname    Value:
+11:57:52   headertext name cstname    Value:
+11:57:52   headertext name ccusabbname    Value:
+11:57:52   headertext name imoney    Value:
+11:57:52   headertext name cdepname    Value:
+11:57:52   headertext name itaxrate    Value:
+11:57:52   headertext name cpersonname    Value:
+11:57:52   headertext name cscname    Value:
+11:57:52   headertext name iexchrate    Value:
+11:57:52   headertext name cmemo    Value:
+11:57:52   headertext name cexch_name    Value:
+11:57:52   headertext name dpredatebt    Value:
+11:57:52   headertext name dpremodatebt    Value:
+11:57:52   headertext name cgatheringplan    Value:
+11:57:52   headertext name cgatheringplanname    Value:
+11:57:52   headertext name cdefine1    Value:
+11:57:52   headertext name dmodifysystime    Value:
+11:57:52   headertext name cmodifier    Value:
+11:57:52   headertext name dmoddate    Value:
+11:57:52   headertext name dcreatesystime    Value:
+11:57:52   headertext name dclosedate    Value:
+11:57:52   headertext name dclosesystime    Value:
+11:57:52   headertext name cgathingcode    Value:
+11:57:52   headertext name bcashsale    Value:
+11:57:52   headertext name iflowid    Value:
+11:57:52   headertext name cflowname    Value:
+11:57:52   headertext name cchangeverifier    Value:
+11:57:52   headertext name dchangeverifydate    Value:
+11:57:52   headertext name dchangeverifytime    Value:
+11:57:52   headertext name cchanger    Value:
+11:57:52   headertext name ccrechpname    Value:
+11:57:53   headertext name istatus    Value:
+11:57:53   headertext name zdsumdx    Value:
+11:57:53   headertext name isumdx    Value:
+11:57:53   headertext name ccusaddress    Value:
+11:57:53   headertext name ccusperson    Value:
+11:57:53   headertext name coppcode    Value:
+11:57:53   headertext name ccusdefine1    Value:
+11:57:53   headertext name ccusdefine2    Value:
+11:57:53   headertext name ccusdefine3    Value:
+11:57:53   headertext name ccusdefine4    Value:
+11:57:53   headertext name ccusdefine5    Value:
+11:57:53   headertext name ccusdefine6    Value:
+11:57:53   headertext name ccusdefine7    Value:
+11:57:53   headertext name ccusdefine8    Value:
+11:57:53   headertext name ccusdefine9    Value:
+11:57:53   headertext name ccusdefine10    Value:
+11:57:53   headertext name ccusdefine11    Value:
+11:57:53   headertext name ccusdefine12    Value:
+11:57:53   headertext name ccusdefine13    Value:
+11:57:53   headertext name ccusdefine14    Value:
+11:57:53   headertext name ccusdefine15    Value:
+11:57:53   headertext name ccusdefine16    Value:
+11:57:53   headertext name icuscreline    Value:
+11:57:53   headertext name id    Value:
+11:57:53   headertext name ufts    Value:
+11:57:53   headertext name ccrechppass    Value:
+11:57:53   headertext name clowpricepass    Value:
+11:57:53   headertext name bcontinue    Value:
+11:57:53   headertext name fstockquan    Value:
+11:57:53   headertext name fcanusequan    Value:
+11:57:53   headertext name cdefine2    Value:
+11:57:53   headertext name cdefine3    Value:
+11:57:53   headertext name cdefine4    Value:
+11:57:53   headertext name cdefine5    Value:
+11:57:53   headertext name cdefine6    Value:
+11:57:53   headertext name cdefine7    Value:
+11:57:53   headertext name cdefine8    Value:
+11:57:53   headertext name cdefine9    Value:
+11:57:53   headertext name cdefine10    Value:
+11:57:53   headertext name cdefine11    Value:
+11:57:53   headertext name cdefine12    Value:
+11:57:53   headertext name cdefine13    Value:
+11:57:53   headertext name cdefine14    Value:
+11:57:53   headertext name cdefine15    Value:
+11:57:53   headertext name cdefine16    Value:
+11:57:53   headertext name ccushand    Value:
+11:57:53   headertext name cpsnophone    Value:
+11:57:53   headertext name cpsnmobilephone    Value:
+11:57:53   headertext name cofficephone    Value:
+11:57:53   headertext name cmobilephone    Value:
+11:57:53   headertext name clocker    Value:
+11:57:53   headertext name caddcode    Value:
+11:57:53   headertext name cdeliverunit    Value:
+11:57:53   headertext name ccontactname    Value:
+11:57:53   headertext name ccreditcuscode    Value:
+11:57:53   headertext name ccreditcusname    Value:
+11:57:53   headertext name iverifystate    Value:
+11:57:53   headertext name ireturncount    Value:
+11:57:53   headertext name icreditstate    Value:
+11:57:53   headertext name iswfcontrolled    Value:
+11:57:53   headertext name fstockquanO    Value:
+11:57:53   headertext name fcanusequanO    Value:
+11:57:53   headertext name dverifysystime    Value:
+11:57:53   headertext name dverifydate    Value:
+11:57:53   headertext name ccloser    Value:
+11:57:53   headertext name cverifier    Value:
+11:57:53   headertext name cmaker    Value:
+11:57:53   sKey     _CUSTDEFbtntest
+11:57:53   VarentValue      测试数据
+11:59:26   Function:->RunCommand is true   
+11:59:31   objLogin.cAcc_Id    001
+11:59:36   objForm.Name    frmBillVouchNew
+12:06:19   自动化错误
+12:23:13   Function:->RunCommand is true   
+12:23:14   objLogin.cAcc_Id    001
+12:31:55   Function:->Init is true   
+12:31:55   msbar.buttons(1).Key   add
+12:31:55   msbar.buttons(1).Caption   增加
+12:31:55   msbar.buttons(2).Key   print
+12:31:55   msbar.buttons(2).Caption   打印
+12:31:55   msbar.buttons(3).Key   modify
+12:31:55   msbar.buttons(3).Caption   修改
+12:31:55   msbar.buttons(4).Key   preview
+12:31:55   msbar.buttons(4).Caption   预览
+12:31:55   msbar.buttons(5).Key   delete
+12:31:55   msbar.buttons(5).Caption   删除
+12:31:55   msbar.buttons(6).Key   output
+12:31:55   msbar.buttons(6).Caption   输出
+12:31:55   msbar.buttons(7).Key   outputandemail
+12:31:55   msbar.buttons(7).Caption   邮件
+12:31:55   msbar.buttons(8).Key   refervouch
+12:31:55   msbar.buttons(8).Caption   生单
+12:31:55   msbar.buttons(9).Key   tofirst
+12:31:55   msbar.buttons(9).Caption   首张
+12:31:55   msbar.buttons(10).Key   copy
+12:31:55   msbar.buttons(10).Caption   复制
+12:31:55   msbar.buttons(11).Key   toprevious
+12:31:55   msbar.buttons(11).Caption   上张
+12:31:55   msbar.buttons(12).Key   tonext
+12:31:55   msbar.buttons(12).Caption   下张
+12:31:55   msbar.buttons(13).Key   draft
+12:31:55   msbar.buttons(13).Caption   草稿
+12:31:55   msbar.buttons(14).Key   tolast
+12:31:55   msbar.buttons(14).Caption   末张
+12:31:55   msbar.buttons(15).Key   release
+12:31:55   msbar.buttons(15).Caption   释放
+12:31:55   msbar.buttons(16).Key   template
+12:31:55   msbar.buttons(16).Caption   模板
+12:31:55   msbar.buttons(17).Key   save
+12:31:55   msbar.buttons(17).Caption   保存
+12:31:55   msbar.buttons(18).Key   _CUSTDEFbtntest
+12:31:55   msbar.buttons(18).Caption   测试
+12:31:55   msbar.buttons(19).Key   cancel
+12:31:55   msbar.buttons(19).Caption   放弃
+12:31:55   msbar.buttons(20).Key   resubmit
+12:31:55   msbar.buttons(20).Caption   重新提交
+12:31:55   msbar.buttons(21).Key   submit
+12:31:55   msbar.buttons(21).Caption   提交
+12:31:55   msbar.buttons(22).Key   unsubmit
+12:31:55   msbar.buttons(22).Caption   撤销
+12:31:56   msbar.buttons(23).Key   verify
+12:31:56   msbar.buttons(23).Caption   审核
+12:31:56   msbar.buttons(24).Key   unverify
+12:31:56   msbar.buttons(24).Caption   弃审
+12:31:56   msbar.buttons(25).Key   viewverify
+12:31:56   msbar.buttons(25).Caption   查审
+12:31:56   msbar.buttons(26).Key   closeorder
+12:31:56   msbar.buttons(26).Caption   关闭
+12:31:56   msbar.buttons(27).Key   openorder
+12:31:56   msbar.buttons(27).Caption   打开
+12:31:56   msbar.buttons(28).Key   lock
+12:31:56   msbar.buttons(28).Caption   锁定
+12:31:56   msbar.buttons(29).Key   checkstock
+12:31:56   msbar.buttons(29).Caption   可用量
+12:31:56   msbar.buttons(30).Key   unlock
+12:31:56   msbar.buttons(30).Caption   解锁
+12:31:56   msbar.buttons(31).Key   changeorder
+12:31:56   msbar.buttons(31).Caption   变更
+12:31:56   msbar.buttons(32).Key   addline
+12:31:56   msbar.buttons(32).Caption   增行
+12:31:56   msbar.buttons(33).Key   delline
+12:31:56   msbar.buttons(33).Caption   删行
+12:31:56   msbar.buttons(34).Key   insertline
+12:31:56   msbar.buttons(34).Caption   插行
+12:31:56   msbar.buttons(35).Key   fetchprice
+12:31:56   msbar.buttons(35).Caption   取价
+12:31:56   msbar.buttons(36).Key   attached
+12:31:56   msbar.buttons(36).Caption   附件
+12:31:56   msbar.buttons(37).Key   formatsetup
+12:31:56   msbar.buttons(37).Caption   格式设置
+12:31:56   msbar.buttons(38).Key   savelayout
+12:31:56   msbar.buttons(38).Caption   保存布局
+12:31:56   msbar.buttons(39).Key   pricehistory
+12:31:56   msbar.buttons(39).Caption   价格
+12:31:56   msbar.buttons(40).Key   locate
+12:31:56   msbar.buttons(40).Caption   定位
+12:31:56   msbar.buttons(41).Key   refresh
+12:31:56   msbar.buttons(41).Caption   刷新
+12:31:56   msbar.buttons(42).Key   billrelation
+12:31:56   msbar.buttons(42).Caption   关联查询
+12:31:56   msbar.buttons(43).Key   help
+12:31:56   msbar.buttons(43).Caption   帮助
+12:32:06   Function:->RunCommand is true   
+12:32:43   Function:->Init is true   
+12:32:43   msbar.buttons(1).Key   add
+12:32:43   msbar.buttons(1).Caption   增加
+12:32:43   msbar.buttons(2).Key   print
+12:32:43   msbar.buttons(2).Caption   打印
+12:32:43   msbar.buttons(3).Key   modify
+12:32:43   msbar.buttons(3).Caption   修改
+12:32:43   msbar.buttons(4).Key   preview
+12:32:43   msbar.buttons(4).Caption   预览
+12:32:43   msbar.buttons(5).Key   delete
+12:32:43   msbar.buttons(5).Caption   删除
+12:32:43   msbar.buttons(6).Key   output
+12:32:43   msbar.buttons(6).Caption   输出
+12:32:43   msbar.buttons(7).Key   outputandemail
+12:32:43   msbar.buttons(7).Caption   邮件
+12:32:43   msbar.buttons(8).Key   refervouch
+12:32:43   msbar.buttons(8).Caption   生单
+12:32:43   msbar.buttons(9).Key   tofirst
+12:32:43   msbar.buttons(9).Caption   首张
+12:32:43   msbar.buttons(10).Key   copy
+12:32:43   msbar.buttons(10).Caption   复制
+12:32:43   msbar.buttons(11).Key   toprevious
+12:32:43   msbar.buttons(11).Caption   上张
+12:32:43   msbar.buttons(12).Key   tonext
+12:32:43   msbar.buttons(12).Caption   下张
+12:32:43   msbar.buttons(13).Key   draft
+12:32:43   msbar.buttons(13).Caption   草稿
+12:32:43   msbar.buttons(14).Key   tolast
+12:32:43   msbar.buttons(14).Caption   末张
+12:32:43   msbar.buttons(15).Key   release
+12:32:43   msbar.buttons(15).Caption   释放
+12:32:43   msbar.buttons(16).Key   template
+12:32:43   msbar.buttons(16).Caption   模板
+12:32:43   msbar.buttons(17).Key   save
+12:32:43   msbar.buttons(17).Caption   保存
+12:32:43   msbar.buttons(18).Key   _CUSTDEFbtntest
+12:32:43   msbar.buttons(18).Caption   测试
+12:32:43   msbar.buttons(19).Key   cancel
+12:32:43   msbar.buttons(19).Caption   放弃
+12:32:43   msbar.buttons(20).Key   resubmit
+12:32:43   msbar.buttons(20).Caption   重新提交
+12:32:43   msbar.buttons(21).Key   submit
+12:32:43   msbar.buttons(21).Caption   提交
+12:32:43   msbar.buttons(22).Key   unsubmit
+12:32:43   msbar.buttons(22).Caption   撤销
+12:32:43   msbar.buttons(23).Key   verify
+12:32:43   msbar.buttons(23).Caption   审核
+12:32:43   msbar.buttons(24).Key   unverify
+12:32:43   msbar.buttons(24).Caption   弃审
+12:32:43   msbar.buttons(25).Key   viewverify
+12:32:43   msbar.buttons(25).Caption   查审
+12:32:43   msbar.buttons(26).Key   closeorder
+12:32:43   msbar.buttons(26).Caption   关闭
+12:32:43   msbar.buttons(27).Key   openorder
+12:32:43   msbar.buttons(27).Caption   打开
+12:32:43   msbar.buttons(28).Key   lock
+12:32:43   msbar.buttons(28).Caption   锁定
+12:32:43   msbar.buttons(29).Key   checkstock
+12:32:43   msbar.buttons(29).Caption   可用量
+12:32:43   msbar.buttons(30).Key   unlock
+12:32:43   msbar.buttons(30).Caption   解锁
+12:32:43   msbar.buttons(31).Key   changeorder
+12:32:43   msbar.buttons(31).Caption   变更
+12:32:43   msbar.buttons(32).Key   addline
+12:32:43   msbar.buttons(32).Caption   增行
+12:32:43   msbar.buttons(33).Key   delline
+12:32:43   msbar.buttons(33).Caption   删行
+12:32:43   msbar.buttons(34).Key   insertline
+12:32:43   msbar.buttons(34).Caption   插行
+12:32:43   msbar.buttons(35).Key   fetchprice
+12:32:43   msbar.buttons(35).Caption   取价
+12:32:43   msbar.buttons(36).Key   attached
+12:32:43   msbar.buttons(36).Caption   附件
+12:32:43   msbar.buttons(37).Key   formatsetup
+12:32:43   msbar.buttons(37).Caption   格式设置
+12:32:43   msbar.buttons(38).Key   savelayout
+12:32:43   msbar.buttons(38).Caption   保存布局
+12:32:43   msbar.buttons(39).Key   pricehistory
+12:32:43   msbar.buttons(39).Caption   价格
+12:32:43   msbar.buttons(40).Key   locate
+12:32:43   msbar.buttons(40).Caption   定位
+12:32:43   msbar.buttons(41).Key   refresh
+12:32:43   msbar.buttons(41).Caption   刷新
+12:32:43   msbar.buttons(42).Key   billrelation
+12:32:43   msbar.buttons(42).Caption   关联查询
+12:32:43   msbar.buttons(43).Key   help
+12:32:43   msbar.buttons(43).Caption   帮助
+12:32:56   Function:->RunCommand is true   
+12:34:08   headertext name dreleasedate    Value:
+12:34:08   headertext name breturnflag    Value:False
+12:34:08   headertext name zdsum    Value:0.00
+12:34:08   headertext name isumx    Value:0.00
+12:34:08   headertext name ivtid    Value:95
+12:34:08   headertext name ccuspersoncode    Value:
+12:34:08   headertext name bmustbook    Value:0
+12:34:08   headertext name fbookratio    Value:
+12:34:08   headertext name fbooksum    Value:
+12:34:08   headertext name fbooknatsum    Value:
+12:34:08   headertext name fgbooknatsum    Value:
+12:34:08   headertext name fgbooksum    Value:
+12:34:08   headertext name ccuscode    Value:A3MCL
+12:34:08   headertext name cstcode    Value:3
+12:34:08   headertext name cpersoncode    Value:A0001
+12:34:08   headertext name ccusphone    Value:
+12:34:08   headertext name cdepcode    Value:Y01
+12:34:08   headertext name csccode    Value:
+12:34:08   headertext name cpaycode    Value:
+12:34:08   headertext name ccusname    Value:
+12:34:08   headertext name iarmoney    Value:0.00
+12:34:08   headertext name csocode    Value:S320120800048
+12:34:08   headertext name ddate    Value:2012-08-17
+12:34:08   headertext name cbustype    Value:普通销售
+12:34:08   headertext name ccusoaddress    Value:
+12:34:08   headertext name cpayname    Value:
+12:34:08   headertext name cstname    Value:国内销售
+12:34:08   headertext name ccusabbname    Value:3M材料
+12:34:08   headertext name imoney    Value:0.00
+12:34:08   headertext name cdepname    Value:总经理
+12:34:08   headertext name itaxrate    Value:0.00
+12:34:08   headertext name cpersonname    Value:富国平
+12:34:08   headertext name cscname    Value:
+12:34:08   headertext name iexchrate    Value:1
+12:34:08   headertext name cmemo    Value:
+12:34:08   headertext name cexch_name    Value:人民币
+12:34:08   headertext name dpredatebt    Value:2012-08-17
+12:34:08   headertext name dpremodatebt    Value:2012-08-17
+12:34:08   headertext name cgatheringplan    Value:
+12:34:08   headertext name cgatheringplanname    Value:
+12:34:08   headertext name cdefine1    Value:王梓
+12:34:08   headertext name dmodifysystime    Value:2012-08-15 15:51:58
+12:34:08   headertext name cmodifier    Value:demo
+12:34:08   headertext name dmoddate    Value:2012-08-15
+12:34:08   headertext name dcreatesystime    Value:2012-08-15 00:00:00
+12:34:08   headertext name dclosedate    Value:
+12:34:08   headertext name dclosesystime    Value:
+12:34:08   headertext name cgathingcode    Value:
+12:34:08   headertext name bcashsale    Value:0
+12:34:08   headertext name iflowid    Value:1
+12:34:08   headertext name cflowname    Value:间接出口
+12:34:08   headertext name cchangeverifier    Value:
+12:34:08   headertext name dchangeverifydate    Value:
+12:34:08   headertext name dchangeverifytime    Value:
+12:34:08   headertext name cchanger    Value:
+12:34:08   headertext name ccrechpname    Value:
+12:34:08   headertext name istatus    Value:1
+12:34:08   headertext name zdsumdx    Value:`
+12:34:08   headertext name isumdx    Value:`
+12:34:08   headertext name ccusaddress    Value:
+12:34:08   headertext name ccusperson    Value:
+12:34:08   headertext name coppcode    Value:
+12:34:08   headertext name ccusdefine1    Value:
+12:34:08   headertext name ccusdefine2    Value:
+12:34:08   headertext name ccusdefine3    Value:
+12:34:08   headertext name ccusdefine4    Value:
+12:34:08   headertext name ccusdefine5    Value:
+12:34:08   headertext name ccusdefine6    Value:
+12:34:08   headertext name ccusdefine7    Value:
+12:34:08   headertext name ccusdefine8    Value:
+12:34:08   headertext name ccusdefine9    Value:
+12:34:08   headertext name ccusdefine10    Value:
+12:34:08   headertext name ccusdefine11    Value:
+12:34:08   headertext name ccusdefine12    Value:
+12:34:08   headertext name ccusdefine13    Value:
+12:34:08   headertext name ccusdefine14    Value:
+12:34:08   headertext name ccusdefine15    Value:
+12:34:08   headertext name ccusdefine16    Value:
+12:34:08   headertext name icuscreline    Value:0.00
+12:34:09   headertext name id    Value:1000001550
+12:34:09   headertext name ufts    Value:                     1271.2002
+12:34:09   headertext name ccrechppass    Value:
+12:34:09   headertext name clowpricepass    Value:
+12:34:09   headertext name bcontinue    Value:
+12:34:09   headertext name fstockquan    Value:
+12:34:09   headertext name fcanusequan    Value:
+12:34:09   headertext name cdefine2    Value:
+12:34:09   headertext name cdefine3    Value:
+12:34:09   headertext name cdefine4    Value:
+12:34:09   headertext name cdefine5    Value:
+12:34:09   headertext name cdefine6    Value:
+12:34:09   headertext name cdefine7    Value:0.000000
+12:34:09   headertext name cdefine8    Value:
+12:34:09   headertext name cdefine9    Value:
+12:34:09   headertext name cdefine10    Value:
+12:34:09   headertext name cdefine11    Value:
+12:34:09   headertext name cdefine12    Value:
+12:34:09   headertext name cdefine13    Value:
+12:34:09   headertext name cdefine14    Value:
+12:34:09   headertext name cdefine15    Value:
+12:34:09   headertext name cdefine16    Value:
+12:34:09   headertext name ccushand    Value:
+12:34:09   headertext name cpsnophone    Value:
+12:34:09   headertext name cpsnmobilephone    Value:
+12:34:09   headertext name cofficephone    Value:
+12:34:09   headertext name cmobilephone    Value:
+12:34:09   headertext name clocker    Value:
+12:34:09   headertext name caddcode    Value:
+12:34:09   headertext name cdeliverunit    Value:
+12:34:09   headertext name ccontactname    Value:
+12:34:09   headertext name ccreditcuscode    Value:A3MCL
+12:34:09   headertext name ccreditcusname    Value:3M材料技术(苏州)有限公司
+12:34:09   headertext name iverifystate    Value:0
+12:34:09   headertext name ireturncount    Value:0
+12:34:09   headertext name icreditstate    Value:
+12:34:09   headertext name iswfcontrolled    Value:0
+12:34:09   headertext name fstockquanO    Value:
+12:34:09   headertext name fcanusequanO    Value:
+12:34:09   headertext name dverifysystime    Value:2012-08-15 15:52:00
+12:34:09   headertext name dverifydate    Value:2012-08-17
+12:34:09   headertext name ccloser    Value:
+12:34:09   headertext name cverifier    Value:demo
+12:34:09   headertext name cmaker    Value:demo
+12:36:34   自动化错误
+12:57:57   Function:->Init is true   
+12:57:57   msbar.buttons(1).Key   add
+12:57:57   msbar.buttons(1).Caption   增加
+12:57:57   msbar.buttons(2).Key   print
+12:57:57   msbar.buttons(2).Caption   打印
+12:57:57   msbar.buttons(3).Key   modify
+12:57:57   msbar.buttons(3).Caption   修改
+12:57:57   msbar.buttons(4).Key   preview
+12:57:57   msbar.buttons(4).Caption   预览
+12:57:57   msbar.buttons(5).Key   delete
+12:57:57   msbar.buttons(5).Caption   删除
+12:57:57   msbar.buttons(6).Key   output
+12:57:57   msbar.buttons(6).Caption   输出
+12:57:57   msbar.buttons(7).Key   outputandemail
+12:57:57   msbar.buttons(7).Caption   邮件
+12:57:57   msbar.buttons(8).Key   refervouch
+12:57:57   msbar.buttons(8).Caption   生单
+12:57:57   msbar.buttons(9).Key   tofirst
+12:57:57   msbar.buttons(9).Caption   首张
+12:57:57   msbar.buttons(10).Key   copy
+12:57:57   msbar.buttons(10).Caption   复制
+12:57:57   msbar.buttons(11).Key   toprevious
+12:57:57   msbar.buttons(11).Caption   上张
+12:57:57   msbar.buttons(12).Key   tonext
+12:57:57   msbar.buttons(12).Caption   下张
+12:57:57   msbar.buttons(13).Key   draft
+12:57:57   msbar.buttons(13).Caption   草稿
+12:57:57   msbar.buttons(14).Key   tolast
+12:57:57   msbar.buttons(14).Caption   末张
+12:57:57   msbar.buttons(15).Key   release
+12:57:57   msbar.buttons(15).Caption   释放
+12:57:57   msbar.buttons(16).Key   template
+12:57:57   msbar.buttons(16).Caption   模板
+12:57:57   msbar.buttons(17).Key   save
+12:57:57   msbar.buttons(17).Caption   保存
+12:57:57   msbar.buttons(18).Key   _CUSTDEFbtntest
+12:57:57   msbar.buttons(18).Caption   测试
+12:57:57   msbar.buttons(19).Key   cancel
+12:57:57   msbar.buttons(19).Caption   放弃
+12:57:57   msbar.buttons(20).Key   resubmit
+12:57:57   msbar.buttons(20).Caption   重新提交
+12:57:57   msbar.buttons(21).Key   submit
+12:57:57   msbar.buttons(21).Caption   提交
+12:57:57   msbar.buttons(22).Key   unsubmit
+12:57:57   msbar.buttons(22).Caption   撤销
+12:57:57   msbar.buttons(23).Key   verify
+12:57:57   msbar.buttons(23).Caption   审核
+12:57:57   msbar.buttons(24).Key   unverify
+12:57:57   msbar.buttons(24).Caption   弃审
+12:57:57   msbar.buttons(25).Key   viewverify
+12:57:57   msbar.buttons(25).Caption   查审
+12:57:57   msbar.buttons(26).Key   closeorder
+12:57:57   msbar.buttons(26).Caption   关闭
+12:57:57   msbar.buttons(27).Key   openorder
+12:57:57   msbar.buttons(27).Caption   打开
+12:57:57   msbar.buttons(28).Key   lock
+12:57:57   msbar.buttons(28).Caption   锁定
+12:57:57   msbar.buttons(29).Key   checkstock
+12:57:57   msbar.buttons(29).Caption   可用量
+12:57:57   msbar.buttons(30).Key   unlock
+12:57:57   msbar.buttons(30).Caption   解锁
+12:57:57   msbar.buttons(31).Key   changeorder
+12:57:57   msbar.buttons(31).Caption   变更
+12:57:57   msbar.buttons(32).Key   addline
+12:57:57   msbar.buttons(32).Caption   增行
+12:57:57   msbar.buttons(33).Key   delline
+12:57:57   msbar.buttons(33).Caption   删行
+12:57:57   msbar.buttons(34).Key   insertline
+12:57:57   msbar.buttons(34).Caption   插行
+12:57:57   msbar.buttons(35).Key   fetchprice
+12:57:57   msbar.buttons(35).Caption   取价
+12:57:57   msbar.buttons(36).Key   attached
+12:57:57   msbar.buttons(36).Caption   附件
+12:57:57   msbar.buttons(37).Key   formatsetup
+12:57:57   msbar.buttons(37).Caption   格式设置
+12:57:57   msbar.buttons(38).Key   savelayout
+12:57:57   msbar.buttons(38).Caption   保存布局
+12:57:57   msbar.buttons(39).Key   pricehistory
+12:57:57   msbar.buttons(39).Caption   价格
+12:57:57   msbar.buttons(40).Key   locate
+12:57:57   msbar.buttons(40).Caption   定位
+12:57:57   msbar.buttons(41).Key   refresh
+12:57:57   msbar.buttons(41).Caption   刷新
+12:57:57   msbar.buttons(42).Key   billrelation
+12:57:57   msbar.buttons(42).Caption   关联查询
+12:57:57   msbar.buttons(43).Key   help
+12:57:57   msbar.buttons(43).Caption   帮助
+12:59:53   Function:->Init is true   
+12:59:53   msbar.buttons(1).Key   add
+12:59:53   msbar.buttons(1).Caption   增加
+12:59:53   msbar.buttons(2).Key   print
+12:59:53   msbar.buttons(2).Caption   打印
+12:59:53   msbar.buttons(3).Key   modify
+12:59:53   msbar.buttons(3).Caption   修改
+12:59:53   msbar.buttons(4).Key   preview
+12:59:53   msbar.buttons(4).Caption   预览
+12:59:53   msbar.buttons(5).Key   delete
+12:59:53   msbar.buttons(5).Caption   删除
+12:59:53   msbar.buttons(6).Key   output
+12:59:53   msbar.buttons(6).Caption   输出
+12:59:53   msbar.buttons(7).Key   outputandemail
+12:59:53   msbar.buttons(7).Caption   邮件
+12:59:53   msbar.buttons(8).Key   refervouch
+12:59:53   msbar.buttons(8).Caption   生单
+12:59:53   msbar.buttons(9).Key   tofirst
+12:59:53   msbar.buttons(9).Caption   首张
+12:59:53   msbar.buttons(10).Key   copy
+12:59:53   msbar.buttons(10).Caption   复制
+12:59:53   msbar.buttons(11).Key   toprevious
+12:59:53   msbar.buttons(11).Caption   上张
+12:59:53   msbar.buttons(12).Key   tonext
+12:59:53   msbar.buttons(12).Caption   下张
+12:59:53   msbar.buttons(13).Key   draft
+12:59:53   msbar.buttons(13).Caption   草稿
+12:59:53   msbar.buttons(14).Key   tolast
+12:59:53   msbar.buttons(14).Caption   末张
+12:59:53   msbar.buttons(15).Key   release
+12:59:53   msbar.buttons(15).Caption   释放
+12:59:53   msbar.buttons(16).Key   template
+12:59:53   msbar.buttons(16).Caption   模板
+12:59:53   msbar.buttons(17).Key   save
+12:59:53   msbar.buttons(17).Caption   保存
+12:59:53   msbar.buttons(18).Key   _CUSTDEFbtntest
+12:59:53   msbar.buttons(18).Caption   测试
+12:59:53   msbar.buttons(19).Key   cancel
+12:59:53   msbar.buttons(19).Caption   放弃
+12:59:53   msbar.buttons(20).Key   resubmit
+12:59:53   msbar.buttons(20).Caption   重新提交
+12:59:53   msbar.buttons(21).Key   submit
+12:59:53   msbar.buttons(21).Caption   提交
+12:59:53   msbar.buttons(22).Key   unsubmit
+12:59:53   msbar.buttons(22).Caption   撤销
+12:59:53   msbar.buttons(23).Key   verify
+12:59:53   msbar.buttons(23).Caption   审核
+12:59:53   msbar.buttons(24).Key   unverify
+12:59:53   msbar.buttons(24).Caption   弃审
+12:59:53   msbar.buttons(25).Key   viewverify
+12:59:53   msbar.buttons(25).Caption   查审
+12:59:53   msbar.buttons(26).Key   closeorder
+12:59:53   msbar.buttons(26).Caption   关闭
+12:59:53   msbar.buttons(27).Key   openorder
+12:59:53   msbar.buttons(27).Caption   打开
+12:59:53   msbar.buttons(28).Key   lock
+12:59:53   msbar.buttons(28).Caption   锁定
+12:59:53   msbar.buttons(29).Key   checkstock
+12:59:53   msbar.buttons(29).Caption   可用量
+12:59:53   msbar.buttons(30).Key   unlock
+12:59:53   msbar.buttons(30).Caption   解锁
+12:59:53   msbar.buttons(31).Key   changeorder
+12:59:53   msbar.buttons(31).Caption   变更
+12:59:53   msbar.buttons(32).Key   addline
+12:59:53   msbar.buttons(32).Caption   增行
+12:59:53   msbar.buttons(33).Key   delline
+12:59:53   msbar.buttons(33).Caption   删行
+12:59:53   msbar.buttons(34).Key   insertline
+12:59:53   msbar.buttons(34).Caption   插行
+12:59:53   msbar.buttons(35).Key   fetchprice
+12:59:53   msbar.buttons(35).Caption   取价
+12:59:53   msbar.buttons(36).Key   attached
+12:59:53   msbar.buttons(36).Caption   附件
+12:59:53   msbar.buttons(37).Key   formatsetup
+12:59:53   msbar.buttons(37).Caption   格式设置
+12:59:53   msbar.buttons(38).Key   savelayout
+12:59:53   msbar.buttons(38).Caption   保存布局
+12:59:53   msbar.buttons(39).Key   pricehistory
+12:59:53   msbar.buttons(39).Caption   价格
+12:59:53   msbar.buttons(40).Key   locate
+12:59:53   msbar.buttons(40).Caption   定位
+12:59:53   msbar.buttons(41).Key   refresh
+12:59:53   msbar.buttons(41).Caption   刷新
+12:59:53   msbar.buttons(42).Key   billrelation
+12:59:53   msbar.buttons(42).Caption   关联查询
+12:59:53   msbar.buttons(43).Key   help
+12:59:53   msbar.buttons(43).Caption   帮助
+13:03:50   Function:->Init is true   
+13:03:50   msbar.buttons(1).Key   add
+13:03:50   msbar.buttons(1).Caption   增加
+13:03:50   msbar.buttons(2).Key   print
+13:03:50   msbar.buttons(2).Caption   打印
+13:03:50   msbar.buttons(3).Key   modify
+13:03:50   msbar.buttons(3).Caption   修改
+13:03:50   msbar.buttons(4).Key   preview
+13:03:50   msbar.buttons(4).Caption   预览
+13:03:50   msbar.buttons(5).Key   delete
+13:03:50   msbar.buttons(5).Caption   删除
+13:03:50   msbar.buttons(6).Key   output
+13:03:50   msbar.buttons(6).Caption   输出
+13:03:50   msbar.buttons(7).Key   outputandemail
+13:03:50   msbar.buttons(7).Caption   邮件
+13:03:50   msbar.buttons(8).Key   refervouch
+13:03:50   msbar.buttons(8).Caption   生单
+13:03:50   msbar.buttons(9).Key   tofirst
+13:03:50   msbar.buttons(9).Caption   首张
+13:03:50   msbar.buttons(10).Key   copy
+13:03:50   msbar.buttons(10).Caption   复制
+13:03:50   msbar.buttons(11).Key   toprevious
+13:03:50   msbar.buttons(11).Caption   上张
+13:03:50   msbar.buttons(12).Key   tonext
+13:03:50   msbar.buttons(12).Caption   下张
+13:03:50   msbar.buttons(13).Key   draft
+13:03:50   msbar.buttons(13).Caption   草稿
+13:03:50   msbar.buttons(14).Key   tolast
+13:03:50   msbar.buttons(14).Caption   末张
+13:03:50   msbar.buttons(15).Key   release
+13:03:50   msbar.buttons(15).Caption   释放
+13:03:50   msbar.buttons(16).Key   template
+13:03:50   msbar.buttons(16).Caption   模板
+13:03:50   msbar.buttons(17).Key   save
+13:03:50   msbar.buttons(17).Caption   保存
+13:03:50   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:03:50   msbar.buttons(18).Caption   测试
+13:03:50   msbar.buttons(19).Key   cancel
+13:03:50   msbar.buttons(19).Caption   放弃
+13:03:50   msbar.buttons(20).Key   resubmit
+13:03:50   msbar.buttons(20).Caption   重新提交
+13:03:50   msbar.buttons(21).Key   submit
+13:03:50   msbar.buttons(21).Caption   提交
+13:03:50   msbar.buttons(22).Key   unsubmit
+13:03:50   msbar.buttons(22).Caption   撤销
+13:03:50   msbar.buttons(23).Key   verify
+13:03:50   msbar.buttons(23).Caption   审核
+13:03:50   msbar.buttons(24).Key   unverify
+13:03:50   msbar.buttons(24).Caption   弃审
+13:03:50   msbar.buttons(25).Key   viewverify
+13:03:50   msbar.buttons(25).Caption   查审
+13:03:50   msbar.buttons(26).Key   closeorder
+13:03:50   msbar.buttons(26).Caption   关闭
+13:03:50   msbar.buttons(27).Key   openorder
+13:03:50   msbar.buttons(27).Caption   打开
+13:03:50   msbar.buttons(28).Key   lock
+13:03:50   msbar.buttons(28).Caption   锁定
+13:03:50   msbar.buttons(29).Key   checkstock
+13:03:50   msbar.buttons(29).Caption   可用量
+13:03:50   msbar.buttons(30).Key   unlock
+13:03:50   msbar.buttons(30).Caption   解锁
+13:03:50   msbar.buttons(31).Key   changeorder
+13:03:50   msbar.buttons(31).Caption   变更
+13:03:50   msbar.buttons(32).Key   addline
+13:03:50   msbar.buttons(32).Caption   增行
+13:03:50   msbar.buttons(33).Key   delline
+13:03:50   msbar.buttons(33).Caption   删行
+13:03:50   msbar.buttons(34).Key   insertline
+13:03:50   msbar.buttons(34).Caption   插行
+13:03:50   msbar.buttons(35).Key   fetchprice
+13:03:50   msbar.buttons(35).Caption   取价
+13:03:50   msbar.buttons(36).Key   attached
+13:03:50   msbar.buttons(36).Caption   附件
+13:03:50   msbar.buttons(37).Key   formatsetup
+13:03:50   msbar.buttons(37).Caption   格式设置
+13:03:50   msbar.buttons(38).Key   savelayout
+13:03:50   msbar.buttons(38).Caption   保存布局
+13:03:50   msbar.buttons(39).Key   pricehistory
+13:03:50   msbar.buttons(39).Caption   价格
+13:03:50   msbar.buttons(40).Key   locate
+13:03:50   msbar.buttons(40).Caption   定位
+13:03:50   msbar.buttons(41).Key   refresh
+13:03:50   msbar.buttons(41).Caption   刷新
+13:03:50   msbar.buttons(42).Key   billrelation
+13:03:50   msbar.buttons(42).Caption   关联查询
+13:03:50   msbar.buttons(43).Key   help
+13:03:50   msbar.buttons(43).Caption   帮助
+13:07:45   Function:->Init is true   
+13:07:45   msbar.buttons(1).Key   add
+13:07:45   msbar.buttons(1).Caption   增加
+13:07:45   msbar.buttons(2).Key   print
+13:07:45   msbar.buttons(2).Caption   打印
+13:07:45   msbar.buttons(3).Key   modify
+13:07:45   msbar.buttons(3).Caption   修改
+13:07:45   msbar.buttons(4).Key   preview
+13:07:45   msbar.buttons(4).Caption   预览
+13:07:45   msbar.buttons(5).Key   delete
+13:07:45   msbar.buttons(5).Caption   删除
+13:07:45   msbar.buttons(6).Key   output
+13:07:45   msbar.buttons(6).Caption   输出
+13:07:45   msbar.buttons(7).Key   outputandemail
+13:07:45   msbar.buttons(7).Caption   邮件
+13:07:45   msbar.buttons(8).Key   refervouch
+13:07:45   msbar.buttons(8).Caption   生单
+13:07:45   msbar.buttons(9).Key   tofirst
+13:07:45   msbar.buttons(9).Caption   首张
+13:07:45   msbar.buttons(10).Key   copy
+13:07:45   msbar.buttons(10).Caption   复制
+13:07:45   msbar.buttons(11).Key   toprevious
+13:07:45   msbar.buttons(11).Caption   上张
+13:07:45   msbar.buttons(12).Key   tonext
+13:07:45   msbar.buttons(12).Caption   下张
+13:07:45   msbar.buttons(13).Key   draft
+13:07:45   msbar.buttons(13).Caption   草稿
+13:07:45   msbar.buttons(14).Key   tolast
+13:07:45   msbar.buttons(14).Caption   末张
+13:07:45   msbar.buttons(15).Key   release
+13:07:45   msbar.buttons(15).Caption   释放
+13:07:45   msbar.buttons(16).Key   template
+13:07:45   msbar.buttons(16).Caption   模板
+13:07:45   msbar.buttons(17).Key   save
+13:07:45   msbar.buttons(17).Caption   保存
+13:07:45   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:07:45   msbar.buttons(18).Caption   测试
+13:07:45   msbar.buttons(19).Key   cancel
+13:07:45   msbar.buttons(19).Caption   放弃
+13:07:45   msbar.buttons(20).Key   resubmit
+13:07:45   msbar.buttons(20).Caption   重新提交
+13:07:45   msbar.buttons(21).Key   submit
+13:07:45   msbar.buttons(21).Caption   提交
+13:07:45   msbar.buttons(22).Key   unsubmit
+13:07:45   msbar.buttons(22).Caption   撤销
+13:07:45   msbar.buttons(23).Key   verify
+13:07:45   msbar.buttons(23).Caption   审核
+13:07:45   msbar.buttons(24).Key   unverify
+13:07:45   msbar.buttons(24).Caption   弃审
+13:07:45   msbar.buttons(25).Key   viewverify
+13:07:45   msbar.buttons(25).Caption   查审
+13:07:45   msbar.buttons(26).Key   closeorder
+13:07:45   msbar.buttons(26).Caption   关闭
+13:07:45   msbar.buttons(27).Key   openorder
+13:07:45   msbar.buttons(27).Caption   打开
+13:07:45   msbar.buttons(28).Key   lock
+13:07:45   msbar.buttons(28).Caption   锁定
+13:07:45   msbar.buttons(29).Key   checkstock
+13:07:45   msbar.buttons(29).Caption   可用量
+13:07:45   msbar.buttons(30).Key   unlock
+13:07:45   msbar.buttons(30).Caption   解锁
+13:07:45   msbar.buttons(31).Key   changeorder
+13:07:45   msbar.buttons(31).Caption   变更
+13:07:45   msbar.buttons(32).Key   addline
+13:07:45   msbar.buttons(32).Caption   增行
+13:07:45   msbar.buttons(33).Key   delline
+13:07:45   msbar.buttons(33).Caption   删行
+13:07:45   msbar.buttons(34).Key   insertline
+13:07:45   msbar.buttons(34).Caption   插行
+13:07:45   msbar.buttons(35).Key   fetchprice
+13:07:45   msbar.buttons(35).Caption   取价
+13:07:45   msbar.buttons(36).Key   attached
+13:07:45   msbar.buttons(36).Caption   附件
+13:07:45   msbar.buttons(37).Key   formatsetup
+13:07:45   msbar.buttons(37).Caption   格式设置
+13:07:45   msbar.buttons(38).Key   savelayout
+13:07:45   msbar.buttons(38).Caption   保存布局
+13:07:45   msbar.buttons(39).Key   pricehistory
+13:07:45   msbar.buttons(39).Caption   价格
+13:07:45   msbar.buttons(40).Key   locate
+13:07:45   msbar.buttons(40).Caption   定位
+13:07:45   msbar.buttons(41).Key   refresh
+13:07:45   msbar.buttons(41).Caption   刷新
+13:07:45   msbar.buttons(42).Key   billrelation
+13:07:45   msbar.buttons(42).Caption   关联查询
+13:07:45   msbar.buttons(43).Key   help
+13:07:45   msbar.buttons(43).Caption   帮助
+13:09:38   Function:->Init is true   
+13:09:38   msbar.buttons(1).Key   add
+13:09:38   msbar.buttons(1).Caption   增加
+13:09:38   msbar.buttons(2).Key   print
+13:09:38   msbar.buttons(2).Caption   打印
+13:09:38   msbar.buttons(3).Key   modify
+13:09:38   msbar.buttons(3).Caption   修改
+13:09:38   msbar.buttons(4).Key   preview
+13:09:38   msbar.buttons(4).Caption   预览
+13:09:38   msbar.buttons(5).Key   delete
+13:09:38   msbar.buttons(5).Caption   删除
+13:09:38   msbar.buttons(6).Key   output
+13:09:38   msbar.buttons(6).Caption   输出
+13:09:38   msbar.buttons(7).Key   outputandemail
+13:09:38   msbar.buttons(7).Caption   邮件
+13:09:38   msbar.buttons(8).Key   refervouch
+13:09:38   msbar.buttons(8).Caption   生单
+13:09:38   msbar.buttons(9).Key   tofirst
+13:09:38   msbar.buttons(9).Caption   首张
+13:09:38   msbar.buttons(10).Key   copy
+13:09:38   msbar.buttons(10).Caption   复制
+13:09:38   msbar.buttons(11).Key   toprevious
+13:09:38   msbar.buttons(11).Caption   上张
+13:09:38   msbar.buttons(12).Key   tonext
+13:09:38   msbar.buttons(12).Caption   下张
+13:09:38   msbar.buttons(13).Key   draft
+13:09:38   msbar.buttons(13).Caption   草稿
+13:09:38   msbar.buttons(14).Key   tolast
+13:09:38   msbar.buttons(14).Caption   末张
+13:09:38   msbar.buttons(15).Key   release
+13:09:38   msbar.buttons(15).Caption   释放
+13:09:38   msbar.buttons(16).Key   template
+13:09:38   msbar.buttons(16).Caption   模板
+13:09:38   msbar.buttons(17).Key   save
+13:09:38   msbar.buttons(17).Caption   保存
+13:09:38   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:09:38   msbar.buttons(18).Caption   测试
+13:09:38   msbar.buttons(19).Key   cancel
+13:09:38   msbar.buttons(19).Caption   放弃
+13:09:38   msbar.buttons(20).Key   resubmit
+13:09:38   msbar.buttons(20).Caption   重新提交
+13:09:38   msbar.buttons(21).Key   submit
+13:09:38   msbar.buttons(21).Caption   提交
+13:09:38   msbar.buttons(22).Key   unsubmit
+13:09:38   msbar.buttons(22).Caption   撤销
+13:09:38   msbar.buttons(23).Key   verify
+13:09:38   msbar.buttons(23).Caption   审核
+13:09:38   msbar.buttons(24).Key   unverify
+13:09:38   msbar.buttons(24).Caption   弃审
+13:09:38   msbar.buttons(25).Key   viewverify
+13:09:38   msbar.buttons(25).Caption   查审
+13:09:38   msbar.buttons(26).Key   closeorder
+13:09:38   msbar.buttons(26).Caption   关闭
+13:09:38   msbar.buttons(27).Key   openorder
+13:09:38   msbar.buttons(27).Caption   打开
+13:09:38   msbar.buttons(28).Key   lock
+13:09:38   msbar.buttons(28).Caption   锁定
+13:09:38   msbar.buttons(29).Key   checkstock
+13:09:38   msbar.buttons(29).Caption   可用量
+13:09:38   msbar.buttons(30).Key   unlock
+13:09:38   msbar.buttons(30).Caption   解锁
+13:09:38   msbar.buttons(31).Key   changeorder
+13:09:38   msbar.buttons(31).Caption   变更
+13:09:38   msbar.buttons(32).Key   addline
+13:09:38   msbar.buttons(32).Caption   增行
+13:09:38   msbar.buttons(33).Key   delline
+13:09:38   msbar.buttons(33).Caption   删行
+13:09:38   msbar.buttons(34).Key   insertline
+13:09:38   msbar.buttons(34).Caption   插行
+13:09:38   msbar.buttons(35).Key   fetchprice
+13:09:38   msbar.buttons(35).Caption   取价
+13:09:38   msbar.buttons(36).Key   attached
+13:09:38   msbar.buttons(36).Caption   附件
+13:09:38   msbar.buttons(37).Key   formatsetup
+13:09:38   msbar.buttons(37).Caption   格式设置
+13:09:38   msbar.buttons(38).Key   savelayout
+13:09:38   msbar.buttons(38).Caption   保存布局
+13:09:38   msbar.buttons(39).Key   pricehistory
+13:09:38   msbar.buttons(39).Caption   价格
+13:09:38   msbar.buttons(40).Key   locate
+13:09:38   msbar.buttons(40).Caption   定位
+13:09:38   msbar.buttons(41).Key   refresh
+13:09:38   msbar.buttons(41).Caption   刷新
+13:09:38   msbar.buttons(42).Key   billrelation
+13:09:38   msbar.buttons(42).Caption   关联查询
+13:09:38   msbar.buttons(43).Key   help
+13:09:38   msbar.buttons(43).Caption   帮助
+13:11:11   Function:->Init is true   
+13:11:11   msbar.buttons(1).Key   add
+13:11:11   msbar.buttons(1).Caption   增加
+13:11:11   msbar.buttons(2).Key   print
+13:11:11   msbar.buttons(2).Caption   打印
+13:11:11   msbar.buttons(3).Key   modify
+13:11:11   msbar.buttons(3).Caption   修改
+13:11:11   msbar.buttons(4).Key   preview
+13:11:11   msbar.buttons(4).Caption   预览
+13:11:11   msbar.buttons(5).Key   delete
+13:11:11   msbar.buttons(5).Caption   删除
+13:11:11   msbar.buttons(6).Key   output
+13:11:11   msbar.buttons(6).Caption   输出
+13:11:11   msbar.buttons(7).Key   outputandemail
+13:11:11   msbar.buttons(7).Caption   邮件
+13:11:11   msbar.buttons(8).Key   refervouch
+13:11:11   msbar.buttons(8).Caption   生单
+13:11:11   msbar.buttons(9).Key   tofirst
+13:11:11   msbar.buttons(9).Caption   首张
+13:11:11   msbar.buttons(10).Key   copy
+13:11:11   msbar.buttons(10).Caption   复制
+13:11:11   msbar.buttons(11).Key   toprevious
+13:11:11   msbar.buttons(11).Caption   上张
+13:11:11   msbar.buttons(12).Key   tonext
+13:11:11   msbar.buttons(12).Caption   下张
+13:11:11   msbar.buttons(13).Key   draft
+13:11:11   msbar.buttons(13).Caption   草稿
+13:11:11   msbar.buttons(14).Key   tolast
+13:11:11   msbar.buttons(14).Caption   末张
+13:11:11   msbar.buttons(15).Key   release
+13:11:11   msbar.buttons(15).Caption   释放
+13:11:11   msbar.buttons(16).Key   template
+13:11:11   msbar.buttons(16).Caption   模板
+13:11:11   msbar.buttons(17).Key   save
+13:11:11   msbar.buttons(17).Caption   保存
+13:11:11   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:11:11   msbar.buttons(18).Caption   测试
+13:11:11   msbar.buttons(19).Key   cancel
+13:11:11   msbar.buttons(19).Caption   放弃
+13:11:11   msbar.buttons(20).Key   resubmit
+13:11:11   msbar.buttons(20).Caption   重新提交
+13:11:11   msbar.buttons(21).Key   submit
+13:11:11   msbar.buttons(21).Caption   提交
+13:11:11   msbar.buttons(22).Key   unsubmit
+13:11:11   msbar.buttons(22).Caption   撤销
+13:11:11   msbar.buttons(23).Key   verify
+13:11:11   msbar.buttons(23).Caption   审核
+13:11:11   msbar.buttons(24).Key   unverify
+13:11:11   msbar.buttons(24).Caption   弃审
+13:11:11   msbar.buttons(25).Key   viewverify
+13:11:11   msbar.buttons(25).Caption   查审
+13:11:11   msbar.buttons(26).Key   closeorder
+13:11:11   msbar.buttons(26).Caption   关闭
+13:11:11   msbar.buttons(27).Key   openorder
+13:11:11   msbar.buttons(27).Caption   打开
+13:11:11   msbar.buttons(28).Key   lock
+13:11:11   msbar.buttons(28).Caption   锁定
+13:11:11   msbar.buttons(29).Key   checkstock
+13:11:11   msbar.buttons(29).Caption   可用量
+13:11:11   msbar.buttons(30).Key   unlock
+13:11:11   msbar.buttons(30).Caption   解锁
+13:11:11   msbar.buttons(31).Key   changeorder
+13:11:11   msbar.buttons(31).Caption   变更
+13:11:11   msbar.buttons(32).Key   addline
+13:11:11   msbar.buttons(32).Caption   增行
+13:11:11   msbar.buttons(33).Key   delline
+13:11:11   msbar.buttons(33).Caption   删行
+13:11:11   msbar.buttons(34).Key   insertline
+13:11:11   msbar.buttons(34).Caption   插行
+13:11:11   msbar.buttons(35).Key   fetchprice
+13:11:11   msbar.buttons(35).Caption   取价
+13:11:11   msbar.buttons(36).Key   attached
+13:11:11   msbar.buttons(36).Caption   附件
+13:11:11   msbar.buttons(37).Key   formatsetup
+13:11:11   msbar.buttons(37).Caption   格式设置
+13:11:11   msbar.buttons(38).Key   savelayout
+13:11:11   msbar.buttons(38).Caption   保存布局
+13:11:11   msbar.buttons(39).Key   pricehistory
+13:11:11   msbar.buttons(39).Caption   价格
+13:11:11   msbar.buttons(40).Key   locate
+13:11:11   msbar.buttons(40).Caption   定位
+13:11:11   msbar.buttons(41).Key   refresh
+13:11:11   msbar.buttons(41).Caption   刷新
+13:11:11   msbar.buttons(42).Key   billrelation
+13:11:11   msbar.buttons(42).Caption   关联查询
+13:11:11   msbar.buttons(43).Key   help
+13:11:11   msbar.buttons(43).Caption   帮助
+13:14:31   Function:->Init is true   
+13:14:31   msbar.buttons(1).Key   add
+13:14:31   msbar.buttons(1).Caption   增加
+13:14:31   msbar.buttons(2).Key   print
+13:14:31   msbar.buttons(2).Caption   打印
+13:14:31   msbar.buttons(3).Key   modify
+13:14:31   msbar.buttons(3).Caption   修改
+13:14:31   msbar.buttons(4).Key   preview
+13:14:31   msbar.buttons(4).Caption   预览
+13:14:31   msbar.buttons(5).Key   delete
+13:14:31   msbar.buttons(5).Caption   删除
+13:14:31   msbar.buttons(6).Key   output
+13:14:31   msbar.buttons(6).Caption   输出
+13:14:31   msbar.buttons(7).Key   outputandemail
+13:14:31   msbar.buttons(7).Caption   邮件
+13:14:31   msbar.buttons(8).Key   refervouch
+13:14:31   msbar.buttons(8).Caption   生单
+13:14:31   msbar.buttons(9).Key   tofirst
+13:14:31   msbar.buttons(9).Caption   首张
+13:14:31   msbar.buttons(10).Key   copy
+13:14:31   msbar.buttons(10).Caption   复制
+13:14:31   msbar.buttons(11).Key   toprevious
+13:14:31   msbar.buttons(11).Caption   上张
+13:14:31   msbar.buttons(12).Key   tonext
+13:14:31   msbar.buttons(12).Caption   下张
+13:14:31   msbar.buttons(13).Key   draft
+13:14:31   msbar.buttons(13).Caption   草稿
+13:14:31   msbar.buttons(14).Key   tolast
+13:14:31   msbar.buttons(14).Caption   末张
+13:14:31   msbar.buttons(15).Key   release
+13:14:31   msbar.buttons(15).Caption   释放
+13:14:31   msbar.buttons(16).Key   template
+13:14:31   msbar.buttons(16).Caption   模板
+13:14:31   msbar.buttons(17).Key   save
+13:14:31   msbar.buttons(17).Caption   保存
+13:14:31   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:14:31   msbar.buttons(18).Caption   测试
+13:14:31   msbar.buttons(19).Key   cancel
+13:14:31   msbar.buttons(19).Caption   放弃
+13:14:31   msbar.buttons(20).Key   resubmit
+13:14:31   msbar.buttons(20).Caption   重新提交
+13:14:31   msbar.buttons(21).Key   submit
+13:14:31   msbar.buttons(21).Caption   提交
+13:14:31   msbar.buttons(22).Key   unsubmit
+13:14:31   msbar.buttons(22).Caption   撤销
+13:14:31   msbar.buttons(23).Key   verify
+13:14:31   msbar.buttons(23).Caption   审核
+13:14:31   msbar.buttons(24).Key   unverify
+13:14:31   msbar.buttons(24).Caption   弃审
+13:14:31   msbar.buttons(25).Key   viewverify
+13:14:31   msbar.buttons(25).Caption   查审
+13:14:31   msbar.buttons(26).Key   closeorder
+13:14:31   msbar.buttons(26).Caption   关闭
+13:14:31   msbar.buttons(27).Key   openorder
+13:14:31   msbar.buttons(27).Caption   打开
+13:14:31   msbar.buttons(28).Key   lock
+13:14:31   msbar.buttons(28).Caption   锁定
+13:14:31   msbar.buttons(29).Key   checkstock
+13:14:31   msbar.buttons(29).Caption   可用量
+13:14:31   msbar.buttons(30).Key   unlock
+13:14:31   msbar.buttons(30).Caption   解锁
+13:14:31   msbar.buttons(31).Key   changeorder
+13:14:31   msbar.buttons(31).Caption   变更
+13:14:31   msbar.buttons(32).Key   addline
+13:14:31   msbar.buttons(32).Caption   增行
+13:14:31   msbar.buttons(33).Key   delline
+13:14:31   msbar.buttons(33).Caption   删行
+13:14:31   msbar.buttons(34).Key   insertline
+13:14:31   msbar.buttons(34).Caption   插行
+13:14:31   msbar.buttons(35).Key   fetchprice
+13:14:31   msbar.buttons(35).Caption   取价
+13:14:31   msbar.buttons(36).Key   attached
+13:14:31   msbar.buttons(36).Caption   附件
+13:14:31   msbar.buttons(37).Key   formatsetup
+13:14:31   msbar.buttons(37).Caption   格式设置
+13:14:31   msbar.buttons(38).Key   savelayout
+13:14:31   msbar.buttons(38).Caption   保存布局
+13:14:31   msbar.buttons(39).Key   pricehistory
+13:14:31   msbar.buttons(39).Caption   价格
+13:14:31   msbar.buttons(40).Key   locate
+13:14:31   msbar.buttons(40).Caption   定位
+13:14:31   msbar.buttons(41).Key   refresh
+13:14:31   msbar.buttons(41).Caption   刷新
+13:14:31   msbar.buttons(42).Key   billrelation
+13:14:31   msbar.buttons(42).Caption   关联查询
+13:14:31   msbar.buttons(43).Key   help
+13:14:31   msbar.buttons(43).Caption   帮助
+13:21:52   Function:->Init is true   
+13:21:52   msbar.buttons(1).Key   add
+13:21:52   msbar.buttons(1).Caption   增加
+13:21:52   msbar.buttons(2).Key   print
+13:21:52   msbar.buttons(2).Caption   打印
+13:21:52   msbar.buttons(3).Key   modify
+13:21:52   msbar.buttons(3).Caption   修改
+13:21:52   msbar.buttons(4).Key   preview
+13:21:52   msbar.buttons(4).Caption   预览
+13:21:52   msbar.buttons(5).Key   delete
+13:21:52   msbar.buttons(5).Caption   删除
+13:21:52   msbar.buttons(6).Key   output
+13:21:52   msbar.buttons(6).Caption   输出
+13:21:52   msbar.buttons(7).Key   outputandemail
+13:21:52   msbar.buttons(7).Caption   邮件
+13:21:52   msbar.buttons(8).Key   refervouch
+13:21:52   msbar.buttons(8).Caption   生单
+13:21:52   msbar.buttons(9).Key   tofirst
+13:21:52   msbar.buttons(9).Caption   首张
+13:21:52   msbar.buttons(10).Key   copy
+13:21:52   msbar.buttons(10).Caption   复制
+13:21:52   msbar.buttons(11).Key   toprevious
+13:21:52   msbar.buttons(11).Caption   上张
+13:21:52   msbar.buttons(12).Key   tonext
+13:21:52   msbar.buttons(12).Caption   下张
+13:21:52   msbar.buttons(13).Key   draft
+13:21:52   msbar.buttons(13).Caption   草稿
+13:21:52   msbar.buttons(14).Key   tolast
+13:21:52   msbar.buttons(14).Caption   末张
+13:21:52   msbar.buttons(15).Key   release
+13:21:52   msbar.buttons(15).Caption   释放
+13:21:52   msbar.buttons(16).Key   template
+13:21:52   msbar.buttons(16).Caption   模板
+13:21:52   msbar.buttons(17).Key   save
+13:21:52   msbar.buttons(17).Caption   保存
+13:21:52   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:21:52   msbar.buttons(18).Caption   测试
+13:21:52   msbar.buttons(19).Key   cancel
+13:21:52   msbar.buttons(19).Caption   放弃
+13:21:52   msbar.buttons(20).Key   resubmit
+13:21:52   msbar.buttons(20).Caption   重新提交
+13:21:52   msbar.buttons(21).Key   submit
+13:21:52   msbar.buttons(21).Caption   提交
+13:21:52   msbar.buttons(22).Key   unsubmit
+13:21:52   msbar.buttons(22).Caption   撤销
+13:21:52   msbar.buttons(23).Key   verify
+13:21:52   msbar.buttons(23).Caption   审核
+13:21:52   msbar.buttons(24).Key   unverify
+13:21:52   msbar.buttons(24).Caption   弃审
+13:21:52   msbar.buttons(25).Key   viewverify
+13:21:52   msbar.buttons(25).Caption   查审
+13:21:52   msbar.buttons(26).Key   closeorder
+13:21:52   msbar.buttons(26).Caption   关闭
+13:21:52   msbar.buttons(27).Key   openorder
+13:21:52   msbar.buttons(27).Caption   打开
+13:21:52   msbar.buttons(28).Key   lock
+13:21:52   msbar.buttons(28).Caption   锁定
+13:21:52   msbar.buttons(29).Key   checkstock
+13:21:52   msbar.buttons(29).Caption   可用量
+13:21:52   msbar.buttons(30).Key   unlock
+13:21:52   msbar.buttons(30).Caption   解锁
+13:21:52   msbar.buttons(31).Key   changeorder
+13:21:52   msbar.buttons(31).Caption   变更
+13:21:52   msbar.buttons(32).Key   addline
+13:21:52   msbar.buttons(32).Caption   增行
+13:21:52   msbar.buttons(33).Key   delline
+13:21:52   msbar.buttons(33).Caption   删行
+13:21:52   msbar.buttons(34).Key   insertline
+13:21:52   msbar.buttons(34).Caption   插行
+13:21:52   msbar.buttons(35).Key   fetchprice
+13:21:52   msbar.buttons(35).Caption   取价
+13:21:52   msbar.buttons(36).Key   attached
+13:21:52   msbar.buttons(36).Caption   附件
+13:21:52   msbar.buttons(37).Key   formatsetup
+13:21:52   msbar.buttons(37).Caption   格式设置
+13:21:52   msbar.buttons(38).Key   savelayout
+13:21:52   msbar.buttons(38).Caption   保存布局
+13:21:52   msbar.buttons(39).Key   pricehistory
+13:21:52   msbar.buttons(39).Caption   价格
+13:21:52   msbar.buttons(40).Key   locate
+13:21:52   msbar.buttons(40).Caption   定位
+13:21:52   msbar.buttons(41).Key   refresh
+13:21:52   msbar.buttons(41).Caption   刷新
+13:21:52   msbar.buttons(42).Key   billrelation
+13:21:52   msbar.buttons(42).Caption   关联查询
+13:21:52   msbar.buttons(43).Key   help
+13:21:52   msbar.buttons(43).Caption   帮助
+13:23:13   Function:->Init is true   
+13:23:13   msbar.buttons(1).Key   add
+13:23:13   msbar.buttons(1).Caption   增加
+13:23:13   msbar.buttons(2).Key   print
+13:23:13   msbar.buttons(2).Caption   打印
+13:23:13   msbar.buttons(3).Key   modify
+13:23:13   msbar.buttons(3).Caption   修改
+13:23:13   msbar.buttons(4).Key   preview
+13:23:13   msbar.buttons(4).Caption   预览
+13:23:13   msbar.buttons(5).Key   delete
+13:23:13   msbar.buttons(5).Caption   删除
+13:23:13   msbar.buttons(6).Key   output
+13:23:13   msbar.buttons(6).Caption   输出
+13:23:13   msbar.buttons(7).Key   outputandemail
+13:23:13   msbar.buttons(7).Caption   邮件
+13:23:13   msbar.buttons(8).Key   refervouch
+13:23:13   msbar.buttons(8).Caption   生单
+13:23:13   msbar.buttons(9).Key   tofirst
+13:23:13   msbar.buttons(9).Caption   首张
+13:23:13   msbar.buttons(10).Key   copy
+13:23:13   msbar.buttons(10).Caption   复制
+13:23:13   msbar.buttons(11).Key   toprevious
+13:23:13   msbar.buttons(11).Caption   上张
+13:23:13   msbar.buttons(12).Key   tonext
+13:23:13   msbar.buttons(12).Caption   下张
+13:23:13   msbar.buttons(13).Key   draft
+13:23:13   msbar.buttons(13).Caption   草稿
+13:23:13   msbar.buttons(14).Key   tolast
+13:23:13   msbar.buttons(14).Caption   末张
+13:23:13   msbar.buttons(15).Key   release
+13:23:13   msbar.buttons(15).Caption   释放
+13:23:13   msbar.buttons(16).Key   template
+13:23:13   msbar.buttons(16).Caption   模板
+13:23:13   msbar.buttons(17).Key   save
+13:23:13   msbar.buttons(17).Caption   保存
+13:23:13   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:23:13   msbar.buttons(18).Caption   测试
+13:23:13   msbar.buttons(19).Key   cancel
+13:23:13   msbar.buttons(19).Caption   放弃
+13:23:13   msbar.buttons(20).Key   resubmit
+13:23:13   msbar.buttons(20).Caption   重新提交
+13:23:13   msbar.buttons(21).Key   submit
+13:23:13   msbar.buttons(21).Caption   提交
+13:23:13   msbar.buttons(22).Key   unsubmit
+13:23:13   msbar.buttons(22).Caption   撤销
+13:23:13   msbar.buttons(23).Key   verify
+13:23:13   msbar.buttons(23).Caption   审核
+13:23:13   msbar.buttons(24).Key   unverify
+13:23:13   msbar.buttons(24).Caption   弃审
+13:23:13   msbar.buttons(25).Key   viewverify
+13:23:13   msbar.buttons(25).Caption   查审
+13:23:13   msbar.buttons(26).Key   closeorder
+13:23:13   msbar.buttons(26).Caption   关闭
+13:23:13   msbar.buttons(27).Key   openorder
+13:23:13   msbar.buttons(27).Caption   打开
+13:23:13   msbar.buttons(28).Key   lock
+13:23:13   msbar.buttons(28).Caption   锁定
+13:23:13   msbar.buttons(29).Key   checkstock
+13:23:13   msbar.buttons(29).Caption   可用量
+13:23:13   msbar.buttons(30).Key   unlock
+13:23:13   msbar.buttons(30).Caption   解锁
+13:23:13   msbar.buttons(31).Key   changeorder
+13:23:13   msbar.buttons(31).Caption   变更
+13:23:13   msbar.buttons(32).Key   addline
+13:23:13   msbar.buttons(32).Caption   增行
+13:23:13   msbar.buttons(33).Key   delline
+13:23:13   msbar.buttons(33).Caption   删行
+13:23:13   msbar.buttons(34).Key   insertline
+13:23:13   msbar.buttons(34).Caption   插行
+13:23:13   msbar.buttons(35).Key   fetchprice
+13:23:13   msbar.buttons(35).Caption   取价
+13:23:13   msbar.buttons(36).Key   attached
+13:23:13   msbar.buttons(36).Caption   附件
+13:23:13   msbar.buttons(37).Key   formatsetup
+13:23:13   msbar.buttons(37).Caption   格式设置
+13:23:13   msbar.buttons(38).Key   savelayout
+13:23:13   msbar.buttons(38).Caption   保存布局
+13:23:13   msbar.buttons(39).Key   pricehistory
+13:23:13   msbar.buttons(39).Caption   价格
+13:23:13   msbar.buttons(40).Key   locate
+13:23:13   msbar.buttons(40).Caption   定位
+13:23:13   msbar.buttons(41).Key   refresh
+13:23:13   msbar.buttons(41).Caption   刷新
+13:23:13   msbar.buttons(42).Key   billrelation
+13:23:13   msbar.buttons(42).Caption   关联查询
+13:23:13   msbar.buttons(43).Key   help
+13:23:13   msbar.buttons(43).Caption   帮助
+13:24:44   Function:->Init is true   
+13:24:44   msbar.buttons(1).Key   add
+13:24:44   msbar.buttons(1).Caption   增加
+13:24:44   msbar.buttons(2).Key   print
+13:24:44   msbar.buttons(2).Caption   打印
+13:24:44   msbar.buttons(3).Key   modify
+13:24:44   msbar.buttons(3).Caption   修改
+13:24:44   msbar.buttons(4).Key   preview
+13:24:44   msbar.buttons(4).Caption   预览
+13:24:44   msbar.buttons(5).Key   delete
+13:24:44   msbar.buttons(5).Caption   删除
+13:24:44   msbar.buttons(6).Key   output
+13:24:44   msbar.buttons(6).Caption   输出
+13:24:44   msbar.buttons(7).Key   outputandemail
+13:24:44   msbar.buttons(7).Caption   邮件
+13:24:44   msbar.buttons(8).Key   refervouch
+13:24:44   msbar.buttons(8).Caption   生单
+13:24:44   msbar.buttons(9).Key   tofirst
+13:24:44   msbar.buttons(9).Caption   首张
+13:24:44   msbar.buttons(10).Key   copy
+13:24:44   msbar.buttons(10).Caption   复制
+13:24:44   msbar.buttons(11).Key   toprevious
+13:24:44   msbar.buttons(11).Caption   上张
+13:24:44   msbar.buttons(12).Key   tonext
+13:24:44   msbar.buttons(12).Caption   下张
+13:24:44   msbar.buttons(13).Key   draft
+13:24:44   msbar.buttons(13).Caption   草稿
+13:24:44   msbar.buttons(14).Key   tolast
+13:24:44   msbar.buttons(14).Caption   末张
+13:24:44   msbar.buttons(15).Key   release
+13:24:44   msbar.buttons(15).Caption   释放
+13:24:44   msbar.buttons(16).Key   template
+13:24:44   msbar.buttons(16).Caption   模板
+13:24:44   msbar.buttons(17).Key   save
+13:24:44   msbar.buttons(17).Caption   保存
+13:24:44   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:24:44   msbar.buttons(18).Caption   测试
+13:24:44   msbar.buttons(19).Key   cancel
+13:24:44   msbar.buttons(19).Caption   放弃
+13:24:44   msbar.buttons(20).Key   resubmit
+13:24:44   msbar.buttons(20).Caption   重新提交
+13:24:44   msbar.buttons(21).Key   submit
+13:24:44   msbar.buttons(21).Caption   提交
+13:24:44   msbar.buttons(22).Key   unsubmit
+13:24:44   msbar.buttons(22).Caption   撤销
+13:24:44   msbar.buttons(23).Key   verify
+13:24:44   msbar.buttons(23).Caption   审核
+13:24:44   msbar.buttons(24).Key   unverify
+13:24:44   msbar.buttons(24).Caption   弃审
+13:24:44   msbar.buttons(25).Key   viewverify
+13:24:44   msbar.buttons(25).Caption   查审
+13:24:44   msbar.buttons(26).Key   closeorder
+13:24:44   msbar.buttons(26).Caption   关闭
+13:24:44   msbar.buttons(27).Key   openorder
+13:24:44   msbar.buttons(27).Caption   打开
+13:24:44   msbar.buttons(28).Key   lock
+13:24:44   msbar.buttons(28).Caption   锁定
+13:24:44   msbar.buttons(29).Key   checkstock
+13:24:44   msbar.buttons(29).Caption   可用量
+13:24:44   msbar.buttons(30).Key   unlock
+13:24:44   msbar.buttons(30).Caption   解锁
+13:24:44   msbar.buttons(31).Key   changeorder
+13:24:44   msbar.buttons(31).Caption   变更
+13:24:44   msbar.buttons(32).Key   addline
+13:24:44   msbar.buttons(32).Caption   增行
+13:24:44   msbar.buttons(33).Key   delline
+13:24:44   msbar.buttons(33).Caption   删行
+13:24:44   msbar.buttons(34).Key   insertline
+13:24:44   msbar.buttons(34).Caption   插行
+13:24:44   msbar.buttons(35).Key   fetchprice
+13:24:44   msbar.buttons(35).Caption   取价
+13:24:44   msbar.buttons(36).Key   attached
+13:24:44   msbar.buttons(36).Caption   附件
+13:24:44   msbar.buttons(37).Key   formatsetup
+13:24:44   msbar.buttons(37).Caption   格式设置
+13:24:44   msbar.buttons(38).Key   savelayout
+13:24:44   msbar.buttons(38).Caption   保存布局
+13:24:44   msbar.buttons(39).Key   pricehistory
+13:24:44   msbar.buttons(39).Caption   价格
+13:24:44   msbar.buttons(40).Key   locate
+13:24:44   msbar.buttons(40).Caption   定位
+13:24:44   msbar.buttons(41).Key   refresh
+13:24:44   msbar.buttons(41).Caption   刷新
+13:24:44   msbar.buttons(42).Key   billrelation
+13:24:44   msbar.buttons(42).Caption   关联查询
+13:24:44   msbar.buttons(43).Key   help
+13:24:44   msbar.buttons(43).Caption   帮助
+13:25:35   Function:->Init is true   
+13:25:35   msbar.buttons(1).Key   add
+13:25:35   msbar.buttons(1).Caption   增加
+13:25:35   msbar.buttons(2).Key   print
+13:25:35   msbar.buttons(2).Caption   打印
+13:25:35   msbar.buttons(3).Key   modify
+13:25:35   msbar.buttons(3).Caption   修改
+13:25:35   msbar.buttons(4).Key   preview
+13:25:35   msbar.buttons(4).Caption   预览
+13:25:35   msbar.buttons(5).Key   delete
+13:25:35   msbar.buttons(5).Caption   删除
+13:25:35   msbar.buttons(6).Key   output
+13:25:35   msbar.buttons(6).Caption   输出
+13:25:35   msbar.buttons(7).Key   outputandemail
+13:25:35   msbar.buttons(7).Caption   邮件
+13:25:35   msbar.buttons(8).Key   refervouch
+13:25:35   msbar.buttons(8).Caption   生单
+13:25:35   msbar.buttons(9).Key   tofirst
+13:25:35   msbar.buttons(9).Caption   首张
+13:25:35   msbar.buttons(10).Key   copy
+13:25:35   msbar.buttons(10).Caption   复制
+13:25:35   msbar.buttons(11).Key   toprevious
+13:25:35   msbar.buttons(11).Caption   上张
+13:25:35   msbar.buttons(12).Key   tonext
+13:25:35   msbar.buttons(12).Caption   下张
+13:25:35   msbar.buttons(13).Key   draft
+13:25:35   msbar.buttons(13).Caption   草稿
+13:25:35   msbar.buttons(14).Key   tolast
+13:25:35   msbar.buttons(14).Caption   末张
+13:25:35   msbar.buttons(15).Key   release
+13:25:35   msbar.buttons(15).Caption   释放
+13:25:35   msbar.buttons(16).Key   template
+13:25:35   msbar.buttons(16).Caption   模板
+13:25:35   msbar.buttons(17).Key   save
+13:25:35   msbar.buttons(17).Caption   保存
+13:25:35   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:25:35   msbar.buttons(18).Caption   测试
+13:25:35   msbar.buttons(19).Key   cancel
+13:25:35   msbar.buttons(19).Caption   放弃
+13:25:35   msbar.buttons(20).Key   resubmit
+13:25:35   msbar.buttons(20).Caption   重新提交
+13:25:35   msbar.buttons(21).Key   submit
+13:25:35   msbar.buttons(21).Caption   提交
+13:25:35   msbar.buttons(22).Key   unsubmit
+13:25:35   msbar.buttons(22).Caption   撤销
+13:25:35   msbar.buttons(23).Key   verify
+13:25:35   msbar.buttons(23).Caption   审核
+13:25:35   msbar.buttons(24).Key   unverify
+13:25:35   msbar.buttons(24).Caption   弃审
+13:25:35   msbar.buttons(25).Key   viewverify
+13:25:35   msbar.buttons(25).Caption   查审
+13:25:35   msbar.buttons(26).Key   closeorder
+13:25:35   msbar.buttons(26).Caption   关闭
+13:25:35   msbar.buttons(27).Key   openorder
+13:25:35   msbar.buttons(27).Caption   打开
+13:25:35   msbar.buttons(28).Key   lock
+13:25:35   msbar.buttons(28).Caption   锁定
+13:25:35   msbar.buttons(29).Key   checkstock
+13:25:35   msbar.buttons(29).Caption   可用量
+13:25:35   msbar.buttons(30).Key   unlock
+13:25:35   msbar.buttons(30).Caption   解锁
+13:25:35   msbar.buttons(31).Key   changeorder
+13:25:35   msbar.buttons(31).Caption   变更
+13:25:35   msbar.buttons(32).Key   addline
+13:25:35   msbar.buttons(32).Caption   增行
+13:25:35   msbar.buttons(33).Key   delline
+13:25:35   msbar.buttons(33).Caption   删行
+13:25:35   msbar.buttons(34).Key   insertline
+13:25:35   msbar.buttons(34).Caption   插行
+13:25:35   msbar.buttons(35).Key   fetchprice
+13:25:35   msbar.buttons(35).Caption   取价
+13:25:35   msbar.buttons(36).Key   attached
+13:25:35   msbar.buttons(36).Caption   附件
+13:25:35   msbar.buttons(37).Key   formatsetup
+13:25:35   msbar.buttons(37).Caption   格式设置
+13:25:35   msbar.buttons(38).Key   savelayout
+13:25:35   msbar.buttons(38).Caption   保存布局
+13:25:35   msbar.buttons(39).Key   pricehistory
+13:25:35   msbar.buttons(39).Caption   价格
+13:25:35   msbar.buttons(40).Key   locate
+13:25:35   msbar.buttons(40).Caption   定位
+13:25:35   msbar.buttons(41).Key   refresh
+13:25:35   msbar.buttons(41).Caption   刷新
+13:25:35   msbar.buttons(42).Key   billrelation
+13:25:35   msbar.buttons(42).Caption   关联查询
+13:25:35   msbar.buttons(43).Key   help
+13:25:35   msbar.buttons(43).Caption   帮助
+13:26:25   Function:->Init is true   
+13:26:25   msbar.buttons(1).Key   add
+13:26:25   msbar.buttons(1).Caption   增加
+13:26:25   msbar.buttons(2).Key   print
+13:26:25   msbar.buttons(2).Caption   打印
+13:26:25   msbar.buttons(3).Key   modify
+13:26:25   msbar.buttons(3).Caption   修改
+13:26:25   msbar.buttons(4).Key   preview
+13:26:25   msbar.buttons(4).Caption   预览
+13:26:25   msbar.buttons(5).Key   delete
+13:26:25   msbar.buttons(5).Caption   删除
+13:26:25   msbar.buttons(6).Key   output
+13:26:25   msbar.buttons(6).Caption   输出
+13:26:25   msbar.buttons(7).Key   outputandemail
+13:26:25   msbar.buttons(7).Caption   邮件
+13:26:25   msbar.buttons(8).Key   refervouch
+13:26:25   msbar.buttons(8).Caption   生单
+13:26:25   msbar.buttons(9).Key   tofirst
+13:26:25   msbar.buttons(9).Caption   首张
+13:26:25   msbar.buttons(10).Key   copy
+13:26:25   msbar.buttons(10).Caption   复制
+13:26:25   msbar.buttons(11).Key   toprevious
+13:26:25   msbar.buttons(11).Caption   上张
+13:26:25   msbar.buttons(12).Key   tonext
+13:26:25   msbar.buttons(12).Caption   下张
+13:26:25   msbar.buttons(13).Key   draft
+13:26:25   msbar.buttons(13).Caption   草稿
+13:26:25   msbar.buttons(14).Key   tolast
+13:26:25   msbar.buttons(14).Caption   末张
+13:26:25   msbar.buttons(15).Key   release
+13:26:25   msbar.buttons(15).Caption   释放
+13:26:25   msbar.buttons(16).Key   template
+13:26:25   msbar.buttons(16).Caption   模板
+13:26:25   msbar.buttons(17).Key   save
+13:26:25   msbar.buttons(17).Caption   保存
+13:26:25   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:26:25   msbar.buttons(18).Caption   测试
+13:26:25   msbar.buttons(19).Key   cancel
+13:26:25   msbar.buttons(19).Caption   放弃
+13:26:25   msbar.buttons(20).Key   resubmit
+13:26:25   msbar.buttons(20).Caption   重新提交
+13:26:25   msbar.buttons(21).Key   submit
+13:26:25   msbar.buttons(21).Caption   提交
+13:26:25   msbar.buttons(22).Key   unsubmit
+13:26:25   msbar.buttons(22).Caption   撤销
+13:26:25   msbar.buttons(23).Key   verify
+13:26:25   msbar.buttons(23).Caption   审核
+13:26:25   msbar.buttons(24).Key   unverify
+13:26:25   msbar.buttons(24).Caption   弃审
+13:26:25   msbar.buttons(25).Key   viewverify
+13:26:25   msbar.buttons(25).Caption   查审
+13:26:25   msbar.buttons(26).Key   closeorder
+13:26:25   msbar.buttons(26).Caption   关闭
+13:26:25   msbar.buttons(27).Key   openorder
+13:26:25   msbar.buttons(27).Caption   打开
+13:26:25   msbar.buttons(28).Key   lock
+13:26:25   msbar.buttons(28).Caption   锁定
+13:26:25   msbar.buttons(29).Key   checkstock
+13:26:25   msbar.buttons(29).Caption   可用量
+13:26:25   msbar.buttons(30).Key   unlock
+13:26:25   msbar.buttons(30).Caption   解锁
+13:26:25   msbar.buttons(31).Key   changeorder
+13:26:25   msbar.buttons(31).Caption   变更
+13:26:25   msbar.buttons(32).Key   addline
+13:26:25   msbar.buttons(32).Caption   增行
+13:26:25   msbar.buttons(33).Key   delline
+13:26:25   msbar.buttons(33).Caption   删行
+13:26:25   msbar.buttons(34).Key   insertline
+13:26:25   msbar.buttons(34).Caption   插行
+13:26:25   msbar.buttons(35).Key   fetchprice
+13:26:25   msbar.buttons(35).Caption   取价
+13:26:25   msbar.buttons(36).Key   attached
+13:26:25   msbar.buttons(36).Caption   附件
+13:26:25   msbar.buttons(37).Key   formatsetup
+13:26:25   msbar.buttons(37).Caption   格式设置
+13:26:25   msbar.buttons(38).Key   savelayout
+13:26:25   msbar.buttons(38).Caption   保存布局
+13:26:25   msbar.buttons(39).Key   pricehistory
+13:26:25   msbar.buttons(39).Caption   价格
+13:26:25   msbar.buttons(40).Key   locate
+13:26:25   msbar.buttons(40).Caption   定位
+13:26:25   msbar.buttons(41).Key   refresh
+13:26:25   msbar.buttons(41).Caption   刷新
+13:26:25   msbar.buttons(42).Key   billrelation
+13:26:25   msbar.buttons(42).Caption   关联查询
+13:26:25   msbar.buttons(43).Key   help
+13:26:25   msbar.buttons(43).Caption   帮助
+13:28:26   Function:->Init is true   
+13:28:26   msbar.buttons(1).Key   add
+13:28:26   msbar.buttons(1).Caption   增加
+13:28:26   msbar.buttons(2).Key   print
+13:28:26   msbar.buttons(2).Caption   打印
+13:28:26   msbar.buttons(3).Key   modify
+13:28:26   msbar.buttons(3).Caption   修改
+13:28:26   msbar.buttons(4).Key   preview
+13:28:26   msbar.buttons(4).Caption   预览
+13:28:26   msbar.buttons(5).Key   delete
+13:28:26   msbar.buttons(5).Caption   删除
+13:28:26   msbar.buttons(6).Key   output
+13:28:26   msbar.buttons(6).Caption   输出
+13:28:26   msbar.buttons(7).Key   outputandemail
+13:28:26   msbar.buttons(7).Caption   邮件
+13:28:26   msbar.buttons(8).Key   refervouch
+13:28:26   msbar.buttons(8).Caption   生单
+13:28:26   msbar.buttons(9).Key   tofirst
+13:28:26   msbar.buttons(9).Caption   首张
+13:28:26   msbar.buttons(10).Key   copy
+13:28:26   msbar.buttons(10).Caption   复制
+13:28:26   msbar.buttons(11).Key   toprevious
+13:28:26   msbar.buttons(11).Caption   上张
+13:28:26   msbar.buttons(12).Key   tonext
+13:28:26   msbar.buttons(12).Caption   下张
+13:28:26   msbar.buttons(13).Key   draft
+13:28:26   msbar.buttons(13).Caption   草稿
+13:28:26   msbar.buttons(14).Key   tolast
+13:28:26   msbar.buttons(14).Caption   末张
+13:28:26   msbar.buttons(15).Key   release
+13:28:26   msbar.buttons(15).Caption   释放
+13:28:26   msbar.buttons(16).Key   template
+13:28:26   msbar.buttons(16).Caption   模板
+13:28:26   msbar.buttons(17).Key   save
+13:28:26   msbar.buttons(17).Caption   保存
+13:28:26   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:28:26   msbar.buttons(18).Caption   测试
+13:28:26   msbar.buttons(19).Key   cancel
+13:28:26   msbar.buttons(19).Caption   放弃
+13:28:26   msbar.buttons(20).Key   resubmit
+13:28:26   msbar.buttons(20).Caption   重新提交
+13:28:26   msbar.buttons(21).Key   submit
+13:28:26   msbar.buttons(21).Caption   提交
+13:28:26   msbar.buttons(22).Key   unsubmit
+13:28:26   msbar.buttons(22).Caption   撤销
+13:28:26   msbar.buttons(23).Key   verify
+13:28:26   msbar.buttons(23).Caption   审核
+13:28:26   msbar.buttons(24).Key   unverify
+13:28:26   msbar.buttons(24).Caption   弃审
+13:28:26   msbar.buttons(25).Key   viewverify
+13:28:26   msbar.buttons(25).Caption   查审
+13:28:26   msbar.buttons(26).Key   closeorder
+13:28:26   msbar.buttons(26).Caption   关闭
+13:28:26   msbar.buttons(27).Key   openorder
+13:28:26   msbar.buttons(27).Caption   打开
+13:28:26   msbar.buttons(28).Key   lock
+13:28:26   msbar.buttons(28).Caption   锁定
+13:28:26   msbar.buttons(29).Key   checkstock
+13:28:26   msbar.buttons(29).Caption   可用量
+13:28:26   msbar.buttons(30).Key   unlock
+13:28:26   msbar.buttons(30).Caption   解锁
+13:28:26   msbar.buttons(31).Key   changeorder
+13:28:26   msbar.buttons(31).Caption   变更
+13:28:26   msbar.buttons(32).Key   addline
+13:28:26   msbar.buttons(32).Caption   增行
+13:28:26   msbar.buttons(33).Key   delline
+13:28:26   msbar.buttons(33).Caption   删行
+13:28:26   msbar.buttons(34).Key   insertline
+13:28:26   msbar.buttons(34).Caption   插行
+13:28:26   msbar.buttons(35).Key   fetchprice
+13:28:26   msbar.buttons(35).Caption   取价
+13:28:26   msbar.buttons(36).Key   attached
+13:28:26   msbar.buttons(36).Caption   附件
+13:28:26   msbar.buttons(37).Key   formatsetup
+13:28:26   msbar.buttons(37).Caption   格式设置
+13:28:26   msbar.buttons(38).Key   savelayout
+13:28:26   msbar.buttons(38).Caption   保存布局
+13:28:26   msbar.buttons(39).Key   pricehistory
+13:28:26   msbar.buttons(39).Caption   价格
+13:28:26   msbar.buttons(40).Key   locate
+13:28:26   msbar.buttons(40).Caption   定位
+13:28:26   msbar.buttons(41).Key   refresh
+13:28:26   msbar.buttons(41).Caption   刷新
+13:28:26   msbar.buttons(42).Key   billrelation
+13:28:26   msbar.buttons(42).Caption   关联查询
+13:28:26   msbar.buttons(43).Key   help
+13:28:26   msbar.buttons(43).Caption   帮助
+13:33:09   Function:->Init is true   
+13:33:09   msbar.buttons(1).Key   add
+13:33:09   msbar.buttons(1).Caption   增加
+13:33:09   msbar.buttons(2).Key   print
+13:33:09   msbar.buttons(2).Caption   打印
+13:33:09   msbar.buttons(3).Key   modify
+13:33:09   msbar.buttons(3).Caption   修改
+13:33:09   msbar.buttons(4).Key   preview
+13:33:09   msbar.buttons(4).Caption   预览
+13:33:09   msbar.buttons(5).Key   delete
+13:33:09   msbar.buttons(5).Caption   删除
+13:33:09   msbar.buttons(6).Key   output
+13:33:09   msbar.buttons(6).Caption   输出
+13:33:09   msbar.buttons(7).Key   outputandemail
+13:33:09   msbar.buttons(7).Caption   邮件
+13:33:09   msbar.buttons(8).Key   refervouch
+13:33:09   msbar.buttons(8).Caption   生单
+13:33:09   msbar.buttons(9).Key   tofirst
+13:33:09   msbar.buttons(9).Caption   首张
+13:33:09   msbar.buttons(10).Key   copy
+13:33:09   msbar.buttons(10).Caption   复制
+13:33:09   msbar.buttons(11).Key   toprevious
+13:33:09   msbar.buttons(11).Caption   上张
+13:33:09   msbar.buttons(12).Key   tonext
+13:33:09   msbar.buttons(12).Caption   下张
+13:33:09   msbar.buttons(13).Key   draft
+13:33:09   msbar.buttons(13).Caption   草稿
+13:33:09   msbar.buttons(14).Key   tolast
+13:33:09   msbar.buttons(14).Caption   末张
+13:33:09   msbar.buttons(15).Key   release
+13:33:09   msbar.buttons(15).Caption   释放
+13:33:09   msbar.buttons(16).Key   template
+13:33:09   msbar.buttons(16).Caption   模板
+13:33:09   msbar.buttons(17).Key   save
+13:33:09   msbar.buttons(17).Caption   保存
+13:33:09   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:33:09   msbar.buttons(18).Caption   测试
+13:33:09   msbar.buttons(19).Key   cancel
+13:33:09   msbar.buttons(19).Caption   放弃
+13:33:09   msbar.buttons(20).Key   resubmit
+13:33:09   msbar.buttons(20).Caption   重新提交
+13:33:09   msbar.buttons(21).Key   submit
+13:33:09   msbar.buttons(21).Caption   提交
+13:33:09   msbar.buttons(22).Key   unsubmit
+13:33:09   msbar.buttons(22).Caption   撤销
+13:33:09   msbar.buttons(23).Key   verify
+13:33:09   msbar.buttons(23).Caption   审核
+13:33:09   msbar.buttons(24).Key   unverify
+13:33:09   msbar.buttons(24).Caption   弃审
+13:33:09   msbar.buttons(25).Key   viewverify
+13:33:09   msbar.buttons(25).Caption   查审
+13:33:09   msbar.buttons(26).Key   closeorder
+13:33:09   msbar.buttons(26).Caption   关闭
+13:33:09   msbar.buttons(27).Key   openorder
+13:33:09   msbar.buttons(27).Caption   打开
+13:33:09   msbar.buttons(28).Key   lock
+13:33:09   msbar.buttons(28).Caption   锁定
+13:33:09   msbar.buttons(29).Key   checkstock
+13:33:09   msbar.buttons(29).Caption   可用量
+13:33:09   msbar.buttons(30).Key   unlock
+13:33:09   msbar.buttons(30).Caption   解锁
+13:33:09   msbar.buttons(31).Key   changeorder
+13:33:09   msbar.buttons(31).Caption   变更
+13:33:09   msbar.buttons(32).Key   addline
+13:33:09   msbar.buttons(32).Caption   增行
+13:33:09   msbar.buttons(33).Key   delline
+13:33:09   msbar.buttons(33).Caption   删行
+13:33:09   msbar.buttons(34).Key   insertline
+13:33:09   msbar.buttons(34).Caption   插行
+13:33:09   msbar.buttons(35).Key   fetchprice
+13:33:09   msbar.buttons(35).Caption   取价
+13:33:09   msbar.buttons(36).Key   attached
+13:33:09   msbar.buttons(36).Caption   附件
+13:33:09   msbar.buttons(37).Key   formatsetup
+13:33:09   msbar.buttons(37).Caption   格式设置
+13:33:09   msbar.buttons(38).Key   savelayout
+13:33:09   msbar.buttons(38).Caption   保存布局
+13:33:09   msbar.buttons(39).Key   pricehistory
+13:33:09   msbar.buttons(39).Caption   价格
+13:33:09   msbar.buttons(40).Key   locate
+13:33:09   msbar.buttons(40).Caption   定位
+13:33:09   msbar.buttons(41).Key   refresh
+13:33:09   msbar.buttons(41).Caption   刷新
+13:33:09   msbar.buttons(42).Key   billrelation
+13:33:09   msbar.buttons(42).Caption   关联查询
+13:33:09   msbar.buttons(43).Key   help
+13:33:09   msbar.buttons(43).Caption   帮助
+13:34:26   Function:->Init is true   
+13:34:26   msbar.buttons(1).Key   add
+13:34:26   msbar.buttons(1).Caption   增加
+13:34:26   msbar.buttons(2).Key   print
+13:34:26   msbar.buttons(2).Caption   打印
+13:34:26   msbar.buttons(3).Key   modify
+13:34:26   msbar.buttons(3).Caption   修改
+13:34:26   msbar.buttons(4).Key   preview
+13:34:26   msbar.buttons(4).Caption   预览
+13:34:26   msbar.buttons(5).Key   delete
+13:34:26   msbar.buttons(5).Caption   删除
+13:34:26   msbar.buttons(6).Key   output
+13:34:26   msbar.buttons(6).Caption   输出
+13:34:26   msbar.buttons(7).Key   outputandemail
+13:34:26   msbar.buttons(7).Caption   邮件
+13:34:26   msbar.buttons(8).Key   refervouch
+13:34:26   msbar.buttons(8).Caption   生单
+13:34:26   msbar.buttons(9).Key   tofirst
+13:34:26   msbar.buttons(9).Caption   首张
+13:34:26   msbar.buttons(10).Key   copy
+13:34:26   msbar.buttons(10).Caption   复制
+13:34:26   msbar.buttons(11).Key   toprevious
+13:34:26   msbar.buttons(11).Caption   上张
+13:34:26   msbar.buttons(12).Key   tonext
+13:34:26   msbar.buttons(12).Caption   下张
+13:34:26   msbar.buttons(13).Key   draft
+13:34:26   msbar.buttons(13).Caption   草稿
+13:34:26   msbar.buttons(14).Key   tolast
+13:34:26   msbar.buttons(14).Caption   末张
+13:34:26   msbar.buttons(15).Key   release
+13:34:26   msbar.buttons(15).Caption   释放
+13:34:26   msbar.buttons(16).Key   template
+13:34:26   msbar.buttons(16).Caption   模板
+13:34:26   msbar.buttons(17).Key   save
+13:34:26   msbar.buttons(17).Caption   保存
+13:34:26   msbar.buttons(18).Key   _CUSTDEFbtntest
+13:34:26   msbar.buttons(18).Caption   测试
+13:34:26   msbar.buttons(19).Key   cancel
+13:34:26   msbar.buttons(19).Caption   放弃
+13:34:26   msbar.buttons(20).Key   resubmit
+13:34:26   msbar.buttons(20).Caption   重新提交
+13:34:26   msbar.buttons(21).Key   submit
+13:34:26   msbar.buttons(21).Caption   提交
+13:34:26   msbar.buttons(22).Key   unsubmit
+13:34:26   msbar.buttons(22).Caption   撤销
+13:34:26   msbar.buttons(23).Key   verify
+13:34:26   msbar.buttons(23).Caption   审核
+13:34:26   msbar.buttons(24).Key   unverify
+13:34:26   msbar.buttons(24).Caption   弃审
+13:34:26   msbar.buttons(25).Key   viewverify
+13:34:26   msbar.buttons(25).Caption   查审
+13:34:26   msbar.buttons(26).Key   closeorder
+13:34:26   msbar.buttons(26).Caption   关闭
+13:34:26   msbar.buttons(27).Key   openorder
+13:34:26   msbar.buttons(27).Caption   打开
+13:34:26   msbar.buttons(28).Key   lock
+13:34:26   msbar.buttons(28).Caption   锁定
+13:34:26   msbar.buttons(29).Key   checkstock
+13:34:26   msbar.buttons(29).Caption   可用量
+13:34:26   msbar.buttons(30).Key   unlock
+13:34:26   msbar.buttons(30).Caption   解锁
+13:34:26   msbar.buttons(31).Key   changeorder
+13:34:26   msbar.buttons(31).Caption   变更
+13:34:26   msbar.buttons(32).Key   addline
+13:34:26   msbar.buttons(32).Caption   增行
+13:34:26   msbar.buttons(33).Key   delline
+13:34:26   msbar.buttons(33).Caption   删行
+13:34:26   msbar.buttons(34).Key   insertline
+13:34:26   msbar.buttons(34).Caption   插行
+13:34:26   msbar.buttons(35).Key   fetchprice
+13:34:26   msbar.buttons(35).Caption   取价
+13:34:26   msbar.buttons(36).Key   attached
+13:34:26   msbar.buttons(36).Caption   附件
+13:34:26   msbar.buttons(37).Key   formatsetup
+13:34:26   msbar.buttons(37).Caption   格式设置
+13:34:26   msbar.buttons(38).Key   savelayout
+13:34:26   msbar.buttons(38).Caption   保存布局
+13:34:26   msbar.buttons(39).Key   pricehistory
+13:34:26   msbar.buttons(39).Caption   价格
+13:34:26   msbar.buttons(40).Key   locate
+13:34:26   msbar.buttons(40).Caption   定位
+13:34:26   msbar.buttons(41).Key   refresh
+13:34:26   msbar.buttons(41).Caption   刷新
+13:34:26   msbar.buttons(42).Key   billrelation
+13:34:26   msbar.buttons(42).Caption   关联查询
+13:34:26   msbar.buttons(43).Key   help
+13:34:26   msbar.buttons(43).Caption   帮助

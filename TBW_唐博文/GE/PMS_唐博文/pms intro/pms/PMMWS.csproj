@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4784F41-BFC2-4BDE-B10B-EF36F6684983}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMMWS</RootNamespace>
+    <AssemblyName>PMMWS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>D:\Castle-bin-net-2.0\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>D:\Castle-bin-net-2.0\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy">
+      <HintPath>D:\Castle-bin-net-2.0\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Model">
+      <HintPath>D:\Castle-bin-net-2.0\Castle.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v11.1.Export, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.1.Web, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v11.1.Web, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>D:\Castle-bin-net-2.0\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>D:\Castle-bin-net-2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>D:\Castle-bin-net-2.0\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Nullables">
+      <HintPath>D:\Castle-bin-net-2.0\Nullables.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MechineName.xml" />
+    <Content Include="ChartingControl.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EHSDeviceInfo.aspx" />
+    <Content Include="EquipmentsInfo.aspx" />
+    <Content Include="ge_logo.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\HeaderFilterButton.png" />
+    <Content Include="Images\Key.bmp" />
+    <Content Include="ld.aspx" />
+    <Content Include="MaintenanceHistor.aspx" />
+    <Content Include="MaintenanceWebInfo.aspx" />
+    <Content Include="MaintenanceWebInfoB.aspx" />
+    <Content Include="MaintenanceWebInfoC.aspx" />
+    <Content Include="MaintenanceWebInfoD.aspx" />
+    <Content Include="mono_aviation.gif" />
+    <Content Include="OpMainPage.aspx" />
+    <Content Include="PmContents.aspx" />
+    <Content Include="PmPlan.aspx" />
+    <Content Include="PublicFacilities.aspx" />
+    <Content Include="RepairPageForm.aspx" />
+    <Content Include="RepairsScan.aspx" />
+    <Content Include="ReportView.aspx" />
+    <Content Include="SPInfo.aspx" />
+    <Content Include="StatuesColor\Green.png" />
+    <Content Include="StatuesColor\Red.png" />
+    <Content Include="StatuesColor\write.png" />
+    <Content Include="StatuesColor\Yellow.png" />
+    <Content Include="Test.aspx" />
+    <Content Include="TitleControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="MaintenancePlanForm.aspx" />
+    <Content Include="WeekARate.aspx" />
+    <Content Include="WorkerInfo.aspx" />
+    <Content Include="WorkOrderAdmin.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARXtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ARXtraReport.designer.cs">
+      <DependentUpon>ARXtraReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChartingControl.aspx.cs">
+      <DependentUpon>ChartingControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChartingControl.aspx.designer.cs">
+      <DependentUpon>ChartingControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commandMethods.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\HPPOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\CMOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\CMPOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\CMReport.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\HPOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\HPReport.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\MAOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\MAPOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\Machine.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\MAReport.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\PMSMPlan.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\PMSPMBackup.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\PMSPMContent.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\PMSPMPlan.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\Scanning.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\SMOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\SMPOrder.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\SMReport.cs" />
+    <Compile Include="DataBaseQuery\SUZHOU\Worker.cs" />
+    <Compile Include="Data\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dBQuery.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EHSDeviceInfo.aspx.cs">
+      <DependentUpon>EHSDeviceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EHSDeviceInfo.aspx.designer.cs">
+      <DependentUpon>EHSDeviceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\EmailNotificationService.cs" />
+    <Compile Include="Email\MailNotifyInfo.cs" />
+    <Compile Include="Email\NotificationHandler.cs" />
+    <Compile Include="EquipmentsInfo.aspx.cs">
+      <DependentUpon>EquipmentsInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EquipmentsInfo.aspx.designer.cs">
+      <DependentUpon>EquipmentsInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ld.aspx.cs">
+      <DependentUpon>ld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ld.aspx.designer.cs">
+      <DependentUpon>ld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceHistor.aspx.cs">
+      <DependentUpon>MaintenanceHistor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceHistor.aspx.designer.cs">
+      <DependentUpon>MaintenanceHistor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceWebInfo.aspx.cs">
+      <DependentUpon>MaintenanceWebInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceWebInfo.aspx.designer.cs">
+      <DependentUpon>MaintenanceWebInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoB.aspx.cs">
+      <DependentUpon>MaintenanceWebInfoB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoB.aspx.designer.cs">
+      <DependentUpon>MaintenanceWebInfoB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoC.aspx.cs">
+      <DependentUpon>MaintenanceWebInfoC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoC.aspx.designer.cs">
+      <DependentUpon>MaintenanceWebInfoC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoD.aspx.cs">
+      <DependentUpon>MaintenanceWebInfoD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceWebInfoD.aspx.designer.cs">
+      <DependentUpon>MaintenanceWebInfoD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OpMainPage.aspx.cs">
+      <DependentUpon>OpMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpMainPage.aspx.designer.cs">
+      <DependentUpon>OpMainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PmContents.aspx.cs">
+      <DependentUpon>PmContents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PmContents.aspx.designer.cs">
+      <DependentUpon>PmContents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PmPlan.aspx.cs">
+      <DependentUpon>PmPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PmPlan.aspx.designer.cs">
+      <DependentUpon>PmPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressIndicator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MaintenancePlanForm.aspx.cs">
+      <DependentUpon>MaintenancePlanForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenancePlanForm.aspx.designer.cs">
+      <DependentUpon>MaintenancePlanForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicFacilities.aspx.cs">
+      <DependentUpon>PublicFacilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicFacilities.aspx.designer.cs">
+      <DependentUpon>PublicFacilities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairPageForm.aspx.cs">
+      <DependentUpon>RepairPageForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairPageForm.aspx.designer.cs">
+      <DependentUpon>RepairPageForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairsScan.aspx.cs">
+      <DependentUpon>RepairsScan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairsScan.aspx.designer.cs">
+      <DependentUpon>RepairsScan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportView.aspx.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportView.aspx.designer.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SPInfo.aspx.cs">
+      <DependentUpon>SPInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPInfo.aspx.designer.cs">
+      <DependentUpon>SPInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TitleControl.ascx.cs">
+      <DependentUpon>TitleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TitleControl.ascx.designer.cs">
+      <DependentUpon>TitleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WeekARate.aspx.cs">
+      <DependentUpon>WeekARate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeekARate.aspx.designer.cs">
+      <DependentUpon>WeekARate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerInfo.aspx.cs">
+      <DependentUpon>WorkerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerInfo.aspx.designer.cs">
+      <DependentUpon>WorkerInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderAdmin.aspx.cs">
+      <DependentUpon>WorkOrderAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkOrderAdmin.aspx.designer.cs">
+      <DependentUpon>WorkOrderAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XtraWeekReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraWeekReport.Designer.cs">
+      <DependentUpon>XtraWeekReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraWeekReportSM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraWeekReportSM.designer.cs">
+      <DependentUpon>XtraWeekReportSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraWeekReportCM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraWeekReportCM.designer.cs">
+      <DependentUpon>XtraWeekReportCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraWeekReportAT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraWeekReportAT.designer.cs">
+      <DependentUpon>XtraWeekReportAT.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ARXtraReport.resx">
+      <DependentUpon>ARXtraReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="XtraWeekReport.resx">
+      <DependentUpon>XtraWeekReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraWeekReportSM.resx">
+      <DependentUpon>XtraWeekReportSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraWeekReportCM.resx">
+      <DependentUpon>XtraWeekReportCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraWeekReportAT.resx">
+      <DependentUpon>XtraWeekReportAT.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Data\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="myDataSet.xsc">
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="myDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="myDataSet.xss">
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62890</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

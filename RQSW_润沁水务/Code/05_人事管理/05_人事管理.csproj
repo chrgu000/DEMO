@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{075E3993-DB7C-433F-8941-1B7EFF6DFACD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>人事管理</RootNamespace>
+    <AssemblyName>人事管理</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="佣金申请\Frm佣金申请.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="佣金申请\Frm佣金申请.designer.cs">
+      <DependentUpon>Frm佣金申请.cs</DependentUpon>
+    </Compile>
+    <Compile Include="佣金申请\Frm佣金申请_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="佣金申请\Frm佣金申请_Add.designer.cs">
+      <DependentUpon>Frm佣金申请_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="佣金申请\Frm佣金申请列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="佣金申请\Frm佣金申请列表.designer.cs">
+      <DependentUpon>Frm佣金申请列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="佣金申请\Frm销售订单_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="佣金申请\Frm销售订单_New.designer.cs">
+      <DependentUpon>Frm销售订单_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记.designer.cs">
+      <DependentUpon>Frm出差登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记_Add.designer.cs">
+      <DependentUpon>Frm出差登记_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="出差登记\Frm出差登记列表.designer.cs">
+      <DependentUpon>Frm出差登记列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请.designer.cs">
+      <DependentUpon>Frm业务费申请.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请_Add.designer.cs">
+      <DependentUpon>Frm业务费申请_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务费申请\Frm业务费申请列表.designer.cs">
+      <DependentUpon>Frm业务费申请列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单_Add.designer.cs">
+      <DependentUpon>Frm实验申请单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单.designer.cs">
+      <DependentUpon>Frm实验申请单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="实验室申请单\Frm实验申请单列表.designer.cs">
+      <DependentUpon>Frm实验申请单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="日程登記\Frm日程登记.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="日程登記\Frm日程登记.designer.cs">
+      <DependentUpon>Frm日程登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="用人申请\Frm用人申请列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用人申请\Frm用人申请列表.designer.cs">
+      <DependentUpon>Frm用人申请列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="用人申请\Frm用人申请.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用人申请\Frm用人申请.designer.cs">
+      <DependentUpon>Frm用人申请.cs</DependentUpon>
+    </Compile>
+    <Compile Include="用人申请\Frm用人申请_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用人申请\Frm用人申请_Add.designer.cs">
+      <DependentUpon>Frm用人申请_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="计划管理\Frm计划管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="计划管理\Frm计划管理.designer.cs">
+      <DependentUpon>Frm计划管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="计划管理\Frm车辆里程记录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="计划管理\Frm车辆里程记录.designer.cs">
+      <DependentUpon>Frm车辆里程记录.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="佣金申请\Frm佣金申请.resx">
+      <DependentUpon>Frm佣金申请.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="佣金申请\Frm佣金申请_Add.resx">
+      <DependentUpon>Frm佣金申请_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="佣金申请\Frm佣金申请列表.resx">
+      <DependentUpon>Frm佣金申请列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="佣金申请\Frm销售订单_New.resx">
+      <DependentUpon>Frm销售订单_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="出差登记\Frm出差登记.resx">
+      <DependentUpon>Frm出差登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="出差登记\Frm出差登记_Add.resx">
+      <DependentUpon>Frm出差登记_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="出差登记\Frm出差登记列表.resx">
+      <DependentUpon>Frm出差登记列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务费申请\Frm业务费申请.resx">
+      <DependentUpon>Frm业务费申请.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务费申请\Frm业务费申请_Add.resx">
+      <DependentUpon>Frm业务费申请_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务费申请\Frm业务费申请列表.resx">
+      <DependentUpon>Frm业务费申请列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验室申请单\Frm实验申请单_Add.resx">
+      <DependentUpon>Frm实验申请单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验室申请单\Frm实验申请单.resx">
+      <DependentUpon>Frm实验申请单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验室申请单\Frm实验申请单列表.resx">
+      <DependentUpon>Frm实验申请单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="日程登記\Frm日程登记.resx">
+      <DependentUpon>Frm日程登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用人申请\Frm用人申请列表.resx">
+      <DependentUpon>Frm用人申请列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用人申请\Frm用人申请.resx">
+      <DependentUpon>Frm用人申请.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用人申请\Frm用人申请_Add.resx">
+      <DependentUpon>Frm用人申请_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="计划管理\Frm计划管理.resx">
+      <DependentUpon>Frm计划管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="计划管理\Frm车辆里程记录.resx">
+      <DependentUpon>Frm车辆里程记录.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

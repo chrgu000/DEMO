@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace U8Export
+{
+    static public class ClsFormatString
+    {
+        static public string SetStringFormat(object o, int iLength)
+        {
+            string sTxt = "";
+            if (o != null)
+            {
+                sTxt = o.ToString().Trim();
+            }
+
+            while (System.Text.Encoding.Default.GetBytes(sTxt).Length < iLength)
+            {
+                sTxt = sTxt + ' '.ToString();
+            }
+
+
+            return sTxt;
+        }
+
+        static public string SetStringFormat(object o, int iLength, char sValue)
+        {
+            string sTxt = "";
+            if (o != null)
+            {
+                sTxt = o.ToString().Trim();
+            }
+
+            while (System.Text.Encoding.Default.GetBytes(sTxt).Length < iLength)
+            {
+                sTxt = sValue.ToString() + sTxt;
+            }
+
+            if (System.Text.Encoding.Default.GetBytes(sTxt).Length > iLength)
+            {
+                for (int i = System.Text.Encoding.Default.GetBytes(sTxt).Length; i <= 8; i++)
+                {
+                    sTxt = "0" + sTxt;
+                }
+                sTxt = sTxt.Substring(sTxt.Length - 8);
+            }
+
+
+            return sTxt;
+        }
+    }
+}

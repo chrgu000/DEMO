@@ -1,0 +1,91 @@
+﻿Create view [dbo].[_TH_GET_FLD]
+AS
+
+
+select a.iID as FPIDs,a.发票号码 as  cSBVCode,a.发票日期 as dDate,a.业务员编码 as cPersonCode,a.业务员名称 as cPersonName
+	,null as cDepCode,null as cDepName
+	,a.客户编码 as cCusCode,a.客户名称 as cCusName,a.客户名称 as cCusAbbName
+	,a.货物编码 as cInvCode,a.货物名称 as cInvName,a.规格型号 as cInvStd,a.单价 as iTaxUnitPrice,a.开票数量 as iQuantity,a.金额 as iSum
+	,a.发货单号 as cDLCode
+	,cast(null as decimal(16,2)) as iTaxUnitPriceFH
+	,cast(null as decimal(16,2)) as iTaxRateCJ
+	,cast(null as decimal(16,2)) as iTaxCJ
+	,cast(null as decimal(16,2)) as iMoneyFL
+	,a.代码商编码 as DLS,a.代理商名称 as DLSName
+	,a.城市编码 as cDCCode,a.城市编码 as cDCName
+	,cast(case when a.金额 < 0 then 1 else 0 end as bit) as bRed
+from [dbo].[_发票_sap] a
+where a.发票号码 in (select distinct [发票号码] from [dbo].[_回款_sap])
+
+go
+
+
+
+
+CREATE TABLE [dbo].[_发票_sap](
+	[iID] [int] IDENTITY(1,1) NOT NULL,
+	[销售组织] [nvarchar](60) NULL,
+	[发票号码] [nvarchar](60) NULL,
+	[发票类型] [nvarchar](60) NULL,
+	[发票类型名称] [nvarchar](60) NULL,
+	[发票日期] [date] NULL,
+	[客户编码] [nvarchar](60) NULL,
+	[客户旧编码] [nvarchar](60) NULL,
+	[客户名称] [nvarchar](60) NULL,
+	[代码商编码] [nvarchar](60) NULL,
+	[代理商名称] [nvarchar](60) NULL,
+	[业务员编码] [nvarchar](60) NULL,
+	[业务员名称] [nvarchar](60) NULL,
+	[省份编码] [nvarchar](60) NULL,
+	[省份名称] [nvarchar](60) NULL,
+	[城市编码] [nvarchar](60) NULL,
+	[发货单号] [nvarchar](60) NULL,
+	[发货行号] [int] NULL,
+	[货物编码] [nvarchar](60) NULL,
+	[货物名称] [nvarchar](60) NULL,
+	[规格型号] [nvarchar](60) NULL,
+	[批次] [nvarchar](60) NULL,
+	[单价] [decimal](18, 4) NULL,
+	[开票数量] [decimal](18, 4) NULL,
+	[金额] [decimal](18, 4) NULL,
+	[货币单位] [nvarchar](60) NULL,
+	[金税发票号码] [nvarchar](60) NULL,
+	[发票已取消] [nvarchar](60) NULL,
+	[被冲销的号码] [nvarchar](60) NULL,
+	[PO项目] [nvarchar](60) NULL,
+ CONSTRAINT [PK__发票_sap] PRIMARY KEY CLUSTERED 
+(
+	[iID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+CREATE TABLE [dbo].[_回款_sap](
+	[iID] [int] IDENTITY(1,1) NOT NULL,
+	[收款单号] [nvarchar](50) NULL,
+	[收款单日期] [datetime] NULL,
+	[收款单金额] [decimal](18, 4) NULL,
+	[业务员编码] [nvarchar](50) NULL,
+	[业务员] [nvarchar](50) NULL,
+	[核销金额] [decimal](18, 4) NULL,
+	[核销日期] [datetime] NULL,
+	[发票号码] [nvarchar](50) NULL,
+	[发票日期] [datetime] NULL,
+	[销售组织] [nvarchar](50) NULL,
+	[客户编码] [nvarchar](50) NULL,
+	[客户名称] [nvarchar](50) NULL,
+	[发票金额] [decimal](18, 4) NULL,
+	[货币单位] [nvarchar](50) NULL,
+ CONSTRAINT [PK__回款_sap] PRIMARY KEY CLUSTERED 
+(
+	[iID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

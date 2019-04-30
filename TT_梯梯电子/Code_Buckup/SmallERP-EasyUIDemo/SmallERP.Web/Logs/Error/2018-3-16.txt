@@ -1,0 +1,14 @@
+
+http://localhost:60308/PartMaster/AddRouting    15时43分22秒
+SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+
+http://localhost:60308/PartMaster/AddRouting    15时44分39秒
+Input string was not in a correct format.
+
+http://localhost:60308/PartMaster/AddRouting    16时02分11秒
+The INSERT statement conflicted with the FOREIGN KEY constraint "fk_routeops_machs". The conflict occurred in database "smallerp", table "dbo.t_o_machines", column 'macid'.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddRouting    16时10分43秒
+The INSERT statement conflicted with the FOREIGN KEY constraint "fk_routeops_machs". The conflict occurred in database "smallerp", table "dbo.t_o_machines", column 'macid'.
+The statement has been terminated.

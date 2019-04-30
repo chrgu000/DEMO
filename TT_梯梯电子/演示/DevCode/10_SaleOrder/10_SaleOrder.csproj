@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42253ED6-A39D-43FD-A46E-1555720967D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaleOrder</RootNamespace>
+    <AssemblyName>SaleOrder</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsVenInvPrice.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm缺料_demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm缺料_demo.Designer.cs">
+      <DependentUpon>Frm缺料_demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_生产.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_生产.designer.cs">
+      <DependentUpon>Frm订单评审_生产.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_委外.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_委外.designer.cs">
+      <DependentUpon>Frm订单评审_委外.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达采购计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达采购计划.designer.cs">
+      <DependentUpon>Frm订单评审_下达采购计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_采购.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_采购.designer.cs">
+      <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_维护.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_维护.designer.cs">
+      <DependentUpon>Frm订单评审_维护.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达委外计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达委外计划.designer.cs">
+      <DependentUpon>Frm订单评审_下达委外计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达生产计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达生产计划.designer.cs">
+      <DependentUpon>Frm订单评审_下达生产计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm物料供需分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm物料供需分析.Designer.cs">
+      <DependentUpon>Frm物料供需分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBOM单阶展开.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBOM单阶展开.designer.cs">
+      <DependentUpon>FrmBOM单阶展开.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBOM单阶展开列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBOM单阶展开列表.designer.cs">
+      <DependentUpon>FrmBOM单阶展开列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm物料时间检查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm物料时间检查.Designer.cs">
+      <DependentUpon>Frm物料时间检查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm外销订单总表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm外销订单总表.designer.cs">
+      <DependentUpon>Frm外销订单总表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm销售订单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm销售订单导入.designer.cs">
+      <DependentUpon>Frm销售订单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm评审状态查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm评审状态查看.designer.cs">
+      <DependentUpon>Frm评审状态查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm15天分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm15天分析.Designer.cs">
+      <DependentUpon>Frm15天分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达采购计划SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达采购计划SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_下达采购计划SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_维护SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_维护SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_维护SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达委外计划SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达委外计划SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_下达委外计划SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_下达生产计划SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_下达生产计划SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_下达生产计划SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_采购SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_采购SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_采购SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_生产SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_生产SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_生产SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_委外SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_委外SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_委外SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frm订单评审运算.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审运算.designer.cs">
+      <DependentUpon>Frm订单评审运算.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审运算_SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审运算_SEL.Designer.cs">
+      <DependentUpon>Frm订单评审运算_SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审运算_SEL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审运算_SEL2.Designer.cs">
+      <DependentUpon>Frm订单评审运算_SEL2.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\01_BasicInformation\01_BasicInformation.csproj">
+      <Project>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</Project>
+      <Name>01_BasicInformation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrameBaseFunction\FrameBaseFunction.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>FrameBaseFunction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm缺料_demo.resx">
+      <DependentUpon>Frm缺料_demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_SEL.resx">
+      <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_生产.resx">
+      <DependentUpon>Frm订单评审_生产.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_委外.resx">
+      <DependentUpon>Frm订单评审_委外.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达采购计划.resx">
+      <DependentUpon>Frm订单评审_下达采购计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_采购.resx">
+      <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_维护.resx">
+      <DependentUpon>Frm订单评审_维护.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达委外计划.resx">
+      <DependentUpon>Frm订单评审_下达委外计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达生产计划.resx">
+      <DependentUpon>Frm订单评审_下达生产计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm物料供需分析.resx">
+      <DependentUpon>Frm物料供需分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBOM单阶展开.resx">
+      <DependentUpon>FrmBOM单阶展开.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBOM单阶展开列表.resx">
+      <DependentUpon>FrmBOM单阶展开列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm物料时间检查.resx">
+      <DependentUpon>Frm物料时间检查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm外销订单总表.resx">
+      <DependentUpon>Frm外销订单总表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm销售订单导入.resx">
+      <DependentUpon>Frm销售订单导入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm评审状态查看.resx">
+      <DependentUpon>Frm评审状态查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm15天分析.resx">
+      <DependentUpon>Frm15天分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达采购计划SEL.resx">
+      <DependentUpon>Frm订单评审_下达采购计划SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_维护SEL.resx">
+      <DependentUpon>Frm订单评审_维护SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达委外计划SEL.resx">
+      <DependentUpon>Frm订单评审_下达委外计划SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_下达生产计划SEL.resx">
+      <DependentUpon>Frm订单评审_下达生产计划SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_采购SEL.resx">
+      <DependentUpon>Frm订单评审_采购SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_生产SEL.resx">
+      <DependentUpon>Frm订单评审_生产SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_委外SEL.resx">
+      <DependentUpon>Frm订单评审_委外SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审运算.resx">
+      <DependentUpon>Frm订单评审运算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审运算_SEL.resx">
+      <DependentUpon>Frm订单评审运算_SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审运算_SEL2.resx">
+      <DependentUpon>Frm订单评审运算_SEL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+"CustCode","CustInvoice","CustInvoiceDate","CustPO","DONo","DODate","DOTime","ItemNo","PartCode","ModelNo","CustLot","LotNo","DelQty","MarkLot","FromStation","SEPOperationCode","ToStation","EPJOperationCode","NextStation","MaterialPrice","Currency","ProductCode","ParentCode","PlatingSpec","Remark1","Remark2","Remark3"
+"90721","WC/20160466","20160430","","","0","0","CF-1N010AP001A","CF-84946004","","5000240179","","114","","KKW","2019","OPA9","3003","QPJ","6.87","USD","","CA-1N010AP001A","KG6-BI/S1-1","","",""
+"90721","WC/20160466","20160430","","","0","0","BZ-8B540AW003A","BZ-85947804","","5000243107","","10","","KKV","2013","OPA8","3003","MME","3.75","USD","","CA-8B540AW003A","G6/S1-1","","",""

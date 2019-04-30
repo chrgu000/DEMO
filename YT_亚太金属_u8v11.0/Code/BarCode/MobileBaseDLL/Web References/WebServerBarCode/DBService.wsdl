@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="b登陆">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="b登陆Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="b登陆Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s登陆">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s登陆Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s登陆Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtm当前服务器时间">
+        <s:complexType />
+      </s:element>
+      <s:element name="dtm当前服务器时间Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtm当前服务器时间Result" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt存货信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sInvCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt存货信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt存货信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s货仓">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s货仓Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s货仓Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s货位">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s货位Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s货位Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s仓库">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s仓库Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s仓库Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="d货位现存量">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBatch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWhPos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="d货位现存量Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="d货位现存量Result" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="d仓库现存量">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBatch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFree4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWhCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="d仓库现存量Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="d仓库现存量Result" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk货位是否存在">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk货位是否存在Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Chk货位是否存在Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk采购入库条码是否已经使用">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk采购入库条码是否已经使用Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Chk采购入库条码是否已经使用Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save采购入库单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save采购入库单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save采购入库单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt采购条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt采购条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt采购条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt到货单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单明细信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单明细信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt到货单明细信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单明细信息2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt到货单明细信息2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt到货单明细信息2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt采购订单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt采购订单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt采购订单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt生产订单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRowNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt生产订单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt生产订单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt生产订单子件信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRowNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInvcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt生产订单子件信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt生产订单子件信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt材料出库条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRowNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt材料出库条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt材料出库条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk材料出库条码是否已经使用">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk材料出库条码是否已经使用Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Chk材料出库条码是否已经使用Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save材料出库单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="iRowNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save材料出库单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save材料出库单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save产品入库单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save产品入库单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save产品入库单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk产品入库条码是否已经使用">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk产品入库条码是否已经使用Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Chk产品入库条码是否已经使用Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt产品入库条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt产品入库条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt产品入库条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk销售出库条码是否已经使用">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chk销售出库条码是否已经使用Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Chk销售出库条码是否已经使用Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售出库条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售出库条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt销售出库条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售订单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售订单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt销售订单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售订单明细信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt销售订单明细信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt销售订单明细信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save销售出库单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save销售出库单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save销售出库单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt发货单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt发货单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt发货单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt盘点单信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt盘点单信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt盘点单信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt盘点条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt盘点条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt盘点条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save盘点数据">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save盘点数据Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save盘点数据Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save货位调整单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save货位调整单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save货位调整单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt存货条码信息">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt存货条码信息Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt存货条码信息Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="b登陆SoapIn">
+    <wsdl:part name="parameters" element="tns:b登陆" />
+  </wsdl:message>
+  <wsdl:message name="b登陆SoapOut">
+    <wsdl:part name="parameters" element="tns:b登陆Response" />
+  </wsdl:message>
+  <wsdl:message name="s登陆SoapIn">
+    <wsdl:part name="parameters" element="tns:s登陆" />
+  </wsdl:message>
+  <wsdl:message name="s登陆SoapOut">
+    <wsdl:part name="parameters" element="tns:s登陆Response" />
+  </wsdl:message>
+  <wsdl:message name="dtm当前服务器时间SoapIn">
+    <wsdl:part name="parameters" element="tns:dtm当前服务器时间" />
+  </wsdl:message>
+  <wsdl:message name="dtm当前服务器时间SoapOut">
+    <wsdl:part name="parameters" element="tns:dtm当前服务器时间Response" />
+  </wsdl:message>
+  <wsdl:message name="dt存货信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt存货信息" />
+  </wsdl:message>
+  <wsdl:message name="dt存货信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt存货信息Response" />
+  </wsdl:message>
+  <wsdl:message name="s货仓SoapIn">
+    <wsdl:part name="parameters" element="tns:s货仓" />
+  </wsdl:message>
+  <wsdl:message name="s货仓SoapOut">
+    <wsdl:part name="parameters" element="tns:s货仓Response" />
+  </wsdl:message>
+  <wsdl:message name="s货位SoapIn">
+    <wsdl:part name="parameters" element="tns:s货位" />
+  </wsdl:message>
+  <wsdl:message name="s货位SoapOut">
+    <wsdl:part name="parameters" element="tns:s货位Response" />
+  </wsdl:message>
+  <wsdl:message name="s仓库SoapIn">
+    <wsdl:part name="parameters" element="tns:s仓库" />
+  </wsdl:message>
+  <wsdl:message name="s仓库SoapOut">
+    <wsdl:part name="parameters" element="tns:s仓库Response" />
+  </wsdl:message>
+  <wsdl:message name="d货位现存量SoapIn">
+    <wsdl:part name="parameters" element="tns:d货位现存量" />
+  </wsdl:message>
+  <wsdl:message name="d货位现存量SoapOut">
+    <wsdl:part name="parameters" element="tns:d货位现存量Response" />
+  </wsdl:message>
+  <wsdl:message name="d仓库现存量SoapIn">
+    <wsdl:part name="parameters" element="tns:d仓库现存量" />
+  </wsdl:message>
+  <wsdl:message name="d仓库现存量SoapOut">
+    <wsdl:part name="parameters" element="tns:d仓库现存量Response" />
+  </wsdl:message>
+  <wsdl:message name="Chk货位是否存在SoapIn">
+    <wsdl:part name="parameters" element="tns:Chk货位是否存在" />
+  </wsdl:message>
+  <wsdl:message name="Chk货位是否存在SoapOut">
+    <wsdl:part name="parameters" element="tns:Chk货位是否存在Response" />
+  </wsdl:message>
+  <wsdl:message name="Chk采购入库条码是否已经使用SoapIn">
+    <wsdl:part name="parameters" element="tns:Chk采购入库条码是否已经使用" />
+  </wsdl:message>
+  <wsdl:message name="Chk采购入库条码是否已经使用SoapOut">
+    <wsdl:part name="parameters" element="tns:Chk采购入库条码是否已经使用Response" />
+  </wsdl:message>
+  <wsdl:message name="Save采购入库单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save采购入库单" />
+  </wsdl:message>
+  <wsdl:message name="Save采购入库单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save采购入库单Response" />
+  </wsdl:message>
+  <wsdl:message name="dt采购条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt采购条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt采购条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt采购条码信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt到货单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt到货单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单明细信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt到货单明细信息" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单明细信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt到货单明细信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单明细信息2SoapIn">
+    <wsdl:part name="parameters" element="tns:dt到货单明细信息2" />
+  </wsdl:message>
+  <wsdl:message name="dt到货单明细信息2SoapOut">
+    <wsdl:part name="parameters" element="tns:dt到货单明细信息2Response" />
+  </wsdl:message>
+  <wsdl:message name="dt采购订单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt采购订单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt采购订单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt采购订单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt生产订单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt生产订单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt生产订单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt生产订单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt生产订单子件信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt生产订单子件信息" />
+  </wsdl:message>
+  <wsdl:message name="dt生产订单子件信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt生产订单子件信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt材料出库条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt材料出库条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt材料出库条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt材料出库条码信息Response" />
+  </wsdl:message>
+  <wsdl:message name="Chk材料出库条码是否已经使用SoapIn">
+    <wsdl:part name="parameters" element="tns:Chk材料出库条码是否已经使用" />
+  </wsdl:message>
+  <wsdl:message name="Chk材料出库条码是否已经使用SoapOut">
+    <wsdl:part name="parameters" element="tns:Chk材料出库条码是否已经使用Response" />
+  </wsdl:message>
+  <wsdl:message name="Save材料出库单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save材料出库单" />
+  </wsdl:message>
+  <wsdl:message name="Save材料出库单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save材料出库单Response" />
+  </wsdl:message>
+  <wsdl:message name="Save产品入库单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save产品入库单" />
+  </wsdl:message>
+  <wsdl:message name="Save产品入库单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save产品入库单Response" />
+  </wsdl:message>
+  <wsdl:message name="Chk产品入库条码是否已经使用SoapIn">
+    <wsdl:part name="parameters" element="tns:Chk产品入库条码是否已经使用" />
+  </wsdl:message>
+  <wsdl:message name="Chk产品入库条码是否已经使用SoapOut">
+    <wsdl:part name="parameters" element="tns:Chk产品入库条码是否已经使用Response" />
+  </wsdl:message>
+  <wsdl:message name="dt产品入库条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt产品入库条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt产品入库条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt产品入库条码信息Response" />
+  </wsdl:message>
+  <wsdl:message name="Chk销售出库条码是否已经使用SoapIn">
+    <wsdl:part name="parameters" element="tns:Chk销售出库条码是否已经使用" />
+  </wsdl:message>
+  <wsdl:message name="Chk销售出库条码是否已经使用SoapOut">
+    <wsdl:part name="parameters" element="tns:Chk销售出库条码是否已经使用Response" />
+  </wsdl:message>
+  <wsdl:message name="dt销售出库条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt销售出库条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt销售出库条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt销售出库条码信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt销售订单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt销售订单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt销售订单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt销售订单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt销售订单明细信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt销售订单明细信息" />
+  </wsdl:message>
+  <wsdl:message name="dt销售订单明细信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt销售订单明细信息Response" />
+  </wsdl:message>
+  <wsdl:message name="Save销售出库单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save销售出库单" />
+  </wsdl:message>
+  <wsdl:message name="Save销售出库单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save销售出库单Response" />
+  </wsdl:message>
+  <wsdl:message name="dt发货单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt发货单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt发货单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt发货单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt盘点单信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt盘点单信息" />
+  </wsdl:message>
+  <wsdl:message name="dt盘点单信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt盘点单信息Response" />
+  </wsdl:message>
+  <wsdl:message name="dt盘点条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt盘点条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt盘点条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt盘点条码信息Response" />
+  </wsdl:message>
+  <wsdl:message name="Save盘点数据SoapIn">
+    <wsdl:part name="parameters" element="tns:Save盘点数据" />
+  </wsdl:message>
+  <wsdl:message name="Save盘点数据SoapOut">
+    <wsdl:part name="parameters" element="tns:Save盘点数据Response" />
+  </wsdl:message>
+  <wsdl:message name="Save货位调整单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save货位调整单" />
+  </wsdl:message>
+  <wsdl:message name="Save货位调整单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save货位调整单Response" />
+  </wsdl:message>
+  <wsdl:message name="dt存货条码信息SoapIn">
+    <wsdl:part name="parameters" element="tns:dt存货条码信息" />
+  </wsdl:message>
+  <wsdl:message name="dt存货条码信息SoapOut">
+    <wsdl:part name="parameters" element="tns:dt存货条码信息Response" />
+  </wsdl:message>
+  <wsdl:portType name="DBWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <wsdl:input message="tns:b登陆SoapIn" />
+      <wsdl:output message="tns:b登陆SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <wsdl:input message="tns:s登陆SoapIn" />
+      <wsdl:output message="tns:s登陆SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <wsdl:input message="tns:dtm当前服务器时间SoapIn" />
+      <wsdl:output message="tns:dtm当前服务器时间SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt存货信息">
+      <wsdl:input message="tns:dt存货信息SoapIn" />
+      <wsdl:output message="tns:dt存货信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s货仓">
+      <wsdl:input message="tns:s货仓SoapIn" />
+      <wsdl:output message="tns:s货仓SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s货位">
+      <wsdl:input message="tns:s货位SoapIn" />
+      <wsdl:output message="tns:s货位SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s仓库">
+      <wsdl:input message="tns:s仓库SoapIn" />
+      <wsdl:output message="tns:s仓库SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="d货位现存量">
+      <wsdl:input message="tns:d货位现存量SoapIn" />
+      <wsdl:output message="tns:d货位现存量SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="d仓库现存量">
+      <wsdl:input message="tns:d仓库现存量SoapIn" />
+      <wsdl:output message="tns:d仓库现存量SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chk货位是否存在">
+      <wsdl:input message="tns:Chk货位是否存在SoapIn" />
+      <wsdl:output message="tns:Chk货位是否存在SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chk采购入库条码是否已经使用">
+      <wsdl:input message="tns:Chk采购入库条码是否已经使用SoapIn" />
+      <wsdl:output message="tns:Chk采购入库条码是否已经使用SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save采购入库单">
+      <wsdl:input message="tns:Save采购入库单SoapIn" />
+      <wsdl:output message="tns:Save采购入库单SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt采购条码信息">
+      <wsdl:input message="tns:dt采购条码信息SoapIn" />
+      <wsdl:output message="tns:dt采购条码信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单信息">
+      <wsdl:input message="tns:dt到货单信息SoapIn" />
+      <wsdl:output message="tns:dt到货单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息">
+      <wsdl:input message="tns:dt到货单明细信息SoapIn" />
+      <wsdl:output message="tns:dt到货单明细信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息2">
+      <wsdl:input message="tns:dt到货单明细信息2SoapIn" />
+      <wsdl:output message="tns:dt到货单明细信息2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt采购订单信息">
+      <wsdl:input message="tns:dt采购订单信息SoapIn" />
+      <wsdl:output message="tns:dt采购订单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单信息">
+      <wsdl:input message="tns:dt生产订单信息SoapIn" />
+      <wsdl:output message="tns:dt生产订单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单子件信息">
+      <wsdl:input message="tns:dt生产订单子件信息SoapIn" />
+      <wsdl:output message="tns:dt生产订单子件信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt材料出库条码信息">
+      <wsdl:input message="tns:dt材料出库条码信息SoapIn" />
+      <wsdl:output message="tns:dt材料出库条码信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chk材料出库条码是否已经使用">
+      <wsdl:input message="tns:Chk材料出库条码是否已经使用SoapIn" />
+      <wsdl:output message="tns:Chk材料出库条码是否已经使用SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save材料出库单">
+      <wsdl:input message="tns:Save材料出库单SoapIn" />
+      <wsdl:output message="tns:Save材料出库单SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save产品入库单">
+      <wsdl:input message="tns:Save产品入库单SoapIn" />
+      <wsdl:output message="tns:Save产品入库单SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chk产品入库条码是否已经使用">
+      <wsdl:input message="tns:Chk产品入库条码是否已经使用SoapIn" />
+      <wsdl:output message="tns:Chk产品入库条码是否已经使用SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt产品入库条码信息">
+      <wsdl:input message="tns:dt产品入库条码信息SoapIn" />
+      <wsdl:output message="tns:dt产品入库条码信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chk销售出库条码是否已经使用">
+      <wsdl:input message="tns:Chk销售出库条码是否已经使用SoapIn" />
+      <wsdl:output message="tns:Chk销售出库条码是否已经使用SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt销售出库条码信息">
+      <wsdl:input message="tns:dt销售出库条码信息SoapIn" />
+      <wsdl:output message="tns:dt销售出库条码信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单信息">
+      <wsdl:input message="tns:dt销售订单信息SoapIn" />
+      <wsdl:output message="tns:dt销售订单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单明细信息">
+      <wsdl:input message="tns:dt销售订单明细信息SoapIn" />
+      <wsdl:output message="tns:dt销售订单明细信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save销售出库单">
+      <wsdl:input message="tns:Save销售出库单SoapIn" />
+      <wsdl:output message="tns:Save销售出库单SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt发货单信息">
+      <wsdl:input message="tns:dt发货单信息SoapIn" />
+      <wsdl:output message="tns:dt发货单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点单信息">
+      <wsdl:input message="tns:dt盘点单信息SoapIn" />
+      <wsdl:output message="tns:dt盘点单信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点条码信息">
+      <wsdl:input message="tns:dt盘点条码信息SoapIn" />
+      <wsdl:output message="tns:dt盘点条码信息SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save盘点数据">
+      <wsdl:input message="tns:Save盘点数据SoapIn" />
+      <wsdl:output message="tns:Save盘点数据SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save货位调整单">
+      <wsdl:input message="tns:Save货位调整单SoapIn" />
+      <wsdl:output message="tns:Save货位调整单SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt存货条码信息">
+      <wsdl:input message="tns:dt存货条码信息SoapIn" />
+      <wsdl:output message="tns:dt存货条码信息SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBWebServiceSoap" type="tns:DBWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <soap:operation soapAction="http://tempuri.org/b登陆" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <soap:operation soapAction="http://tempuri.org/s登陆" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <soap:operation soapAction="http://tempuri.org/dtm当前服务器时间" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt存货信息">
+      <soap:operation soapAction="http://tempuri.org/dt存货信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s货仓">
+      <soap:operation soapAction="http://tempuri.org/s货仓" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s货位">
+      <soap:operation soapAction="http://tempuri.org/s货位" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s仓库">
+      <soap:operation soapAction="http://tempuri.org/s仓库" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="d货位现存量">
+      <soap:operation soapAction="http://tempuri.org/d货位现存量" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="d仓库现存量">
+      <soap:operation soapAction="http://tempuri.org/d仓库现存量" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk货位是否存在">
+      <soap:operation soapAction="http://tempuri.org/Chk货位是否存在" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk采购入库条码是否已经使用">
+      <soap:operation soapAction="http://tempuri.org/Chk采购入库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save采购入库单">
+      <soap:operation soapAction="http://tempuri.org/Save采购入库单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt采购条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt采购条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单信息">
+      <soap:operation soapAction="http://tempuri.org/dt到货单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息">
+      <soap:operation soapAction="http://tempuri.org/dt到货单明细信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息2">
+      <soap:operation soapAction="http://tempuri.org/dt到货单明细信息2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt采购订单信息">
+      <soap:operation soapAction="http://tempuri.org/dt采购订单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单信息">
+      <soap:operation soapAction="http://tempuri.org/dt生产订单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单子件信息">
+      <soap:operation soapAction="http://tempuri.org/dt生产订单子件信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt材料出库条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt材料出库条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk材料出库条码是否已经使用">
+      <soap:operation soapAction="http://tempuri.org/Chk材料出库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save材料出库单">
+      <soap:operation soapAction="http://tempuri.org/Save材料出库单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save产品入库单">
+      <soap:operation soapAction="http://tempuri.org/Save产品入库单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk产品入库条码是否已经使用">
+      <soap:operation soapAction="http://tempuri.org/Chk产品入库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt产品入库条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt产品入库条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk销售出库条码是否已经使用">
+      <soap:operation soapAction="http://tempuri.org/Chk销售出库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售出库条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt销售出库条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单信息">
+      <soap:operation soapAction="http://tempuri.org/dt销售订单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单明细信息">
+      <soap:operation soapAction="http://tempuri.org/dt销售订单明细信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save销售出库单">
+      <soap:operation soapAction="http://tempuri.org/Save销售出库单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt发货单信息">
+      <soap:operation soapAction="http://tempuri.org/dt发货单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点单信息">
+      <soap:operation soapAction="http://tempuri.org/dt盘点单信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt盘点条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save盘点数据">
+      <soap:operation soapAction="http://tempuri.org/Save盘点数据" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save货位调整单">
+      <soap:operation soapAction="http://tempuri.org/Save货位调整单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt存货条码信息">
+      <soap:operation soapAction="http://tempuri.org/dt存货条码信息" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBWebServiceSoap12" type="tns:DBWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <soap12:operation soapAction="http://tempuri.org/b登陆" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <soap12:operation soapAction="http://tempuri.org/s登陆" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <soap12:operation soapAction="http://tempuri.org/dtm当前服务器时间" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt存货信息">
+      <soap12:operation soapAction="http://tempuri.org/dt存货信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s货仓">
+      <soap12:operation soapAction="http://tempuri.org/s货仓" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s货位">
+      <soap12:operation soapAction="http://tempuri.org/s货位" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s仓库">
+      <soap12:operation soapAction="http://tempuri.org/s仓库" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="d货位现存量">
+      <soap12:operation soapAction="http://tempuri.org/d货位现存量" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="d仓库现存量">
+      <soap12:operation soapAction="http://tempuri.org/d仓库现存量" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk货位是否存在">
+      <soap12:operation soapAction="http://tempuri.org/Chk货位是否存在" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk采购入库条码是否已经使用">
+      <soap12:operation soapAction="http://tempuri.org/Chk采购入库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save采购入库单">
+      <soap12:operation soapAction="http://tempuri.org/Save采购入库单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt采购条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt采购条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt到货单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息">
+      <soap12:operation soapAction="http://tempuri.org/dt到货单明细信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt到货单明细信息2">
+      <soap12:operation soapAction="http://tempuri.org/dt到货单明细信息2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt采购订单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt采购订单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt生产订单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt生产订单子件信息">
+      <soap12:operation soapAction="http://tempuri.org/dt生产订单子件信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt材料出库条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt材料出库条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk材料出库条码是否已经使用">
+      <soap12:operation soapAction="http://tempuri.org/Chk材料出库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save材料出库单">
+      <soap12:operation soapAction="http://tempuri.org/Save材料出库单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save产品入库单">
+      <soap12:operation soapAction="http://tempuri.org/Save产品入库单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk产品入库条码是否已经使用">
+      <soap12:operation soapAction="http://tempuri.org/Chk产品入库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt产品入库条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt产品入库条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chk销售出库条码是否已经使用">
+      <soap12:operation soapAction="http://tempuri.org/Chk销售出库条码是否已经使用" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售出库条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt销售出库条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt销售订单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt销售订单明细信息">
+      <soap12:operation soapAction="http://tempuri.org/dt销售订单明细信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save销售出库单">
+      <soap12:operation soapAction="http://tempuri.org/Save销售出库单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt发货单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt发货单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点单信息">
+      <soap12:operation soapAction="http://tempuri.org/dt盘点单信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt盘点条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt盘点条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save盘点数据">
+      <soap12:operation soapAction="http://tempuri.org/Save盘点数据" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save货位调整单">
+      <soap12:operation soapAction="http://tempuri.org/Save货位调整单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt存货条码信息">
+      <soap12:operation soapAction="http://tempuri.org/dt存货条码信息" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBWebService">
+    <wsdl:port name="DBWebServiceSoap" binding="tns:DBWebServiceSoap">
+      <soap:address location="http://localhost/webTT/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBWebServiceSoap12" binding="tns:DBWebServiceSoap12">
+      <soap12:address location="http://localhost/webTT/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

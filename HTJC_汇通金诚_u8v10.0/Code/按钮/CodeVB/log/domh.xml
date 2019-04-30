@@ -1,0 +1,331 @@
+<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+	<s:Schema id="RowsetSchema">
+		<s:ElementType name="row" content="eltOnly" rs:updatable="true">
+			<s:AttributeType name="id" rs:number="1" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="id" rs:keycolumn="true">
+				<s:datatype dt:type="i8" dt:maxLength="8" rs:precision="19" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="brdflag" rs:number="2" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="brdflag">
+				<s:datatype dt:type="ui1" dt:maxLength="1" rs:precision="3" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cvouchtype" rs:number="3" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cvouchtype">
+				<s:datatype dt:type="string" dt:maxLength="2" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cvouchname" rs:number="4" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="vouchtype" rs:basecolumn="cvouchname">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cbustype" rs:number="5" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cbustype">
+				<s:datatype dt:type="string" dt:maxLength="12"/>
+			</s:AttributeType>
+			<s:AttributeType name="cbuscode" rs:number="6" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cbuscode">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="imquantity" rs:number="7" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="imquantity">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="darvdate" rs:number="8" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="darvdate">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cchkcode" rs:number="9" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cchkcode">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="dchkdate" rs:number="10" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dchkdate">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cchkperson" rs:number="11" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cchkperson">
+				<s:datatype dt:type="string" dt:maxLength="40"/>
+			</s:AttributeType>
+			<s:AttributeType name="vt_id" rs:number="12" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="vt_id">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bisstqc" rs:number="13" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="bisstqc">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="csource" rs:number="14" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="csource">
+				<s:datatype dt:type="string" dt:maxLength="50" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cwhcode" rs:number="15" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cwhcode">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cwhname" rs:number="16" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="warehouse" rs:basecolumn="cwhname">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ddate" rs:number="17" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="ddate">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccode" rs:number="18" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="ccode">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="crdcode" rs:number="19" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="crdcode">
+				<s:datatype dt:type="string" dt:maxLength="5"/>
+			</s:AttributeType>
+			<s:AttributeType name="crdname" rs:number="20" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rd_style" rs:basecolumn="crdname">
+				<s:datatype dt:type="string" dt:maxLength="12"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdepcode" rs:number="21" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdepcode">
+				<s:datatype dt:type="string" dt:maxLength="12"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdepname" rs:number="22" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="department" rs:basecolumn="cdepname">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="cpersoncode" rs:number="23" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cpersoncode">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cpersonname" rs:number="24" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="hr_hi_person" rs:basecolumn="cPsn_Name">
+				<s:datatype dt:type="string" dt:maxLength="40"/>
+			</s:AttributeType>
+			<s:AttributeType name="cstcode" rs:number="25" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cstcode">
+				<s:datatype dt:type="string" dt:maxLength="2"/>
+			</s:AttributeType>
+			<s:AttributeType name="cstname" rs:number="26" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="saletype" rs:basecolumn="cstname">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccuscode" rs:number="27" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="ccuscode">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusabbname" rs:number="28" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusabbname">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusperson" rs:number="29" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusperson">
+				<s:datatype dt:type="string" dt:maxLength="50"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusphone" rs:number="30" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusphone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusname" rs:number="31" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusname">
+				<s:datatype dt:type="string" dt:maxLength="98"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccushand" rs:number="32" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccushand">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusaddress" rs:number="33" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusaddress">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="contactphone" rs:number="34" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="cCusPhone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="contactmobile" rs:number="35" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="cCusHand">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cpsnophone" rs:number="36" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="hr_hi_person" rs:basecolumn="cpsnophone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="cpsnmobilephone" rs:number="37" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="hr_hi_person" rs:basecolumn="cpsnmobilephone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdeliverunit" rs:number="38" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="cusdeliveradd" rs:basecolumn="cdeliverunit">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccontactname" rs:number="39" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="Crm_Contact" rs:basecolumn="ccontactname">
+				<s:datatype dt:type="string" dt:maxLength="50"/>
+			</s:AttributeType>
+			<s:AttributeType name="cmobilephone" rs:number="40" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="Crm_Contact" rs:basecolumn="cmobilephone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="cofficephone" rs:number="41" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="Crm_Contact" rs:basecolumn="cofficephone">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="cvencode" rs:number="42" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cvencode">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cordercode" rs:number="43" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cordercode">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="cbillcode" rs:number="44" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cbillcode">
+				<s:datatype dt:type="i8" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdlcode" rs:number="45" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdlcode">
+				<s:datatype dt:type="i8" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cmemo" rs:number="46" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cmemo">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="cmaker" rs:number="47" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cmaker">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="caccounter" rs:number="48" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="caccounter">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cvenabbname" rs:number="49" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="chandler" rs:number="50" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="chandler">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine1" rs:number="51" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine1">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine2" rs:number="52" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine2">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine3" rs:number="53" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine3">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine4" rs:number="54" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine4">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine5" rs:number="55" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine5">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine6" rs:number="56" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine6">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine7" rs:number="57" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine7">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine8" rs:number="58" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine8">
+				<s:datatype dt:type="string" dt:maxLength="4"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine9" rs:number="59" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine9">
+				<s:datatype dt:type="string" dt:maxLength="8"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine10" rs:number="60" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine10">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine11" rs:number="61" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine11">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine12" rs:number="62" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine12">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine13" rs:number="63" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine13">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine14" rs:number="64" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine14">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine15" rs:number="65" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine15">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine16" rs:number="66" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cdefine16">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ufts" rs:number="67" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dveridate" rs:number="68" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dveridate">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="gspcheck" rs:number="69" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="gspcheck">
+				<s:datatype dt:type="string" dt:maxLength="10"/>
+			</s:AttributeType>
+			<s:AttributeType name="bpufirst" rs:number="70" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="bpufirst">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="biafirst" rs:number="71" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="biafirst">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="isalebillid" rs:number="72" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="isalebillid">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="cshipaddress" rs:number="73" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cshipaddress">
+				<s:datatype dt:type="string" dt:maxLength="200"/>
+			</s:AttributeType>
+			<s:AttributeType name="caddcode" rs:number="74" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="caddcode">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="bislsquery" rs:number="75" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="bislsquery">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ireturncount" rs:number="76" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="ireturncount">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iverifystate" rs:number="77" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="iverifystate">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iswfcontrolled" rs:number="78" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="iswfcontrolled">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cmodifyperson" rs:number="79" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="cmodifyperson">
+				<s:datatype dt:type="string" dt:maxLength="50"/>
+			</s:AttributeType>
+			<s:AttributeType name="dmodifydate" rs:number="80" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dmodifydate">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dnmaketime" rs:number="81" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dnmaketime">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dnmodifytime" rs:number="82" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dnmodifytime">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dnverifytime" rs:number="83" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="dnverifytime">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bomfirst" rs:number="84" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cusiid" rs:number="85" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="iId">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="chinvsn" rs:number="86" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="iflowid" rs:number="87" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="iflowid">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cflowname" rs:number="88" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="SABizFlow" rs:basecolumn="cSalesProcessDescribes">
+				<s:datatype dt:type="string" dt:maxLength="40"/>
+			</s:AttributeType>
+			<s:AttributeType name="csourcels" rs:number="89" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="csourcels">
+				<s:datatype dt:type="string" dt:maxLength="4"/>
+			</s:AttributeType>
+			<s:AttributeType name="iPrintCount" rs:number="90" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="rdrecord32" rs:basecolumn="iPrintCount">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine1" rs:number="91" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine1">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine2" rs:number="92" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine2">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine3" rs:number="93" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine3">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine4" rs:number="94" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine4">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine5" rs:number="95" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine5">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine6" rs:number="96" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine6">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine7" rs:number="97" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine7">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine8" rs:number="98" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine8">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine9" rs:number="99" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine9">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine10" rs:number="100" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine10">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine11" rs:number="101" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine11">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine12" rs:number="102" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine12">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine13" rs:number="103" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine13">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine14" rs:number="104" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine14">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine15" rs:number="105" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine15">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusdefine16" rs:number="106" rs:nullable="true" rs:writeunknown="true" rs:basecatalog="UFDATA_001_2013" rs:basetable="customer" rs:basecolumn="ccusdefine16">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="editprop" rs:number="107" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="2" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:extends type="rs:rowbase"/>
+		</s:ElementType>
+	</s:Schema>
+	<rs:data>
+		<z:row id="1000043647" brdflag="0" cvouchtype="32" cvouchname="销售出库单" cbustype="分期收款" cbuscode="0000004534" vt_id="87" bisstqc="False" csource="发货单" cwhcode="04" cwhname="成品仓" ddate="2016-10-01T00:00:00" ccode="0000004621" crdcode="24" crdname="销售出库" cdepcode="04" cdepname="销售部" cstcode="01" cstname="普通销售" ccuscode="01003" ccusabbname="振华集团（昆山）建设工程有限公司" ccusname="振华集团（昆山）建设工程有限公司" cdlcode="1000007544" cmaker="demo" chandler="" ufts="                    29563.5198" bpufirst="False" biafirst="False" ireturncount="0" iverifystate="0" iswfcontrolled="0" cmodifyperson="demo" dmodifydate="2016-10-02T00:00:00" dnmaketime="2016-10-02T00:34:15.730000000" dnmodifytime="2016-10-02T17:46:41.770000000" bomfirst="0" chinvsn="" iPrintCount="0" editprop=""/>
+	</rs:data>
+</xml>

@@ -1,0 +1,813 @@
+USE [UFDATA_101_2013]
+GO
+/****** Object:  StoredProcedure [dbo].[_GetSalesSummary]    Script Date: 09/01/2014 14:29:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[_GetSalesSummary] (@iYear int)
+as 
+
+BEGIN	
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tSalesSummary]') AND type in (N'U'))
+DROP TABLE [dbo].[tSalesSummary]
+
+
+CREATE TABLE [dbo].[tSalesSummary](
+	iID int ,
+	[ProName] [varchar](100) NOT NULL,
+	[BJBQty] [decimal](18, 6) NULL,
+	[BJBPrice] [decimal](18, 6) NULL,
+	[BJBMoney] [decimal](18, 6) NULL,
+	[CZSSBQty] [decimal](18, 6) NULL,
+	[CZSSBPrice] [decimal](18, 6) NULL,
+	[CZSSBMoney] [decimal](18, 6) NULL,
+	[KSSSBQty] [decimal](18, 6) NULL,
+	[KSSSBPrice] [decimal](18, 6) NULL,
+	[KSSSBMoney] [decimal](18, 6) NULL,
+	[SZFSBQty] [decimal](18, 6) NULL,
+	[SZFSBPrice] [decimal](18, 6) NULL,
+	[SZFSBMoney] [decimal](18, 6) NULL,
+	[SZSSBQty] [decimal](18, 6) NULL,
+	[SZSSBPrice] [decimal](18, 6) NULL,
+	[SZSSBMoney] [decimal](18, 6) NULL,
+	[XMBQty] [decimal](18, 6) NULL,
+	[XMBMoney] [decimal](18, 6) NULL,
+	[XMBPrice] [decimal](18, 6) NULL,
+	[CQBQty] [decimal](18, 6) NULL,
+	[CQBPrice] [decimal](18, 6) NULL,
+	[CQBMoney] [decimal](18, 6) NULL,
+	[DLQty] [decimal](18, 6) NULL,
+	[DLPrice] [decimal](18, 6) NULL,
+	[DLMoney] [decimal](18, 6) NULL,
+ CONSTRAINT [PK_tSalesSummary] PRIMARY KEY CLUSTERED 
+(
+	[ProName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+insert into [tSalesSummary](iID,[ProName])values(1,'感光胶')
+insert into [tSalesSummary](iID,[ProName])values(2,'其他副资材')
+insert into [tSalesSummary](iID,[ProName])values(3,'重氮')
+insert into [tSalesSummary](iID,[ProName])values(4,'网版')
+insert into [tSalesSummary](iID,[ProName])values(5,'丝网')
+insert into [tSalesSummary](iID,[ProName])values(6,'小膜油')
+insert into [tSalesSummary](iID,[ProName])values(7,'油墨')
+
+--declare @iYear int
+--set @iYear = 2014
+--101
+
+---BJB	
+update tSalesSummary set [BJBMoney] = ISNULL([BJBMoney],0) + b.iMoney,[BJBQty] = ISNULL([BJBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'BJB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [BJBPrice] = cast(([BJBMoney] / case when isnull([BJBQty],0) = 0 then 1 else [BJBQty] end) as decimal(16,6))
+
+
+---CZSSB
+update tSalesSummary set [CZSSBMoney] = ISNULL([CZSSBMoney],0) + b.iMoney,[CZSSBQty] = ISNULL([CZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CZSSBPrice] = cast(([CZSSBMoney] / case when isnull([CZSSBQty],0) = 0 then 1 else [CZSSBQty] end) as decimal(16,6))
+
+
+---KSSSB
+update tSalesSummary set [KSSSBMoney] = ISNULL([KSSSBMoney],0) + b.iMoney,[KSSSBQty] = ISNULL([KSSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'KSSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [KSSSBPrice] = cast(([KSSSBMoney] / case when isnull([KSSSBQty],0) = 0 then 1 else [KSSSBQty] end) as decimal(16,6))
+
+
+
+---SZFSB
+update tSalesSummary set [SZFSBMoney] = ISNULL([SZFSBMoney],0) + b.iMoney,[SZFSBQty] = ISNULL([SZFSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZFSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZFSBPrice] = cast(([SZFSBMoney] / case when isnull([SZFSBQty],0) = 0 then 1 else [SZFSBQty] end) as decimal(16,6))
+
+
+
+---SZSSB
+update tSalesSummary set [SZSSBMoney] = ISNULL([SZSSBMoney],0) + b.iMoney,[SZSSBQty] = ISNULL([SZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZSSBPrice] = cast(([SZSSBMoney] / case when isnull([SZSSBQty],0) = 0 then 1 else [SZSSBQty] end) as decimal(16,6))
+
+
+
+---XMB
+update tSalesSummary set [XMBMoney] = ISNULL([XMBMoney],0) + b.iMoney,[XMBQty] = ISNULL([XMBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'XMB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [XMBPrice] = cast(([XMBMoney] / case when isnull([XMBQty],0) = 0 then 1 else [XMBQty] end) as decimal(16,6))
+
+
+
+
+
+
+---CQB
+update tSalesSummary set [CQBMoney] = ISNULL([CQBMoney],0) + b.iMoney,[CQBQty] = ISNULL([CQBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CQB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CQBPrice] = cast(([CQBMoney] / case when isnull([CQBQty],0) = 0 then 1 else [CQBQty] end) as decimal(16,6))
+
+
+
+
+
+---DL
+update tSalesSummary set [DLMoney] = ISNULL([DLMoney],0) + b.iMoney,[DLQty] = ISNULL([DLQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'DL'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [DLPrice] = cast(([DLMoney] / case when isnull([DLQty],0) = 0 then 1 else [DLQty] end) as decimal(16,6))
+
+
+
+
+
+--102
+
+---BJB	
+update tSalesSummary set [BJBMoney] = ISNULL([BJBMoney],0) + b.iMoney,[BJBQty] = ISNULL([BJBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'BJB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [BJBPrice] = cast(([BJBMoney] / case when isnull([BJBQty],0) = 0 then 1 else [BJBQty] end) as decimal(16,6))
+
+
+---CZSSB
+update tSalesSummary set [CZSSBMoney] = ISNULL([CZSSBMoney],0) + b.iMoney,[CZSSBQty] = ISNULL([CZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CZSSBPrice] = cast(([CZSSBMoney] / case when isnull([CZSSBQty],0) = 0 then 1 else [CZSSBQty] end) as decimal(16,6))
+
+
+---KSSSB
+update tSalesSummary set [KSSSBMoney] = ISNULL([KSSSBMoney],0) + b.iMoney,[KSSSBQty] = ISNULL([KSSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'KSSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [KSSSBPrice] = cast(([KSSSBMoney] / case when isnull([KSSSBQty],0) = 0 then 1 else [KSSSBQty] end) as decimal(16,6))
+
+
+
+---SZFSB
+update tSalesSummary set [SZFSBMoney] = ISNULL([SZFSBMoney],0) + b.iMoney,[SZFSBQty] = ISNULL([SZFSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZFSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZFSBPrice] = cast(([SZFSBMoney] / case when isnull([SZFSBQty],0) = 0 then 1 else [SZFSBQty] end) as decimal(16,6))
+
+
+
+---SZSSB
+update tSalesSummary set [SZSSBMoney] = ISNULL([SZSSBMoney],0) + b.iMoney,[SZSSBQty] = ISNULL([SZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZSSBPrice] = cast(([SZSSBMoney] / case when isnull([SZSSBQty],0) = 0 then 1 else [SZSSBQty] end) as decimal(16,6))
+
+
+
+---XMB
+update tSalesSummary set [XMBMoney] = ISNULL([XMBMoney],0) + b.iMoney,[XMBQty] = ISNULL([XMBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'XMB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [XMBPrice] = cast(([XMBMoney] / case when isnull([XMBQty],0) = 0 then 1 else [XMBQty] end) as decimal(16,6))
+
+
+
+
+
+
+---CQB
+update tSalesSummary set [CQBMoney] = ISNULL([CQBMoney],0) + b.iMoney,[CQBQty] = ISNULL([CQBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CQB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CQBPrice] = cast(([CQBMoney] / case when isnull([CQBQty],0) = 0 then 1 else [CQBQty] end) as decimal(16,6))
+
+
+
+
+
+---DL
+update tSalesSummary set [DLMoney] = ISNULL([DLMoney],0) + b.iMoney,[DLQty] = ISNULL([DLQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'DL'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [DLPrice] = cast(([DLMoney] / case when isnull([DLQty],0) = 0 then 1 else [DLQty] end) as decimal(16,6))
+
+
+
+
+
+--104
+
+---BJB	
+update tSalesSummary set [BJBMoney] = ISNULL([BJBMoney],0) + b.iMoney,[BJBQty] = ISNULL([BJBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'BJB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [BJBPrice] = cast(([BJBMoney] / case when isnull([BJBQty],0) = 0 then 1 else [BJBQty] end) as decimal(16,6))
+
+
+---CZSSB
+update tSalesSummary set [CZSSBMoney] = ISNULL([CZSSBMoney],0) + b.iMoney,[CZSSBQty] = ISNULL([CZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CZSSBPrice] = cast(([CZSSBMoney] / case when isnull([CZSSBQty],0) = 0 then 1 else [CZSSBQty] end) as decimal(16,6))
+
+
+---KSSSB
+update tSalesSummary set [KSSSBMoney] = ISNULL([KSSSBMoney],0) + b.iMoney,[KSSSBQty] = ISNULL([KSSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'KSSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [KSSSBPrice] = cast(([KSSSBMoney] / case when isnull([KSSSBQty],0) = 0 then 1 else [KSSSBQty] end) as decimal(16,6))
+
+
+
+---SZFSB
+update tSalesSummary set [SZFSBMoney] = ISNULL([SZFSBMoney],0) + b.iMoney,[SZFSBQty] = ISNULL([SZFSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZFSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZFSBPrice] = cast(([SZFSBMoney] / case when isnull([SZFSBQty],0) = 0 then 1 else [SZFSBQty] end) as decimal(16,6))
+
+
+
+---SZSSB
+update tSalesSummary set [SZSSBMoney] = ISNULL([SZSSBMoney],0) + b.iMoney,[SZSSBQty] = ISNULL([SZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZSSBPrice] = cast(([SZSSBMoney] / case when isnull([SZSSBQty],0) = 0 then 1 else [SZSSBQty] end) as decimal(16,6))
+
+
+
+---XMB
+update tSalesSummary set [XMBMoney] = ISNULL([XMBMoney],0) + b.iMoney,[XMBQty] = ISNULL([XMBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'XMB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [XMBPrice] = cast(([XMBMoney] / case when isnull([XMBQty],0) = 0 then 1 else [XMBQty] end) as decimal(16,6))
+
+
+
+
+
+
+---CQB
+update tSalesSummary set [CQBMoney] = ISNULL([CQBMoney],0) + b.iMoney,[CQBQty] = ISNULL([CQBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CQB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CQBPrice] = cast(([CQBMoney] / case when isnull([CQBQty],0) = 0 then 1 else [CQBQty] end) as decimal(16,6))
+
+
+
+
+
+---DL
+update tSalesSummary set [DLMoney] = ISNULL([DLMoney],0) + b.iMoney,[DLQty] = ISNULL([DLQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'DL'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [DLPrice] = cast(([DLMoney] / case when isnull([DLQty],0) = 0 then 1 else [DLQty] end) as decimal(16,6))
+
+
+
+--103
+
+---BJB	
+update tSalesSummary set [BJBMoney] = ISNULL([BJBMoney],0) + b.iMoney,[BJBQty] = ISNULL([BJBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'BJB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [BJBPrice] = cast(([BJBMoney] / case when isnull([BJBQty],0) = 0 then 1 else [BJBQty] end) as decimal(16,6))
+
+
+---CZSSB
+update tSalesSummary set [CZSSBMoney] = ISNULL([CZSSBMoney],0) + b.iMoney,[CZSSBQty] = ISNULL([CZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CZSSBPrice] = cast(([CZSSBMoney] / case when isnull([CZSSBQty],0) = 0 then 1 else [CZSSBQty] end) as decimal(16,6))
+
+
+---KSSSB
+update tSalesSummary set [KSSSBMoney] = ISNULL([KSSSBMoney],0) + b.iMoney,[KSSSBQty] = ISNULL([KSSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'KSSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [KSSSBPrice] = cast(([KSSSBMoney] / case when isnull([KSSSBQty],0) = 0 then 1 else [KSSSBQty] end) as decimal(16,6))
+
+
+
+---SZFSB
+update tSalesSummary set [SZFSBMoney] = ISNULL([SZFSBMoney],0) + b.iMoney,[SZFSBQty] = ISNULL([SZFSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZFSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZFSBPrice] = cast(([SZFSBMoney] / case when isnull([SZFSBQty],0) = 0 then 1 else [SZFSBQty] end) as decimal(16,6))
+
+
+
+---SZSSB
+update tSalesSummary set [SZSSBMoney] = ISNULL([SZSSBMoney],0) + b.iMoney,[SZSSBQty] = ISNULL([SZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZSSBPrice] = cast(([SZSSBMoney] / case when isnull([SZSSBQty],0) = 0 then 1 else [SZSSBQty] end) as decimal(16,6))
+
+
+
+---XMB
+update tSalesSummary set [XMBMoney] = ISNULL([XMBMoney],0) + b.iMoney,[XMBQty] = ISNULL([XMBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'XMB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [XMBPrice] = cast(([XMBMoney] / case when isnull([XMBQty],0) = 0 then 1 else [XMBQty] end) as decimal(16,6))
+
+
+
+
+
+
+---CQB
+update tSalesSummary set [CQBMoney] = ISNULL([CQBMoney],0) + b.iMoney,[CQBQty] = ISNULL([CQBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CQB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CQBPrice] = cast(([CQBMoney] / case when isnull([CQBQty],0) = 0 then 1 else [CQBQty] end) as decimal(16,6))
+
+
+
+
+
+---DL
+update tSalesSummary set [DLMoney] = ISNULL([DLMoney],0) + b.iMoney,[DLQty] = ISNULL([DLQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'DL'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [DLPrice] = cast(([DLMoney] / case when isnull([DLQty],0) = 0 then 1 else [DLQty] end) as decimal(16,6))
+
+
+
+--103
+
+---BJB	
+update tSalesSummary set [BJBMoney] = ISNULL([BJBMoney],0) + b.iMoney,[BJBQty] = ISNULL([BJBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'BJB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [BJBPrice] = cast(([BJBMoney] / case when isnull([BJBQty],0) = 0 then 1 else [BJBQty] end) as decimal(16,6))
+
+
+---CZSSB
+update tSalesSummary set [CZSSBMoney] = ISNULL([CZSSBMoney],0) + b.iMoney,[CZSSBQty] = ISNULL([CZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CZSSBPrice] = cast(([CZSSBMoney] / case when isnull([CZSSBQty],0) = 0 then 1 else [CZSSBQty] end) as decimal(16,6))
+
+
+---KSSSB
+update tSalesSummary set [KSSSBMoney] = ISNULL([KSSSBMoney],0) + b.iMoney,[KSSSBQty] = ISNULL([KSSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'KSSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [KSSSBPrice] = cast(([KSSSBMoney] / case when isnull([KSSSBQty],0) = 0 then 1 else [KSSSBQty] end) as decimal(16,6))
+
+
+
+---SZFSB
+update tSalesSummary set [SZFSBMoney] = ISNULL([SZFSBMoney],0) + b.iMoney,[SZFSBQty] = ISNULL([SZFSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZFSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZFSBPrice] = cast(([SZFSBMoney] / case when isnull([SZFSBQty],0) = 0 then 1 else [SZFSBQty] end) as decimal(16,6))
+
+
+
+---SZSSB
+update tSalesSummary set [SZSSBMoney] = ISNULL([SZSSBMoney],0) + b.iMoney,[SZSSBQty] = ISNULL([SZSSBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'SZSSB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [SZSSBPrice] = cast(([SZSSBMoney] / case when isnull([SZSSBQty],0) = 0 then 1 else [SZSSBQty] end) as decimal(16,6))
+
+
+
+---XMB
+update tSalesSummary set [XMBMoney] = ISNULL([XMBMoney],0) + b.iMoney,[XMBQty] = ISNULL([XMBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'XMB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [XMBPrice] = cast(([XMBMoney] / case when isnull([XMBQty],0) = 0 then 1 else [XMBQty] end) as decimal(16,6))
+
+
+
+
+
+
+---CQB
+update tSalesSummary set [CQBMoney] = ISNULL([CQBMoney],0) + b.iMoney,[CQBQty] = ISNULL([CQBQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'CQB'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [CQBPrice] = cast(([CQBMoney] / case when isnull([CQBQty],0) = 0 then 1 else [CQBQty] end) as decimal(16,6))
+
+
+
+
+
+---DL
+update tSalesSummary set [DLMoney] = ISNULL([DLMoney],0) + b.iMoney,[DLQty] = ISNULL([DLQty],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = 'DL'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = tSalesSummary.[ProName]
+
+update tSalesSummary set [DLPrice] = cast(([DLMoney] / case when isnull([DLQty],0) = 0 then 1 else [DLQty] end) as decimal(16,6))
+
+
+
+select * from tSalesSummary order by iID
+
+end

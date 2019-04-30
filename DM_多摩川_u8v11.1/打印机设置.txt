@@ -1,0 +1,8 @@
+run "su -p pass admin"
+setup write "wlan","uart1:"
+SETUP "wlan","SSID","suzhoudmc"
+SETUP "wlan","WPA_PSK","dmc@2014"
+setup "wlan","WPA","ON"
+setup "wlan","WPA2","ON"
+setup "wlan","ACTIVE","1"
+

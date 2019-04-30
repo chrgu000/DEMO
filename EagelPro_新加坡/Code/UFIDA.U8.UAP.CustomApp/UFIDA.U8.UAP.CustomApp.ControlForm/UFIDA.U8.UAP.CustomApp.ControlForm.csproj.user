@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferencePath>D:\WorkSpace\工作项目\EagelPro_新加坡_u8v11.1\Code\UFIDA.U8.UAP.CustomApp\out\</ReferencePath>
+  </PropertyGroup>
+</Project>

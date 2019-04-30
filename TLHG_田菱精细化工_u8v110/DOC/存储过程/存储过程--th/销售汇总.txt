@@ -1,0 +1,145 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesByDept1]    Script Date: 09/23/2014 01:25:24 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesSum]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesSum]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesByDept1]    Script Date: 09/23/2014 01:25:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+--   exec _GetSalesSum '2013-1-1','2014-12-31','北京办'
+
+--	exec _GetSalesSum '2013-1-1','2014-12-31',''
+
+--	销售合计
+
+CREATE PROCEDURE [dbo]._GetSalesSum (@dDate1 datetime,@dDate2 datetime,@DepName varchar(50))
+as 
+
+BEGIN	
+
+set nocount on
+
+if @DepName <> '' 
+
+select a.cInvCName as 品名,a.cDepMemo as 部门
+	,sum(iQuantity) as 数量,sum(iMoney) as 金额
+from (
+		  select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		  from UFDATA_101_2013..DispatchList a inner join UFDATA_101_2013..DispatchLists  b on a.DLID  = b.DLID 
+		  	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		  where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_102_2014..DispatchList a inner join UFDATA_102_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_102_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_103_2014..DispatchList a inner join UFDATA_103_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_103_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_104_2014..DispatchList a inner join UFDATA_104_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_104_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_201_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_201_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+) as a
+
+where 1=1
+	 and a.dDate>=@dDate1 and a.dDate<=@dDate2
+	 and a.cDepMemo = @DepName
+group by a.cInvCName,a.cDepMemo
+order by a.cDepMemo,a.cInvCName
+
+else
+
+select a.cInvCName as 品名,a.cDepMemo as 部门
+	,sum(iQuantity) as 数量,sum(iMoney) as 金额
+from (
+				  select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		  from UFDATA_101_2013..DispatchList a inner join UFDATA_101_2013..DispatchLists  b on a.DLID  = b.DLID 
+		  	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		  where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_102_2014..DispatchList a inner join UFDATA_102_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_102_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_103_2014..DispatchList a inner join UFDATA_103_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_103_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_104_2014..DispatchList a inner join UFDATA_104_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_104_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+union all 
+		select f.cInvCName,c.cDepMemo,datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+		from UFDATA_201_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_201_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' 
+) as a
+where 1=1
+	 and a.dDate>=@dDate1 and a.dDate<=@dDate2
+group by a.cInvCName,a.cDepMemo
+order by a.cDepMemo,a.cInvCName
+
+end
+
+
+
+
+GO
+
+
+
+
+

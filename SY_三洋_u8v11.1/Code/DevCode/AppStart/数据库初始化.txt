@@ -1,0 +1,21 @@
+﻿
+--TRUNCATE TABLE  dbo._a
+--TRUNCATE TABLE  dbo._UserRoleInfo 
+--TRUNCATE TABLE  dbo._RoleRight
+--delete dbo._RoleInfo where vchrRoleID <> 'administrator'
+--delete dbo._UserInfo where vchrUid <> 'admin'
+--TRUNCATE TABLE  dbo.Get供需分析Temp
+--TRUNCATE TABLE  dbo.Holidays
+--TRUNCATE TABLE  dbo.InvLineCycle
+--TRUNCATE TABLE  dbo.ProductionLine
+--TRUNCATE TABLE  dbo.ProductionLinePeopleNO
+--TRUNCATE TABLE  dbo.ProductionLineState
+--TRUNCATE TABLE  dbo.WorkCalendar
+--TRUNCATE TABLE  dbo.订单评审
+--TRUNCATE TABLE  dbo.订单评审临时表
+--TRUNCATE TABLE  dbo.订单评审明细
+--TRUNCATE TABLE  dbo.生产日计划
+--TRUNCATE TABLE  dbo.生产日计划历史
+--TRUNCATE TABLE  dbo.生产日计划完工登记
+--TRUNCATE TABLE  dbo.生产计划
+ 

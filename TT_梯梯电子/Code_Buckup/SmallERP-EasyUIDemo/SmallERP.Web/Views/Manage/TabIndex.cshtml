@@ -1,0 +1,318 @@
+﻿@{
+    ViewBag.Title = "TabIndex";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section CSS{
+    @*<link rel="stylesheet" type="text/css" href="~/Plugins/gooflow0.8/GooFlow/codebase/GooFlow2.css" />
+        <link rel="stylesheet" type="text/css" href="~/Plugins/gooflow0.8/default.css" />*@
+    <link rel="stylesheet" type="text/css" href="~/Styles/960/fluid/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/960/fluid/text.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/960/fluid/grid.css" />
+    <style type="text/css">
+        .grid_3 {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            width: 78px;
+            height: 82px;
+            padding-top: 8px;
+        }
+
+        .center {
+            background-color: #eff6fe !important;
+        }
+
+        .container_16 {
+            background: url(/Images/kf.jpg) center no-repeat !important;
+            height: 408px;
+            margin: 25px auto;
+            width: 500px;
+            position: relative;
+            text-align: center;
+        }
+
+            .container_16 a {
+                color: black;
+                text-decoration: none;
+            }
+
+
+            .container_16 a:hover {
+                background: url(/Images/HotBtnBack.jpg) center no-repeat;
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .panel-tool {
+            display: none;
+        }
+    </style>
+}
+<body class="easyui-layout" style="overflow: hidden;">
+
+    <div region="center" class="center">
+        <div class="container_16">
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Manage Bills of Material', '/PartMaster/PartMasterManage', '');"><img src="~/Images/index_icon_1.jpg" alt="Material Master" /><div>Material Master</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('WO Management', '/WO/WorksOrdersManage', '');" style=" margin-left:128px;"><img src="~/Images/index_icon_2.jpg" alt="Manage WO" /><div>Manage WO</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('WO Status', '', '');" style="margin-left:20px;"><img src="~/Images/index_icon_3.jpg" alt="WO Status" /><div>WO Status</div></a>
+
+            <div class="clear"></div>
+
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Maintain Warehouse', '/Report/CommonReport?rptName=MaintainWarehouse', '');"><img src="~/Images/index_icon_4.jpg" alt="Warehouse Configure" /><div>Warehouse Configure</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Stock Normal Operation', '/StockManagement/stockNormalOperation', '');" style="margin-left:25px;"><img src="~/Images/index_icon_5.jpg" alt="Stock Manage" /><div>Stock Manage</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Stock Taking', '', '');" style="margin-left:15px;"><img src="~/Images/index_icon_6.jpg" alt="Stock Taking" /><div>Stock Taking</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('WO Kitting', '', '');" style="margin-left:20px;"><img src="~/Images/index_icon_7.jpg" alt="WO Kitting" /><div>WO Kitting</div></a>
+
+            <div class="clear"></div>
+
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Goods Receive', '', '');" style="margin-left:223px;"><img src="~/Images/index_icon_8.jpg" alt="Goods Receive" /><div>Goods Receive</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('SO Adjust', '', '');" style="margin-left:20px;"><img src="~/Images/index_icon_9.jpg" alt="SO Adjust" /><div>SO Adjust</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Product Management', '', '');" style="margin-left:-10px;"><img src="~/Images/index_icon_10.jpg" alt="Product Management" /><div>Product Management</div></a>
+
+            <div class="clear"></div>
+
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Traders', '/Report/CommonReport?rptName=Traders', '');"><img src="~/Images/index_icon_11.jpg" alt="Manage Trader" /><div>Manage Trader</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Traders Addresses', '/Report/CommonReport?rptName=TradersAddresses', '');" style="margin-left:25px;"><img src="~/Images/index_icon_12.jpg" alt="Manage Trader Address" /><div>Trader Address</div></a>
+            <a class="grid_3" href="javascript:void(0);" onclick="window.parent.addTab('Traders Contacts', '/Report/CommonReport?rptName=TradersContacts', '');" style="margin-left:125px;"><img src="~/Images/index_icon_13.jpg" alt="Manage Trader Contact" /><div>Trader Contact</div></a>
+        </div>
+    </div>
+
+
+    @*<div id="demo" style="overflow:hidden;"></div>*@
+    @*<input id="submit" type="button" value='导出结果' onclick="Export()" />
+        <textarea id="result" row="6"></textarea>*@
+</body>
+@section JS{
+    <script src="~/Scripts/Common.js"></script>
+    @*<script src="~/Plugins/jquery-easyui-1.4.4/OpenWin.js"></script>*@
+    <script type="text/javascript" src="~/Plugins/gooflow0.8/GooFlow/data.js"></script>
+    <script type="text/javascript" src="~/Plugins/gooflow0.8/GooFunc.js"></script>
+    <script type="text/javascript" src="~/Plugins/gooflow0.8/json2.js"></script>
+    <script type="text/javascript" src="~/Plugins/gooflow0.8/GooFlow/codebase/GooFlow.js"></script>
+    <script type="text/javascript">
+        ///**
+        // * 添加tab页面
+        // * param {string} title tab标题
+        // * param {string} url iframe的url地址
+        // * param {iconCls} 图标 css 类
+        // */
+        //function addTab(title, url, iconCls) {
+        //    if ($('#tabs').tabs('exists', title)) {
+        //        $('#tabs').tabs('select', title);
+        //    } else {
+        //        var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;border:none;"></iframe>';
+        //        $('#tabs').tabs('add', {
+        //            title: title,
+        //            content: content,
+        //            border: false,
+        //            closable: true,
+        //            iconCls: iconCls
+        //        });
+        //    }
+        //}
+
+
+        //var demo;
+        $(document).ready(function () {
+            $('a').each(function () {
+                var that = $(this), data = parent.$("body", parent.document).data("menulist");
+                $.each(data || [], function () {
+                    if (this.URL == that.attr('url')) {
+                        that.attr('title', this.MenuName);
+                        that.attr('icon', this.IconClass);
+                    }
+                });
+            }).click(function () {
+                var that = $(this);
+                com.openTab(that.attr('title'), that.attr('url'), that.attr('icon'));
+            });
+
+            //using('layout', function () {
+            //    var box = $("#layoutbox");
+            //    box.width($(window).width() - 4).height($(window).height() - 4).layout();
+            //    $(window).resize(function () { box.width($(window).width() - 4).height($(window).height() - 4).layout('resize'); });
+            //});
+
+
+
+            //var property = {
+            //    width: $(document).width(),
+            //    height: $(document).height(),
+            //    //toolBtns: ["start round", "end round", "task round", "node", "chat", "state", "plug", "join", "fork", "complex mix"],
+            //    toolBtns: [],
+            //    haveHead: false,
+            //    headLabel: true,
+            //    //headBtns: ["new", "open", "save", "undo", "redo", "reload"],//如果haveHead=true，则定义HEAD区的按钮
+            //    haveTool: true,
+            //    haveGroup: true,
+            //    useOperStack: false
+            //};
+            ////var remark = {
+            ////    cursor: "选择指针",
+            ////    direct: "结点连线",
+            ////    start: "入口结点",
+            ////    "end": "结束结点",
+            ////    "task": "任务结点",
+            ////    node: "自动结点",
+            ////    chat: "决策结点",
+            ////    state: "状态结点",
+            ////    plug: "附加插件",
+            ////    fork: "分支结点",
+            ////    "join": "联合结点",
+            ////    "complex mix": "复合结点",
+            ////    group: "组织划分框编辑开关"
+            ////};
+
+            //demo = $.createGooFlow($("#demo"), property);
+            //demo.setTitle("Index");
+            ////demo.setNodeRemarks(remark);
+            ////demo.onItemDel=function(id,type){
+            ////	return confirm("确定要删除该单元吗?");
+            ////}
+            //demo.onItemFocus = function (id, type) {
+            //    //alert(id);
+            //    switch (id) {
+            //        case "demo_node_72":
+            //            window.parent.addTab('View Test1', "/Manage/Admin", '');
+            //            break;
+            //        case "demo_node_78":
+            //            window.parent.addTab('View Test2', "/Manage/Permission", '');
+            //            break;
+            //        case "demo_node_79":
+            //            window.parent.addTab('View Test3', "/Manage/Role", '');
+            //            break;
+            //        case "demo_node_85":
+            //            window.parent.addTab('View Test4', "/Manage/Admin", '');
+            //            break;
+            //        case "demo_node_87":
+            //            window.parent.addTab('View Test5', "/Manage/Admin", '');
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+            //demo.loadData(jsondata);
+
+
+        });
+        var out;
+        //function Export() {
+        //    document.getElementById("result").value = JSON.stringify(demo.exportData());
+        //}
+
+        jsondata = {
+            "title": "Index",
+            "nodes": {
+                "demo_node_9": {
+                    "name": "Start",
+                    "left": 10,
+                    "top": 47,
+                    "type": "start round",
+                    "width": 24,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_72": {
+                    "name": "Page1",
+                    "left": 83,
+                    "top": 47,
+                    "type": "mutiselect",
+                    "width": 100,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_78": {
+                    "name": "Page2",
+                    "left": 247,
+                    "top": 47,
+                    "type": "mutiselect",
+                    "width": 100,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_79": {
+                    "name": "Page3",
+                    "left": 411,
+                    "top": 47,
+                    "type": "mutiselect",
+                    "width": 100,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_85": {
+                    "name": "Page4",
+                    "left": 575,
+                    "top": 47,
+                    "type": "mutiselect",
+                    "width": 100,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_87": {
+                    "name": "Page5",
+                    "left": 736,
+                    "top": 47,
+                    "type": "mutiselect",
+                    "width": 100,
+                    "height": 24,
+                    "alt": true
+                },
+                "demo_node_89": {
+                    "name": "End",
+                    "left": 893,
+                    "top": 47,
+                    "type": "end round",
+                    "width": 24,
+                    "height": 24,
+                    "alt": true
+                }
+            },
+            "lines": {
+                "demo_line_74": {
+                    "type": "sl",
+                    "from": "demo_node_9",
+                    "to": "demo_node_72",
+                    "name": "",
+                    "alt": true
+                },
+                "demo_line_80": {
+                    "type": "sl",
+                    "from": "demo_node_72",
+                    "to": "demo_node_78",
+                    "name": "",
+                    "alt": true
+                },
+                "demo_line_81": {
+                    "type": "sl",
+                    "from": "demo_node_78",
+                    "to": "demo_node_79",
+                    "name": "",
+                    "alt": true
+                },
+                "demo_line_86": {
+                    "type": "sl",
+                    "from": "demo_node_79",
+                    "to": "demo_node_85",
+                    "name": "",
+                    "alt": true
+                },
+                "demo_line_88": {
+                    "type": "sl",
+                    "from": "demo_node_85",
+                    "to": "demo_node_87",
+                    "name": "",
+                    "alt": true
+                },
+                "demo_line_90": {
+                    "type": "sl",
+                    "from": "demo_node_87",
+                    "to": "demo_node_89",
+                    "name": "",
+                    "alt": true
+                }
+            },
+            "areas": {},
+            "initNum": 91
+        };
+    </script>
+}

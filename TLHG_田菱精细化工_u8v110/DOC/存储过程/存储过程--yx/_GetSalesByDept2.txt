@@ -1,0 +1,67 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesByDept2]    Script Date: 09/27/2014 00:10:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesByDept2]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesByDept2]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesByDept2]    Script Date: 09/27/2014 00:10:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--  exec _GetSalesByDept2 2014,1,12,'感光胶'
+
+-----------------------------
+--俞霞
+--2014-9-21
+-----------------------------
+
+
+CREATE PROCEDURE [dbo].[_GetSalesByDept2] (@iYear int,@iMonth1 int,@iMonth2 int,@cInvCName as nvarchar(50))
+as 
+
+BEGIN	
+
+set nocount on
+
+select f.cInvCName as cInvCName1,e.cInvCName as cInvCName2,d.cInvName
+	,sum(case when c.cDepMemo='北京办' then iQuantity end) as 北京办数量,sum(case when c.cDepMemo='北京办' then iMoney end) as 北京办金额
+	,sum(case when c.cDepMemo='潮州销售部' then iQuantity end) as 潮州销售部数量,sum(case when c.cDepMemo='潮州销售部' then iMoney end) as 潮州销售部金额
+	,sum(case when c.cDepMemo='昆山销售部' then iQuantity end) as 昆山销售部数量,sum(case when c.cDepMemo='昆山销售部' then iMoney end) as 昆山销售部金额
+	,sum(case when c.cDepMemo='深圳佛山办' then iQuantity end) as 深圳佛山办数量,sum(case when c.cDepMemo='深圳佛山办' then iMoney end) as 深圳佛山办金额
+	,sum(case when c.cDepMemo='深圳销售部' then iQuantity end) as 深圳销售部数量,sum(case when c.cDepMemo='深圳销售部' then iMoney end) as 深圳销售部金额
+	,sum(case when c.cDepMemo='厦门办' then iQuantity end) as 厦门办数量,sum(case when c.cDepMemo='厦门办' then iMoney end) as 厦门办金额
+	,sum(case when c.cDepMemo='重庆办' then iQuantity end) as 重庆办数量,sum(case when c.cDepMemo='重庆办' then iMoney end) as 重庆办金额
+	,sum(case when c.cDepMemo='大连' then iQuantity end) as 大连数量,sum(case when c.cDepMemo='大连' then iMoney end) as 大连金额
+	--into #SaleMonth
+from (
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+) as a
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = a.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+	inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+where 1=1 and iyear=@iYear and imonth>=@iMonth1 and imonth<=@iMonth2 and f.cInvCName=@cInvCName
+group by f.cInvCName,e.cInvCName,e.cInvCCode,d.cInvName
+
+
+
+
+end
+
+
+
+GO
+
+

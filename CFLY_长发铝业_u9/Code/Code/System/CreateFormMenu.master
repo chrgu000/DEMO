@@ -1,0 +1,20 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CreateFormMenu.master.cs"
+    MasterPageFile="~/Frame/MasterPage.master" Inherits="CreateFormMenu" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CenterContent" runat="server">
+    <table border="0" width="98%" cellpadding="0" cellspacing="0" class="InputFrameMain">
+        <tr>
+            <td class="InputFrameMain" style="vertical-align:top;width: 40%">
+                <asp:TreeView ID="treeDir" runat="server" ExpandDepth="1" ShowLines="True" LineImagesFolder="../Images/treeview/" >
+                    <NodeStyle CssClass="tree_node"  />
+                    <SelectedNodeStyle  Font-Bold="True" />
+                    
+                </asp:TreeView>
+            </td>
+            <td style="vertical-align:top;width: 60%">
+                <asp:ContentPlaceHolder ID="CenterRightContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+</asp:Content>

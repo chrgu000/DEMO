@@ -1,0 +1,354 @@
+"DeployProject"
+{
+"VSVersion" = "3:701"
+"ProjectType" = "8:{AB322303-2255-48EF-A496-5904EB18DA55}"
+"IsWebType" = "8:FALSE"
+"ProjectName" = "8:DMCBarcode"
+"LanguageId" = "3:2052"
+"CodePage" = "3:936"
+"SccProjectName" = "8:\"$/DMC_¶àÄ¦´¨/WinCESetup/DMCBarcode.root/DMCBarcode\", ITIBAAAA"
+"SccLocalPath" = "8:..\\..\\.."
+"SccAuxPath" = "8:"
+"SccProvider" = "8:MSSCCI:Microsoft Visual SourceSafe"
+    "Hierarchy"
+    {
+        "Entry"
+        {
+        "MsmKey" = "8:_4F67E5DC3B98AC568414B45FCA4B0410"
+        "OwnerKey" = "8:_524C288FD5284DD19520DB0859546953"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_524C288FD5284DD19520DB0859546953"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68BF8F4B6881CF9769492F1178AA9324"
+        "OwnerKey" = "8:_524C288FD5284DD19520DB0859546953"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68BF8F4B6881CF9769492F1178AA9324"
+        "OwnerKey" = "8:_4F67E5DC3B98AC568414B45FCA4B0410"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6CCAEEAE4DADBD176174EB67F5DBE455"
+        "OwnerKey" = "8:_DE1A4A943F525175A302D714C22A86A0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE1A4A943F525175A302D714C22A86A0"
+        "OwnerKey" = "8:_524C288FD5284DD19520DB0859546953"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+    }
+    "Configurations"
+    {
+        "Debug"
+        {
+        "DisplayName" = "8:Debug"
+        "IsDebugOnly" = "11:TRUE"
+        "IsReleaseOnly" = "11:FALSE"
+        "OutputFilename" = "8:..\\out\\DMCBarcode.cab"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "SignOutput" = "11:FALSE"
+        "CertificateHash" = "8:"
+        "TimeStampServer" = "8:"
+        }
+        "Release"
+        {
+        "DisplayName" = "8:Release"
+        "IsDebugOnly" = "11:FALSE"
+        "IsReleaseOnly" = "11:TRUE"
+        "OutputFilename" = "8:Release\\DMCBarcode.cab"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "SignOutput" = "11:FALSE"
+        "CertificateHash" = "8:"
+        "TimeStampServer" = "8:"
+        }
+    }
+    "Deployable"
+    {
+        "File"
+        {
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_4F67E5DC3B98AC568414B45FCA4B0410"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:TH.Smart.WebService, Version=1.0.5632.31123, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_4F67E5DC3B98AC568414B45FCA4B0410"
+                    {
+                    "Name" = "8:TH.Smart.WebService.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:TH.Smart.WebService.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_524C288FD5284DD19520DB0859546953"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Smartclient, Version=1.0.0.0, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_524C288FD5284DD19520DB0859546953"
+                    {
+                    "Name" = "8:Smartclient.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\..\\SmartClient\\out\\Smartclient.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_68BF8F4B6881CF9769492F1178AA9324"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:TH.Smart.BaseClass, Version=1.0.5632.31121, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_68BF8F4B6881CF9769492F1178AA9324"
+                    {
+                    "Name" = "8:TH.Smart.BaseClass.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:TH.Smart.BaseClass.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_6CCAEEAE4DADBD176174EB67F5DBE455"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Honeywell.DataCollection.WinCE.Common, Version=2.107.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348"
+                "ScatterAssemblies"
+                {
+                    "_6CCAEEAE4DADBD176174EB67F5DBE455"
+                    {
+                    "Name" = "8:Honeywell.DataCollection.WinCE.Common.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Honeywell.DataCollection.WinCE.Common.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_DE1A4A943F525175A302D714C22A86A0"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Honeywell.DataCollection.WinCE.Decoding, Version=2.107.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348"
+                "ScatterAssemblies"
+                {
+                    "_DE1A4A943F525175A302D714C22A86A0"
+                    {
+                    "Name" = "8:Honeywell.DataCollection.WinCE.Decoding.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Honeywell.DataCollection.WinCE.Decoding.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+        }
+        "Folder"
+        {
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_0AA31D1D05394D80AC070532539C7E3C"
+            {
+            "Name" = "8:#1911"
+            "Condition" = "8:"
+            "Property" = "8:%CE1%"
+                "Folders"
+                {
+                    "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+                    {
+                    "Name" = "8:BarCode"
+                    "Condition" = "8:"
+                    "Property" = "8:_619C0261006B49D6A58610601225D0C5"
+                        "Folders"
+                        {
+                        }
+                    }
+                }
+            }
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_30DF9033C12A4AF8A5F568772A94C332"
+            {
+            "Name" = "8:#1913"
+            "Condition" = "8:"
+            "Property" = "8:%CE4%"
+                "Folders"
+                {
+                }
+            }
+            "{D5B00AC1-E6C3-4CC5-90FF-8E0F53D9E5E0}:_85F5E4118647497BB01EDA1BFC525E75"
+            {
+            "DefaultLocation" = "8:%InstallDir%"
+            "Name" = "8:#1920"
+            "Condition" = "8:"
+            "Property" = "8:%InstallDir%"
+                "Folders"
+                {
+                }
+            }
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_AFC365618F824CBE9C65ECD9C6167C3F"
+            {
+            "Name" = "8:#1919"
+            "Condition" = "8:"
+            "Property" = "8:%CE17%"
+                "Folders"
+                {
+                }
+            }
+        }
+        "Product"
+        {
+        "Name" = "8:Microsoft Visual Studio"
+        "ProductName" = "8:DMCBarcode"
+        "Manufacturer" = "8:Microsoft"
+        "OSVersionMin" = "8:4.0"
+        "OSVersionMax" = "8:6.99"
+        "NoUninstall" = "11:FALSE"
+        "Compress" = "11:FALSE"
+        "CESetupDLL" = "8:"
+        }
+        "ProjectOutput"
+        {
+        }
+        "Registry"
+        {
+            "HKLM"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKCU"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKCR"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKU"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKPU"
+            {
+                "Keys"
+                {
+                }
+            }
+        }
+        "Shortcut"
+        {
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_1977C1231BD643058C70ED42FAFAF2D7"
+            {
+            "Name" = "8:Smartclient.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_524C288FD5284DD19520DB0859546953"
+            "Folder" = "8:_30DF9033C12A4AF8A5F568772A94C332"
+            "WorkingFolder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            }
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_1E81CC3F90B54F3FBBF73A1F4B68FB41"
+            {
+            "Name" = "8:Smartclient.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_524C288FD5284DD19520DB0859546953"
+            "Folder" = "8:_AFC365618F824CBE9C65ECD9C6167C3F"
+            "WorkingFolder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            }
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_7BA1C90C6BFF45C9B96CDE2D57D24DB1"
+            {
+            "Name" = "8:Smartclient.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_524C288FD5284DD19520DB0859546953"
+            "Folder" = "8:_85F5E4118647497BB01EDA1BFC525E75"
+            "WorkingFolder" = "8:_A6623C2E5CF1498A8561D5DE5A75A3A6"
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<publishData>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webQCDQ\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="07/30/2018 09:27:47" />
+    <file relUrl="bin/WebService1.dll" publishTime="07/30/2018 09:27:47" />
+    <file relUrl="web.config" publishTime="03/15/2018 10:21:41" />
+    <file relUrl="bin/TH.BaseClass.dll" publishTime="07/30/2018 09:27:47" />
+    <file relUrl="bin/WebService1.pdb" publishTime="07/30/2018 09:27:47" />
+    <file relUrl="bin/TH.BaseClass.pdb" publishTime="07/30/2018 09:27:47" />
+    <file relUrl="bin/ClsU8.dll" publishTime="07/30/2018 09:27:47" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webHTJC\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="10/19/2016 20:54:34" />
+    <file relUrl="bin/WebService1.dll" publishTime="10/19/2016 20:54:34" />
+    <file relUrl="web.config" publishTime="10/18/2016 20:15:10" />
+    <file relUrl="bin/WebService1.pdb" publishTime="10/19/2016 20:54:34" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="10/19/2016 20:54:34" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="10/19/2016 20:54:34" />
+    <file relUrl="bin/ClsU8.dll" publishTime="10/19/2016 20:54:34" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webTT\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="01/26/2014 10:43:09" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="01/26/2014 10:43:04" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="01/26/2014 10:43:04" />
+    <file relUrl="bin/WebService1.dll" publishTime="01/26/2014 10:43:14" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="01/26/2014 10:43:04" />
+    <file relUrl="bin/WebService1.pdb" publishTime="01/26/2014 10:43:14" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="01/26/2014 10:43:03" />
+    <file relUrl="bin/ClsU8.dll" publishTime="01/26/2014 10:43:09" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\web\">
+    <file relUrl="bin/TH.DBWebService.pdb" publishTime="03/21/2009 08:26:59" />
+    <file relUrl="bin/TH.DBWebService.dll" publishTime="03/21/2009 08:26:59" />
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:40" />
+  </publishTarget>
+</publishData>

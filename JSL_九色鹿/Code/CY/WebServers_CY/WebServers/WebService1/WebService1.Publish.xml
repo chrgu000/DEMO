@@ -1,0 +1,115 @@
+<publishData>
+  <publishTarget publishUrl="C:\inetpub\wwwroot\WebJSL\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="04/27/2015 11:15:47" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="05/20/2016 14:26:26" />
+    <file relUrl="bin/WebService1.dll" publishTime="05/20/2016 14:50:55" />
+    <file relUrl="web.config" publishTime="04/05/2016 19:19:19" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="04/27/2015 11:15:48" />
+    <file relUrl="bin/WebService1.pdb" publishTime="05/20/2016 14:50:55" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="05/20/2016 14:50:55" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="05/20/2016 14:26:26" />
+    <file relUrl="bin/ClsU8.dll" publishTime="05/20/2016 14:50:55" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\inetpub\wwwroot\WebFH\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="04/27/2015 11:15:47" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="09/13/2015 17:36:08" />
+    <file relUrl="bin/WebService1.dll" publishTime="09/13/2015 17:36:09" />
+    <file relUrl="web.config" publishTime="09/09/2015 13:09:08" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="04/27/2015 11:15:48" />
+    <file relUrl="bin/WebService1.pdb" publishTime="09/13/2015 17:36:08" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="09/13/2015 17:36:08" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="09/13/2015 17:36:08" />
+    <file relUrl="bin/ClsU8.dll" publishTime="09/13/2015 17:36:08" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\inetpub\wwwroot\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="06/23/2015 16:51:44" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="04/27/2015 11:15:47" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="06/23/2015 16:51:44" />
+    <file relUrl="bin/WebService1.dll" publishTime="06/23/2015 16:51:45" />
+    <file relUrl="web.config" publishTime="06/23/2015 16:52:20" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="04/27/2015 11:15:48" />
+    <file relUrl="bin/WebService1.pdb" publishTime="06/23/2015 16:51:45" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="06/23/2015 16:51:44" />
+    <file relUrl="bin/ClsU8.dll" publishTime="06/23/2015 16:51:44" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\Work\丰辉电力\webFH\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="06/23/2015 01:14:02" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="04/27/2015 11:15:47" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="06/22/2015 00:10:53" />
+    <file relUrl="bin/WebService1.dll" publishTime="06/23/2015 01:14:02" />
+    <file relUrl="web.config" publishTime="06/08/2015 20:34:12" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="04/27/2015 11:15:48" />
+    <file relUrl="bin/WebService1.pdb" publishTime="06/23/2015 01:14:02" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="06/22/2015 00:10:53" />
+    <file relUrl="bin/ClsU8.dll" publishTime="06/23/2015 01:14:02" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\Work\亚太\webYT\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="04/22/2015 21:47:09" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="04/22/2015 21:47:09" />
+    <file relUrl="bin/WebService1.dll" publishTime="04/22/2015 21:47:17" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="04/22/2015 21:47:09" />
+    <file relUrl="bin/WebService1.pdb" publishTime="04/22/2015 21:47:17" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="04/22/2015 21:47:11" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="04/22/2015 21:47:09" />
+    <file relUrl="bin/ClsU8.dll" publishTime="04/22/2015 21:47:11" />
+  </publishTarget>
+  <publishTarget publishUrl="\\192.168.31.219\webTT\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="03/27/2015 15:07:11" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="03/27/2015 15:07:10" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="03/27/2015 15:07:10" />
+    <file relUrl="bin/WebService1.dll" publishTime="03/27/2015 15:07:16" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="03/27/2015 15:07:10" />
+    <file relUrl="bin/WebService1.pdb" publishTime="03/27/2015 15:07:16" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="03/27/2015 15:07:10" />
+    <file relUrl="bin/ClsU8.dll" publishTime="03/27/2015 15:07:11" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\Documents\桌面\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/WebService1.dll" publishTime="03/18/2015 18:05:57" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/WebService1.pdb" publishTime="03/18/2015 18:05:57" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="03/18/2015 18:05:49" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/ClsU8.dll" publishTime="03/18/2015 18:05:49" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Documents and Settings\Administrator\桌面\webTt\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="03/18/2015 18:05:49" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/WebService1.dll" publishTime="03/18/2015 18:05:57" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/WebService1.pdb" publishTime="03/18/2015 18:05:57" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="03/18/2015 18:05:45" />
+    <file relUrl="bin/ClsU8.dll" publishTime="03/18/2015 18:05:49" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webTT\">
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:42" />
+    <file relUrl="bin/BaseDllMobile.pdb" publishTime="09/30/2014 20:02:00" />
+    <file relUrl="bin/ClsBaseClass.dll" publishTime="09/30/2014 20:02:00" />
+    <file relUrl="bin/WebService1.dll" publishTime="09/30/2014 20:02:07" />
+    <file relUrl="web.config" publishTime="10/31/2013 22:57:24" />
+    <file relUrl="bin/BaseDllMobile.dll" publishTime="09/30/2014 20:02:00" />
+    <file relUrl="bin/WebService1.pdb" publishTime="09/30/2014 20:02:07" />
+    <file relUrl="bin/ClsU8.pdb" publishTime="09/30/2014 20:02:02" />
+    <file relUrl="bin/ClsBaseClass.pdb" publishTime="09/30/2014 20:02:00" />
+    <file relUrl="bin/ClsU8.dll" publishTime="09/30/2014 20:02:02" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\web\">
+    <file relUrl="bin/TH.DBWebService.pdb" publishTime="03/21/2009 08:26:59" />
+    <file relUrl="bin/TH.DBWebService.dll" publishTime="03/21/2009 08:26:59" />
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:40" />
+  </publishTarget>
+</publishData>

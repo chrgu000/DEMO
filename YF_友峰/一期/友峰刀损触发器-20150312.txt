@@ -1,0 +1,173 @@
+
+
+
+ALTER TRIGGER [dbo].[_TH_CountQTY]
+on [dbo].[SO_SODetails]
+for insert,update
+as
+
+DECLARE @客户 NVARCHAR(200)
+declare @尺寸 nvarchar(200)
+declare @密度 nvarchar(200)
+declare @语句 nvarchar(800)
+declare @件数 nvarchar(200)
+declare @autoID nvarchar(20)
+declare @材料类型 nvarchar(20)
+declare @长度 decimal(16,6)
+declare @重量 decimal(16,6)
+DECLARE @刀损 decimal(16,6)
+SET @刀损 = 5
+
+select @autoID = autoID from inserted
+select @autoID = cast(a.AutoID as varchar(10)),@件数=a.cDefine34,@尺寸=a.cDefine28,@密度=a.cDefine33,@材料类型 = isnull(b.cInvDefine4 ,'')
+	,@客户 = c.cCusCode
+from SO_SODetails a inner join Inventory b on a.cInvCode = b.cInvCode
+	INNER JOIN dbo.SO_SOMain c ON a.ID = c.ID
+where AutoID = @autoID
+
+DECLARE @iBanC1 BIT
+DECLARE @iBanC2 BIT
+DECLARE @iBanC3 BIT
+
+DECLARE @iBangC1 BIT
+DECLARE @iBangC3 BIT
+
+SELECT @iBanC1 = ISNULL(b.BanC1,0), @iBanC2 = ISNULL(b.BanC2,0), @iBanC3 = ISNULL(b.BanC3,0)
+	, @iBangC1 = ISNULL(b.BangC1,0), @iBangC3 = ISNULL(b.BangC3,0)
+from dbo.Customer a LEFT JOIN XWSystemDB_YF..DSCustomer b ON a.cCusCode = b.cCusCode
+WHERE a.cCusCode = @客户
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_ta]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_ta
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_tb]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_tb
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TH_TAC]') AND type in (N'U'))
+	DROP TABLE [dbo].TH_TAC
+
+	create table TH_ta 
+	( 
+		id int, 
+		id_value varchar(30) 
+	) 
+
+
+if(@材料类型 = '棒')
+begin
+-- 棒子体积计算方式
+	
+	
+	insert into TH_ta 
+	select  1 ,@尺寸
+
+	select 
+	top 4000 ix = identity(int, 1, 1) 
+	into TH_tb 
+	from sys.objects a, sys.objects b 
+
+	select 
+		id, id_value = substring(id_value,ix,charindex('*',id_value + '*',ix) - ix) ,ROW_NUMBER() OVER(ORDER BY a.id) AS rowNumber
+	into TH_TAC
+	FROM TH_ta as A, TH_tb as B 
+	WHERE SUBSTRING( '*' + id_value, ix, 1) = '*' 
+
+	declare @直径 decimal(16,6)
+
+	select @直径 = id_value from TH_TAC where rowNumber = 1
+	select @长度 = id_value from TH_TAC where rowNumber = 2
+	
+	-----------棒材-------------------------------
+	
+	DECLARE @棒材同时选中是否执行 BIT
+	SET @棒材同时选中是否执行 = 0
+	
+	--1. 长<100mm选中，则当长度小于100mm时增加刀损
+	IF(@iBangC3 = 1)
+	BEGIN
+		IF(@长度 < 100)
+		BEGIN
+			SET @长度 = @长度 + @刀损
+			SET @棒材同时选中是否执行 = 1
+		END
+	END
+	
+	--2. 长选中
+	IF(@iBangC1 = 1 AND @棒材同时选中是否执行=0)
+	BEGIN
+		SET  @长度 = @长度 + @刀损
+	END
+	
+	------------------------------------------
+	
+	
+	set @重量 =CAST(cast(@件数 as decimal(16,6)) * cast(@密度 as decimal(16,6)) * 3.14 * (@直径/2)* (@直径/2) * @长度 /1000000 as decimal(16,2))
+
+	update SO_SODetails set cDefine22 = cast(cast(@重量 as varchar(50)) as decimal(16,2)) where AutoID = @autoID
+end
+else
+begin
+	insert into TH_ta 
+	select  1 ,@尺寸
+
+	select 
+	top 4000 ix = identity(int, 1, 1) 
+	into TH_tb 
+	from sys.objects a, sys.objects b 
+
+	select 
+		id, id_value = substring(id_value,ix,charindex('*',id_value + '*',ix) - ix) ,ROW_NUMBER() OVER(ORDER BY a.id) AS rowNumber
+	into TH_TAC
+	FROM TH_ta as A, TH_tb as B 
+	WHERE SUBSTRING( '*' + id_value, ix, 1) = '*' 
+
+	declare @厚度 decimal(16,6)
+	declare @宽度 decimal(16,6)
+
+
+	select @厚度 = id_value from TH_TAC where rowNumber = 1
+	select @宽度 = id_value from TH_TAC where rowNumber = 2
+	select @长度 = id_value from TH_TAC where rowNumber = 3
+
+		
+	-----------板材-------------------------------
+	
+	DECLARE @板材同时选中是否执行长 BIT
+	SET @板材同时选中是否执行长 = 0
+	
+	DECLARE @板材同时选中是否执行宽 BIT
+	SET @板材同时选中是否执行宽 = 0
+	
+	--1. 长<100mm选中，则当长度小于100mm时增加刀损
+	IF(@iBanC3 = 1)
+	BEGIN
+		IF(@长度 < 100)
+		BEGIN
+			SET @长度 = @长度 + @刀损
+			SET @板材同时选中是否执行长 = 1
+		END
+		
+		IF(@宽度 < 100)
+		BEGIN
+			SET @宽度 = @宽度 + @刀损
+			SET @板材同时选中是否执行宽 = 1
+		END
+	END
+	
+	--2. 长选中
+	IF(@iBanC1 = 1 AND @板材同时选中是否执行长 = 0)
+	BEGIN
+		SET  @长度 = @长度 + @刀损
+	END
+	
+	--3. 宽选中
+	IF(@iBanC2 = 1 AND @板材同时选中是否执行宽 = 0)
+	BEGIN
+		SET  @宽度 = @宽度 + @刀损
+	END
+	------------------------------------------
+	
+	set @重量 = cast(cast(@件数 as decimal(16,6)) * cast(@密度 as decimal(16,6)) * @厚度 * @宽度 * @长度 /1000000 as decimal(16,2))
+	
+	update SO_SODetails set cDefine22 = cast(@重量 as decimal(16,2)) where AutoID = @autoID
+END
+
+exec sp_executesql @语句

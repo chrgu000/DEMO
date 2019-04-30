@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>系统服务</RootNamespace>
+    <AssemblyName>系统服务</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/BasePerRightInfo/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="00_ProcedureAllocation\FrmCreateFormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmCreateFormMenu.Designer.cs">
+      <DependentUpon>FrmCreateFormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmLookUpType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmLookUpType.designer.cs">
+      <DependentUpon>FrmLookUpType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01_FrameForm\ClsDistributeForm.cs" />
+    <Compile Include="01_FrameForm\MdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_FrameForm\MdiMain.Designer.cs">
+      <DependentUpon>MdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01_FrameForm\XmlFiles.cs" />
+    <Compile Include="02_BaseClass\ClsBaseDataInfo.cs" />
+    <Compile Include="02_BaseClass\ClsDataBaseFactory.cs" />
+    <Compile Include="02_BaseClass\ClsDataExport.cs" />
+    <Compile Include="02_BaseClass\ClsDES.cs" />
+    <Compile Include="02_BaseClass\ClsExcel.cs" />
+    <Compile Include="02_BaseClass\ClsMail.cs" />
+    <Compile Include="02_BaseClass\ClsSQLFactory.cs" />
+    <Compile Include="02_BaseClass\ClsSqlHelper.cs" />
+    <Compile Include="02_BaseClass\ClsXMLCommond.cs" />
+    <Compile Include="03_BaseForm\ClsFormBaseBll.cs" />
+    <Compile Include="03_BaseForm\ClsGetSQL.cs" />
+    <Compile Include="03_BaseForm\FrmBaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="03_BaseForm\FrmBaseInfo.Designer.cs">
+      <DependentUpon>FrmBaseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="03_BaseForm\FrmProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="03_BaseForm\FrmProgressBar.Designer.cs">
+      <DependentUpon>FrmProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="03_BaseForm\RepBaseGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="03_BaseForm\RepBaseGrid.Designer.cs">
+      <DependentUpon>RepBaseGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="03_BaseForm\FrmBaseSEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="03_BaseForm\FrmBaseSEL.Designer.cs">
+      <DependentUpon>FrmBaseSEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\ClsU8Function.cs" />
+    <Compile Include="04_PublicForm\ClsVenInvPrice.cs" />
+    <Compile Include="04_PublicForm\FrmBaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmBaseList.Designer.cs">
+      <DependentUpon>FrmBaseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmInvInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmInvInfo.Designer.cs">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmInvPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmInvPrice.Designer.cs">
+      <DependentUpon>FrmInvPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmMailSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmMailSet.Designer.cs">
+      <DependentUpon>FrmMailSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmMsgBox.Designer.cs">
+      <DependentUpon>FrmMsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmBaseInfoImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmBaseInfoImport.Designer.cs">
+      <DependentUpon>FrmBaseInfoImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmQC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmQC1.Designer.cs">
+      <DependentUpon>FrmQC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmSendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmSendMail.Designer.cs">
+      <DependentUpon>FrmSendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmSendMailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmSendMailList.Designer.cs">
+      <DependentUpon>FrmSendMailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmVenHavPriceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmVenHavPriceInfo.Designer.cs">
+      <DependentUpon>FrmVenHavPriceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmVenInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmVenInfo.Designer.cs">
+      <DependentUpon>FrmVenInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmWorkPer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="04_PublicForm\FrmWorkPer.Designer.cs">
+      <DependentUpon>FrmWorkPer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="21_Bll\ClsRoleEditBll.cs" />
+    <Compile Include="21_Bll\ClsRoleInfoBll.cs" />
+    <Compile Include="21_Bll\ClsRoleRightBll.cs" />
+    <Compile Include="21_Bll\ClsUserEditBll.cs" />
+    <Compile Include="21_Bll\ClsUserInfoBll.cs" />
+    <Compile Include="31_Dal\ClsRoleRightDal.cs" />
+    <Compile Include="31_Dal\ClsUserEditDal.cs" />
+    <Compile Include="31_Dal\ClsUserInfoDal.cs" />
+    <Compile Include="31_Dal\ClsRoleEditDal.cs" />
+    <Compile Include="31_Dal\ClsRoleInfoDal.cs" />
+    <Compile Include="11_USL\FrmBuckUpDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmBuckUpDataBase.Designer.cs">
+      <DependentUpon>FrmBuckUpDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmChangePWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmChangePWD.Designer.cs">
+      <DependentUpon>FrmChangePWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmFromBtnInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmFromBtnInfo.Designer.cs">
+      <DependentUpon>FrmFromBtnInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleEdit.Designer.cs">
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleInfo.Designer.cs">
+      <DependentUpon>FrmRoleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmRoleRight.Designer.cs">
+      <DependentUpon>FrmRoleRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmTableCol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmTableCol.Designer.cs">
+      <DependentUpon>FrmTableCol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmUserEdit.Designer.cs">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmUserInfo.Designer.cs">
+      <DependentUpon>FrmUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11_USL\FrmUserUFAccInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11_USL\FrmUserUFAccInfo.Designer.cs">
+      <DependentUpon>FrmUserUFAccInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="15_Model\ClsRoleInfoMod.cs" />
+    <Compile Include="15_Model\ClsRoleRightMod.cs" />
+    <Compile Include="15_Model\ClsUserInfoMod.cs" />
+    <Compile Include="15_Model\ClsUserRoleMod.cs" />
+    <Compile Include="99_PublicClass\Frm参照.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="99_PublicClass\Frm参照.designer.cs">
+      <DependentUpon>Frm参照.cs</DependentUpon>
+    </Compile>
+    <Compile Include="99_PublicClass\收款利润.cs" />
+    <Compile Include="99_PublicClass\规格化.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="35_Query\ClsBuckUpDataBase.cs" />
+    <Compile Include="35_Query\ClsRoleEditQuery.cs" />
+    <Compile Include="35_Query\ClsRoleInfoQuery.cs" />
+    <Compile Include="35_Query\ClsRoleRight.cs" />
+    <Compile Include="35_Query\ClsUserEditQuery.cs" />
+    <Compile Include="35_Query\ClsUserInfoQuery.cs" />
+    <Compile Include="00_ProcedureAllocation\FrmLookUpData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00_ProcedureAllocation\FrmLookUpData.designer.cs">
+      <DependentUpon>FrmLookUpData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="99_PublicClass\序号.cs" />
+    <Compile Include="99_PublicClass\控件调用.cs" />
+    <Compile Include="99_PublicClass\通用参照.cs" />
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="99_PublicClass\变更表.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="00_ProcedureAllocation\FrmCreateFormMenu.resx">
+      <DependentUpon>FrmCreateFormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00_ProcedureAllocation\FrmLookUpType.resx">
+      <DependentUpon>FrmLookUpType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_FrameForm\MdiMain.resx">
+      <DependentUpon>MdiMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="03_BaseForm\FrmBaseInfo.resx">
+      <DependentUpon>FrmBaseInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="03_BaseForm\FrmProgressBar.resx">
+      <DependentUpon>FrmProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="03_BaseForm\RepBaseGrid.resx">
+      <DependentUpon>RepBaseGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="03_BaseForm\FrmBaseSEL.resx">
+      <DependentUpon>FrmBaseSEL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmBaseList.resx">
+      <DependentUpon>FrmBaseList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmInvInfo.resx">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmMailSet.resx">
+      <DependentUpon>FrmMailSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmMsgBox.resx">
+      <DependentUpon>FrmMsgBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmBaseInfoImport.resx">
+      <DependentUpon>FrmBaseInfoImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmQC1.resx">
+      <DependentUpon>FrmQC1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmSendMail.resx">
+      <DependentUpon>FrmSendMail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmSendMailList.resx">
+      <DependentUpon>FrmSendMailList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmVenHavPriceInfo.resx">
+      <DependentUpon>FrmVenHavPriceInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmVenInfo.resx">
+      <DependentUpon>FrmVenInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="04_PublicForm\FrmWorkPer.resx">
+      <DependentUpon>FrmWorkPer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmBuckUpDataBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBuckUpDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmChangePWD.resx">
+      <DependentUpon>FrmChangePWD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmFromBtnInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmFromBtnInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmLogin.en.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmRoleEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmRoleInfo.resx">
+      <DependentUpon>FrmRoleInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmRoleRight.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmRoleRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00_ProcedureAllocation\FrmTableCol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTableCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmUserEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmUserInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11_USL\FrmUserUFAccInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmUserUFAccInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="99_PublicClass\Frm参照.resx">
+      <DependentUpon>Frm参照.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00_ProcedureAllocation\FrmLookUpData.resx">
+      <DependentUpon>FrmLookUpData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="02_BaseClass\app.config" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://tanghui-rqsw.oicp.net:19835/webservice1/DBService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://tanghui-rqsw.oicp.net:19835/webservice1/DBService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>系统服务_WebReference_DBWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\DBService.disco" />
+    <None Include="Web References\WebReference\DBService.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

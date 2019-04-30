@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "90_系统服务", "90_系统服务\90_系统服务.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "九色鹿信息化管理系统", "信息化管理系统\九色鹿信息化管理系统.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "80_生产", "80_生产\80_生产.csproj", "{ADE10146-2AFF-46D7-A633-4AC7489084D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "50_报表", "50_报表\50_报表.csproj", "{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "40_仓库", "40_仓库\40_仓库.csproj", "{0E7BF976-469F-4EF9-84A3-10875F7D1D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20_采购", "20_采购\20_采购.csproj", "{C53CA212-1D54-4D8A-B1A2-D5EAC73080CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_销售", "10_销售\10_销售.csproj", "{42253ED6-A39D-43FD-A46E-1555720967D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_基础档案", "01_基础档案\01_基础档案.csproj", "{8FCDDFD6-6669-4DAF-A02C-6BE9E7E44223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "60_天猫", "60_天猫\60_天猫.csproj", "{0B45813E-24A4-4308-82D9-7BDE07ABA83A}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 10
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = 01_基础档案\\01_基础档案.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = 01_基础档案\\
+		SccProjectUniqueName2 = 10_销售\\10_销售.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = 10_销售\\
+		SccProjectUniqueName3 = 20_采购\\20_采购.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = 20_采购\\
+		SccProjectUniqueName4 = 40_仓库\\40_仓库.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = 40_仓库\\
+		SccProjectUniqueName5 = 50_报表\\50_报表.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = 50_报表\\
+		SccProjectUniqueName6 = 60_天猫\\60_天猫.csproj
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = 60_天猫\\
+		SccProjectUniqueName7 = 80_生产\\80_生产.csproj
+		SccLocalPath7 = .
+		SccProjectFilePathRelativizedFromConnection7 = 80_生产\\
+		SccProjectUniqueName8 = 90_系统服务\\90_系统服务.csproj
+		SccLocalPath8 = .
+		SccProjectFilePathRelativizedFromConnection8 = 90_系统服务\\
+		SccProjectUniqueName9 = 信息化管理系统\\九色鹿信息化管理系统.csproj
+		SccLocalPath9 = .
+		SccProjectFilePathRelativizedFromConnection9 = 信息化管理系统\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7BF976-469F-4EF9-84A3-10875F7D1D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7BF976-469F-4EF9-84A3-10875F7D1D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7BF976-469F-4EF9-84A3-10875F7D1D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7BF976-469F-4EF9-84A3-10875F7D1D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C53CA212-1D54-4D8A-B1A2-D5EAC73080CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C53CA212-1D54-4D8A-B1A2-D5EAC73080CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C53CA212-1D54-4D8A-B1A2-D5EAC73080CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C53CA212-1D54-4D8A-B1A2-D5EAC73080CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42253ED6-A39D-43FD-A46E-1555720967D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42253ED6-A39D-43FD-A46E-1555720967D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42253ED6-A39D-43FD-A46E-1555720967D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42253ED6-A39D-43FD-A46E-1555720967D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCDDFD6-6669-4DAF-A02C-6BE9E7E44223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCDDFD6-6669-4DAF-A02C-6BE9E7E44223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCDDFD6-6669-4DAF-A02C-6BE9E7E44223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCDDFD6-6669-4DAF-A02C-6BE9E7E44223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B45813E-24A4-4308-82D9-7BDE07ABA83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B45813E-24A4-4308-82D9-7BDE07ABA83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B45813E-24A4-4308-82D9-7BDE07ABA83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B45813E-24A4-4308-82D9-7BDE07ABA83A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

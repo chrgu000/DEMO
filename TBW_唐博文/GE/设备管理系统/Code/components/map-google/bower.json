@@ -1,0 +1,10 @@
+{
+  "name": "map-google",
+  "version": "0.1.0",
+  "main": "js/googlemaps.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

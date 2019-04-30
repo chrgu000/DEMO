@@ -1,0 +1,813 @@
+
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_Get销售汇总]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo]._Get销售汇总
+GO
+
+create PROCEDURE _Get销售汇总 (@iYear int)
+as 
+
+BEGIN	
+
+set nocount on
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[销售汇总]') AND type in (N'U'))
+DROP TABLE [dbo].[销售汇总]
+
+
+CREATE TABLE [dbo].[销售汇总](
+	iID int ,
+	[品名] [varchar](100) NOT NULL,
+	[北京办数量] [decimal](18, 6) NULL,
+	[北京办单价] [decimal](18, 6) NULL,
+	[北京办金额] [decimal](18, 6) NULL,
+	[潮州销售部数量] [decimal](18, 6) NULL,
+	[潮州销售部单价] [decimal](18, 6) NULL,
+	[潮州销售部金额] [decimal](18, 6) NULL,
+	[昆山销售部数量] [decimal](18, 6) NULL,
+	[昆山销售部单价] [decimal](18, 6) NULL,
+	[昆山销售部金额] [decimal](18, 6) NULL,
+	[深圳佛山办数量] [decimal](18, 6) NULL,
+	[深圳佛山办单价] [decimal](18, 6) NULL,
+	[深圳佛山办金额] [decimal](18, 6) NULL,
+	[深圳销售部数量] [decimal](18, 6) NULL,
+	[深圳销售部单价] [decimal](18, 6) NULL,
+	[深圳销售部金额] [decimal](18, 6) NULL,
+	[厦门办数量] [decimal](18, 6) NULL,
+	[厦门办金额] [decimal](18, 6) NULL,
+	[厦门办单价] [decimal](18, 6) NULL,
+	[重庆办数量] [decimal](18, 6) NULL,
+	[重庆办单价] [decimal](18, 6) NULL,
+	[重庆办金额] [decimal](18, 6) NULL,
+	[大连数量] [decimal](18, 6) NULL,
+	[大连单价] [decimal](18, 6) NULL,
+	[大连金额] [decimal](18, 6) NULL,
+ CONSTRAINT [PK_销售汇总] PRIMARY KEY CLUSTERED 
+(
+	[品名] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+insert into [销售汇总](iID,[品名])values(1,'感光胶')
+insert into [销售汇总](iID,[品名])values(2,'其他副资材')
+insert into [销售汇总](iID,[品名])values(3,'重氮')
+insert into [销售汇总](iID,[品名])values(4,'网版')
+insert into [销售汇总](iID,[品名])values(5,'丝网')
+insert into [销售汇总](iID,[品名])values(6,'小膜油')
+insert into [销售汇总](iID,[品名])values(7,'油墨')
+
+--declare @iYear int
+--set @iYear = 2014
+--101
+
+---北京办	
+update 销售汇总 set [北京办金额] = ISNULL([北京办金额],0) + b.iMoney,[北京办数量] = ISNULL([北京办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '北京办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [北京办单价] = cast(([北京办金额] / case when isnull([北京办数量],0) = 0 then 1 else [北京办数量] end) as decimal(16,6))
+
+
+---潮州销售部
+update 销售汇总 set [潮州销售部金额] = ISNULL([潮州销售部金额],0) + b.iMoney,[潮州销售部数量] = ISNULL([潮州销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '潮州销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [潮州销售部单价] = cast(([潮州销售部金额] / case when isnull([潮州销售部数量],0) = 0 then 1 else [潮州销售部数量] end) as decimal(16,6))
+
+
+---昆山销售部
+update 销售汇总 set [昆山销售部金额] = ISNULL([昆山销售部金额],0) + b.iMoney,[昆山销售部数量] = ISNULL([昆山销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '昆山销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [昆山销售部单价] = cast(([昆山销售部金额] / case when isnull([昆山销售部数量],0) = 0 then 1 else [昆山销售部数量] end) as decimal(16,6))
+
+
+
+---深圳佛山办
+update 销售汇总 set [深圳佛山办金额] = ISNULL([深圳佛山办金额],0) + b.iMoney,[深圳佛山办数量] = ISNULL([深圳佛山办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳佛山办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳佛山办单价] = cast(([深圳佛山办金额] / case when isnull([深圳佛山办数量],0) = 0 then 1 else [深圳佛山办数量] end) as decimal(16,6))
+
+
+
+---深圳销售部
+update 销售汇总 set [深圳销售部金额] = ISNULL([深圳销售部金额],0) + b.iMoney,[深圳销售部数量] = ISNULL([深圳销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳销售部单价] = cast(([深圳销售部金额] / case when isnull([深圳销售部数量],0) = 0 then 1 else [深圳销售部数量] end) as decimal(16,6))
+
+
+
+---厦门办
+update 销售汇总 set [厦门办金额] = ISNULL([厦门办金额],0) + b.iMoney,[厦门办数量] = ISNULL([厦门办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '厦门办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [厦门办单价] = cast(([厦门办金额] / case when isnull([厦门办数量],0) = 0 then 1 else [厦门办数量] end) as decimal(16,6))
+
+
+
+
+
+
+---重庆办
+update 销售汇总 set [重庆办金额] = ISNULL([重庆办金额],0) + b.iMoney,[重庆办数量] = ISNULL([重庆办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '重庆办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [重庆办单价] = cast(([重庆办金额] / case when isnull([重庆办数量],0) = 0 then 1 else [重庆办数量] end) as decimal(16,6))
+
+
+
+
+
+---大连
+update 销售汇总 set [大连金额] = ISNULL([大连金额],0) + b.iMoney,[大连数量] = ISNULL([大连数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '大连'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [大连单价] = cast(([大连金额] / case when isnull([大连数量],0) = 0 then 1 else [大连数量] end) as decimal(16,6))
+
+
+
+
+
+--102
+
+---北京办	
+update 销售汇总 set [北京办金额] = ISNULL([北京办金额],0) + b.iMoney,[北京办数量] = ISNULL([北京办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '北京办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [北京办单价] = cast(([北京办金额] / case when isnull([北京办数量],0) = 0 then 1 else [北京办数量] end) as decimal(16,6))
+
+
+---潮州销售部
+update 销售汇总 set [潮州销售部金额] = ISNULL([潮州销售部金额],0) + b.iMoney,[潮州销售部数量] = ISNULL([潮州销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '潮州销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [潮州销售部单价] = cast(([潮州销售部金额] / case when isnull([潮州销售部数量],0) = 0 then 1 else [潮州销售部数量] end) as decimal(16,6))
+
+
+---昆山销售部
+update 销售汇总 set [昆山销售部金额] = ISNULL([昆山销售部金额],0) + b.iMoney,[昆山销售部数量] = ISNULL([昆山销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '昆山销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [昆山销售部单价] = cast(([昆山销售部金额] / case when isnull([昆山销售部数量],0) = 0 then 1 else [昆山销售部数量] end) as decimal(16,6))
+
+
+
+---深圳佛山办
+update 销售汇总 set [深圳佛山办金额] = ISNULL([深圳佛山办金额],0) + b.iMoney,[深圳佛山办数量] = ISNULL([深圳佛山办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳佛山办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳佛山办单价] = cast(([深圳佛山办金额] / case when isnull([深圳佛山办数量],0) = 0 then 1 else [深圳佛山办数量] end) as decimal(16,6))
+
+
+
+---深圳销售部
+update 销售汇总 set [深圳销售部金额] = ISNULL([深圳销售部金额],0) + b.iMoney,[深圳销售部数量] = ISNULL([深圳销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳销售部单价] = cast(([深圳销售部金额] / case when isnull([深圳销售部数量],0) = 0 then 1 else [深圳销售部数量] end) as decimal(16,6))
+
+
+
+---厦门办
+update 销售汇总 set [厦门办金额] = ISNULL([厦门办金额],0) + b.iMoney,[厦门办数量] = ISNULL([厦门办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '厦门办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [厦门办单价] = cast(([厦门办金额] / case when isnull([厦门办数量],0) = 0 then 1 else [厦门办数量] end) as decimal(16,6))
+
+
+
+
+
+
+---重庆办
+update 销售汇总 set [重庆办金额] = ISNULL([重庆办金额],0) + b.iMoney,[重庆办数量] = ISNULL([重庆办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '重庆办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [重庆办单价] = cast(([重庆办金额] / case when isnull([重庆办数量],0) = 0 then 1 else [重庆办数量] end) as decimal(16,6))
+
+
+
+
+
+---大连
+update 销售汇总 set [大连金额] = ISNULL([大连金额],0) + b.iMoney,[大连数量] = ISNULL([大连数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '大连'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [大连单价] = cast(([大连金额] / case when isnull([大连数量],0) = 0 then 1 else [大连数量] end) as decimal(16,6))
+
+
+
+
+
+--104
+
+---北京办	
+update 销售汇总 set [北京办金额] = ISNULL([北京办金额],0) + b.iMoney,[北京办数量] = ISNULL([北京办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '北京办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [北京办单价] = cast(([北京办金额] / case when isnull([北京办数量],0) = 0 then 1 else [北京办数量] end) as decimal(16,6))
+
+
+---潮州销售部
+update 销售汇总 set [潮州销售部金额] = ISNULL([潮州销售部金额],0) + b.iMoney,[潮州销售部数量] = ISNULL([潮州销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '潮州销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [潮州销售部单价] = cast(([潮州销售部金额] / case when isnull([潮州销售部数量],0) = 0 then 1 else [潮州销售部数量] end) as decimal(16,6))
+
+
+---昆山销售部
+update 销售汇总 set [昆山销售部金额] = ISNULL([昆山销售部金额],0) + b.iMoney,[昆山销售部数量] = ISNULL([昆山销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '昆山销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [昆山销售部单价] = cast(([昆山销售部金额] / case when isnull([昆山销售部数量],0) = 0 then 1 else [昆山销售部数量] end) as decimal(16,6))
+
+
+
+---深圳佛山办
+update 销售汇总 set [深圳佛山办金额] = ISNULL([深圳佛山办金额],0) + b.iMoney,[深圳佛山办数量] = ISNULL([深圳佛山办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳佛山办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳佛山办单价] = cast(([深圳佛山办金额] / case when isnull([深圳佛山办数量],0) = 0 then 1 else [深圳佛山办数量] end) as decimal(16,6))
+
+
+
+---深圳销售部
+update 销售汇总 set [深圳销售部金额] = ISNULL([深圳销售部金额],0) + b.iMoney,[深圳销售部数量] = ISNULL([深圳销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳销售部单价] = cast(([深圳销售部金额] / case when isnull([深圳销售部数量],0) = 0 then 1 else [深圳销售部数量] end) as decimal(16,6))
+
+
+
+---厦门办
+update 销售汇总 set [厦门办金额] = ISNULL([厦门办金额],0) + b.iMoney,[厦门办数量] = ISNULL([厦门办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '厦门办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [厦门办单价] = cast(([厦门办金额] / case when isnull([厦门办数量],0) = 0 then 1 else [厦门办数量] end) as decimal(16,6))
+
+
+
+
+
+
+---重庆办
+update 销售汇总 set [重庆办金额] = ISNULL([重庆办金额],0) + b.iMoney,[重庆办数量] = ISNULL([重庆办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '重庆办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [重庆办单价] = cast(([重庆办金额] / case when isnull([重庆办数量],0) = 0 then 1 else [重庆办数量] end) as decimal(16,6))
+
+
+
+
+
+---大连
+update 销售汇总 set [大连金额] = ISNULL([大连金额],0) + b.iMoney,[大连数量] = ISNULL([大连数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '大连'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [大连单价] = cast(([大连金额] / case when isnull([大连数量],0) = 0 then 1 else [大连数量] end) as decimal(16,6))
+
+
+
+--103
+
+---北京办	
+update 销售汇总 set [北京办金额] = ISNULL([北京办金额],0) + b.iMoney,[北京办数量] = ISNULL([北京办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '北京办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [北京办单价] = cast(([北京办金额] / case when isnull([北京办数量],0) = 0 then 1 else [北京办数量] end) as decimal(16,6))
+
+
+---潮州销售部
+update 销售汇总 set [潮州销售部金额] = ISNULL([潮州销售部金额],0) + b.iMoney,[潮州销售部数量] = ISNULL([潮州销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '潮州销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [潮州销售部单价] = cast(([潮州销售部金额] / case when isnull([潮州销售部数量],0) = 0 then 1 else [潮州销售部数量] end) as decimal(16,6))
+
+
+---昆山销售部
+update 销售汇总 set [昆山销售部金额] = ISNULL([昆山销售部金额],0) + b.iMoney,[昆山销售部数量] = ISNULL([昆山销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '昆山销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [昆山销售部单价] = cast(([昆山销售部金额] / case when isnull([昆山销售部数量],0) = 0 then 1 else [昆山销售部数量] end) as decimal(16,6))
+
+
+
+---深圳佛山办
+update 销售汇总 set [深圳佛山办金额] = ISNULL([深圳佛山办金额],0) + b.iMoney,[深圳佛山办数量] = ISNULL([深圳佛山办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳佛山办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳佛山办单价] = cast(([深圳佛山办金额] / case when isnull([深圳佛山办数量],0) = 0 then 1 else [深圳佛山办数量] end) as decimal(16,6))
+
+
+
+---深圳销售部
+update 销售汇总 set [深圳销售部金额] = ISNULL([深圳销售部金额],0) + b.iMoney,[深圳销售部数量] = ISNULL([深圳销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳销售部单价] = cast(([深圳销售部金额] / case when isnull([深圳销售部数量],0) = 0 then 1 else [深圳销售部数量] end) as decimal(16,6))
+
+
+
+---厦门办
+update 销售汇总 set [厦门办金额] = ISNULL([厦门办金额],0) + b.iMoney,[厦门办数量] = ISNULL([厦门办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '厦门办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [厦门办单价] = cast(([厦门办金额] / case when isnull([厦门办数量],0) = 0 then 1 else [厦门办数量] end) as decimal(16,6))
+
+
+
+
+
+
+---重庆办
+update 销售汇总 set [重庆办金额] = ISNULL([重庆办金额],0) + b.iMoney,[重庆办数量] = ISNULL([重庆办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '重庆办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [重庆办单价] = cast(([重庆办金额] / case when isnull([重庆办数量],0) = 0 then 1 else [重庆办数量] end) as decimal(16,6))
+
+
+
+
+
+---大连
+update 销售汇总 set [大连金额] = ISNULL([大连金额],0) + b.iMoney,[大连数量] = ISNULL([大连数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '大连'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [大连单价] = cast(([大连金额] / case when isnull([大连数量],0) = 0 then 1 else [大连数量] end) as decimal(16,6))
+
+
+
+--103
+
+---北京办	
+update 销售汇总 set [北京办金额] = ISNULL([北京办金额],0) + b.iMoney,[北京办数量] = ISNULL([北京办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '北京办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [北京办单价] = cast(([北京办金额] / case when isnull([北京办数量],0) = 0 then 1 else [北京办数量] end) as decimal(16,6))
+
+
+---潮州销售部
+update 销售汇总 set [潮州销售部金额] = ISNULL([潮州销售部金额],0) + b.iMoney,[潮州销售部数量] = ISNULL([潮州销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '潮州销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [潮州销售部单价] = cast(([潮州销售部金额] / case when isnull([潮州销售部数量],0) = 0 then 1 else [潮州销售部数量] end) as decimal(16,6))
+
+
+---昆山销售部
+update 销售汇总 set [昆山销售部金额] = ISNULL([昆山销售部金额],0) + b.iMoney,[昆山销售部数量] = ISNULL([昆山销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '昆山销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [昆山销售部单价] = cast(([昆山销售部金额] / case when isnull([昆山销售部数量],0) = 0 then 1 else [昆山销售部数量] end) as decimal(16,6))
+
+
+
+---深圳佛山办
+update 销售汇总 set [深圳佛山办金额] = ISNULL([深圳佛山办金额],0) + b.iMoney,[深圳佛山办数量] = ISNULL([深圳佛山办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳佛山办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳佛山办单价] = cast(([深圳佛山办金额] / case when isnull([深圳佛山办数量],0) = 0 then 1 else [深圳佛山办数量] end) as decimal(16,6))
+
+
+
+---深圳销售部
+update 销售汇总 set [深圳销售部金额] = ISNULL([深圳销售部金额],0) + b.iMoney,[深圳销售部数量] = ISNULL([深圳销售部数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '深圳销售部'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [深圳销售部单价] = cast(([深圳销售部金额] / case when isnull([深圳销售部数量],0) = 0 then 1 else [深圳销售部数量] end) as decimal(16,6))
+
+
+
+---厦门办
+update 销售汇总 set [厦门办金额] = ISNULL([厦门办金额],0) + b.iMoney,[厦门办数量] = ISNULL([厦门办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '厦门办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [厦门办单价] = cast(([厦门办金额] / case when isnull([厦门办数量],0) = 0 then 1 else [厦门办数量] end) as decimal(16,6))
+
+
+
+
+
+
+---重庆办
+update 销售汇总 set [重庆办金额] = ISNULL([重庆办金额],0) + b.iMoney,[重庆办数量] = ISNULL([重庆办数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '重庆办'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [重庆办单价] = cast(([重庆办金额] / case when isnull([重庆办数量],0) = 0 then 1 else [重庆办数量] end) as decimal(16,6))
+
+
+
+
+
+---大连
+update 销售汇总 set [大连金额] = ISNULL([大连金额],0) + b.iMoney,[大连数量] = ISNULL([大连数量],0) + b.iQty
+from
+(
+	select sum(iQuantity) as iQty,SUM(iMoney ) as iMoney,c.cDepMemo,d.cInvDefine10
+	from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID 
+		inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+		inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+	where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+		and c.cDepMemo = '大连'
+		and year(dDate) = @iYear
+	group by c.cDepMemo,d.cInvDefine10
+) b where b.cInvDefine10 = 销售汇总.[品名]
+
+update 销售汇总 set [大连单价] = cast(([大连金额] / case when isnull([大连数量],0) = 0 then 1 else [大连数量] end) as decimal(16,6))
+
+
+
+select * from 销售汇总 order by iID
+
+end

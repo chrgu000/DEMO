@@ -1,0 +1,47 @@
+﻿製造入庫(IRS) → 4/28or29
+内製 → 用友
+フォルダー(用友サーバ) D:\UFIDA_System_Data\IRS
+ファイル名 　          IRS_Prod_Incoming_Data_20160421_083000.csv
+    　　　　　　　　　　          　　　　　　~~~~~~~~~~~~~~~
+ファイル名(緊急) 　    IRS_Prod_Incoming_Data_20160421_163000.csv
+　　　　　　　　　　　　          　　　　　　~~~~~~~~~~~~~~~
+製造入庫(原価:CPS) → 4/27
+用友 → 内製
+フォルダー(用友サーバ) D:\UFIDA_System_Data\UFIDA
+ファイル名 　          Monthly_Prod_Incoming_Data.txt
+
+生産手配(SRS) → 4/27
+用友 → 内製
+フォルダー(用友サーバ)   D:\UFIDA_System_Data\UFIDA
+ファイル名(受注残数) 　  Receive_All_Order.txt
+ファイル名(有效在库数据) Receive_All_Stock.txt
+
+MBLへの他拠点発注データ(OTS) → 4/28
+用友 → 内製
+フォルダー(用友サーバ) D:\UFIDA_System_Data\UFIDA
+ファイル名 　          Ufida_Export_POData_OTS_041.xlsx
+ファイル名 　          Ufida_OTS_Data_041.txt
+
+標準原価(CPS) → 4/27
+内製 → 用友
+フォルダー(用友サーバ) 　D:\UFIDA_System_Data\CPS
+ファイル名(期中:差分)    CPS_Tranfer_Price_Data_C_20160404_202740.csv
+    　　　　　　　　　　          　　　　　　　  ~~~~~~~~~~~~~~~
+ファイル名(新年度：全件) CPS_Tranfer_Price_Data_N.csv
+
+日本への転送データ → 4/27
+用友 → 内製(毎晩 22:00 自動実行)
+フォルダー(用友サーバ) D:\UFIDA_System_Data\UFIDA
+ファイル名             bilis_Sales_Order.csv
+                       bilis_AR_Detail.csv
+                       bilis_Stock_Master.csv
+                       bilis_Monthly_Stock_Master.csv
+                       bilis_Result_ProductionReceipt.csv
+                       bilis_M_Customer.csv
+                       bilis_M_Item.csv
+                       bilis_M_Sysin.csv
+
+出荷完了データ(PLS) → 4/27
+用友 → 内製
+フォルダー(用友サーバ) D:\UFIDA_System_Data\UFIDA
+ファイル名             SHP_Export_ShippingData.xls

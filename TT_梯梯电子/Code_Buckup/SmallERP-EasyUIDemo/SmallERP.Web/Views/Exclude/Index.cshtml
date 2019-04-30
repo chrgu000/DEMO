@@ -1,0 +1,306 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            //初始化查询筛选设置
+
+            //url定向
+            var actionUrl = {
+                GetList: '/Exclude/GetList',
+                Update: '/Exclude/Update',
+                Delete: '/Exclude/Delete',
+            }
+
+            //重新加载grid
+            function reloadData() {
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+                $('#grid').datagrid('load', {
+                    filterName: $('#queryName').val()
+                });
+            }
+            // grid工具栏添加按钮
+            $('#grid').datagrid({
+                url: actionUrl.GetList,
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500, 1000, 1500, 2000],
+                queryParams: { filterName: $('#queryName').val() },
+                toolbar: [{
+                    text: 'Add',//新增
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        endEditing();
+                        $("#grid").datagrid('insertRow', {
+                            row: {}
+                        });
+                    }
+                }, '-', {
+                    iconCls: 'icon-save',
+                    text: 'Save',//保存
+                    handler: function () {
+                        endEditing();
+                        var rows = $('#grid').datagrid('getRows');
+                        if (rows == null) {
+                            $.messager.alert('Message', '没有需要保存的行。');
+                            return false;
+                        }
+                        var arrs = new Array();
+                        for (var i = 0; i < rows.length; i++) {
+                            if (rows[i].iSave == "update") {
+                                var arr = {};
+                                arr["iID"] = StringFormatter(rows[i].iID);
+                                arr["sItemNo"] = StringFormatter(rows[i].sItemNo);
+
+                                if (arr["sItemNo"] == "") {
+                                    $.messager.alert('信息', (i + 1) + "行物料编码不等于空");
+                                    return false;
+                                }
+                                arrs[i] = arr;
+                            }
+                        }
+                        $.messager.confirm('提示', '确认是否要保存？', function (r) {
+                            if (r) {
+                                $.ajax({
+                                    type: "post",
+                                    url: actionUrl.Update,
+                                    cache: false,
+                                    data: { "grid": "[" + JSON.stringify(arrs) + "]" },
+                                    datatype: "json",
+                                    async: false,
+                                    success: function (data) {
+                                        if (data["Result"] === "1") {
+                                            $.messager.alert('信息', data["Msg"]);
+                                            reloadData();
+                                            $('#grid').datagrid('clearSelections');
+                                        } else {
+                                            $.messager.alert('信息', data["Msg"]);
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }, '-', {
+                    iconCls: 'icon-delete',
+                    text: 'Delete',//删除
+                    handler: function () {
+                        endEditing();
+                        var rows = $('#grid').datagrid('getSelections');
+                        if (rows.length == 0) {
+                            $.messager.alert('提示', '请选中行');
+                            return false;
+                        }
+                        var arrs = new Array();
+                        for (var i = 0; i < rows.length; i++) {
+                            if (rows[i].iID != "" && rows[i].iID != undefined) {
+                                var arr = {};
+                                arr["iID"] = rows[i].iID;
+                                arrs[i] = arr;
+                            }
+                        }
+                        $.messager.confirm('提示', '确认是否要删除行', function (r) {
+                            if (arrs.length > 0) {
+                                if (r) {
+                                    $.ajax({
+                                        type: "post",
+                                        url: actionUrl.Delete,
+                                        cache: false,
+                                        data: { "id": "[" + JSON.stringify(arrs) + "]" },
+                                        datatype: "json",
+                                        async: false,
+                                        success: function (data) {
+                                            if (data["Result"] === "1") {
+                                                $.messager.alert('信息', data["Msg"]);
+
+                                                var a = $('#grid').datagrid('getSelected');
+                                                var b = $('#grid').datagrid('getRowIndex', a);
+                                                $('#grid').datagrid('deleteRow', b);
+                                            } else {
+                                                $.messager.alert('信息', data["Msg"]);
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                            else {
+                                var a = $('#grid').datagrid('getSelected');
+                                var b = $('#grid').datagrid('getRowIndex', a);
+                                $('#grid').datagrid('deleteRow', b);
+                            }
+                        });
+
+                    }
+                }
+                ],
+                columns: [
+                    [
+                        //{ field: 'iID', title: '序号', width: 80, },
+                        {
+                            field: 'sItemNo', title: '物料编码', width: 200,
+                            editor: 'textbox'
+                        },
+                        { field: 'iSave', title: 'iSave', width: 80, hidden: true },
+                    ]
+                ],
+            });
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            //初始化按钮
+            $('#btnReset').click(function () {
+                $('#queryName').textbox('reset');
+                reloadData();
+            });
+        });
+
+        //格式化日期
+        function DateTimeFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            if (value.length == 10) {
+                return value;
+            }
+            try {
+                value = value.substr(1, value.length - 2);
+                var obj = eval('(' + "{Date: new " + value + "}" + ')');
+                var dateValue = obj["Date"];
+                return dateValue.format("yyyy-mm-dd");
+            }
+            catch (e) {
+                return "";
+            }
+        }
+
+        //格式化日期
+        Date.prototype.format = function (fmt) { //author: meizz
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        //格式化字符串
+        function StringFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            return value;
+        }
+
+        //修改单元格扩展
+        $.extend($.fn.datagrid.methods, {
+            editCell: function (jq, param) {
+                return jq.each(function () {
+                    var opts = $(this).datagrid('options');
+                    var fields = $(this).datagrid('getColumnFields', true).concat($(this).datagrid('getColumnFields'));
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor1 = col.editor;
+                        if (fields[i] != param.field) {
+                            col.editor = null;
+                        }
+                    }
+                    $(this).datagrid('beginEdit', param.index);
+                    for (var i = 0; i < fields.length; i++) {
+                        var col = $(this).datagrid('getColumnOption', fields[i]);
+                        col.editor = col.editor1;
+                    }
+                });
+            }
+        });
+
+        //修改行号
+        var editIndex = undefined;
+        //修改栏位
+        var editCol = undefined;
+        //数据发生改变时触发
+        function endEditing() {
+            if (editIndex == undefined) { return true }
+            if ($('#grid').datagrid('validateRow', editIndex)) {// 检测  数据是否发生 改变
+                //start数据发生改变时设置
+                $('#grid').datagrid('getRows')[editIndex]['iSave'] = "update";
+
+                $('#grid').datagrid('endEdit', editIndex);// 触发 onAfterEdit  方法
+                //end数据发生改变时设置
+                editIndex = undefined;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //点击单元格变更
+        function onClickCell(index, field, data) {
+            if (endEditing()) {
+                $('#grid').datagrid('selectRow', index)
+                        .datagrid('editCell', { index: index, field: field, data: data });
+                editIndex = index;
+            }
+        }
+
+        //datagrid 时间控件编辑器扩展
+        $.extend($.fn.datagrid.defaults.editors, {
+            datebox: {// datebox就是你要自定义editor的名称
+                init: function (container, options) {
+                    var input = $('<input class="easyuidatebox" style="width:100px">').appendTo(container);
+                    return input.datebox({
+                        formatter: function (date) {
+                            return new Date(date).format("yyyy-mm-dd");
+                        }
+                    });
+                },
+                getValue: function (target) {
+                    return $(target).datebox("getValue");
+                },
+                setValue: function (target, value) {
+                    $(target).datebox("setValue", DateTimeFormatter(value));
+                },
+                resize: function (target, width) {
+                    var input = $(target);
+                    if ($.boxModel == true) {
+                        input.width(width - (input.outerWidth() - input.width()));
+                    } else {
+                        input.width(width);
+                    }
+                }
+            }
+        });
+
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px">
+        <table>
+            <tr>
+                <td>物料编码：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryName" id="queryName" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true,onClickCell: onClickCell"></table>
+    </div>
+</body>

@@ -1,0 +1,117 @@
+<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+	<s:Schema id="RowsetSchema">
+		<s:ElementType name="row" content="eltOnly" rs:CommandTimeout="500" rs:updatable="true">
+			<s:AttributeType name="Define_1" rs:number="17" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_10" rs:number="26" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_11" rs:number="27" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_12" rs:number="28" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_13" rs:number="29" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_14" rs:number="30" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_15" rs:number="31" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_16" rs:number="32" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_2" rs:number="18" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_3" rs:number="19" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_4" rs:number="20" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_5" rs:number="21" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_6" rs:number="22" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_7" rs:number="23" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_8" rs:number="24" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="4" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Define_9" rs:number="25" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="8" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="BarCode" rs:number="3" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="80" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="CreateTime" rs:number="9" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="IsWFControl" rs:number="10" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ModifyTime" rs:number="13" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="RelsVTid" rs:number="34" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="STSNFlag" rs:number="14" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="MoCode" rs:number="1" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DefMDeptCode" rs:number="2" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="12" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DefMoTypeCode" rs:number="4" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Ufts" rs:number="16" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="UpdCount" rs:number="15" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="VTid" rs:number="33" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="MoId" rs:number="21" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DefStartDate" rs:number="5" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DefDueDate" rs:number="6" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="CreateUser" rs:number="7" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="CreateDate" rs:number="8" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ModifyUser" rs:number="11" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ModifyDate" rs:number="12" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="editprop" rs:number="35" rs:writeunknown="true">
+				<s:datatype dt:type="string" rs:dbtype="str" dt:maxLength="2" rs:maybenull="false"/>
+			</s:AttributeType>
+		</s:ElementType>
+	</s:Schema>
+	<rs:data>
+		<z:row MoId="1000000105" MoCode="00105" IsWFControl="0" STSNFlag="0" Define_1="" Define_2="" Define_3="" Define_4="" Define_5="" Define_6="" Define_7="" Define_8="" Define_9="" Define_10="" Define_11="" Define_12="" Define_13="" Define_14="" Define_15="" Define_16="" CreateUser="demo" CreateDate="2017-06-30" CreateTime="2017-06-30 08:33:55" ModifyUser="" ModifyDate="" ModifyTime="" VTid="30413" RelsVTid="30422" DefMDeptCode="" DefMoTypeCode="" DefStartDate="" DefDueDate="" BarCode="||MO21|00105" editprop=""/>
+	</rs:data>
+</xml>

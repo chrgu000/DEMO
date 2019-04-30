@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>业务</RootNamespace>
+    <AssemblyName>业务</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.Wizard, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v11.1.Designer, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1.Extensions, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1.UI, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\RdRecord.cs" />
+    <Compile Include="DAL\RdRecords.cs" />
+    <Compile Include="DAL\Registers.cs" />
+    <Compile Include="Model\RdRecord.cs" />
+    <Compile Include="Model\RdRecords.cs" />
+    <Compile Include="Model\Registers.cs" />
+    <Compile Include="业务\Frm现品票.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm现品票.designer.cs">
+      <DependentUpon>Frm现品票.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\Frm存量查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\Frm存量查看.designer.cs">
+      <DependentUpon>Frm存量查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="业务\Frm发货计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划.designer.cs">
+      <DependentUpon>Frm发货计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_Add.designer.cs">
+      <DependentUpon>Frm发货计划_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划列表.designer.cs">
+      <DependentUpon>Frm发货计划列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_New.designer.cs">
+      <DependentUpon>Frm发货计划_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="基础档案\Frm门号对照表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="基础档案\Frm门号对照表.designer.cs">
+      <DependentUpon>Frm门号对照表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\Frm预警.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\Frm预警.designer.cs">
+      <DependentUpon>Frm预警.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="业务\Frm现品票.resx">
+      <DependentUpon>Frm现品票.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\Frm存量查看.resx">
+      <DependentUpon>Frm存量查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划.resx">
+      <DependentUpon>Frm发货计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划_Add.resx">
+      <DependentUpon>Frm发货计划_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划列表.resx">
+      <DependentUpon>Frm发货计划列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划_New.resx">
+      <DependentUpon>Frm发货计划_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="基础档案\Frm门号对照表.resx">
+      <DependentUpon>Frm门号对照表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\Frm预警.resx">
+      <DependentUpon>Frm预警.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

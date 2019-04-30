@@ -1,0 +1,796 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D57AC05B-60E2-4174-9B56-1480A0B64D1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UFIDA.U8.UAP.CustomApp.ControlForm</RootNamespace>
+    <AssemblyName>UFIDA.U8.UAP.CustomApp.ControlForm</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\U8SOFT\UAP\Runtime\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.Extensions, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2.Design, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Interop.U8Login, Version=1.14.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Interop.U8Login.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.UFPortalProxyInterface, Version=8.2.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Interop.UFPortalProxyInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="org.in2bits.MyXls, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\org.in2bits.MyXls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.U8.Portal.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFIDA.U8.Portal.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.Portal.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFIDA.U8.Portal.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.Portal.Proxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFIDA.U8.Portal.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.Portal.UAPFacade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFIDA.U8.Portal.UAPFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.U8.Framework.Login.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=19a34671517e8c56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFSoft.U8.Framework.Login.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.U8.Framework.LoginContext, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90e57cffdf9d854d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFSoft.U8.Framework.LoginContext.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.U8.Framework.SecurityCommon, Version=8.50.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UFSoft.U8.Framework.SecurityCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseInfo\CustomerFeedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CustomerFeedback.Designer.cs">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\ClsLocalPrinter.cs" />
+    <Compile Include="BaseInfo\clsU8.cs" />
+    <Compile Include="BaseInfo\Defects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Defects.Designer.cs">
+      <DependentUpon>Defects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\DefectsMater.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\DefectsMater.Designer.cs">
+      <DependentUpon>DefectsMater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLSampleSizeMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLSampleSizeMap.Designer.cs">
+      <DependentUpon>_AQLSampleSizeMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLLevelMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLLevelMap.Designer.cs">
+      <DependentUpon>_AQLLevelMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_AQL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_AQL.Designer.cs">
+      <DependentUpon>_AQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_CorrectiveAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_CorrectiveAction.Designer.cs">
+      <DependentUpon>_CorrectiveAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\DefectsForOQC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\DefectsForOQC.Designer.cs">
+      <DependentUpon>DefectsForOQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClsUserRight.cs" />
+    <Compile Include="DAL\_AQLSampleSizeMap.cs" />
+    <Compile Include="DAL\_AQLLevelMap.cs" />
+    <Compile Include="DAL\_CorrectiveActionReportLogsheet.cs" />
+    <Compile Include="DAL\_DefectMaster_2.cs" />
+    <Compile Include="DAL\OQC_RMDF.cs" />
+    <Compile Include="DAL\OQC_RMDFs.cs" />
+    <Compile Include="DAL\_SendIQCMail.cs" />
+    <Compile Include="DAL\_DefectForOQC.cs" />
+    <Compile Include="FrmIQC_EMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIQC_EMail.Designer.cs">
+      <DependentUpon>FrmIQC_EMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_Action.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_Action.Designer.cs">
+      <DependentUpon>_Action.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_ActionFCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_ActionFCost.Designer.cs">
+      <DependentUpon>_ActionFCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLInspectionLevel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\_AQLInspectionLevel.Designer.cs">
+      <DependentUpon>_AQLInspectionLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\_AQLInspectionLevel.cs" />
+    <Compile Include="DAL\IQC_RMDF.cs" />
+    <Compile Include="DAL\IQC_RMDFs.cs" />
+    <Compile Include="DAL\_Action.cs" />
+    <Compile Include="DAL\_ActionFCost.cs" />
+    <Compile Include="DAL\_CustomerFeedback.cs" />
+    <Compile Include="DAL\DispatchList.cs" />
+    <Compile Include="DAL\PlatingProcess.cs" />
+    <Compile Include="DAL\SO_SODetails_extradefine.cs" />
+    <Compile Include="DAL\Process.cs" />
+    <Compile Include="DAL\InvProcess.cs" />
+    <Compile Include="DAL\SO_SODetails.cs" />
+    <Compile Include="DAL\SO_SOMain.cs" />
+    <Compile Include="DAL\SystemSet.cs" />
+    <Compile Include="DAL\Payment.cs" />
+    <Compile Include="DAL\InvProcessPrice.cs" />
+    <Compile Include="DAL\RoutingInfo.cs" />
+    <Compile Include="DAL\BarCodeLabel.cs" />
+    <Compile Include="DAL\BarStatus.cs" />
+    <Compile Include="DAL\ProcessList.cs" />
+    <Compile Include="DAL\TransVouchs.cs" />
+    <Compile Include="DAL\TransVouch.cs" />
+    <Compile Include="DAL\RdRecord08.cs" />
+    <Compile Include="DAL\RdRecord09.cs" />
+    <Compile Include="DAL\rdrecords08.cs" />
+    <Compile Include="DAL\rdrecords09.cs" />
+    <Compile Include="DAL\DispatchLists.cs" />
+    <Compile Include="DAL\_Defects.cs" />
+    <Compile Include="DAL\_ProLine.cs" />
+    <Compile Include="DAL\_SalesSet.cs" />
+    <Compile Include="DAL\_PurchaseSet.cs" />
+    <Compile Include="DAL\_SalesShipment.cs" />
+    <Compile Include="DAL\rdrecord32.cs" />
+    <Compile Include="DAL\rdrecords32.cs" />
+    <Compile Include="DAL\DispatchLists_extradefine.cs" />
+    <Compile Include="BaseInfo\FrmInvInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\FrmInvInfo.designer.cs">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\FrmMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\FrmMsgBox.Designer.cs">
+      <DependentUpon>FrmMsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\_DefectForOQC.cs" />
+    <Compile Include="Model\_SendIQCMail.cs" />
+    <Compile Include="Model\_AQLInspectionLevel.cs" />
+    <Compile Include="Model\_AQLLevelMap.cs" />
+    <Compile Include="Model\_AQLSampleSizeMap.cs" />
+    <Compile Include="Model\_CorrectiveActionReportLogsheet.cs" />
+    <Compile Include="Model\_DefectMaster.cs" />
+    <Compile Include="Model\IQC_RMDF.cs" />
+    <Compile Include="Model\IQC_RMDFs.cs" />
+    <Compile Include="Model\OQC_RMDF.cs" />
+    <Compile Include="Model\OQC_RMDFs.cs" />
+    <Compile Include="Model\SO_SODetails_extradefine.cs" />
+    <Compile Include="Model\Process.cs" />
+    <Compile Include="Model\InvProcess.cs" />
+    <Compile Include="Model\SO_SODetails.cs" />
+    <Compile Include="Model\SO_SOMain.cs" />
+    <Compile Include="Model\SystemSet.cs" />
+    <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\InvProcessPrice.cs" />
+    <Compile Include="Model\RoutingInfo.cs" />
+    <Compile Include="Model\BarCodeLabel.cs" />
+    <Compile Include="Model\PlatingProcess.cs" />
+    <Compile Include="Model\ProcessList.cs" />
+    <Compile Include="Model\BarStatus.cs" />
+    <Compile Include="Model\TransVouch.cs" />
+    <Compile Include="Model\TransVouchs.cs" />
+    <Compile Include="Model\RdRecord08.cs" />
+    <Compile Include="Model\RdRecords08.cs" />
+    <Compile Include="Model\RdRecord09.cs" />
+    <Compile Include="Model\RdRecords09.cs" />
+    <Compile Include="Model\DispatchList.cs" />
+    <Compile Include="Model\DispatchLists.cs" />
+    <Compile Include="Model\_Action.cs" />
+    <Compile Include="Model\_ActionFCost.cs" />
+    <Compile Include="Model\_CustomerFeedback.cs" />
+    <Compile Include="Model\_Defects.cs" />
+    <Compile Include="Model\_ProLine.cs" />
+    <Compile Include="Model\_SalesSet.cs" />
+    <Compile Include="Model\_PurchaseSet.cs" />
+    <Compile Include="Model\_SalesShipment.cs" />
+    <Compile Include="Model\RdRecord32.cs" />
+    <Compile Include="Model\rdrecords32.cs" />
+    <Compile Include="Model\DispatchLists_extradefines.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SystemSet.Designer.cs">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RepBaseGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepBaseGrid.designer.cs">
+      <DependentUpon>RepBaseGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\FrmVendorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\FrmVendorInfo.designer.cs">
+      <DependentUpon>FrmVendorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Process.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Process.Designer.cs">
+      <DependentUpon>Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvProcess.Designer.cs">
+      <DependentUpon>InvProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBillVouch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SaleBillVouch.Designer.cs">
+      <DependentUpon>SaleBillVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurBillVouch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurBillVouch.Designer.cs">
+      <DependentUpon>PurBillVouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\CreditLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CreditLine.Designer.cs">
+      <DependentUpon>CreditLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportSaleOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportSaleOrder.Designer.cs">
+      <DependentUpon>ImportSaleOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvProcessPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvProcessPrice.Designer.cs">
+      <DependentUpon>InvProcessPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoutingInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoutingInfo.Designer.cs">
+      <DependentUpon>RoutingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintBarLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintBarLabel.Designer.cs">
+      <DependentUpon>PrintBarLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSplit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSplit.Designer.cs">
+      <DependentUpon>BarSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarClose.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarClose.Designer.cs">
+      <DependentUpon>BarClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarTransfer.Designer.cs">
+      <DependentUpon>BarTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintFlowCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PrintFlowCard.Designer.cs">
+      <DependentUpon>PrintFlowCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlatingProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlatingProcess.Designer.cs">
+      <DependentUpon>PlatingProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\ProcessList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\ProcessList.Designer.cs">
+      <DependentUpon>ProcessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSalesShipment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSalesShipment.Designer.cs">
+      <DependentUpon>BarSalesShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\ProLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\ProLine.Designer.cs">
+      <DependentUpon>ProLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesSet.Designer.cs">
+      <DependentUpon>SalesSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarAdjust.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarAdjust.Designer.cs">
+      <DependentUpon>BarAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepBarcodeAverage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepBarcodeAverage.Designer.cs">
+      <DependentUpon>RepBarcodeAverage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepBarcodeDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepBarcodeDetail.Designer.cs">
+      <DependentUpon>RepBarcodeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\PurchaseSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\PurchaseSet.Designer.cs">
+      <DependentUpon>PurchaseSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarCodeStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarCodeStatus.Designer.cs">
+      <DependentUpon>BarCodeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSalesShipmentAudit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSalesShipmentAudit.Designer.cs">
+      <DependentUpon>BarSalesShipmentAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSalesShipmentEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSalesShipmentEdit.Designer.cs">
+      <DependentUpon>BarSalesShipmentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleBillVouchCSV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SaleBillVouchCSV.Designer.cs">
+      <DependentUpon>SaleBillVouchCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepWatchWip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepWatchWip.Designer.cs">
+      <DependentUpon>RepWatchWip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepSTFG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepSTFG.Designer.cs">
+      <DependentUpon>RepSTFG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepWatchWipOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepWatchWipOS.Designer.cs">
+      <DependentUpon>RepWatchWipOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepSTFGOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepSTFGOS.Designer.cs">
+      <DependentUpon>RepSTFGOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IQCRMDFList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IQCRMDFList.Designer.cs">
+      <DependentUpon>IQCRMDFList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IQCRMDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IQCRMDF.Designer.cs">
+      <DependentUpon>IQCRMDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIQCRMDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIQCRMDF.Designer.cs">
+      <DependentUpon>FrmIQCRMDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OQCRMDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OQCRMDF.Designer.cs">
+      <DependentUpon>OQCRMDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OQCRMDFList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OQCRMDFList.Designer.cs">
+      <DependentUpon>OQCRMDFList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOQCRMDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOQCRMDF.Designer.cs">
+      <DependentUpon>FrmOQCRMDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepFCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepFCost.Designer.cs">
+      <DependentUpon>RepFCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSplitList_del.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSplitList_del.Designer.cs">
+      <DependentUpon>BarSplitList_del.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarSplitList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarSplitList.Designer.cs">
+      <DependentUpon>BarSplitList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\UserRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\UserRight.Designer.cs">
+      <DependentUpon>UserRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingQC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingQC.Designer.cs">
+      <DependentUpon>PendingQC.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseInfo\CustomerFeedback.resx">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\DefectsMater.resx">
+      <DependentUpon>DefectsMater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_AQLSampleSizeMap.resx">
+      <DependentUpon>_AQLSampleSizeMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_AQLLevelMap.resx">
+      <DependentUpon>_AQLLevelMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_AQL.resx">
+      <DependentUpon>_AQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_CorrectiveAction.resx">
+      <DependentUpon>_CorrectiveAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\DefectsForOQC.resx">
+      <DependentUpon>DefectsForOQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIQC_EMail.resx">
+      <DependentUpon>FrmIQC_EMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\FrmInvInfo.resx">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\FrmMsgBox.resx">
+      <DependentUpon>FrmMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\Defects.resx">
+      <DependentUpon>Defects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_Action.resx">
+      <DependentUpon>_Action.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_ActionFCost.resx">
+      <DependentUpon>_ActionFCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\_AQLInspectionLevel.resx">
+      <DependentUpon>_AQLInspectionLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="SystemSet.resx">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepBaseGrid.resx">
+      <DependentUpon>RepBaseGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\FrmVendorInfo.resx">
+      <DependentUpon>FrmVendorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\Process.resx">
+      <DependentUpon>Process.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvProcess.resx">
+      <DependentUpon>InvProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleBillVouch.resx">
+      <DependentUpon>SaleBillVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurBillVouch.resx">
+      <DependentUpon>PurBillVouch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\CreditLine.resx">
+      <DependentUpon>CreditLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportSaleOrder.resx">
+      <DependentUpon>ImportSaleOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvProcessPrice.resx">
+      <DependentUpon>InvProcessPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoutingInfo.resx">
+      <DependentUpon>RoutingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintBarLabel.resx">
+      <DependentUpon>PrintBarLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSplit.resx">
+      <DependentUpon>BarSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarClose.resx">
+      <DependentUpon>BarClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarTransfer.resx">
+      <DependentUpon>BarTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintFlowCard.resx">
+      <DependentUpon>PrintFlowCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlatingProcess.resx">
+      <DependentUpon>PlatingProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\ProcessList.resx">
+      <DependentUpon>ProcessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSalesShipment.resx">
+      <DependentUpon>BarSalesShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\ProLine.resx">
+      <DependentUpon>ProLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesSet.resx">
+      <DependentUpon>SalesSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarAdjust.resx">
+      <DependentUpon>BarAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepBarcodeAverage.resx">
+      <DependentUpon>RepBarcodeAverage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepBarcodeDetail.resx">
+      <DependentUpon>RepBarcodeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\PurchaseSet.resx">
+      <DependentUpon>PurchaseSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarCodeStatus.resx">
+      <DependentUpon>BarCodeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSalesShipmentAudit.resx">
+      <DependentUpon>BarSalesShipmentAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSalesShipmentEdit.resx">
+      <DependentUpon>BarSalesShipmentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleBillVouchCSV.resx">
+      <DependentUpon>SaleBillVouchCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepWatchWip.resx">
+      <DependentUpon>RepWatchWip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepSTFG.resx">
+      <DependentUpon>RepSTFG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepWatchWipOS.resx">
+      <DependentUpon>RepWatchWipOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepSTFGOS.resx">
+      <DependentUpon>RepSTFGOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IQCRMDFList.resx">
+      <DependentUpon>IQCRMDFList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IQCRMDF.resx">
+      <DependentUpon>IQCRMDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIQCRMDF.resx">
+      <DependentUpon>FrmIQCRMDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OQCRMDF.resx">
+      <DependentUpon>OQCRMDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OQCRMDFList.resx">
+      <DependentUpon>OQCRMDFList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOQCRMDF.resx">
+      <DependentUpon>FrmOQCRMDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepFCost.resx">
+      <DependentUpon>RepFCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSplitList_del.resx">
+      <DependentUpon>BarSplitList_del.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSplitList.resx">
+      <DependentUpon>BarSplitList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseInfo\UserRight.resx">
+      <DependentUpon>UserRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingQC.resx">
+      <DependentUpon>PendingQC.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TH.BaseClass\TH.BaseClass.csproj">
+      <Project>{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}</Project>
+      <Name>TH.BaseClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U8.UAP.CustomApp.MetaData\UFIDA.U8.UAP.CustomApp.MetaData.csproj">
+      <Project>{079EC8DF-9664-4DAC-9CC8-2F4486E8E981}</Project>
+      <Name>UFIDA.U8.UAP.CustomApp.MetaData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000206-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

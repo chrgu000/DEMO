@@ -1,0 +1,3 @@
+192.168.1.8		administrator	password.1		SQL :sa	 Sa!@#	 demo	980199
+			ufida		wjh123!@#
+192.168.1.7		administrator	555			SQL: sa  Sa!@#	 demo	980199

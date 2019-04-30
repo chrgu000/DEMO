@@ -1,0 +1,82 @@
+
+
+/****** Object:  Table [dbo].[历史销售发票明细表]    Script Date: 07/16/2013 21:45:46 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[历史销售发票明细表]') AND type in (N'U'))
+DROP TABLE [dbo].[历史销售发票明细表]
+GO
+
+
+
+/****** Object:  Table [dbo].[历史销售发票明细表]    Script Date: 07/16/2013 21:45:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[历史销售发票明细表](
+	[销售类型] [nvarchar](50) NULL,
+	[销售发票号] [nvarchar](50) NULL,
+	[销售日期] [datetime] NULL,
+	[存货编码] [nvarchar](500) NULL,
+	[存货名称] [nvarchar](500) NULL,
+	[存货规格] [nvarchar](500) NULL,
+	[数量] [decimal](18, 6) NULL,
+	[含税单价] [decimal](18, 6) NULL,
+	[无税单价] [decimal](18, 6) NULL
+) ON [PRIMARY]
+
+GO
+
+
+
+
+/****** Object:  Table [dbo].[产品原价分析汇总]    Script Date: 07/16/2013 21:45:31 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[产品原价分析汇总]') AND type in (N'U'))
+DROP TABLE [dbo].[产品原价分析汇总]
+GO
+
+
+/****** Object:  Table [dbo].[产品原价分析汇总]    Script Date: 07/16/2013 21:45:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[产品原价分析汇总](
+	[物料编码] [nvarchar](255) NOT NULL,
+	[物料名称] [nvarchar](255) NULL,
+	[英文名称] [nvarchar](255) NULL,
+	[规格型号] [nvarchar](255) NULL,
+	[计量单位] [nvarchar](255) NULL,
+	[物料类别] [nvarchar](50) NULL,
+	[物料类别编码] [nvarchar](50) NULL,
+	[发票最高单价] [numeric](18, 4) NULL,
+	[发票最低单价] [numeric](18, 4) NULL,
+	[参考成本] [numeric](18, 4) NULL,
+	[供应商最高单价] [numeric](18, 4) NULL,
+	[供应商最低单价] [numeric](18, 4) NULL,
+	[销售标准单价] [numeric](18, 4) NULL,
+	[销售发票号] [nvarchar](255) NULL,
+	[销售发票日期] [nvarchar](50) NULL,
+	[最高进价] [numeric](18, 4) NULL,
+	[客户标准销售单价] [numeric](18, 4) NULL,
+	[客户编码] [nvarchar](255) NULL,
+	[客户简称] [nvarchar](255) NULL,
+	[产品停用日期] [varchar](50) NULL,
+ CONSTRAINT [PK_产品原价分析汇总] PRIMARY KEY CLUSTERED 
+(
+	[物料编码] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

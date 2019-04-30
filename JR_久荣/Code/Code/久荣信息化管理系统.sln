@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "久荣信息化管理系统", "信息化管理系统\久荣信息化管理系统.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "90_系统服务", "90_系统服务\90_系统服务.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_业务", "01_业务\01_业务.csproj", "{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = 01_业务\\01_业务.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = 01_业务\\
+		SccProjectUniqueName2 = 90_系统服务\\90_系统服务.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = 90_系统服务\\
+		SccProjectUniqueName3 = 信息化管理系统\\久荣信息化管理系统.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = 信息化管理系统\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

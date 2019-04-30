@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8E2D28A-9EC1-446F-97C0-EA3C7E7E4807}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>报表</RootNamespace>
+    <AssemblyName>报表</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="销售\Frm应收款与订单执行差异表.cs">
+    </Compile>
+    <Compile Include="销售\Frm应收款与订单执行差异表.designer.cs">
+      <DependentUpon>Frm应收款与订单执行差异表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm应收款明细表2.cs">
+    </Compile>
+    <Compile Include="销售\Frm应收款明细表2.designer.cs">
+      <DependentUpon>Frm应收款明细表2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\应收款.cs" />
+    <Compile Include="销售\Frm业务费申请_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\Frm业务费申请_Add.designer.cs">
+      <DependentUpon>Frm业务费申请_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm业务费申请汇总.cs">
+    </Compile>
+    <Compile Include="销售\Frm业务费申请汇总.designer.cs">
+      <DependentUpon>Frm业务费申请汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm出货汇总表.cs">
+    </Compile>
+    <Compile Include="销售\Frm出货汇总表.designer.cs">
+      <DependentUpon>Frm出货汇总表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm商机报表.cs">
+    </Compile>
+    <Compile Include="销售\Frm商机报表.designer.cs">
+      <DependentUpon>Frm商机报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm客户明细.cs">
+    </Compile>
+    <Compile Include="销售\Frm客户明细.designer.cs">
+      <DependentUpon>Frm客户明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm市场部考核报表.cs">
+    </Compile>
+    <Compile Include="销售\Frm市场部考核报表.designer.cs">
+      <DependentUpon>Frm市场部考核报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="采购\Frm应付款明细表.cs">
+    </Compile>
+    <Compile Include="采购\Frm应付款明细表.designer.cs">
+      <DependentUpon>Frm应付款明细表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm应收款明细表.cs">
+    </Compile>
+    <Compile Include="销售\Frm应收款明细表.designer.cs">
+      <DependentUpon>Frm应收款明细表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="仓库\Frm收发存汇总表.cs">
+    </Compile>
+    <Compile Include="仓库\Frm收发存汇总表.designer.cs">
+      <DependentUpon>Frm收发存汇总表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm收款汇总.cs">
+    </Compile>
+    <Compile Include="销售\Frm收款汇总.designer.cs">
+      <DependentUpon>Frm收款汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm绩效考核排名表.cs">
+    </Compile>
+    <Compile Include="销售\Frm绩效考核排名表.designer.cs">
+      <DependentUpon>Frm绩效考核排名表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm订单部周报.cs">
+    </Compile>
+    <Compile Include="销售\Frm订单部周报.designer.cs">
+      <DependentUpon>Frm订单部周报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm订单部季报.cs">
+    </Compile>
+    <Compile Include="销售\Frm订单部季报.designer.cs">
+      <DependentUpon>Frm订单部季报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm订单部月报.cs">
+    </Compile>
+    <Compile Include="销售\Frm订单部月报.designer.cs">
+      <DependentUpon>Frm订单部月报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm账龄表.cs">
+    </Compile>
+    <Compile Include="销售\Frm账龄表.designer.cs">
+      <DependentUpon>Frm账龄表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="采购\Frm采购订单执行情况表.cs">
+    </Compile>
+    <Compile Include="采购\Frm采购订单执行情况表.designer.cs">
+      <DependentUpon>Frm采购订单执行情况表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm销售发票汇总.cs">
+    </Compile>
+    <Compile Include="销售\Frm销售发票汇总.designer.cs">
+      <DependentUpon>Frm销售发票汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\Frm销售订单执行情况表.cs">
+    </Compile>
+    <Compile Include="销售\Frm销售订单执行情况表.designer.cs">
+      <DependentUpon>Frm销售订单执行情况表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="销售\Frm应收款与订单执行差异表.resx">
+      <DependentUpon>Frm应收款与订单执行差异表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm应收款明细表2.resx">
+      <DependentUpon>Frm应收款明细表2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm业务费申请_Add.resx">
+      <DependentUpon>Frm业务费申请_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm业务费申请汇总.resx">
+      <DependentUpon>Frm业务费申请汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm出货汇总表.resx">
+      <DependentUpon>Frm出货汇总表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm商机报表.resx">
+      <DependentUpon>Frm商机报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm客户明细.resx">
+      <DependentUpon>Frm客户明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm市场部考核报表.resx">
+      <DependentUpon>Frm市场部考核报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购\Frm应付款明细表.resx">
+      <DependentUpon>Frm应付款明细表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm应收款明细表.resx">
+      <DependentUpon>Frm应收款明细表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="仓库\Frm收发存汇总表.resx">
+      <DependentUpon>Frm收发存汇总表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm收款汇总.resx">
+      <DependentUpon>Frm收款汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm绩效考核排名表.resx">
+      <DependentUpon>Frm绩效考核排名表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm订单部周报.resx">
+      <DependentUpon>Frm订单部周报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm订单部季报.resx">
+      <DependentUpon>Frm订单部季报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm订单部月报.resx">
+      <DependentUpon>Frm订单部月报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm账龄表.resx">
+      <DependentUpon>Frm账龄表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="采购\Frm采购订单执行情况表.resx">
+      <DependentUpon>Frm采购订单执行情况表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm销售发票汇总.resx">
+      <DependentUpon>Frm销售发票汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm销售订单执行情况表.resx">
+      <DependentUpon>Frm销售订单执行情况表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\Frm订单部月报明细.resx">
+      <DependentUpon>Frm订单部月报明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="销售\出货.cs" />
+    <Compile Include="采购\应付款.cs" />
+    <Compile Include="销售\Frm订单部月报明细.cs">
+    </Compile>
+    <Compile Include="销售\Frm订单部月报明细.designer.cs">
+      <DependentUpon>Frm订单部月报明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\季报.cs" />
+    <Compile Include="销售\收款.cs" />
+    <Compile Include="销售\月报.cs" />
+    <Compile Include="销售\计划.cs" />
+    <Compile Include="销售\销售.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

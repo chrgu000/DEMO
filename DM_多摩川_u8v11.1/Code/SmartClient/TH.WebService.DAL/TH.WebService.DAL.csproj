@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDB0EFC6-83C4-4DFF-A97B-4C92766966CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TH.WebService.DAL</RootNamespace>
+    <AssemblyName>TH.WebService.DAL</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MSXML2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\Interop\Interop.MSXML2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.U8Login, Version=1.14.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\Interop\Interop.U8Login.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.U8.MomServiceCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.MomServiceCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.U8APIFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.U8APIFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.U8MOMAPIFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.U8MOMAPIFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.U8.Business.Interface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\U8SOFT\UAP\BusinessInterface\Framework\UFSoft.U8.Business.Interface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarCode128.cs" />
+    <Compile Include="BarCodePrint.cs" />
+    <Compile Include="_BarCodeList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RdRecord01.cs" />
+    <Compile Include="_BarCodeRD.cs" />
+    <Compile Include="RdRecord11.cs" />
+    <Compile Include="TransVouch.cs" />
+    <Compile Include="CheckVouch.cs" />
+    <Compile Include="RdRecord10.cs" />
+    <Compile Include="DispatchList.cs" />
+    <Compile Include="RdRecord09.cs" />
+    <Compile Include="RdRecord08.cs" />
+    <Compile Include="RdRecords08.cs" />
+    <Compile Include="RdRecords09.cs" />
+    <Compile Include="rdrecord32.cs" />
+    <Compile Include="rdrecords32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TH.WebService.BaseClass\TH.WebService.BaseClass.csproj">
+      <Project>{0FE75EDD-8844-4D12-828E-BA440FF7FD11}</Project>
+      <Name>TH.WebService.BaseClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TH.WebService.Model\TH.WebService.Model.csproj">
+      <Project>{6233A812-B8D4-41D5-9A97-BE3D8E3D3051}</Project>
+      <Name>TH.WebService.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="STAPI">
+      <Guid>{2DD3B1BA-A882-4277-8EC0-E2E5BA8F3D1A}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

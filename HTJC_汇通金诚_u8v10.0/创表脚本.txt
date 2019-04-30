@@ -1,0 +1,54 @@
+USE [UFDATA_300_2013]
+GO
+
+
+
+CREATE TABLE [dbo].[_LookUpType](
+	[iID] [varchar](50) NOT NULL,
+	[iType] [varchar](50) NOT NULL,
+	[Remark] [varchar](50) NULL,
+	[tstamp] [timestamp] NULL,
+ CONSTRAINT [PK_LookUpType] PRIMARY KEY CLUSTERED 
+(
+	[iID] ASC,
+	[iType] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+
+
+CREATE TABLE [dbo].[_LookUpDate](
+	[iID] [varchar](50) NOT NULL,
+	[iText] [varchar](50) NOT NULL,
+	[Remark] [varchar](50) NULL,
+	[iType] [varchar](50) NOT NULL,
+	[bClose] [int] NULL,
+	[bSystem] [int] NULL,
+	[tstamp] [timestamp] NULL,
+ CONSTRAINT [PK_LookUpDate] PRIMARY KEY CLUSTERED 
+(
+	[iID] ASC,
+	[iType] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+
+
+CREATE TABLE [dbo].[_UserInfo](
+	[vchrUid] [varchar](50) NOT NULL,
+	[vchrName] [varchar](50) NULL,
+	[vchrPwd] [varchar](50) NOT NULL,
+	[vchrRemark] [varchar](50) NOT NULL,
+	[dtmCreate] [datetime] NULL,
+	[dtmClose] [datetime] NULL,
+	[tstamp] [timestamp] NOT NULL,
+	[bSystem] [bit] NULL,
+ CONSTRAINT [PK__UserInfo] PRIMARY KEY CLUSTERED 
+(
+	[vchrUid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+

@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImportDLL</RootNamespace>
+    <AssemblyName>ImportDLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\out\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v11.1.Designer, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1.Extensions, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseFile\FrmHolidays.cs">
+    </Compile>
+    <Compile Include="BaseFile\FrmHolidays.designer.cs">
+      <DependentUpon>FrmHolidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFile\FrmWorkCalendar.cs">
+    </Compile>
+    <Compile Include="BaseFile\FrmWorkCalendar.designer.cs">
+      <DependentUpon>FrmWorkCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvInfo.designer.cs">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionLinePeopleNO.cs">
+    </Compile>
+    <Compile Include="FrmProductionLinePeopleNO.designer.cs">
+      <DependentUpon>FrmProductionLinePeopleNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionLinePeopleNOList.cs">
+    </Compile>
+    <Compile Include="FrmProductionLinePeopleNOList.designer.cs">
+      <DependentUpon>FrmProductionLinePeopleNOList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionLineState.cs">
+    </Compile>
+    <Compile Include="FrmProductionLineState.designer.cs">
+      <DependentUpon>FrmProductionLineState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm人员档案.cs">
+    </Compile>
+    <Compile Include="Frm人员档案.designer.cs">
+      <DependentUpon>Frm人员档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工作中心设备档案.cs">
+    </Compile>
+    <Compile Include="Frm工作中心设备档案.designer.cs">
+      <DependentUpon>Frm工作中心设备档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工序_New.designer.cs">
+      <DependentUpon>Frm工序_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序转移单批量.cs">
+    </Compile>
+    <Compile Include="Frm工序转移单批量.designer.cs">
+      <DependentUpon>Frm工序转移单批量.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm排产客户汇总统计表.cs">
+    </Compile>
+    <Compile Include="Frm排产客户汇总统计表.designer.cs">
+      <DependentUpon>Frm排产客户汇总统计表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产订单_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产订单_New.designer.cs">
+      <DependentUpon>Frm生产订单_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产工序排产_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产工序排产_Add.designer.cs">
+      <DependentUpon>Frm生产工序排产_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产工序排产明细.cs">
+    </Compile>
+    <Compile Include="Frm生产工序排产明细.designer.cs">
+      <DependentUpon>Frm生产工序排产明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frm生产订单批量修改.cs">
+    </Compile>
+    <Compile Include="Frm生产订单批量修改.designer.cs">
+      <DependentUpon>Frm生产订单批量修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产工票打印.cs">
+    </Compile>
+    <Compile Include="Frm生产工票打印.designer.cs">
+      <DependentUpon>Frm生产工票打印.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序流转卡打印.cs">
+    </Compile>
+    <Compile Include="Frm工序流转卡打印.designer.cs">
+      <DependentUpon>Frm工序流转卡打印.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产工序排产2.cs">
+    </Compile>
+    <Compile Include="Frm生产工序排产2.designer.cs">
+      <DependentUpon>Frm生产工序排产2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序批量_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工序批量_New.designer.cs">
+      <DependentUpon>Frm工序批量_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm设备状态.cs">
+    </Compile>
+    <Compile Include="Frm设备状态.designer.cs">
+      <DependentUpon>Frm设备状态.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm产能汇总.cs">
+    </Compile>
+    <Compile Include="Frm产能汇总.designer.cs">
+      <DependentUpon>Frm产能汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm排产产品汇总统计表.cs">
+    </Compile>
+    <Compile Include="Frm排产产品汇总统计表.designer.cs">
+      <DependentUpon>Frm排产产品汇总统计表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm排产汇总.cs">
+    </Compile>
+    <Compile Include="Frm排产汇总.designer.cs">
+      <DependentUpon>Frm排产汇总.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomer.designer.cs">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm排产明细.cs">
+    </Compile>
+    <Compile Include="Frm排产明细.designer.cs">
+      <DependentUpon>Frm排产明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm人员工时_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm人员工时_New.designer.cs">
+      <DependentUpon>Frm人员工时_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产工票打印批量_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产工票打印批量_New.designer.cs">
+      <DependentUpon>Frm生产工票打印批量_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序转移单批量_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工序转移单批量_New.designer.cs">
+      <DependentUpon>Frm工序转移单批量_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序转移单批量_查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工序转移单批量_查询.designer.cs">
+      <DependentUpon>Frm工序转移单批量_查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm排产日期比对.cs">
+    </Compile>
+    <Compile Include="Frm排产日期比对.designer.cs">
+      <DependentUpon>Frm排产日期比对.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用参照.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseFile\FrmHolidays.resx">
+      <DependentUpon>FrmHolidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFile\FrmWorkCalendar.resx">
+      <DependentUpon>FrmWorkCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvInfo.resx">
+      <DependentUpon>FrmInvInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductionLinePeopleNO.resx">
+      <DependentUpon>FrmProductionLinePeopleNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductionLinePeopleNOList.resx">
+      <DependentUpon>FrmProductionLinePeopleNOList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductionLineState.resx">
+      <DependentUpon>FrmProductionLineState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm人员档案.resx">
+      <DependentUpon>Frm人员档案.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工作中心设备档案.resx">
+      <DependentUpon>Frm工作中心设备档案.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序_New.resx">
+      <DependentUpon>Frm工序_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序转移单批量.resx">
+      <DependentUpon>Frm工序转移单批量.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm排产客户汇总统计表.resx">
+      <DependentUpon>Frm排产客户汇总统计表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单批量修改.resx">
+      <DependentUpon>Frm生产订单批量修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产工票打印.resx">
+      <DependentUpon>Frm生产工票打印.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序流转卡打印.resx">
+      <DependentUpon>Frm工序流转卡打印.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产工序排产2.resx">
+      <DependentUpon>Frm生产工序排产2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单_New.resx">
+      <DependentUpon>Frm生产订单_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产工序排产_Add.resx">
+      <DependentUpon>Frm生产工序排产_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序批量_New.resx">
+      <DependentUpon>Frm工序批量_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm设备状态.resx">
+      <DependentUpon>Frm设备状态.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm产能汇总.resx">
+      <DependentUpon>Frm产能汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm排产产品汇总统计表.resx">
+      <DependentUpon>Frm排产产品汇总统计表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm排产汇总.resx">
+      <DependentUpon>Frm排产汇总.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomer.resx">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm排产明细.resx">
+      <DependentUpon>Frm排产明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm人员工时_New.resx">
+      <DependentUpon>Frm人员工时_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产工票打印批量_New.resx">
+      <DependentUpon>Frm生产工票打印批量_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序转移单批量_New.resx">
+      <DependentUpon>Frm工序转移单批量_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序转移单批量_查询.resx">
+      <DependentUpon>Frm工序转移单批量_查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产工序排产明细.resx">
+      <DependentUpon>Frm生产工序排产明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm排产日期比对.resx">
+      <DependentUpon>Frm排产日期比对.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseFunction\BaseFunction.csproj">
+      <Project>{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}</Project>
+      <Name>BaseFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{3015E122-41EF-4140-817C-8972E8B84659}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrameBaseFunction\FrameBaseFunction.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>FrameBaseFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{D18D3571-57AD-4CEB-A701-371AC49CD029}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

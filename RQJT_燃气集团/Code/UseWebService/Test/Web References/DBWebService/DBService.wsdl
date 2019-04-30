@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddPU_AppVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPU_AppVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPU_AppVouchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMaterialAppVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMaterialAppVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMaterialAppVouchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPU_AppVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPU_AppVouch" />
+  </wsdl:message>
+  <wsdl:message name="AddPU_AppVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPU_AppVouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMaterialAppVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMaterialAppVouch" />
+  </wsdl:message>
+  <wsdl:message name="AddMaterialAppVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMaterialAppVouchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBWebServiceSoap">
+    <wsdl:operation name="AddPU_AppVouch">
+      <wsdl:input message="tns:AddPU_AppVouchSoapIn" />
+      <wsdl:output message="tns:AddPU_AppVouchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialAppVouch">
+      <wsdl:input message="tns:AddMaterialAppVouchSoapIn" />
+      <wsdl:output message="tns:AddMaterialAppVouchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBWebServiceSoap" type="tns:DBWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPU_AppVouch">
+      <soap:operation soapAction="http://tempuri.org/AddPU_AppVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialAppVouch">
+      <soap:operation soapAction="http://tempuri.org/AddMaterialAppVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBWebServiceSoap12" type="tns:DBWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPU_AppVouch">
+      <soap12:operation soapAction="http://tempuri.org/AddPU_AppVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialAppVouch">
+      <soap12:operation soapAction="http://tempuri.org/AddMaterialAppVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBWebService">
+    <wsdl:port name="DBWebServiceSoap" binding="tns:DBWebServiceSoap">
+      <soap:address location="http://localhost/WebService1/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBWebServiceSoap12" binding="tns:DBWebServiceSoap12">
+      <soap12:address location="http://localhost/WebService1/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

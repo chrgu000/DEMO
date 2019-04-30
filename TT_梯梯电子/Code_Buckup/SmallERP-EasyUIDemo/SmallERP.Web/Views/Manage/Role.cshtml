@@ -1,0 +1,184 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            var actionUrl = {
+                Get: '/Manage/GetRole',
+                GetList: '/Manage/GetRoleList',
+                Add: '/Manage/AddRole',
+                Update: '/Manage/UpdateRole',
+                Delete: '/Manage/DeleteRole'
+            }
+
+            function reloadData() {
+                $('#role_grid').datagrid('load', {
+                    filterName: $('#queryName').val()
+                });
+            }
+            // 角色grid工具栏添加按钮
+            $('#role_grid').datagrid({
+                url: actionUrl.GetList,
+                //idField: 'Id',
+                queryParams: { filterName: $('#queryName').val() },
+                toolbar: [{
+                    iconCls: 'icon-add',
+                    text: 'Add',
+                    handler: function () {
+                        // 设置当前window的标题及icon
+
+                        $('#Id').val('');
+
+                        $('#win_role').window({
+                            title: '添加角色',
+                            iconCls: 'icon-add'
+                        });
+                        // 重置form，弹出window
+                        $('#form_role').form('reset');
+                        $('#win_role').window('open');
+                    }
+                }, {
+                    iconCls: 'icon-edit',
+                    text: 'Edit',
+                    handler: function () {
+                        var row = $('#role_grid').datagrid('getSelected');
+                        if (row == null) {
+                            $.messager.alert('Message', '请先选中需要编辑的行。');
+                            return false;
+                        }
+
+                        $('#Id').val(row.ID);
+
+                        // 设置当前window的标题及icon
+                        $('#win_role').window({
+                            title: '编辑角色',
+                            iconCls: 'icon-edit'
+                        });
+                        // 弹出window
+                        $('#win_role').window('open');
+                        $('#form_role').form('load', row);
+                    }
+                }
+                , {
+                    iconCls: 'icon-remove',
+                    text: 'Delete',
+                    handler: function () {
+                        var row = $('#role_grid').datagrid('getSelected');
+                        if (row == null) {
+                            $.messager.alert('Message', '请先选中需要删除的行。');
+                            return false;
+                        }
+
+                        $.messager.confirm('提示', '确认要删除该角色？', function (r) {
+                            if (r) {
+                                $.post(actionUrl.Delete, { Id: row.ID }, function (result) {
+                                    if (result.success) {
+                                        reloadData();
+                                        $('#role_grid').datagrid('clearSelections');
+                                    } else {
+                                        $.messager.alert('信息', result.message);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+                ]
+            });
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            $('#btnReset').click(function () {
+                $('#queryName').textbox('reset');
+                reloadData();
+            });
+
+            // 点击窗体的提交按钮
+            $('#btn_ok').click(function () {
+                $('#form_role').form('submit', {
+                    url: $('#Id').val().length == 0 ? actionUrl.Add : actionUrl.Update,
+                    onSubmit: function () {
+                        var isValid = $(this).form('validate');
+                        if (!isValid) return false;
+                    },
+                    success: function (data) {
+                        var result = $.parseJSON(data);
+                        if (result.success) {
+                            $('#win_role').window('close');
+                            // 刷新数据
+                            reloadData();
+                        } else {
+                            $.messager.alert('Error', result.Message);
+                        }
+                    }
+                });
+            });
+
+            // 点击窗体的取消按钮，关闭window
+            $('#btn_cancel').click(function () {
+                $('#win_role').window('close');
+            });
+
+
+        });
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" border="false">
+        <table>
+            <tr>
+                <td>Role：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryName" id="queryName" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 角色列表 -->
+    <div data-options="region:'center'" style="padding:2px;" border="false">
+        <table id="role_grid" class="easyui-datagrid" style="border-bottom:none;" fit="true" title="Roles List" data-options="rownumbers:true,singleSelect:true,collapsible:false">
+            <thead>
+                <tr>
+                    <th data-options="field:'ck',checkbox:true"></th>
+                    <th data-options="field:'Name',width:150">Role Name</th>
+                    <th data-options="field:'Sort',width:80,align:'center'">Sort Num</th>
+                    <th data-options="field:'Description',width:600">Description</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- 弹窗 （添加、编辑） -->
+    <div id="win_role" class="easyui-window" title="Create Role" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false" style="width:320px;height:260px;padding:10px;">
+        <form id="form_role" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td style="text-align:right;">Role Name:</td>
+                    <td><input class="easyui-textbox" type="text" name="Name" id="name" data-options="required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Sort Num:</td>
+                    <td><input class="easyui-numberbox" type="number" value="0" name="Sort" id="sort" data-options="min:0,precision:0,required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Description:</td>
+                    <td><input class="easyui-textbox" name="Description" id="description" data-options="multiline:true" style="height:80px" /></td>
+                </tr>
+            </table>
+            <div style="text-align:center; margin-top:10px;">
+                <!-- 当前角色的Id -->
+                <input type="hidden" id="Id" name="Id" />
+                <a id="btn_ok" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="width:80px;">Submit</a>
+                <a id="btn_cancel" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" style="width:80px;">Close</a>
+            </div>
+        </form>
+    </div>
+</body>

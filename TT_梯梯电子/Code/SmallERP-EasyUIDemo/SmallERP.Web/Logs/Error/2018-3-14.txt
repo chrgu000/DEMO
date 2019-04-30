@@ -1,0 +1,46 @@
+
+http://localhost:60308/PartMaster/UpdatePartMaster    11时02分36秒
+A transport-level error has occurred when receiving results from the server. (provider: Shared Memory Provider, error: 0 - The handle is invalid.)
+
+http://localhost:60308/PartMaster/UpdateBOM    15时02分39秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/UpdateBOM    15时02分53秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/UpdateBOM    15时03分02秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/UpdateBOM    15时03分26秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时11分56秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时12分19秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时12分29秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时17分39秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时18分38秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/AddBOM    15时19分34秒
+Cannot insert explicit value for identity column in table 't_o_bom' when IDENTITY_INSERT is set to OFF.
+
+http://localhost:60308/PartMaster/AddBOM    15时19分50秒
+Cannot insert explicit value for identity column in table 't_o_bom' when IDENTITY_INSERT is set to OFF.
+
+http://localhost:60308/PartMaster/AddBOM    15时30分23秒
+Index was outside the bounds of the array.
+
+http://localhost:60308/PartMaster/AddBOM    15时30分54秒
+Index was outside the bounds of the array.
+
+http://localhost:60308/PartMaster/DeletePartMaster    16时50分05秒
+The DELETE statement conflicted with the REFERENCE constraint "fk_partrev_part". The conflict occurred in database "smallerp", table "dbo.t_o_partrevisions", column 'partid'.
+The statement has been terminated.

@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sServerTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="sServerTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sServerTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCheckRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCheckRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCheckRightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sUpdatePwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOldPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sUpdatePwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUpdatePwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtRdCodeScan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtRdCodeScanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtRdCodeScanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtScanBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtScanBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtScanBarCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iChkBarCodeUsed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BarCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RDType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iChkBarCodeUsedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iChkBarCodeUsedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iBarCodeUsed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iBarCodeUsedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iBarCodeUsedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dBarCodeQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dBarCodeQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dBarCodeQtyResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sBarCodeInvalid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sBarCodeInvalidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCodeInvalidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRdrecord01Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord01ChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord01ChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRdrecord01ChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord09">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord09Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRdrecord09Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord09ChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord09ChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRdrecord09ChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord08">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord08Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRdrecord08Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord08ChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord08ChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRdrecord08ChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord11">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord11Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRdrecord11Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord11ChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord11ChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRdrecord11ChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sTransVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sTransVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTransVouchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveTransVouchChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveTransVouchChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveTransVouchChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCheckVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCheckVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCheckVouchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveCheckVouchChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveCheckVouchChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveCheckVouchChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveBoxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveUnBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveUnBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveUnBoxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtSBoxBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtSBoxBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtSBoxBarCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtSBoxInvCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtSBoxInvCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtSBoxInvCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sRdrecord10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRdrecord10Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord10ChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveRdrecord10ChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveRdrecord10ChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDispatchList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDispatchListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDispatchListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveDispatchListChkQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBarCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveDispatchListChkQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveDispatchListChkQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sOMRdrecord01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInvCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sOMRdrecord01Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOMRdrecord01Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveBarCodeAdjust">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dQty" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dQtyUse" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSaveBarCodeAdjustResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSaveBarCodeAdjustResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeAdjust">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrintName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeAdjustResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintBarCodeAdjustResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeQTY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dQty" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrintName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeQTYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintBarCodeQTYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeQTYSecond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dQty" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrintName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarCodeQTYSecondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintBarCodeQTYSecondResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="sServerTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:sServerTime" />
+  </wsdl:message>
+  <wsdl:message name="sServerTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:sServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sCheckRightSoapIn">
+    <wsdl:part name="parameters" element="tns:sCheckRight" />
+  </wsdl:message>
+  <wsdl:message name="sCheckRightSoapOut">
+    <wsdl:part name="parameters" element="tns:sCheckRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="sLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:sLogin" />
+  </wsdl:message>
+  <wsdl:message name="sLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:sLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="sUpdatePwdSoapIn">
+    <wsdl:part name="parameters" element="tns:sUpdatePwd" />
+  </wsdl:message>
+  <wsdl:message name="sUpdatePwdSoapOut">
+    <wsdl:part name="parameters" element="tns:sUpdatePwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtRdCodeScanSoapIn">
+    <wsdl:part name="parameters" element="tns:dtRdCodeScan" />
+  </wsdl:message>
+  <wsdl:message name="dtRdCodeScanSoapOut">
+    <wsdl:part name="parameters" element="tns:dtRdCodeScanResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtScanBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:dtScanBarCode" />
+  </wsdl:message>
+  <wsdl:message name="dtScanBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:dtScanBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iChkBarCodeUsedSoapIn">
+    <wsdl:part name="parameters" element="tns:iChkBarCodeUsed" />
+  </wsdl:message>
+  <wsdl:message name="iChkBarCodeUsedSoapOut">
+    <wsdl:part name="parameters" element="tns:iChkBarCodeUsedResponse" />
+  </wsdl:message>
+  <wsdl:message name="iBarCodeUsedSoapIn">
+    <wsdl:part name="parameters" element="tns:iBarCodeUsed" />
+  </wsdl:message>
+  <wsdl:message name="iBarCodeUsedSoapOut">
+    <wsdl:part name="parameters" element="tns:iBarCodeUsedResponse" />
+  </wsdl:message>
+  <wsdl:message name="dBarCodeQtySoapIn">
+    <wsdl:part name="parameters" element="tns:dBarCodeQty" />
+  </wsdl:message>
+  <wsdl:message name="dBarCodeQtySoapOut">
+    <wsdl:part name="parameters" element="tns:dBarCodeQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sBarCodeInvalidSoapIn">
+    <wsdl:part name="parameters" element="tns:sBarCodeInvalid" />
+  </wsdl:message>
+  <wsdl:message name="sBarCodeInvalidSoapOut">
+    <wsdl:part name="parameters" element="tns:sBarCodeInvalidResponse" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord01SoapIn">
+    <wsdl:part name="parameters" element="tns:sRdrecord01" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord01SoapOut">
+    <wsdl:part name="parameters" element="tns:sRdrecord01Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord01ChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord01ChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord01ChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord01ChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord09SoapIn">
+    <wsdl:part name="parameters" element="tns:sRdrecord09" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord09SoapOut">
+    <wsdl:part name="parameters" element="tns:sRdrecord09Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord09ChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord09ChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord09ChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord09ChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord08SoapIn">
+    <wsdl:part name="parameters" element="tns:sRdrecord08" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord08SoapOut">
+    <wsdl:part name="parameters" element="tns:sRdrecord08Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord08ChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord08ChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord08ChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord08ChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord11SoapIn">
+    <wsdl:part name="parameters" element="tns:sRdrecord11" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord11SoapOut">
+    <wsdl:part name="parameters" element="tns:sRdrecord11Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord11ChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord11ChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord11ChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord11ChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sTransVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:sTransVouch" />
+  </wsdl:message>
+  <wsdl:message name="sTransVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:sTransVouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSaveTransVouchChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveTransVouchChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveTransVouchChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveTransVouchChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sCheckVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:sCheckVouch" />
+  </wsdl:message>
+  <wsdl:message name="sCheckVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:sCheckVouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSaveCheckVouchChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveCheckVouchChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveCheckVouchChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveCheckVouchChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSaveBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveBox" />
+  </wsdl:message>
+  <wsdl:message name="sSaveBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSaveUnBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveUnBox" />
+  </wsdl:message>
+  <wsdl:message name="sSaveUnBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveUnBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtSBoxBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:dtSBoxBarCode" />
+  </wsdl:message>
+  <wsdl:message name="dtSBoxBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:dtSBoxBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtSBoxInvCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:dtSBoxInvCode" />
+  </wsdl:message>
+  <wsdl:message name="dtSBoxInvCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:dtSBoxInvCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord10SoapIn">
+    <wsdl:part name="parameters" element="tns:sRdrecord10" />
+  </wsdl:message>
+  <wsdl:message name="sRdrecord10SoapOut">
+    <wsdl:part name="parameters" element="tns:sRdrecord10Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord10ChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord10ChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveRdrecord10ChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveRdrecord10ChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sDispatchListSoapIn">
+    <wsdl:part name="parameters" element="tns:sDispatchList" />
+  </wsdl:message>
+  <wsdl:message name="sDispatchListSoapOut">
+    <wsdl:part name="parameters" element="tns:sDispatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSaveDispatchListChkQtySoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveDispatchListChkQty" />
+  </wsdl:message>
+  <wsdl:message name="sSaveDispatchListChkQtySoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveDispatchListChkQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="sOMRdrecord01SoapIn">
+    <wsdl:part name="parameters" element="tns:sOMRdrecord01" />
+  </wsdl:message>
+  <wsdl:message name="sOMRdrecord01SoapOut">
+    <wsdl:part name="parameters" element="tns:sOMRdrecord01Response" />
+  </wsdl:message>
+  <wsdl:message name="sSaveBarCodeAdjustSoapIn">
+    <wsdl:part name="parameters" element="tns:sSaveBarCodeAdjust" />
+  </wsdl:message>
+  <wsdl:message name="sSaveBarCodeAdjustSoapOut">
+    <wsdl:part name="parameters" element="tns:sSaveBarCodeAdjustResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeAdjustSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeAdjust" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeAdjustSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeAdjustResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeQTYSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeQTY" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeQTYSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeQTYResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeQTYSecondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeQTYSecond" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarCodeQTYSecondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintBarCodeQTYSecondResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsBarCodeSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <wsdl:input message="tns:sServerTimeSoapIn" />
+      <wsdl:output message="tns:sServerTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sCheckRight">
+      <wsdl:input message="tns:sCheckRightSoapIn" />
+      <wsdl:output message="tns:sCheckRightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <wsdl:input message="tns:sLoginSoapIn" />
+      <wsdl:output message="tns:sLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <wsdl:input message="tns:sUpdatePwdSoapIn" />
+      <wsdl:output message="tns:sUpdatePwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtRdCodeScan">
+      <wsdl:input message="tns:dtRdCodeScanSoapIn" />
+      <wsdl:output message="tns:dtRdCodeScanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtScanBarCode">
+      <wsdl:input message="tns:dtScanBarCodeSoapIn" />
+      <wsdl:output message="tns:dtScanBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iChkBarCodeUsed">
+      <wsdl:input message="tns:iChkBarCodeUsedSoapIn" />
+      <wsdl:output message="tns:iChkBarCodeUsedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iBarCodeUsed">
+      <wsdl:input message="tns:iBarCodeUsedSoapIn" />
+      <wsdl:output message="tns:iBarCodeUsedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dBarCodeQty">
+      <wsdl:input message="tns:dBarCodeQtySoapIn" />
+      <wsdl:output message="tns:dBarCodeQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sBarCodeInvalid">
+      <wsdl:input message="tns:sBarCodeInvalidSoapIn" />
+      <wsdl:output message="tns:sBarCodeInvalidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord01">
+      <wsdl:input message="tns:sRdrecord01SoapIn" />
+      <wsdl:output message="tns:sRdrecord01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord01ChkQty">
+      <wsdl:input message="tns:sSaveRdrecord01ChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveRdrecord01ChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord09">
+      <wsdl:input message="tns:sRdrecord09SoapIn" />
+      <wsdl:output message="tns:sRdrecord09SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord09ChkQty">
+      <wsdl:input message="tns:sSaveRdrecord09ChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveRdrecord09ChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord08">
+      <wsdl:input message="tns:sRdrecord08SoapIn" />
+      <wsdl:output message="tns:sRdrecord08SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord08ChkQty">
+      <wsdl:input message="tns:sSaveRdrecord08ChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveRdrecord08ChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord11">
+      <wsdl:input message="tns:sRdrecord11SoapIn" />
+      <wsdl:output message="tns:sRdrecord11SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord11ChkQty">
+      <wsdl:input message="tns:sSaveRdrecord11ChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveRdrecord11ChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sTransVouch">
+      <wsdl:input message="tns:sTransVouchSoapIn" />
+      <wsdl:output message="tns:sTransVouchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveTransVouchChkQty">
+      <wsdl:input message="tns:sSaveTransVouchChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveTransVouchChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sCheckVouch">
+      <wsdl:input message="tns:sCheckVouchSoapIn" />
+      <wsdl:output message="tns:sCheckVouchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveCheckVouchChkQty">
+      <wsdl:input message="tns:sSaveCheckVouchChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveCheckVouchChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBox">
+      <wsdl:input message="tns:sSaveBoxSoapIn" />
+      <wsdl:output message="tns:sSaveBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveUnBox">
+      <wsdl:input message="tns:sSaveUnBoxSoapIn" />
+      <wsdl:output message="tns:sSaveUnBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxBarCode">
+      <wsdl:input message="tns:dtSBoxBarCodeSoapIn" />
+      <wsdl:output message="tns:dtSBoxBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxInvCode">
+      <wsdl:input message="tns:dtSBoxInvCodeSoapIn" />
+      <wsdl:output message="tns:dtSBoxInvCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord10">
+      <wsdl:input message="tns:sRdrecord10SoapIn" />
+      <wsdl:output message="tns:sRdrecord10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord10ChkQty">
+      <wsdl:input message="tns:sSaveRdrecord10ChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveRdrecord10ChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sDispatchList">
+      <wsdl:input message="tns:sDispatchListSoapIn" />
+      <wsdl:output message="tns:sDispatchListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveDispatchListChkQty">
+      <wsdl:input message="tns:sSaveDispatchListChkQtySoapIn" />
+      <wsdl:output message="tns:sSaveDispatchListChkQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sOMRdrecord01">
+      <wsdl:input message="tns:sOMRdrecord01SoapIn" />
+      <wsdl:output message="tns:sOMRdrecord01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBarCodeAdjust">
+      <wsdl:input message="tns:sSaveBarCodeAdjustSoapIn" />
+      <wsdl:output message="tns:sSaveBarCodeAdjustSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeAdjust">
+      <wsdl:input message="tns:PrintBarCodeAdjustSoapIn" />
+      <wsdl:output message="tns:PrintBarCodeAdjustSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTY">
+      <wsdl:input message="tns:PrintBarCodeQTYSoapIn" />
+      <wsdl:output message="tns:PrintBarCodeQTYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTYSecond">
+      <wsdl:input message="tns:PrintBarCodeQTYSecondSoapIn" />
+      <wsdl:output message="tns:PrintBarCodeQTYSecondSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsBarCodeSoap" type="tns:WsBarCodeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <soap:operation soapAction="http://tempuri.org/sServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCheckRight">
+      <soap:operation soapAction="http://tempuri.org/sCheckRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <soap:operation soapAction="http://tempuri.org/sLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <soap:operation soapAction="http://tempuri.org/sUpdatePwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtRdCodeScan">
+      <soap:operation soapAction="http://tempuri.org/dtRdCodeScan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtScanBarCode">
+      <soap:operation soapAction="http://tempuri.org/dtScanBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iChkBarCodeUsed">
+      <soap:operation soapAction="http://tempuri.org/iChkBarCodeUsed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iBarCodeUsed">
+      <soap:operation soapAction="http://tempuri.org/iBarCodeUsed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dBarCodeQty">
+      <soap:operation soapAction="http://tempuri.org/dBarCodeQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sBarCodeInvalid">
+      <soap:operation soapAction="http://tempuri.org/sBarCodeInvalid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord01">
+      <soap:operation soapAction="http://tempuri.org/sRdrecord01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord01ChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveRdrecord01ChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord09">
+      <soap:operation soapAction="http://tempuri.org/sRdrecord09" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord09ChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveRdrecord09ChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord08">
+      <soap:operation soapAction="http://tempuri.org/sRdrecord08" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord08ChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveRdrecord08ChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord11">
+      <soap:operation soapAction="http://tempuri.org/sRdrecord11" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord11ChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveRdrecord11ChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sTransVouch">
+      <soap:operation soapAction="http://tempuri.org/sTransVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveTransVouchChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveTransVouchChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCheckVouch">
+      <soap:operation soapAction="http://tempuri.org/sCheckVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveCheckVouchChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveCheckVouchChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBox">
+      <soap:operation soapAction="http://tempuri.org/sSaveBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveUnBox">
+      <soap:operation soapAction="http://tempuri.org/sSaveUnBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxBarCode">
+      <soap:operation soapAction="http://tempuri.org/dtSBoxBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxInvCode">
+      <soap:operation soapAction="http://tempuri.org/dtSBoxInvCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord10">
+      <soap:operation soapAction="http://tempuri.org/sRdrecord10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord10ChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveRdrecord10ChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDispatchList">
+      <soap:operation soapAction="http://tempuri.org/sDispatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveDispatchListChkQty">
+      <soap:operation soapAction="http://tempuri.org/sSaveDispatchListChkQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMRdrecord01">
+      <soap:operation soapAction="http://tempuri.org/sOMRdrecord01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBarCodeAdjust">
+      <soap:operation soapAction="http://tempuri.org/sSaveBarCodeAdjust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeAdjust">
+      <soap:operation soapAction="http://tempuri.org/PrintBarCodeAdjust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTY">
+      <soap:operation soapAction="http://tempuri.org/PrintBarCodeQTY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTYSecond">
+      <soap:operation soapAction="http://tempuri.org/PrintBarCodeQTYSecond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsBarCodeSoap12" type="tns:WsBarCodeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sServerTime">
+      <soap12:operation soapAction="http://tempuri.org/sServerTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCheckRight">
+      <soap12:operation soapAction="http://tempuri.org/sCheckRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sLogin">
+      <soap12:operation soapAction="http://tempuri.org/sLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sUpdatePwd">
+      <soap12:operation soapAction="http://tempuri.org/sUpdatePwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtRdCodeScan">
+      <soap12:operation soapAction="http://tempuri.org/dtRdCodeScan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtScanBarCode">
+      <soap12:operation soapAction="http://tempuri.org/dtScanBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iChkBarCodeUsed">
+      <soap12:operation soapAction="http://tempuri.org/iChkBarCodeUsed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iBarCodeUsed">
+      <soap12:operation soapAction="http://tempuri.org/iBarCodeUsed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dBarCodeQty">
+      <soap12:operation soapAction="http://tempuri.org/dBarCodeQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sBarCodeInvalid">
+      <soap12:operation soapAction="http://tempuri.org/sBarCodeInvalid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord01">
+      <soap12:operation soapAction="http://tempuri.org/sRdrecord01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord01ChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRdrecord01ChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord09">
+      <soap12:operation soapAction="http://tempuri.org/sRdrecord09" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord09ChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRdrecord09ChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord08">
+      <soap12:operation soapAction="http://tempuri.org/sRdrecord08" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord08ChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRdrecord08ChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord11">
+      <soap12:operation soapAction="http://tempuri.org/sRdrecord11" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord11ChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRdrecord11ChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sTransVouch">
+      <soap12:operation soapAction="http://tempuri.org/sTransVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveTransVouchChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveTransVouchChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCheckVouch">
+      <soap12:operation soapAction="http://tempuri.org/sCheckVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveCheckVouchChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveCheckVouchChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBox">
+      <soap12:operation soapAction="http://tempuri.org/sSaveBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveUnBox">
+      <soap12:operation soapAction="http://tempuri.org/sSaveUnBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxBarCode">
+      <soap12:operation soapAction="http://tempuri.org/dtSBoxBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtSBoxInvCode">
+      <soap12:operation soapAction="http://tempuri.org/dtSBoxInvCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRdrecord10">
+      <soap12:operation soapAction="http://tempuri.org/sRdrecord10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveRdrecord10ChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveRdrecord10ChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDispatchList">
+      <soap12:operation soapAction="http://tempuri.org/sDispatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveDispatchListChkQty">
+      <soap12:operation soapAction="http://tempuri.org/sSaveDispatchListChkQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sOMRdrecord01">
+      <soap12:operation soapAction="http://tempuri.org/sOMRdrecord01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSaveBarCodeAdjust">
+      <soap12:operation soapAction="http://tempuri.org/sSaveBarCodeAdjust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeAdjust">
+      <soap12:operation soapAction="http://tempuri.org/PrintBarCodeAdjust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTY">
+      <soap12:operation soapAction="http://tempuri.org/PrintBarCodeQTY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarCodeQTYSecond">
+      <soap12:operation soapAction="http://tempuri.org/PrintBarCodeQTYSecond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsBarCode">
+    <wsdl:port name="WsBarCodeSoap" binding="tns:WsBarCodeSoap">
+      <soap:address location="http://192.168.150.1/webDMC/DBScanForCheck.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsBarCodeSoap12" binding="tns:WsBarCodeSoap12">
+      <soap12:address location="http://192.168.150.1/webDMC/DBScanForCheck.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

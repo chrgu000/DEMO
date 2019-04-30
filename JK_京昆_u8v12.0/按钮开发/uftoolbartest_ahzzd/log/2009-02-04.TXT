@@ -1,0 +1,456 @@
+10:36:50   Function:->Init is true   
+10:36:50   msbar.buttons(1).Key   tlbPrint
+10:36:50   msbar.buttons(1).Caption   打印
+10:36:50   msbar.buttons(2).Key   tlbPreview
+10:36:50   msbar.buttons(2).Caption   预览
+10:36:50   msbar.buttons(3).Key   tlbExport
+10:36:50   msbar.buttons(3).Caption   输出
+10:36:50   msbar.buttons(4).Key   tlbSeparator1
+10:36:50   msbar.buttons(4).Caption   
+10:36:50   msbar.buttons(5).Key   tlbAdd
+10:36:50   msbar.buttons(5).Caption   增加
+10:36:50   msbar.buttons(6).Key   tlbModify
+10:36:50   msbar.buttons(6).Caption   修改
+10:36:50   msbar.buttons(7).Key   tlbDelete
+10:36:50   msbar.buttons(7).Caption   删除
+10:36:50   msbar.buttons(8).Key   tlbSave
+10:36:50   msbar.buttons(8).Caption   保存
+10:36:50   msbar.buttons(9).Key   tlbUndo
+10:36:50   msbar.buttons(9).Caption   放弃
+10:36:50   msbar.buttons(10).Key   tlbSeparator5
+10:36:50   msbar.buttons(10).Caption   
+10:36:50   msbar.buttons(11).Key   tlbAddLine
+10:36:50   msbar.buttons(11).Caption   增行
+10:36:50   msbar.buttons(12).Key   tlbDelLine
+10:36:50   msbar.buttons(12).Caption   删行
+10:36:50   msbar.buttons(13).Key   tlbSeparator2
+10:36:50   msbar.buttons(13).Caption   
+10:36:50   msbar.buttons(14).Key   tlbLock
+10:36:50   msbar.buttons(14).Caption   锁定
+10:36:50   msbar.buttons(15).Key   tlbUnLock
+10:36:50   msbar.buttons(15).Caption   弃锁
+10:36:50   msbar.buttons(16).Key   tlbGraph
+10:36:50   msbar.buttons(16).Caption   图形
+10:36:50   msbar.buttons(17).Key   tlbSeparator3
+10:36:50   msbar.buttons(17).Caption   
+10:36:50   msbar.buttons(18).Key   tlbLocal
+10:36:50   msbar.buttons(18).Caption   查询
+10:36:50   msbar.buttons(19).Key   tlbFirst
+10:36:50   msbar.buttons(19).Caption   首张
+10:36:50   msbar.buttons(20).Key   tlbPrevious
+10:36:50   msbar.buttons(20).Caption   上张
+10:36:50   msbar.buttons(21).Key   tlbNext
+10:36:50   msbar.buttons(21).Caption   下张
+10:36:50   msbar.buttons(22).Key   tlbLast
+10:36:50   msbar.buttons(22).Caption   末张
+10:36:50   msbar.buttons(23).Key   tlbSeparator4
+10:36:50   msbar.buttons(23).Caption   
+10:36:50   msbar.buttons(24).Key   tlbRefresh
+10:36:50   msbar.buttons(24).Caption   刷新
+10:36:50   msbar.buttons(25).Key   tlbAttached
+10:36:50   msbar.buttons(25).Caption   附件
+10:36:50   msbar.buttons(26).Key   tlbHelp
+10:36:50   msbar.buttons(26).Caption   帮助
+10:36:50   msbar.buttons(27).Key   _CUSTDEFButtonTest
+10:36:50   msbar.buttons(27).Caption   测试发货单
+10:36:50   msbar.buttons(28).Key   tlbExit
+10:36:50   msbar.buttons(28).Caption   退出
+14:13:57   Function:->Init is true   
+14:13:57   msbar.buttons(1).Key   tlbPrint
+14:13:57   msbar.buttons(1).Caption   打印
+14:13:57   msbar.buttons(2).Key   tlbPreview
+14:13:57   msbar.buttons(2).Caption   预览
+14:13:57   msbar.buttons(3).Key   tlbExport
+14:13:57   msbar.buttons(3).Caption   输出
+14:13:57   msbar.buttons(4).Key   tlbSeparator1
+14:13:57   msbar.buttons(4).Caption   
+14:13:57   msbar.buttons(5).Key   tlbAdd
+14:13:57   msbar.buttons(5).Caption   增加
+14:13:57   msbar.buttons(6).Key   tlbModify
+14:13:57   msbar.buttons(6).Caption   修改
+14:13:57   msbar.buttons(7).Key   tlbDelete
+14:13:57   msbar.buttons(7).Caption   删除
+14:13:57   msbar.buttons(8).Key   tlbSave
+14:13:57   msbar.buttons(8).Caption   保存
+14:13:57   msbar.buttons(9).Key   tlbUndo
+14:13:57   msbar.buttons(9).Caption   放弃
+14:13:57   msbar.buttons(10).Key   tlbSeparator5
+14:13:57   msbar.buttons(10).Caption   
+14:13:57   msbar.buttons(11).Key   tlbAddLine
+14:13:57   msbar.buttons(11).Caption   增行
+14:13:57   msbar.buttons(12).Key   tlbDelLine
+14:13:57   msbar.buttons(12).Caption   删行
+14:13:57   msbar.buttons(13).Key   tlbSeparator2
+14:13:57   msbar.buttons(13).Caption   
+14:13:57   msbar.buttons(14).Key   tlbLock
+14:13:57   msbar.buttons(14).Caption   锁定
+14:13:57   msbar.buttons(15).Key   tlbUnLock
+14:13:57   msbar.buttons(15).Caption   弃锁
+14:13:57   msbar.buttons(16).Key   tlbGraph
+14:13:57   msbar.buttons(16).Caption   图形
+14:13:57   msbar.buttons(17).Key   tlbSeparator3
+14:13:57   msbar.buttons(17).Caption   
+14:13:57   msbar.buttons(18).Key   tlbLocal
+14:13:57   msbar.buttons(18).Caption   查询
+14:13:57   msbar.buttons(19).Key   tlbFirst
+14:13:57   msbar.buttons(19).Caption   首张
+14:13:57   msbar.buttons(20).Key   tlbPrevious
+14:13:57   msbar.buttons(20).Caption   上张
+14:13:57   msbar.buttons(21).Key   tlbNext
+14:13:57   msbar.buttons(21).Caption   下张
+14:13:57   msbar.buttons(22).Key   tlbLast
+14:13:57   msbar.buttons(22).Caption   末张
+14:13:57   msbar.buttons(23).Key   tlbSeparator4
+14:13:57   msbar.buttons(23).Caption   
+14:13:57   msbar.buttons(24).Key   tlbRefresh
+14:13:57   msbar.buttons(24).Caption   刷新
+14:13:57   msbar.buttons(25).Key   tlbAttached
+14:13:57   msbar.buttons(25).Caption   附件
+14:13:57   msbar.buttons(26).Key   tlbHelp
+14:13:57   msbar.buttons(26).Caption   帮助
+14:13:57   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:13:57   msbar.buttons(27).Caption   测试发货单
+14:13:57   msbar.buttons(28).Key   tlbExit
+14:13:57   msbar.buttons(28).Caption   退出
+14:15:07   Function:->Init is true   
+14:15:07   msbar.buttons(1).Key   tlbPrint
+14:15:07   msbar.buttons(1).Caption   打印
+14:15:07   msbar.buttons(2).Key   tlbPreview
+14:15:07   msbar.buttons(2).Caption   预览
+14:15:07   msbar.buttons(3).Key   tlbExport
+14:15:07   msbar.buttons(3).Caption   输出
+14:15:07   msbar.buttons(4).Key   tlbSeparator1
+14:15:07   msbar.buttons(4).Caption   
+14:15:07   msbar.buttons(5).Key   tlbAdd
+14:15:07   msbar.buttons(5).Caption   增加
+14:15:07   msbar.buttons(6).Key   tlbModify
+14:15:07   msbar.buttons(6).Caption   修改
+14:15:07   msbar.buttons(7).Key   tlbDelete
+14:15:07   msbar.buttons(7).Caption   删除
+14:15:07   msbar.buttons(8).Key   tlbSave
+14:15:07   msbar.buttons(8).Caption   保存
+14:15:07   msbar.buttons(9).Key   tlbUndo
+14:15:07   msbar.buttons(9).Caption   放弃
+14:15:07   msbar.buttons(10).Key   tlbSeparator5
+14:15:07   msbar.buttons(10).Caption   
+14:15:07   msbar.buttons(11).Key   tlbAddLine
+14:15:07   msbar.buttons(11).Caption   增行
+14:15:07   msbar.buttons(12).Key   tlbDelLine
+14:15:07   msbar.buttons(12).Caption   删行
+14:15:07   msbar.buttons(13).Key   tlbSeparator2
+14:15:07   msbar.buttons(13).Caption   
+14:15:07   msbar.buttons(14).Key   tlbLock
+14:15:07   msbar.buttons(14).Caption   锁定
+14:15:07   msbar.buttons(15).Key   tlbUnLock
+14:15:07   msbar.buttons(15).Caption   弃锁
+14:15:07   msbar.buttons(16).Key   tlbGraph
+14:15:07   msbar.buttons(16).Caption   图形
+14:15:07   msbar.buttons(17).Key   tlbSeparator3
+14:15:07   msbar.buttons(17).Caption   
+14:15:07   msbar.buttons(18).Key   tlbLocal
+14:15:07   msbar.buttons(18).Caption   查询
+14:15:07   msbar.buttons(19).Key   tlbFirst
+14:15:07   msbar.buttons(19).Caption   首张
+14:15:07   msbar.buttons(20).Key   tlbPrevious
+14:15:07   msbar.buttons(20).Caption   上张
+14:15:07   msbar.buttons(21).Key   tlbNext
+14:15:07   msbar.buttons(21).Caption   下张
+14:15:07   msbar.buttons(22).Key   tlbLast
+14:15:07   msbar.buttons(22).Caption   末张
+14:15:07   msbar.buttons(23).Key   tlbSeparator4
+14:15:07   msbar.buttons(23).Caption   
+14:15:07   msbar.buttons(24).Key   tlbRefresh
+14:15:07   msbar.buttons(24).Caption   刷新
+14:15:07   msbar.buttons(25).Key   tlbAttached
+14:15:07   msbar.buttons(25).Caption   附件
+14:15:07   msbar.buttons(26).Key   tlbHelp
+14:15:07   msbar.buttons(26).Caption   帮助
+14:15:07   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:15:07   msbar.buttons(27).Caption   测试发货单
+14:15:07   msbar.buttons(28).Key   tlbExit
+14:15:07   msbar.buttons(28).Caption   退出
+14:17:23   Function:->Init is true   
+14:17:23   msbar.buttons(1).Key   tlbPrint
+14:17:23   msbar.buttons(1).Caption   打印
+14:17:23   msbar.buttons(2).Key   tlbPreview
+14:17:23   msbar.buttons(2).Caption   预览
+14:17:23   msbar.buttons(3).Key   tlbExport
+14:17:23   msbar.buttons(3).Caption   输出
+14:17:23   msbar.buttons(4).Key   tlbSeparator1
+14:17:23   msbar.buttons(4).Caption   
+14:17:23   msbar.buttons(5).Key   tlbAdd
+14:17:23   msbar.buttons(5).Caption   增加
+14:17:23   msbar.buttons(6).Key   tlbModify
+14:17:23   msbar.buttons(6).Caption   修改
+14:17:23   msbar.buttons(7).Key   tlbDelete
+14:17:23   msbar.buttons(7).Caption   删除
+14:17:23   msbar.buttons(8).Key   tlbSave
+14:17:23   msbar.buttons(8).Caption   保存
+14:17:23   msbar.buttons(9).Key   tlbUndo
+14:17:23   msbar.buttons(9).Caption   放弃
+14:17:23   msbar.buttons(10).Key   tlbSeparator5
+14:17:23   msbar.buttons(10).Caption   
+14:17:23   msbar.buttons(11).Key   tlbAddLine
+14:17:23   msbar.buttons(11).Caption   增行
+14:17:23   msbar.buttons(12).Key   tlbDelLine
+14:17:23   msbar.buttons(12).Caption   删行
+14:17:23   msbar.buttons(13).Key   tlbSeparator2
+14:17:23   msbar.buttons(13).Caption   
+14:17:23   msbar.buttons(14).Key   tlbLock
+14:17:23   msbar.buttons(14).Caption   锁定
+14:17:23   msbar.buttons(15).Key   tlbUnLock
+14:17:23   msbar.buttons(15).Caption   弃锁
+14:17:23   msbar.buttons(16).Key   tlbGraph
+14:17:23   msbar.buttons(16).Caption   图形
+14:17:23   msbar.buttons(17).Key   tlbSeparator3
+14:17:23   msbar.buttons(17).Caption   
+14:17:23   msbar.buttons(18).Key   tlbLocal
+14:17:23   msbar.buttons(18).Caption   查询
+14:17:23   msbar.buttons(19).Key   tlbFirst
+14:17:23   msbar.buttons(19).Caption   首张
+14:17:23   msbar.buttons(20).Key   tlbPrevious
+14:17:23   msbar.buttons(20).Caption   上张
+14:17:23   msbar.buttons(21).Key   tlbNext
+14:17:23   msbar.buttons(21).Caption   下张
+14:17:23   msbar.buttons(22).Key   tlbLast
+14:17:23   msbar.buttons(22).Caption   末张
+14:17:23   msbar.buttons(23).Key   tlbSeparator4
+14:17:23   msbar.buttons(23).Caption   
+14:17:23   msbar.buttons(24).Key   tlbRefresh
+14:17:23   msbar.buttons(24).Caption   刷新
+14:17:23   msbar.buttons(25).Key   tlbAttached
+14:17:23   msbar.buttons(25).Caption   附件
+14:17:23   msbar.buttons(26).Key   tlbHelp
+14:17:23   msbar.buttons(26).Caption   帮助
+14:17:23   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:17:23   msbar.buttons(27).Caption   测试发货单
+14:17:23   msbar.buttons(28).Key   tlbExit
+14:17:23   msbar.buttons(28).Caption   退出
+14:22:35   Function:->Init is true   
+14:22:35   msbar.buttons(1).Key   tlbPrint
+14:22:35   msbar.buttons(1).Caption   打印
+14:22:35   msbar.buttons(2).Key   tlbPreview
+14:22:35   msbar.buttons(2).Caption   预览
+14:22:35   msbar.buttons(3).Key   tlbExport
+14:22:35   msbar.buttons(3).Caption   输出
+14:22:35   msbar.buttons(4).Key   tlbSeparator1
+14:22:35   msbar.buttons(4).Caption   
+14:22:35   msbar.buttons(5).Key   tlbAdd
+14:22:35   msbar.buttons(5).Caption   增加
+14:22:35   msbar.buttons(6).Key   tlbModify
+14:22:35   msbar.buttons(6).Caption   修改
+14:22:35   msbar.buttons(7).Key   tlbDelete
+14:22:35   msbar.buttons(7).Caption   删除
+14:22:35   msbar.buttons(8).Key   tlbSave
+14:22:35   msbar.buttons(8).Caption   保存
+14:22:35   msbar.buttons(9).Key   tlbUndo
+14:22:35   msbar.buttons(9).Caption   放弃
+14:22:35   msbar.buttons(10).Key   tlbSeparator5
+14:22:35   msbar.buttons(10).Caption   
+14:22:35   msbar.buttons(11).Key   tlbAddLine
+14:22:35   msbar.buttons(11).Caption   增行
+14:22:35   msbar.buttons(12).Key   tlbDelLine
+14:22:35   msbar.buttons(12).Caption   删行
+14:22:35   msbar.buttons(13).Key   tlbSeparator2
+14:22:35   msbar.buttons(13).Caption   
+14:22:35   msbar.buttons(14).Key   tlbLock
+14:22:35   msbar.buttons(14).Caption   锁定
+14:22:35   msbar.buttons(15).Key   tlbUnLock
+14:22:35   msbar.buttons(15).Caption   弃锁
+14:22:35   msbar.buttons(16).Key   tlbGraph
+14:22:35   msbar.buttons(16).Caption   图形
+14:22:35   msbar.buttons(17).Key   tlbSeparator3
+14:22:35   msbar.buttons(17).Caption   
+14:22:35   msbar.buttons(18).Key   tlbLocal
+14:22:35   msbar.buttons(18).Caption   查询
+14:22:35   msbar.buttons(19).Key   tlbFirst
+14:22:35   msbar.buttons(19).Caption   首张
+14:22:35   msbar.buttons(20).Key   tlbPrevious
+14:22:35   msbar.buttons(20).Caption   上张
+14:22:35   msbar.buttons(21).Key   tlbNext
+14:22:35   msbar.buttons(21).Caption   下张
+14:22:35   msbar.buttons(22).Key   tlbLast
+14:22:35   msbar.buttons(22).Caption   末张
+14:22:35   msbar.buttons(23).Key   tlbSeparator4
+14:22:35   msbar.buttons(23).Caption   
+14:22:35   msbar.buttons(24).Key   tlbRefresh
+14:22:35   msbar.buttons(24).Caption   刷新
+14:22:35   msbar.buttons(25).Key   tlbAttached
+14:22:35   msbar.buttons(25).Caption   附件
+14:22:35   msbar.buttons(26).Key   tlbHelp
+14:22:35   msbar.buttons(26).Caption   帮助
+14:22:35   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:22:35   msbar.buttons(27).Caption   测试发货单
+14:22:35   msbar.buttons(28).Key   tlbExit
+14:22:35   msbar.buttons(28).Caption   退出
+14:27:40   Function:->Init is true   
+14:27:40   msbar.buttons(1).Key   tlbPrint
+14:27:40   msbar.buttons(1).Caption   打印
+14:27:40   msbar.buttons(2).Key   tlbPreview
+14:27:40   msbar.buttons(2).Caption   预览
+14:27:40   msbar.buttons(3).Key   tlbExport
+14:27:40   msbar.buttons(3).Caption   输出
+14:27:40   msbar.buttons(4).Key   tlbSeparator1
+14:27:40   msbar.buttons(4).Caption   
+14:27:40   msbar.buttons(5).Key   tlbAdd
+14:27:40   msbar.buttons(5).Caption   增加
+14:27:40   msbar.buttons(6).Key   tlbModify
+14:27:40   msbar.buttons(6).Caption   修改
+14:27:40   msbar.buttons(7).Key   tlbDelete
+14:27:40   msbar.buttons(7).Caption   删除
+14:27:40   msbar.buttons(8).Key   tlbSave
+14:27:40   msbar.buttons(8).Caption   保存
+14:27:40   msbar.buttons(9).Key   tlbUndo
+14:27:40   msbar.buttons(9).Caption   放弃
+14:27:40   msbar.buttons(10).Key   tlbSeparator5
+14:27:40   msbar.buttons(10).Caption   
+14:27:40   msbar.buttons(11).Key   tlbAddLine
+14:27:40   msbar.buttons(11).Caption   增行
+14:27:40   msbar.buttons(12).Key   tlbDelLine
+14:27:40   msbar.buttons(12).Caption   删行
+14:27:40   msbar.buttons(13).Key   tlbSeparator2
+14:27:40   msbar.buttons(13).Caption   
+14:27:40   msbar.buttons(14).Key   tlbLock
+14:27:40   msbar.buttons(14).Caption   锁定
+14:27:40   msbar.buttons(15).Key   tlbUnLock
+14:27:40   msbar.buttons(15).Caption   弃锁
+14:27:40   msbar.buttons(16).Key   tlbGraph
+14:27:40   msbar.buttons(16).Caption   图形
+14:27:40   msbar.buttons(17).Key   tlbSeparator3
+14:27:40   msbar.buttons(17).Caption   
+14:27:40   msbar.buttons(18).Key   tlbLocal
+14:27:40   msbar.buttons(18).Caption   查询
+14:27:40   msbar.buttons(19).Key   tlbFirst
+14:27:40   msbar.buttons(19).Caption   首张
+14:27:40   msbar.buttons(20).Key   tlbPrevious
+14:27:40   msbar.buttons(20).Caption   上张
+14:27:40   msbar.buttons(21).Key   tlbNext
+14:27:40   msbar.buttons(21).Caption   下张
+14:27:40   msbar.buttons(22).Key   tlbLast
+14:27:40   msbar.buttons(22).Caption   末张
+14:27:40   msbar.buttons(23).Key   tlbSeparator4
+14:27:40   msbar.buttons(23).Caption   
+14:27:40   msbar.buttons(24).Key   tlbRefresh
+14:27:40   msbar.buttons(24).Caption   刷新
+14:27:40   msbar.buttons(25).Key   tlbAttached
+14:27:40   msbar.buttons(25).Caption   附件
+14:27:40   msbar.buttons(26).Key   tlbHelp
+14:27:40   msbar.buttons(26).Caption   帮助
+14:27:40   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:27:40   msbar.buttons(27).Caption   测试发货单
+14:27:40   msbar.buttons(28).Key   tlbExit
+14:27:40   msbar.buttons(28).Caption   退出
+14:30:39   Function:->Init is true   
+14:30:39   msbar.buttons(1).Key   tlbPrint
+14:30:39   msbar.buttons(1).Caption   打印
+14:30:39   msbar.buttons(2).Key   tlbPreview
+14:30:39   msbar.buttons(2).Caption   预览
+14:30:39   msbar.buttons(3).Key   tlbExport
+14:30:39   msbar.buttons(3).Caption   输出
+14:30:39   msbar.buttons(4).Key   tlbSeparator1
+14:30:39   msbar.buttons(4).Caption   
+14:30:39   msbar.buttons(5).Key   tlbAdd
+14:30:39   msbar.buttons(5).Caption   增加
+14:30:39   msbar.buttons(6).Key   tlbModify
+14:30:39   msbar.buttons(6).Caption   修改
+14:30:39   msbar.buttons(7).Key   tlbDelete
+14:30:39   msbar.buttons(7).Caption   删除
+14:30:39   msbar.buttons(8).Key   tlbSave
+14:30:39   msbar.buttons(8).Caption   保存
+14:30:39   msbar.buttons(9).Key   tlbUndo
+14:30:39   msbar.buttons(9).Caption   放弃
+14:30:39   msbar.buttons(10).Key   tlbSeparator5
+14:30:39   msbar.buttons(10).Caption   
+14:30:39   msbar.buttons(11).Key   tlbAddLine
+14:30:39   msbar.buttons(11).Caption   增行
+14:30:39   msbar.buttons(12).Key   tlbDelLine
+14:30:39   msbar.buttons(12).Caption   删行
+14:30:39   msbar.buttons(13).Key   tlbSeparator2
+14:30:39   msbar.buttons(13).Caption   
+14:30:39   msbar.buttons(14).Key   tlbLock
+14:30:39   msbar.buttons(14).Caption   锁定
+14:30:39   msbar.buttons(15).Key   tlbUnLock
+14:30:39   msbar.buttons(15).Caption   弃锁
+14:30:39   msbar.buttons(16).Key   tlbGraph
+14:30:39   msbar.buttons(16).Caption   图形
+14:30:39   msbar.buttons(17).Key   tlbSeparator3
+14:30:40   msbar.buttons(17).Caption   
+14:30:40   msbar.buttons(18).Key   tlbLocal
+14:30:40   msbar.buttons(18).Caption   查询
+14:30:40   msbar.buttons(19).Key   tlbFirst
+14:30:40   msbar.buttons(19).Caption   首张
+14:30:40   msbar.buttons(20).Key   tlbPrevious
+14:30:40   msbar.buttons(20).Caption   上张
+14:30:40   msbar.buttons(21).Key   tlbNext
+14:30:40   msbar.buttons(21).Caption   下张
+14:30:40   msbar.buttons(22).Key   tlbLast
+14:30:40   msbar.buttons(22).Caption   末张
+14:30:40   msbar.buttons(23).Key   tlbSeparator4
+14:30:40   msbar.buttons(23).Caption   
+14:30:40   msbar.buttons(24).Key   tlbRefresh
+14:30:40   msbar.buttons(24).Caption   刷新
+14:30:40   msbar.buttons(25).Key   tlbAttached
+14:30:40   msbar.buttons(25).Caption   附件
+14:30:40   msbar.buttons(26).Key   tlbHelp
+14:30:40   msbar.buttons(26).Caption   帮助
+14:30:40   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:30:40   msbar.buttons(27).Caption   测试发货单
+14:30:40   msbar.buttons(28).Key   tlbExit
+14:30:40   msbar.buttons(28).Caption   退出
+14:43:04   Function:->Init is true   
+14:43:04   msbar.buttons(1).Key   tlbPrint
+14:43:04   msbar.buttons(1).Caption   打印
+14:43:04   msbar.buttons(2).Key   tlbPreview
+14:43:04   msbar.buttons(2).Caption   预览
+14:43:04   msbar.buttons(3).Key   tlbExport
+14:43:04   msbar.buttons(3).Caption   输出
+14:43:04   msbar.buttons(4).Key   tlbSeparator1
+14:43:04   msbar.buttons(4).Caption   
+14:43:04   msbar.buttons(5).Key   tlbAdd
+14:43:04   msbar.buttons(5).Caption   增加
+14:43:04   msbar.buttons(6).Key   tlbModify
+14:43:04   msbar.buttons(6).Caption   修改
+14:43:04   msbar.buttons(7).Key   tlbDelete
+14:43:04   msbar.buttons(7).Caption   删除
+14:43:04   msbar.buttons(8).Key   tlbSave
+14:43:04   msbar.buttons(8).Caption   保存
+14:43:04   msbar.buttons(9).Key   tlbUndo
+14:43:04   msbar.buttons(9).Caption   放弃
+14:43:04   msbar.buttons(10).Key   tlbSeparator5
+14:43:04   msbar.buttons(10).Caption   
+14:43:04   msbar.buttons(11).Key   tlbAddLine
+14:43:04   msbar.buttons(11).Caption   增行
+14:43:04   msbar.buttons(12).Key   tlbDelLine
+14:43:04   msbar.buttons(12).Caption   删行
+14:43:04   msbar.buttons(13).Key   tlbSeparator2
+14:43:04   msbar.buttons(13).Caption   
+14:43:04   msbar.buttons(14).Key   tlbLock
+14:43:04   msbar.buttons(14).Caption   锁定
+14:43:04   msbar.buttons(15).Key   tlbUnLock
+14:43:04   msbar.buttons(15).Caption   弃锁
+14:43:04   msbar.buttons(16).Key   tlbGraph
+14:43:04   msbar.buttons(16).Caption   图形
+14:43:04   msbar.buttons(17).Key   tlbSeparator3
+14:43:04   msbar.buttons(17).Caption   
+14:43:04   msbar.buttons(18).Key   tlbLocal
+14:43:04   msbar.buttons(18).Caption   查询
+14:43:04   msbar.buttons(19).Key   tlbFirst
+14:43:04   msbar.buttons(19).Caption   首张
+14:43:04   msbar.buttons(20).Key   tlbPrevious
+14:43:04   msbar.buttons(20).Caption   上张
+14:43:04   msbar.buttons(21).Key   tlbNext
+14:43:04   msbar.buttons(21).Caption   下张
+14:43:04   msbar.buttons(22).Key   tlbLast
+14:43:04   msbar.buttons(22).Caption   末张
+14:43:04   msbar.buttons(23).Key   tlbSeparator4
+14:43:04   msbar.buttons(23).Caption   
+14:43:04   msbar.buttons(24).Key   tlbRefresh
+14:43:04   msbar.buttons(24).Caption   刷新
+14:43:04   msbar.buttons(25).Key   tlbAttached
+14:43:04   msbar.buttons(25).Caption   附件
+14:43:04   msbar.buttons(26).Key   tlbHelp
+14:43:04   msbar.buttons(26).Caption   帮助
+14:43:04   msbar.buttons(27).Key   _CUSTDEFButtonTest
+14:43:04   msbar.buttons(27).Caption   测试发货单
+14:43:04   msbar.buttons(28).Key   tlbExit
+14:43:04   msbar.buttons(28).Caption   退出

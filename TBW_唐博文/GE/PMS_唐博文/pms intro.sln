@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "pms intro", "pms intro", "{E875DD69-9E67-463D-B948-05F2A9388FEC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "2.0"
+		Debug.AspNetCompiler.VirtualPath = "/pms intro"
+		Debug.AspNetCompiler.PhysicalPath = "pms intro\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\pms intro\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/pms intro"
+		Release.AspNetCompiler.PhysicalPath = "pms intro\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\pms intro\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2481"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E875DD69-9E67-463D-B948-05F2A9388FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E875DD69-9E67-463D-B948-05F2A9388FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

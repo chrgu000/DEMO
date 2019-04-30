@@ -1,0 +1,107 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth6]    Script Date: 09/27/2014 00:05:29 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesAndPlanMonth7]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesAndPlanMonth7]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth7]    Script Date: 09/27/2014 00:05:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+
+--		exec _GetSalesAndPlanMonth7 '2014' ,'感光胶','北京办'
+
+
+CREATE Proc [dbo].[_GetSalesAndPlanMonth7](@iYear1 varchar(4),@cInvName as varchar(50),@cDepName as varchar(50))
+as
+
+set nocount on
+
+IF Object_id('Tempdb..#SaleMonth') IS NOT NULL   DROP TABLE #SaleMonth
+IF Object_id('Tempdb..#SaleMonth1') IS NOT NULL   DROP TABLE #SaleMonth1
+IF Object_id('Tempdb..#SaleMonth3') IS NOT NULL   DROP TABLE #SaleMonth3
+
+select iyear,a.cDepMemo,a.cInvCName as cInvCName1,a.cInvCName2 as cInvCName2,a.cInvName
+	,sum(case when imonth=1 then iQuantity end) as iQty1,sum(case when imonth=1 then iMoney end) as iMoney1
+	,sum(case when imonth=2 then iQuantity end) as iQty2,sum(case when imonth=2 then iMoney end) as iMoney2
+	,sum(case when imonth=3 then iQuantity end) as iQty3,sum(case when imonth=3 then iMoney end) as iMoney3
+	,sum(case when imonth=4 then iQuantity end) as iQty4,sum(case when imonth=4 then iMoney end) as iMoney4
+	,sum(case when imonth=5 then iQuantity end) as iQty5,sum(case when imonth=5 then iMoney end) as iMoney5
+	,sum(case when imonth=6 then iQuantity end) as iQty6,sum(case when imonth=6 then iMoney end) as iMoney6
+	,sum(case when imonth=7 then iQuantity end) as iQty7,sum(case when imonth=7 then iMoney end) as iMoney7
+	,sum(case when imonth=8 then iQuantity end) as iQty8,sum(case when imonth=8 then iMoney end) as iMoney8
+	,sum(case when imonth=9 then iQuantity end) as iQty9,sum(case when imonth=9 then iMoney end) as iMoney9
+	,sum(case when imonth=10 then iQuantity end) as iQty10,sum(case when imonth=10 then iMoney end) as iMoney10
+	,sum(case when imonth=11 then iQuantity end) as iQty11,sum(case when imonth=11 then iMoney end) as iMoney11
+	,sum(case when imonth=12 then iQuantity end) as iQty12,sum(case when imonth=12 then iMoney end) as iMoney12
+	,sum(iQuantity) as iQuantitySum,sum(iMoney) as iMoneySum
+	--into #SaleMonth
+from (
+	    select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+			,c.cDepMemo,e.cInvCName,f.cInvCName as cInvCName2,d.cInvName
+	    from UFDATA_101_2013..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> '' and f.cInvCCode like '90%'
+union all 
+		select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+			,c.cDepMemo,e.cInvCName,f.cInvCName as cInvCName2,d.cInvName
+		from UFDATA_102_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_102_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> ''  and f.cInvCCode like '90%'
+union all 
+		select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+			,c.cDepMemo,e.cInvCName,f.cInvCName as cInvCName2,d.cInvName
+		from UFDATA_103_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_103_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> ''  and f.cInvCCode like '90%'
+union all 
+		select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney 
+			,c.cDepMemo,e.cInvCName,f.cInvCName as cInvCName2,d.cInvName
+		from UFDATA_104_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_104_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> ''  and f.cInvCCode like '90%'
+union all 
+		select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney
+			,c.cDepMemo,e.cInvCName,f.cInvCName as cInvCName2,d.cInvName
+		from UFDATA_201_2014..DispatchList a inner join UFDATA_201_2014..DispatchLists  b on a.DLID = b.DLID 
+			inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+			inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+			inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+			inner join UFDATA_201_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+		where isnull(cVerifier ,'') <> ''  and f.cInvCCode like '90%'
+) as a
+where 1=1 
+	and iyear=@iYear1 
+	and cDepMemo = @cDepName 
+group by iyear,a.cDepMemo,a.cInvCName,a.cInvCName2,a.cInvName
+order by iyear,a.cDepMemo,a.cInvCName,a.cInvCName2,a.cInvName
+
+GO
+
+

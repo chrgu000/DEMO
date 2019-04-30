@@ -1,0 +1,18 @@
+﻿<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+<dx:ASPxDateEdit runat="server" Width="100px" 
+    EditFormatString="yyyy-MM-dd" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass" 
+                        SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+    <CalendarProperties><%--TodayButtonText="今天" ClearButtonText="清空" --%> 
+    </CalendarProperties>
+    <ButtonStyle Width="11px">
+                        </ButtonStyle>
+                        <CalendarProperties>
+                            <HeaderStyle Spacing="1px" />
+                            <FooterStyle Spacing="4px" />
+                        </CalendarProperties>
+                        <ValidationSettings>
+                            <ErrorFrameStyle ImageSpacing="4px">
+                                <ErrorTextPaddings PaddingLeft="4px" />
+                            </ErrorFrameStyle>
+                        </ValidationSettings>
+</dx:ASPxDateEdit>

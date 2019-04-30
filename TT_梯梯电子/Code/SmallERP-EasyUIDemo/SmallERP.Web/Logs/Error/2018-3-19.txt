@@ -1,0 +1,21 @@
+
+http://localhost:60308/PartMaster/DeleteRouting    09时35分41秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/PartMaster/UpdateRouting    09时42分52秒
+Input string was not in a correct format.
+
+http://localhost:60308/PartMaster/UpdateRouting    09时43分27秒
+Input string was not in a correct format.
+
+http://localhost:60308/Report/AddMetadata    15时12分54秒
+Cannot insert the value NULL into column 'tradertype', table 'smallerp.dbo.t_o_traders'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/Report/AddMetadata    15时16分21秒
+Cannot insert the value NULL into column 'issuspended', table 'smallerp.dbo.t_o_traders'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/Report/AddMetadata    15时50分39秒
+Cannot insert duplicate key row in object 'dbo.t_o_traders' with unique index 'idx_tuuid'. The duplicate key value is (0).
+The statement has been terminated.

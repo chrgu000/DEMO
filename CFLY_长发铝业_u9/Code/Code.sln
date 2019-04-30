@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Code", "Code", "{79289BD1-A0C7-46DE-96EB-A0C0DE059BD1}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/CFLY_长发铝业/Code.root/Code", JNECAAAA"
+		SccAuxPath = ""
+		SccLocalPath = ".."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Code"
+		Debug.AspNetCompiler.PhysicalPath = "Code\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Code\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Code"
+		Release.AspNetCompiler.PhysicalPath = "Code\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Code\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "11649"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = Code
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = Code\\
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79289BD1-A0C7-46DE-96EB-A0C0DE059BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79289BD1-A0C7-46DE-96EB-A0C0DE059BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

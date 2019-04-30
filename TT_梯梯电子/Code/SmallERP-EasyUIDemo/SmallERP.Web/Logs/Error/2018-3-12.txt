@@ -1,0 +1,6 @@
+
+http://localhost:60308/PartMaster/UpdatePartRevision    14时13分51秒
+Must declare the scalar variable "@partid".
+
+http://localhost:60308/PartMaster/UpdatePartRevision    14时13分54秒
+Must declare the scalar variable "@partid".

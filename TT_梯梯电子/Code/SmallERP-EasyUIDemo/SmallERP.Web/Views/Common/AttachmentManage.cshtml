@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "AttachmentManage";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@model SmallERP.Web.Controllers.CommonController.AttachmentManageEntity
+@section CSS{
+    <style type="text/css">
+        .table-border {
+            border-top: 1px solid #C7E6CE;
+            border-left: 1px solid #C7E6CE;
+        }
+
+            .table-border td {
+                border-bottom: 1px solid #C7E6CE;
+                border-right: 1px solid #C7E6CE;
+                padding: 5px;
+            }
+
+        .tabler-border td select {
+            border: 1px solid #95B8E7;
+        }
+
+        .tbAdd {
+            border-collapse: collapse;
+        }
+
+            .tbAdd tr td {
+                border: 1px solid #CFCFCF;
+                padding-left: 10px;
+                height: 30px;
+            }
+
+        .bgred {
+            background-color: red;
+        }
+    </style>
+}
+<body class="easyui-layout">
+
+    <!-- Attachment List列表 -->
+    <div data-options="region:'center'" style="padding:2px;" border="false">
+        <table id="attachment_grid" class="easyui-datagrid" style="border-bottom:none;" fit="true" title="Attachment" data-options="rownumbers:true,singleSelect:true,collapsible:false"></table>
+        <input type="file" style="display:none;" id="fileAttachment" name="fileAttachment" />
+    </div>
+    <input type="hidden" id="hfUserID" name="hfUserID" value="@Model.CurrentUserID" />
+    <input type="hidden" id="hfSourceID" name="hfSourceID" value="@Model.SourceID" />
+    <input type="hidden" id="hfSourceItem" name="hfSourceItem" value="@Model.SourceItem" />
+    <input type="hidden" id="hfValue1" name="hfValue1" value="@Model.Value1" />
+</body>
+@section JS{
+    <script src="~/Scripts/Common.js"></script>
+    @*<script src="~/Plugins/jquery-easyui-1.4.4/OpenWin.js"></script>*@
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+    <script type="text/javascript">
+    //路径地址
+    var actionUrl = {
+        GetAttachmentList: '/Common/GetAttachmentList',
+        AddAttachment: '/Common/AddAttachment',
+        DeleteAttachment: '/Common/DeleteAttachment',
+    };
+
+    $(document).ready(function () {
+
+        function StringBuffer() {
+            this.__strings__ = [];
+        };
+        StringBuffer.prototype.append = function (str) {
+            this.__strings__.push(str);
+        };
+        StringBuffer.prototype.toString = function () {
+            return this.__strings__.join('');
+        };
+
+
+        $('#attachment_grid').datagrid({
+            url: actionUrl.GetAttachmentList + "?sourceID=" + $("#hfSourceID").val() + "&sourceItem=" + $("#hfSourceItem").val() + "&value1=" + $("#hfValue1").val(),
+            //idField: 'ID',
+            loadMsg: 'loading...',
+            singleSelect: false,
+            pagination: true,
+            pageSize: 15,
+            pageList: [15, 20, 30, 50],
+            rowStyler: function (index, row) {
+            },
+            columns: [
+                [
+                    { field: 'id', checkbox: true, },
+                    {
+                        field: 'original_name', title: 'Name', width: 300, align: 'center',
+                        formatter: function (value, row, index) {
+                            var path = "/upload/" + row.path;
+                            return "<a href='" + path + "' target='_blank'>" + value + "</a>";
+                        }
+                    },
+                    { field: 'createdby', title: 'Created By', width: 100, align: 'center' },
+                    {
+                        field: 'createddate', title: 'Created Date', width: 150, align: 'center',
+                        formatter: function (value, row, index) {
+                            var otime = Common.formatterDateTime(value);
+                            return otime;
+                        }
+                    }
+                ]
+            ],
+            toolbar: [{
+                iconCls: 'icon-add',
+                text: 'Upload',
+                handler: function () {
+                    $('#fileAttachment').click();
+                }
+            }, '-', {
+                iconCls: 'icon-cancel',
+                text: 'Delete',
+                handler: function () {
+                    var rows = $('#attachment_grid').datagrid('getChecked');
+                    if (rows.length == 0) {
+                        $.messager.alert('Message', 'Please select one or more attachment you need to delete.');
+                        return false;
+                    }
+
+                    //循环，加入集合
+                    var ids = [];
+                    for (var i = 0; i < rows.length; i++) {
+                        ids.push(rows[i].id);
+                    }
+
+                    $.messager.confirm('Confirm', 'Are you sure want to delete this attachment?', function (r) {
+                        if (r) {
+                            $.post(actionUrl.DeleteAttachment, { ids: ids.join() }, function (data) {
+                                if (typeof data == 'string') {
+                                    data = $.parseJSON(data);
+                                }
+                                console.log(data);
+                                if (data.success) {
+                                    $.messager.alert('Message', data.rows);
+                                    grid.reloadData();
+                                    $('#attachment_grid').datagrid('clearSelections');
+                                    //$('#btnQuery').click();
+                                } else {
+                                    $.messager.alert('Error', data.message);
+                                }
+                            });
+                        }
+                    });
+                }
+            }]
+        });
+
+        var grid = {
+            //页面数据重置
+            resetForm: function () {
+            },
+
+            //重置查询条件
+            reloadData: function () {
+                $('#attachment_grid').datagrid('load', {
+                });
+            }
+        };
+
+
+        $("#fileAttachment").change(function () {
+            $.messager.progress({ title: 'Please waiting', text: 'uploading...' });
+            $.ajaxFileUpload({
+                url: actionUrl.AddAttachment + "?sourceID=" + $("#hfSourceID").val() + "&sourceItem=" + $("#hfSourceItem").val() + "&value1=" + $("#hfValue1").val(),
+                secureuri: false,
+                fileElementId: 'fileAttachment',
+                type: 'POST',
+                dataType: 'json',
+                success: function (result) {
+                    if (typeof result == 'string') {
+                        result = $.parseJSON(result);
+                    }
+                    $.messager.progress('close');
+                    if (result.success) {
+                        //回调函数
+                        if ("@Model.CallBack" && "@Model.CallBack" != "") {
+                            eval('window.parent.' + "@Model.CallBack" + '(' + result.rows + ')');
+                        }
+                        // 上传成功
+                        grid.reloadData();
+                    } else {
+                        $.messager.alert('Upload failed.', result.message, "error");
+                    }
+                },
+                beforeSend: function () {
+                    //uploadMask = layer.msg('正在上传图片...', { icon: 16, time: 0, shade: [0.4, '#ccc'] });
+                },
+                complete: function () {
+                    //layer.close(uploadMask);
+                },
+                error: function (data) {
+                    $.messager.alert('Error', 'servers error, file upload failed.', 'error');
+                }
+            });
+        });
+
+
+
+    });
+
+
+
+
+    </script>
+}

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Sky Zhang</Author>
+  <LastAuthor>Sky Zhang</LastAuthor>
+  <Created>2016-05-19T03:19:42Z</Created>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9300</WindowHeight>
+  <WindowWidth>15135</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>120</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s63">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Bold="1"/>
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <NumberFormat ss:Format="Standard"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Posted Purchase Credit Memos">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="13" x:FullColumns="1"
+   x:FullRows="1">
+   <Row ss:Height="15.75">
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Posted Purchase Credit Memos</Data></Cell>
+   </Row>
+   <Row ss:Height="42.75">
+    <Cell ss:StyleID="s64"><Data ss:Type="String">No.</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Buy-from Vendor No.</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Buy-from Vendor Name</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Currency Code</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Amount</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Amount Including VAT</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Location Code</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">No. Printed</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Vendor Cr. Memo No.</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">User ID</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00001</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0113</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou zhuoshunyue co., LTD</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">3230.77</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">3780</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VI00001</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0174</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou shuirun enterprise management co., LTD</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">104071.29</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">104071.29</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">NO</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00003</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0174</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou shuirun enterprise management co., LTD</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">121699.49</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">121699.49</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">NO NUMBER</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00004</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0183</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SuZhou xinfeida electrical Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00005</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0191</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Qingyujie Equipment Handling and installation</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">02360756</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00006</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0101</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Sherwin-Williams (Shanghai) Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">15624.78</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">18281</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT INVOICES</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00007</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0093</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou Yongyida Industry&amp;Trade Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">5055.5600000000004</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">5915</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">JUNWU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00008</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0004</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Bystronic Co., Ltd. (Shanghai)</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">15381.2</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">17996</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">JUNWU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00009</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0020</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Ma On Shan City Boke CNC tooling Mold Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">15042.72</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">17599.990000000002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">JUNWU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00010</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0072</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">HangYuXin Material Trade(SuZhou)Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">41408.120000000003</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">48447.5</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">JUNWU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VC00011</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">V0223</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Kunshan Honghai Xinyuan Electrical Equipment&#160;Co</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">11381.37</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">13316.2</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VAT</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">JUNWU</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQLstring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecSQLResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSqlTran">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQLstring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecSqlTranResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecSqlTranResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQLstring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecGetScalar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQLstring" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecGetScalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecGetScalarResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecSQL" />
+  </wsdl:message>
+  <wsdl:message name="ExecSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecSqlTranSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecSqlTran" />
+  </wsdl:message>
+  <wsdl:message name="ExecSqlTranSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecSqlTranResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecGetScalarSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecGetScalar" />
+  </wsdl:message>
+  <wsdl:message name="ExecGetScalarSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecGetScalarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecSQL">
+      <wsdl:input message="tns:ExecSQLSoapIn" />
+      <wsdl:output message="tns:ExecSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecSqlTran">
+      <wsdl:input message="tns:ExecSqlTranSoapIn" />
+      <wsdl:output message="tns:ExecSqlTranSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecQuery">
+      <wsdl:input message="tns:ExecQuerySoapIn" />
+      <wsdl:output message="tns:ExecQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecGetScalar">
+      <wsdl:input message="tns:ExecGetScalarSoapIn" />
+      <wsdl:output message="tns:ExecGetScalarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBWebServiceSoap" type="tns:DBWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSQL">
+      <soap:operation soapAction="http://tempuri.org/ExecSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSqlTran">
+      <soap:operation soapAction="http://tempuri.org/ExecSqlTran" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecQuery">
+      <soap:operation soapAction="http://tempuri.org/ExecQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecGetScalar">
+      <soap:operation soapAction="http://tempuri.org/ExecGetScalar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBWebServiceSoap12" type="tns:DBWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSQL">
+      <soap12:operation soapAction="http://tempuri.org/ExecSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecSqlTran">
+      <soap12:operation soapAction="http://tempuri.org/ExecSqlTran" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecQuery">
+      <soap12:operation soapAction="http://tempuri.org/ExecQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecGetScalar">
+      <soap12:operation soapAction="http://tempuri.org/ExecGetScalar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBWebService">
+    <wsdl:port name="DBWebServiceSoap" binding="tns:DBWebServiceSoap">
+      <soap:address location="http://tanghui-rqsw.oicp.net:19835/webservice1/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBWebServiceSoap12" binding="tns:DBWebServiceSoap12">
+      <soap12:address location="http://tanghui-rqsw.oicp.net:19835/webservice1/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

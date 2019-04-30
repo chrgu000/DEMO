@@ -1,0 +1,133 @@
+.voice-brand {
+  font-family: "ge-inspira", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.voice-data {
+  font-family: Inconsolata, Consolas, monospace;
+}
+.voice-human {
+  font-family: "meta-serif", Georgia, serif;
+}
+.voice-ui {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.color-black {
+  color: #13161a;
+}
+.color-green {
+  color: #76b900;
+}
+.color-cyan {
+  color: #08a5e1;
+}
+.color-orange {
+  color: #ed8000;
+}
+.color-red {
+  color: #ee3324;
+}
+.color-purple {
+  color: #711371;
+}
+.color-white {
+  color: #ffffff;
+}
+.ge-logo {
+  background: transparent url("../brandkit/img/ge-monogram-athensgray.svg") no-repeat;
+  background-size: contain;
+  border: 0;
+  color: transparent;
+  float: left;
+  font: 0/0 a;
+  height: 38px;
+  margin: -8px 9px -10px -3px;
+  width: 37px;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 767px) {
+  table.documentation {
+    display: block;
+  }
+  table.documentation > thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table.documentation > tbody {
+    display: block;
+  }
+  table.documentation > tbody > tr {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+  }
+  table.documentation > tbody > tr td.description {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+    font-size: 14px;
+    width: 100% !important;
+    display: block;
+  }
+  table.documentation > tbody > tr td.example {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+    width: 100% !important;
+    display: block;
+  }
+  table.documentation > tbody > tr td.usage {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+    display: none;
+  }
+  dl.documentation > dt,
+  dl.documentation > dd.description,
+  dl.documentation > dd.usage {
+    display: none;
+  }
+  dl.documentation > .example {
+    border-top: 1px solid #e1e2e5;
+    padding-top: 20px;
+  }
+  dl.documentation > .show,
+  dl.documentation > dd.show {
+    display: block;
+  }
+  dl.documentation > .show.description,
+  dl.documentation > dd.show.description {
+    font-size: 14px;
+  }
+  .example .typeahead.typeahead-faceted.dropdown-menu {
+    width: 97% !important;
+  }
+}

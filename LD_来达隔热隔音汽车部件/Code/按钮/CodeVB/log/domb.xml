@@ -1,0 +1,537 @@
+<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+	<s:Schema id="RowsetSchema">
+		<s:ElementType name="row" content="eltOnly" rs:CommandTimeout="500" rs:updatable="true">
+			<s:AttributeType name="DSortSeq" rs:number="1" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoClass" rs:number="2" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomType" rs:number="3" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomVersion" rs:number="4" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomVersionDesc" rs:number="5" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvCode" rs:number="6" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_1" rs:number="7" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_2" rs:number="8" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_3" rs:number="9" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_4" rs:number="10" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_5" rs:number="11" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_6" rs:number="12" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_7" rs:number="13" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_8" rs:number="14" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_9" rs:number="15" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvFree_10" rs:number="16" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvName" rs:number="17" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvStd" rs:number="18" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBasEngineerFigNo" rs:number="19" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvAddCode" rs:number="20" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_1" rs:number="21" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_2" rs:number="22" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_3" rs:number="23" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_4" rs:number="24" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_5" rs:number="25" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_6" rs:number="26" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_7" rs:number="27" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_8" rs:number="28" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_9" rs:number="29" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_10" rs:number="30" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_11" rs:number="31" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_12" rs:number="32" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_13" rs:number="33" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_14" rs:number="34" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_15" rs:number="35" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvDefine_16" rs:number="36" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCustInvCode" rs:number="37" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCustInvName" rs:number="38" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DFmFlag" rs:number="39" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoTypeCode" rs:number="40" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBusFlowId" rs:number="40" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoTypeDesc" rs:number="41" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBusFlowDesc" rs:number="42" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DStatus" rs:number="43" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DAuditStatus" rs:number="44" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DLeadTime" rs:number="45" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DStartDate" rs:number="46" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDueDate" rs:number="47" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvUnitName" rs:number="48" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DQty" rs:number="49" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMrpQty" rs:number="50" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DChangeRate" rs:number="51" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DAuxUnitCode" rs:number="52" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="35" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DAuxUnitName" rs:number="53" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DAuxQty" rs:number="54" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoLotCode" rs:number="55" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DWhCode" rs:number="56" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DWhName" rs:number="57" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMDeptCode" rs:number="58" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="12" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDeptName" rs:number="59" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DLPlanCode" rs:number="60" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="80" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderType" rs:number="61" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderCode" rs:number="62" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderSeq" rs:number="63" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderInvCode" rs:number="64" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderInvName" rs:number="65" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrderInvStd" rs:number="66" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSoType" rs:number="67" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSoCode" rs:number="68" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSoDId" rs:number="68" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="80" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSoSeq" rs:number="69" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDemandCode" rs:number="70" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDemandCodeDesc" rs:number="71" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DManualCode" rs:number="72" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMinSN" rs:number="73" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMaxSN" rs:number="74" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSNPrintData" rs:number="74" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomVersionDate" rs:number="75" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomIdentCode" rs:number="76" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomIdentDesc" rs:number="77" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingType" rs:number="78" rs:nullable="True" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingVersion" rs:number="79" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingVersionDesc" rs:number="80" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingVersionDate" rs:number="81" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingIdentCode" rs:number="82" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingIdentDesc" rs:number="83" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRunCardFlag" rs:number="84" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DWIPType" rs:number="85" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSupplyWhCode" rs:number="86" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSupplyWhName" rs:number="87" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRoutingId" rs:number="88" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOpScheduleType" rs:number="88" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DReasonCode" rs:number="89" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DReasonDesc" rs:number="90" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_22" rs:number="91" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_23" rs:number="92" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_24" rs:number="93" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_25" rs:number="94" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_26" rs:number="95" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_27" rs:number="96" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="number" dt:maxLength="22" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_28" rs:number="97" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_29" rs:number="98" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_30" rs:number="99" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_31" rs:number="100" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_32" rs:number="101" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_33" rs:number="102" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_34" rs:number="103" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_35" rs:number="104" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="9" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_36" rs:number="105" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDefine_37" rs:number="106" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRelsUser" rs:number="107" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRelsDate" rs:number="108" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRelsTime" rs:number="109" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCloseUser" rs:number="110" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCloseDate" rs:number="111" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCloseTime" rs:number="112" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="20" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_1" rs:number="112" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DQcFlag" rs:number="113" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_2" rs:number="113" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRequisitionFlag" rs:number="114" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCustomCode" rs:number="115" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCustomName" rs:number="116" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRemark" rs:number="117" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCollectiveFlag" rs:number="118" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_3" rs:number="118" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceMoCode" rs:number="119" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_4" rs:number="119" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceMoSeq" rs:number="120" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_5" rs:number="120" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceQCVouchType" rs:number="121" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_6" rs:number="121" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceQCCode" rs:number="122" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_7" rs:number="122" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceSvcCode" rs:number="123" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_8" rs:number="123" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDBarCode" rs:number="124" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="80" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_9" rs:number="124" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBStrFree_10" rs:number="125" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DIsRequFlag" rs:number="734" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DIsWFControlled" rs:number="808" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="VerifyState" rs:number="809" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="Ufts1" rs:number="810" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DPolicy" rs:number="838" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSamePartIdFlag" rs:number="839" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRowIsEmptySign" rs:number="840" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceSvcId" rs:number="846" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSourceSvcDId" rs:number="847" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBizFlowFlag" rs:number="848" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoTypeId" rs:number="849" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DSNFlag" rs:number="850" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DCompPEFlag" rs:number="851" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DDemandId" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBomId" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_1" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_10" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_2" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_3" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_4" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_5" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_6" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_7" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_8" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DBFree_9" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DMoDId" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DGroupCode" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="35" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DGroupType" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="4" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DIsLot" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="5" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DOrdFlag" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="5" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DPartId" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DUfts" rs:number="1052" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DIsSub" rs:number="1053" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="80" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DAlloVTid" rs:number="1054" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DRelsAlloVTid" rs:number="1055" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="8" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DIsTrackSaleBill" rs:number="1056" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="DInvSoType" rs:number="1058" rs:nullable="False" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="editprop" rs:number="1059" rs:writeunknown="true">
+				<s:datatype dt:type="string" rs:dbtype="str" dt:maxLength="2" rs:maybenull="false"/>
+			</s:AttributeType>
+		</s:ElementType>
+	</s:Schema>
+	<rs:data>
+		<z:row DMoDId="1000000207" DSortSeq="1" DMoClass="1" DPartId="789" DBasEngineerFigNo="" DInvCode="12639416" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="" DInvName="HS-CM/SHF HSG CVR HT" DInvStd="LGE" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="3" DLeadTime="0" DMrpQty="7000.000000" DAuxUnitCode="" DAuxUnitName="" DQty="7000.000000" DChangeRate="" DAuxQty="" DMoLotCode="1160" DWhCode="T5" DWhName="FG WH 产成品" DMDeptCode="110102" DDeptName="Profession" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000043" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000043" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="1" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="0.000000" DUnIssQty="7000.0000" DIsSfc="0" DIsAllocateIss="1" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="" DCloseTime="" DCloseDate="" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-08-15" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="1" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|1" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/><z:row DMoDId="1000000208" DSortSeq="2" DMoClass="1" DPartId="67" DBasEngineerFigNo="" DInvCode="12639416-F" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="20501888" DInvName="glass fiber for 9416/9417/5222" DInvStd="" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="4" DLeadTime="0" DMrpQty="7000.000000" DAuxUnitCode="" DAuxUnitName="" DQty="7000.000000" DChangeRate="" DAuxQty="" DMoLotCode="1162" DWhCode="T2" DWhName="Semi-finished WH 半成品" DMDeptCode="110102" DDeptName="Profession" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000042" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000033" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="0" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="7000.000000" DUnIssQty="0.0000" DIsSfc="0" DIsAllocateIss="1" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="沈秋良Jim Shen" DCloseTime="2017-06-30 18:19:05" DCloseDate="2017-06-30" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="2017-06-30 18:19:05" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-07-01" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="1" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|2" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/><z:row DMoDId="1000000209" DSortSeq="3" DMoClass="1" DPartId="37" DBasEngineerFigNo="" DInvCode="12656868" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="20101348" DInvName="HS Turbo HT" DInvStd="LGE" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="3" DLeadTime="0" DMrpQty="8600.000000" DAuxUnitCode="" DAuxUnitName="" DQty="8600.000000" DChangeRate="" DAuxQty="" DMoLotCode="1158" DWhCode="T5" DWhName="FG WH 产成品" DMDeptCode="110103" DDeptName="SCM" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000015" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000002" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="1" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="0.000000" DUnIssQty="8600.0000" DIsSfc="0" DIsAllocateIss="0" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="" DCloseTime="" DCloseDate="" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-08-05" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="0" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|3" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/><z:row DMoDId="1000000210" DSortSeq="4" DMoClass="1" DPartId="65" DBasEngineerFigNo="" DInvCode="12656868-F" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="20501886" DInvName="glass fiber for 12656868" DInvStd="" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="3" DLeadTime="0" DMrpQty="8600.000000" DAuxUnitCode="" DAuxUnitName="" DQty="8600.000000" DChangeRate="" DAuxQty="" DMoLotCode="1159" DWhCode="T2" DWhName="Semi-finished WH 半成品" DMDeptCode="110103" DDeptName="SCM" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000034" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000041" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="0" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="0.000000" DUnIssQty="8600.0000" DIsSfc="0" DIsAllocateIss="0" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="" DCloseTime="" DCloseDate="" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-07-02" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="0" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|4" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/><z:row DMoDId="1000000211" DSortSeq="5" DMoClass="1" DPartId="38" DBasEngineerFigNo="" DInvCode="12627073" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="20101349" DInvName="HS ASM EXH MANIF UPR HT" DInvStd="LGE" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="3" DLeadTime="0" DMrpQty="8400.000000" DAuxUnitCode="" DAuxUnitName="" DQty="8400.000000" DChangeRate="" DAuxQty="" DMoLotCode="1161" DWhCode="T5" DWhName="FG WH 产成品" DMDeptCode="110101" DDeptName="DL" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000033" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000005" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="1" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="0.000000" DUnIssQty="8400.0000" DIsSfc="0" DIsAllocateIss="1" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="" DCloseTime="" DCloseDate="" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-08-11" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="1" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|5" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/><z:row DMoDId="1000000212" DSortSeq="6" DMoClass="1" DPartId="66" DBasEngineerFigNo="" DInvCode="12627073-F" DBStrFree_1="False" DBStrFree_2="False" DBStrFree_3="False" DBStrFree_4="False" DBStrFree_5="False" DBStrFree_6="False" DBStrFree_7="False" DBStrFree_8="False" DBStrFree_9="False" DBStrFree_10="False" DInvDefine_1="" DInvDefine_2="" DInvDefine_3="" DInvDefine_4="" DInvDefine_5="" DInvDefine_6="" DInvDefine_7="" DInvDefine_8="" DInvDefine_9="" DInvDefine_10="" DInvDefine_11="" DInvDefine_12="" DInvDefine_13="" DInvDefine_14="" DInvDefine_15="" DInvDefine_16="" DInvAddCode="20501887" DInvName="glass fiber for 12627073" DInvStd="" DGroupCode="10" DGroupName="无换算单位组" DGroupType="0" DInvUnit="101" DInvUnitName="PCS" DSubDate="" DPolicy="PE" DIsLot="1" DSupplyName="3" DPartAttr="3" DEnglishName="" DIsTrackSaleBill="0" DInvSoType="0" DIsSub="0" DProduceByFeatureAllocate="0" DIsFeatureMatch="0" DBFree_1="False" DBFree_2="False" DBFree_3="False" DBFree_4="False" DBFree_5="False" DBFree_6="False" DBFree_7="False" DBFree_8="False" DBFree_9="False" DBFree_10="False" DMoTypeCode="" DMoTypeDesc="" DStatus="3" DLeadTime="0" DMrpQty="8400.000000" DAuxUnitCode="" DAuxUnitName="" DQty="8400.000000" DChangeRate="" DAuxQty="" DMoLotCode="1163" DWhCode="T2" DWhName="Semi-finished WH 半成品" DMDeptCode="110101" DDeptName="DL" DOrderDId="0" DOrderType="0" DOrderCode="" DOrderSeq="" DOrderInvCode="" DOrderInvName="" DOrderInvStd="" DBomId="1000000032" DBomType="1" DBomVersion="10" DBomVersionDesc="10" DBomVersionDate="2000-01-01" DBomIdentCode="" DBomIdentDesc="" DRoutingId="1000000040" DRoutingType="1" DRoutingVersion="10" DRoutingVersionDesc="10" DRoutingVersionDate="2000-01-01" DRoutingIdentCode="" DRoutingIdentDesc="" DQcFlag="0" DOrdFlag="0" DDemandId="0" DRemark="" DWIPType="5" DSupplyWhCode="" DSupplyWhName="" DOpScheduleType="1" DReasonCode="" DReasonDesc="" DDeclaredQty="0.000000" DQualifiedInQty="0.000000" DUnIssQty="8400.0000" DIsSfc="0" DIsAllocateIss="1" DIsOpSchedule="1" DCustomCode="" DCustomName="" DAuditStatus="1" DInvFree_1="" DInvFree_2="" DInvFree_3="" DInvFree_4="" DInvFree_5="" DInvFree_6="" DInvFree_7="" DInvFree_8="" DInvFree_9="" DInvFree_10="" DSourceQCVouchType="0" DSourceQCCode="" DSourceQCSeq="0" DSourceMoCode="" DSourceMoSeq="" DCloseUser="" DCloseTime="" DCloseDate="" DRelsUser="demo" DRelsTime="2017-06-30 08:35:39" DRelsDate="2017-06-30" DOrgClsTime="" DCostItemCode="" DCostItemName="" DCollectiveFlag="0" DSoType="0" DSoCode="" DSoSeq="" DSoDId="" DDemandCode="" DDemandCodeDesc="" DManualCode="" DSamePartIdFlag="0" DStartDate="2017-06-30" DDueDate="2017-07-02" DDefine_22="" DDefine_23="" DDefine_24="" DDefine_25="" DDefine_26="" DDefine_27="" DDefine_28="" DDefine_29="" DDefine_30="" DDefine_31="" DDefine_32="" DDefine_33="" DDefine_34="" DDefine_35="" DDefine_36="" DDefine_37="" DCustInvCode="" DCustInvName="" DFmFlag="0" DMinSN="" DMaxSN="" DSourceSvcVouchType="0" DSourceSvcCode="" DSourceSvcId="" DBizFlowFlag="0" DMoTypeId="" DSNFlag="0" DBusFlowId="" DBusFlowDesc="" DRunCardFlag="0" DRequisitionFlag="0" DIsRequFlag="1" DIsWFControlled="0" DAlloVTid="30417" DRelsAlloVTid="30426" DSNPrintData="" DDBarCode="||MO21|00105|6" DNewLineFlag="0" DLPlanCode="" DMpsUfts="" DPlanCodeBatUpdData="" editprop=""/>
+	</rs:data>
+</xml>

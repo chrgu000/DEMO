@@ -1,0 +1,51 @@
+﻿.TablePublic
+{
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+	border:solid 1px #A2C4E2;
+	border-collapse:collapse;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.TablePublic td
+{
+	border:solid 1px #A2C4E2;
+	margin:2px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
+}
+
+.TablePublic th
+{
+	border:solid 1px #A2C4E2;
+	background-color:#d8e9ff;
+	color:#3e8ac3;
+	font-family:黑体;	
+	margin:2px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
+	text-align:center;
+	/*white-space:nowrap;*/
+}
+
+.thinner
+{
+	background-color:White;
+}
+
+
+.tdmenuright
+{
+	text-align:right;
+	border-bottom:double 3px #A2C4E2;
+	margin:2px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
+}
+
+.tdmenuleft
+{
+	text-align:left;
+	color:#2642a5;
+	border-bottom:double 3px #A2C4E2;
+	margin:2px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
+}

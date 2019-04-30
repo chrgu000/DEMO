@@ -1,0 +1,121 @@
+﻿body 
+{
+	padding:0;
+	margin:0;
+	
+}
+ 
+.btn
+{
+	background-image: url(../../img/button.gif);
+	cursor: hand;
+	border:solid 1px #A2C4E2;
+	color:#4086cd;
+	padding:2px 2px 2px 2px;
+	margin:2px 2px 2px 2px;
+	
+}
+.TextBox
+{
+	width:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	
+}
+
+.div1
+{
+	margin:auto;
+	text-align:center;
+	
+}
+.panel
+{
+}
+/*
+.dxgvDataRow_Aqua tr
+{
+	margin:0;
+	padding:0;
+	height:10px;
+}
+.dxgvDataRow_Aqua td
+{
+	margin:0;
+	padding:0;
+	height:20px;
+	font-size:10px;
+}*/
+
+.title
+{
+	font-family:宋体, Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	color: #808080;
+	
+}
+.title2
+{
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #808000;
+}
+.table
+{
+margin-top:0px;
+}
+.checkbox
+{
+	border:0;
+	border-color:Red;
+	color: #000000; 
+	position:absolute;clip: rect(6 17 17 6);border-color:#ffffff;
+}
+/*
+.table-update
+{
+	border:0;
+	width:100%;
+	border-collapse:collapse;
+}
+.table-update th
+{
+	background-image: url(../../Images/PublicImages/heard_11.gif);
+}
+.table-update tr
+{
+	
+}
+.table-update th,
+.table-update td
+{
+	border:solid 1px #A3C0E8;
+	padding:0px;
+	margin:0px;
+	height:25px;
+}
+.table-update input
+{
+	border:0px;
+	padding:0px;
+	margin:0px;
+	padding:0px;
+	padding-left:2px;
+	margin-right:-9px;
+	padding-right:-9px;
+	width:100%;
+}
+*/
+.aback
+{
+    white-space:nowrap;
+    font-family:宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #808080;
+	vertical-align:bottom;
+	text-decoration: none; 
+}

@@ -1,0 +1,182 @@
+在做系统升级维护的项目中，用到了老系统(VB实现)要调用一部分新功能(C#实现)的情况，于是进行了简单的调查。发现如下资料
+
+网上发现的资料。
+
+---------------------------------------------------------------------------------------------------------------
+
+里面有两个方法   
+Encrypt(string pToEncrypt,string sKey) //加密    
+Decrypt(string pToDecrypt,string sKey) //解密   
+
+然后你这样写代码：    
+using System;    
+using System.Runtime.InteropServices;    
+namespace 名称空间    
+{    
+     // 首先建立接口，这个是Com必须使用的    
+     [Guid("61BB24CB-4C2C-40f8-9E13-1AC5E558D56A")]    
+     public interface IEncrypt    
+     {    
+          string Encrypt(string pToEncrypt,string sKey);    
+          string Decrypt(string pToDecrypt,string sKey);    
+     }    
+         
+     // 写接口的实现    
+     [Guid("CB52E990-185E-4448-A7E8-C88ECAD563AB")]    
+     public class 类名称 : IEncrypt    
+     {    
+          public string Encrypt(string pToEncrypt,string sKey)    
+          {    
+                // 复制FAQ加密代码    
+          }    
+           
+          public string Decrypt(string pToDecrypt,string sKey)    
+          {    
+                // 复制FAQ解密代码    
+          }    
+     }    
+}   
+
+然后用vs.net打包成.dll类库文件，假设名称为MyEncrypt.dll    
+然后用如下工具    
+regasm MyEnCrypt.dll /tlb:MyEncrypt.tlb    
+这个.tlb文件就是类型库，可以由vb6和vc++6引用。   
+
+注意上面的guid是使用vs.net工具菜单里面的创建guid工具生成的。    
+还要注意，vs.net自动生成的assemblyinfo.cs文件中必须添加强名称和版本号，因为Com组件需要版本号，不要改动版本号，也不要用vs.net自动的1.*这样的版本号，最好使用    
+1.1.1.1这样的固定版本，而且必须一次添加，不能多次添加。   
+
+
+步骤    
+一 生成.net程序集：    
+首先你把http://expert.csdn.net/Expert/FAQ/FAQ_Index.asp?id=35935的代码复制。    
+然后你复制这个代码    
+using System;    
+using System.IO;    
+using System.Text;    
+using System.Runtime.InteropServices;    
+using  System.Security.Cryptography;     
+namespace Csic    
+{    
+     // 首先建立接口，这个是Com必须使用的    
+     [Guid("61BB24CB-4C2C-40f8-9E13-1AC5E558D56A")]    
+     public interface IEncrypt    
+     {    
+          string Encrypt(string pToEncrypt,string sKey);    
+          string Decrypt(string pToDecrypt,string sKey);    
+     }    
+         
+     // 写接口的实现    
+     [Guid("CB52E990-185E-4448-A7E8-C88ECAD563AB")]    
+     public class Crypt : IEncrypt    
+     {    
+          public string Encrypt(string pToEncrypt,string sKey)    
+          {    
+                // 复制FAQ加密代码    
+           }    
+           
+          public string Decrypt(string pToDecrypt,string sKey)    
+          {    
+                // 复制FAQ解密代码    
+           }    
+     }    
+}   
+
+把上面的文件保存成vs.net项目的一个类库工程。    
+然后使用vs.net的“Vsitual Studio .Net工具”-->Vistual Studio .Net命令提示符    
+在命令行内打下    
+cd c:/ <回车>    
+sn -k myKey.snk<回车>    
+就在C盘根目录下生成一个名叫myKey.snk的强名称文件，然后关闭提示符窗口。    
+在vs.net的那个类库工程自动生成的AssemblyInfo.cs文件内把    
+[assembly: AssemblyKeyFile("")]    
+改成    
+[assembly: AssemblyKeyFile(@"C:/myKey.snk")]    
+把[assembly: AssemblyVersion("1.0.*")]    
+改成    
+[assembly: AssemblyVersion("1.0.0.0")] // 注意：这时你的Com组件版本为1.0.0.0版   
+
+然后按Shift + Ctrl + B键生成dll库（使用Release模式），假设是Csic.Crypt.dll。    
+这时候，程序集就建立成功了。   
+
+二、注册该程序集并创建一个类型库    
+仍然使用开始菜单中的Vistual Studio .Net命令提示符    
+进入你的项目目录，假设为D:/myProject/bin/Release    
+在对话框中输入    
+d:<回车>    
+cd myproject/bin/release<回车>    
+然后输入 dir 命令可以看见Csic.Crypt.dll文件    
+然后输入：regasm /tlb Csic.Crypt.tlb Csic.Crypt.dll<回车>    
+然后就在这个目录下生成了Csic.Crypt.tlb类型库文件。不要关闭此提示符窗口。    
+这时候，这个.dll的.net程序集就变成一个标准的Com组件了，但是还不能用，必须让它变成全局Com组件。   
+
+这个regasm 实用程序将创建一个类型库并在 Windows 注册表中对其进行注册，以使 PhysServer2.dll 中的类对 COM 客户端可用 。   
+
+三、 将程序集添加到全局程序集缓存中   
+
+进入提示符窗口，输入    
+gacutil /I Csic.Crypt.dll<回车>    
+这时，你的这个dll就被复制到全局程序集缓存中了。也就是说无论在这个电脑的哪个硬盘上都可以使用此dll组件了。   
+
+四、使用方法    
+asp内的使用方法    
+set obj = Server.CreateObject("Csic.Crypt")    
+dim str1    
+str1 = obj.Encrypt("要加密内容","密码") // 加密    
+dim str2    
+str2 = obj.Decrypt("要解密内容","密码") // 解密
+
+---------------------------------------------------------------------------------------------------------------
+
+ 
+
+资料中写的，按照他做就能够实现，但是对于VB不太熟悉的人来说，遇到了一点问题，所以个人总结一下：
+
+1，上面资料的第三步三、 将程序集添加到全局程序集缓存中   后，要在VB项目中添加tlb文件的引用
+
+     选中相应工程--〉工程--〉引用追加--〉生成的DLL上打勾
+
+2，使用方法，除了set   obj   =   Server.CreateObject("Csic.Crypt")外，还可以使用如下方法：
+
+    Dim a As New ComTest
+
+    str1   =   a.Encrypt("要加密内容","密码")   //   加密
+
+3，关于Com组件的生成，下面的描述有些复杂，有如下简单点的方法：
+
+---------------------------------------------------------------------------------------------------------------
+
+1、先选择"文件"--> -->"新建"-->"项目"-->"类库"
+
+ 我在这取名TestVB，代码如下：
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TestVB
+{
+    public class Test
+    {
+        public string testEcho()
+        {
+            return "test1";
+        }
+    }
+}
+
+2、编译此项目前，先设置"项目"-->"TestVB属性"-->"生成"下的"为COM Interop 注册"打上勾，原有AssemblyInfo.cs文件中的"[assembly: ComVisible(false)]"修改为"[assembly: ComVisible(true)]"保存，编译即可      （这儿才是重点，第一个资料没有涵盖）
+
+3、把生成的DLL文件拷贝到VB开发机器上(该机器需安装相应的.NET框架)，运行Regasm /tlb  /codebase  $DLL_DIR/TestVB.dll 命令注册该DLL文件，在VB新建项目中引用TestVB.tlb即可在vb中调用DLL中的函数。测试代码如下：
+
+Private Sub Command1_Click()
+    Dim a As New Test
+   
+    MsgBox a.testEcho
+End Sub
+
+4、以上是测试代码，仅考虑了是否正确调用函数，假使想让VB调用.net DLL时显示提示该类中的方法等，需要在DLL编写时添加额外的代码。
+
+---------------------------------------------------------------------------------------------------------------
+
+ 

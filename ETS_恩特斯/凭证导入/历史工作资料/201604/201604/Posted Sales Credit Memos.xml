@@ -1,0 +1,428 @@
+﻿<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Sky Zhang</Author>
+  <LastAuthor>Sky Zhang</LastAuthor>
+  <Created>2016-05-19T03:10:41Z</Created>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9300</WindowHeight>
+  <WindowWidth>15135</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>120</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s63">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Bold="1"/>
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <NumberFormat ss:Format="Standard"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Posted Sales Credit Memos">
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="33" x:FullColumns="1"
+   x:FullRows="1">
+   <Row ss:Height="15.75">
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Posted Sales Credit Memos</Data></Cell>
+   </Row>
+   <Row ss:Height="32.25">
+    <Cell ss:StyleID="s64"><Data ss:Type="String">No.</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Sell-to Customer No.</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Sell-to Customer Name</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Currency Code</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Amount</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Amount Including VAT</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">Location Code</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">No. Printed</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">User ID</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000001</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2063.06</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2413.7800000000002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2063.06</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2413.7800000000002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000003</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0139</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou Industrial ParK  Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000004</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0143</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou industrial park Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">8825.56</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">10325.91</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000005</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0128</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Tokoy Electron(Kunshan)Limited</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">99816.75</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">116785.60000000001</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000006</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0040</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Makino (China)Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">65887.25</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">77088.08</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000007</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0023</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">NTS Mechatronics Shanghai Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">42256.42</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">49440</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000008</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0023</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">NTS Mechatronics Shanghai Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">97189.4</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">113711.6</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000009</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0139</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou Industrial ParK  Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">8825.56</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">10325.91</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000010</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000011</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0139</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou Industrial ParK  Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000012</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0139</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou Industrial ParK  Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000013</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0133</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">HP Tronic (Suzhou)Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">4319.7299999999996</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">5054.08</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000014</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000015</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2063.06</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2413.7800000000002</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000016</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0132</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Corpoplast Beverage Equipm (Suzhou) Co.,Ltd.&#160;&#160;&#160;&#160;&#160;&#160;</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">35231.089999999997</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">41220.370000000003</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000017</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0132</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Corpoplast Beverage Equipm (Suzhou) Co.,Ltd.&#160;&#160;&#160;&#160;&#160;&#160;</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">61278.36</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">71695.679999999993</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000018</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0132</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Corpoplast Beverage Equipm (Suzhou) Co.,Ltd.&#160;&#160;&#160;&#160;&#160;&#160;</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">96955.23</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">113437.62</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000019</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0143</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Suzhou industrial park Xu Chang spinneret factory</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">4782.68</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">5595.74</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000020</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">4226.1400000000003</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">4944.6000000000004</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000021</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0132</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Corpoplast Beverage Equipm (Suzhou) Co.,Ltd.&#160;&#160;&#160;&#160;&#160;&#160;</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">77345.77</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">90494.56</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000022</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0132</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Corpoplast Beverage Equipm (Suzhou) Co.,Ltd.&#160;&#160;&#160;&#160;&#160;&#160;</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">24155.98</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">28262.5</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000023</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0023</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">NTS Mechatronics Shanghai Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">70675</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">82689.75</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000024</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0128</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Tokoy Electron(Kunshan)Limited</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">1811.02</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">2118.89</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000025</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0018</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Sturm Machinery (Kunshan) Co., Ltd. </Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000026</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0013</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Strama-MPS Machinery Taicang Ltd. </Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000027</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0006</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIPA Machinery Hangzhou Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">EUR</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000028</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0006</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIPA Machinery Hangzhou Co.,Ltd</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">EUR</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SKYZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000029</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0148</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIPA S.P.A</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">EUR</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">1434.2</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">1678.01</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000030</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">18565.86</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">21722.06</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">FSC000031</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">E0124</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SIG Combibloc(Suzhou) Co., Ltd.</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">32997.78</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="Number">38607.410000000003</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">SUZHOU</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">GZHANG</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

@@ -1,0 +1,380 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            var actionUrl = {
+                GetList: '/PAD/GetList',
+            }
+
+            function reloadData() {
+                $('#grid').datagrid('load', {
+                    filterName: $('#queryName').val()
+                });
+            }
+            // grid工具栏添加按钮
+            $('#grid').datagrid({
+                url: actionUrl.GetList,
+                queryParams: { filterName: $('#queryName').val() },
+                toolbar: [
+                ],
+                columns: [
+                    [
+                        { title: '', width: 80, },
+                        { title: '', width: 80, },
+                        { title: '', width: 80, },
+                        { title: 'ST0001', width: 180, },
+                        { title: 'ST0002', width: 180, },
+                        { title: 'ST0003', width: 180, },
+                        { title: 'ST0004', width: 180, },
+                        { title: 'ST0005', width: 180, },
+                        { title: '', width: 180, },
+                        { title: '', width: 180, },
+                        { title: '', width: 180, },
+                        { title: '', width: 180, },
+                        { title: '', width: 180, },
+                        { title: '', width: 180, },
+                    ],
+                    [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week1', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week2', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week3', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week4', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week5', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week6', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week7', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week8', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week9', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week10', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week11', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week12', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Week13', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Month1', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Month2', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Month3', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                     [
+                        { title: '', },
+                        { title: '', },
+                        { title: 'Month4', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                        { title: '', },
+                     ],
+                    [
+                        { field: 'PartNo', title: 'PartNo', },
+                        { field: 'Desc', title: 'Desc', },
+                        { field: 'Childsm', title: 'Childsm', },
+                        { field: 'ST0001', title: 'ST0001', },
+                        { field: 'ST0002', title: 'ST0002', },
+                        { field: 'ST0003', title: 'ST0003', },
+                        { field: 'ST0004', title: 'ST0004', },
+                        { field: 'ST0005', title: 'ST0005', },
+                        { field: 'W1', title: 'W1', },
+                        { field: 'W2', title: 'W2', },
+                        { field: 'W3', title: 'W3', },
+                        { field: 'June', title: 'June', },
+                        { field: 'ETA', title: 'ETA', },
+                        { field: 'Status', title: 'Status', },
+                    ],
+                ],
+            });
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            $('#btnReset').click(function () {
+                $('#queryName').textbox('reset');
+                reloadData();
+            });
+        });
+
+        Date.prototype.format = function (fmt) { //author: meizz
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>产品编码：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryName" id="queryName" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;"  title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false">
+        </table>
+    </div>
+</body>

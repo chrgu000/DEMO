@@ -1,0 +1,118 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "下载更新文件", "信息化管理系统\下载更新文件.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameBaseFunction", "FrameBaseFunction\FrameBaseFunction.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "上传更新文件", "自动更新\上传更新文件.csproj", "{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppStart", "AppStart\AppStart.csproj", "{4C118B81-1A5C-467D-9742-07C6651DBFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDLL", "ImportDLL\ImportDLL.csproj", "{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{D18D3571-57AD-4CEB-A701-371AC49CD029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseFunction", "BaseFunction\BaseFunction.csproj", "{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 9
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppStart\\AppStart.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = AppStart\\
+		SccProjectUniqueName2 = BaseFunction\\BaseFunction.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = BaseFunction\\
+		SccProjectUniqueName3 = DAL\\DAL.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = DAL\\
+		SccProjectUniqueName4 = FrameBaseFunction\\FrameBaseFunction.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = FrameBaseFunction\\
+		SccProjectUniqueName5 = ImportDLL\\ImportDLL.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = ImportDLL\\
+		SccProjectUniqueName6 = Model\\Model.csproj
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = Model\\
+		SccProjectUniqueName7 = 信息化管理系统\\下载更新文件.csproj
+		SccLocalPath7 = .
+		SccProjectFilePathRelativizedFromConnection7 = 信息化管理系统\\
+		SccProjectUniqueName8 = 自动更新\\上传更新文件.csproj
+		SccLocalPath8 = .
+		SccProjectFilePathRelativizedFromConnection8 = 自动更新\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|x86.ActiveCfg = Debug|x86
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|x86.Build.0 = Debug|x86
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|x86.ActiveCfg = Release|x86
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|x86.Build.0 = Release|x86
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|x86.ActiveCfg = Debug|x86
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|x86.Build.0 = Debug|x86
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|x86.ActiveCfg = Release|x86
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|x86.Build.0 = Release|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|x86.ActiveCfg = Debug|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Debug|x86.Build.0 = Debug|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|x86.ActiveCfg = Release|x86
+		{0AC4824B-4399-4EB5-9BCF-0592DF1366DA}.Release|x86.Build.0 = Release|x86
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Debug|x86.ActiveCfg = Debug|x86
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Debug|x86.Build.0 = Debug|x86
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Release|x86.ActiveCfg = Release|x86
+		{4C118B81-1A5C-467D-9742-07C6651DBFD9}.Release|x86.Build.0 = Release|x86
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|x86.ActiveCfg = Debug|x86
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Debug|x86.Build.0 = Debug|x86
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|x86.ActiveCfg = Release|x86
+		{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}.Release|x86.Build.0 = Release|x86
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18D3571-57AD-4CEB-A701-371AC49CD029}.Release|x86.ActiveCfg = Release|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}.Release|x86.ActiveCfg = Release|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

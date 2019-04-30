@@ -1,0 +1,6 @@
+﻿<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+<dx:ASPxButton  runat="server" Width="100px" CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css"  Font-Size="Small" 
+                CssPostfix="Office2003Olive" 
+                SpriteCssFilePath="~/App_Themes/Office2003Olive/{0}/sprite.css" 
+                Wrap="False">
+</dx:ASPxButton>

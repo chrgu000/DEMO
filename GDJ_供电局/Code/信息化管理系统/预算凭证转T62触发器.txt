@@ -1,0 +1,93 @@
+USE [YS_BMDATA007]
+GO
+
+IF  EXISTS (SELECT * FROM sys.triggers WHERE object_id = OBJECT_ID(N'[dbo].[trig_WX_PZChild]'))
+DROP TRIGGER [dbo].[trig_WX_PZChild]
+GO
+
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+/*
+
+--	保存凭证时在备注中需要输入任意字符才能传递到T6
+
+将ufdata_001_2014 改成对应T6的数据库
+
+待确认字段：isignseq,ccode_equal,coutsysname
+*/
+	
+	
+CREATE TRIGGER [dbo].[trig_WX_PZChild] on [dbo].[WX_PZChild]
+for INSERT
+as 
+
+
+declare @iRow int
+declare @sGuid uniqueidentifier
+declare @sHeadGuid uniqueidentifier
+declare @iperiod int
+declare @ino_id int 
+declare @TempID int 
+declare @csign varchar(50)
+declare @cRemark varchar(200)
+select  @cRemark = isnull(b.cRemark,''),@sHeadGuid =a.uPZPK,@sGuid = a.uPZChildPK,@iperiod = b.iperiod,@TempID = cast(isnull(b.cpzcode,-1) as int),@csign=cPZTypeCode 
+from inserted a inner join WX_PZ b on a.uPZPK = b.uPZPK
+
+if(@cRemark <> '')
+begin
+
+	select @iRow = COUNT(*) from ufdata_024_2014..GL_accvouch where iperiod = @iperiod and cast(isnull(ctext1,-1) as int) = @TempID and csign = @csign
+	
+	if(@iRow > 0)
+	begin
+		select @ino_id = ino_id from ufdata_024_2014..GL_accvouch where iperiod = @iperiod and cast(isnull(ctext1,-1) as int) = @TempID and csign = @csign 
+	end
+	else
+	begin
+		select @ino_id = isnull(max(cast(isnull(ino_id,0) as int)),0) from ufdata_024_2014..GL_accvouch where iperiod = @iperiod and csign = @csign 
+		set @ino_id = @ino_id + 1
+	end 
+
+
+
+	declare @isignseq int 
+	SELECT @isignseq = isignseq FROM  ufdata_024_2014..dsign where csign = @csign
+
+
+
+	if not exists(select * from ufdata_024_2014..GL_accvouch where cDefine11 = @sGuid)
+	begin
+		insert into ufdata_024_2014..GL_accvouch(
+			iperiod, csign, isignseq, ino_id, inid, dbill_date, idoc, cbill, ccheck, cbook, ibook, ccashier, iflag, ctext1, ctext2, cdigest, ccode, cexch_name, md, mc, 
+			md_f, mc_f, nfrat, nd_s, nc_s, csettle, cn_id, dt_date, cdept_id, cperson_id, ccus_id, csup_id, citem_id, citem_class, cname, ccode_equal, iflagbank, iflagPerson, 
+			bdelete, coutaccset, ioutyear, coutsysname, coutsysver, doutbilldate, ioutperiod, coutsign, coutno_id, doutdate, coutbillsign, coutid, bvouchedit, bvouchAddordele, 
+			bvouchmoneyhold, bvalueedit, bcodeedit, ccodecontrol, bPCSedit, bDeptedit, bItemedit, bCusSupInput, cDefine1, cDefine2, cDefine3, cDefine4, cDefine5, cDefine6, 
+			cDefine7, cDefine8, cDefine9, cDefine10, cDefine11, cDefine12, cDefine13, cDefine14, cDefine15, cDefine16, dReceive, cWLDZFlag, dWLDZTime, bFlagOut, 
+			iBG_OverFlag, cBG_Auditor, dBG_AuditTime, cBG_AuditOpinion, bWH_BgFlag
+		)
+		select a.iPeriod,a.cPZTypeCode,@isignseq,@ino_id
+			,b.iPZChildIndex,a.dPZDate,0,a.cMakerName,null,null,0,null,null,a.cpzcode,'',b.cSummary,b.cAccountSubjectCode,null,isnull(b.fAmountJF,0),isnull(b.fAmountDF,0),
+			0,0,0,isnull(b.fQuantityJF,0),isnull(b.fQuantityJF,0),null,null,null,null,null,null,null,null,null,null,null,null,null,
+			0,null,null,null,null,null,null,null,null,null,null,null,1,1,
+			1,1,1,null,1,1,1,1,null,null,null,null,null,null,
+			0,null,null,a.uPZPK,b.uPZChildPK,null,null,null,null,null,null,null,null,0,
+			null,null,null,null,null
+		from WX_PZ a inner join WX_PZChild b on a.uPZPK = b.uPZPK
+		where b.uPZChildPK = @sGuid
+		
+		
+		update WX_VoucherPZ set bIsCreated = 1 where uPZPK in(select a.uPZPK from WX_PZ a inner join WX_PZChild b on a.uPZPK = b.uPZPK where b.uPZChildPK = @sGuid)
+	end
+end
+
+
+GO
+
+

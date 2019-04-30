@@ -1,0 +1,281 @@
+
+/*
+
+签卡
+一 加班时间20：00，实际打卡时间20：05显示异常
+1. 根据审核触发单据获得刷卡时间
+2. 判断有无当天的加班单（没有直接结束）
+3. 有加班单则获得加班结束时间
+4. 判断有无大于加班结束时间的刷卡数据，没有结束
+5. 有大于的加班结束时间的刷卡数据，则自动生成一个加班结束时间的刷卡数据
+
+*/
+
+CREATE Proc [dbo].[_Proc_刷新签卡数据] @uRecordId uniqueidentifier
+as
+set nocount on
+
+
+--declare @uRecordId uniqueidentifier
+--set @uRecordId = '53828666-9099-4d6a-af0e-211fbc72a057'
+
+declare @i是否存在相同时间卡 int
+
+declare @员工编号 varchar(50)
+declare @刷卡时间 datetime
+select @员工编号 = cPsn_Num,@刷卡时间 = dDateTime from [_Get刷卡签卡数据] where uRecordId = @uRecordId
+
+declare @班次编号 varchar(10)
+select @班次编号 = isnull(cDutyCode,'') from hr_tm_dayresult where cPsn_Num = @员工编号 and dDutyDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+
+--有排班
+if(@班次编号 <> 'PH')
+begin
+
+	declare @班次上班时间 datetime
+	declare @班次下班时间 datetime 
+
+	select @班次上班时间 = dDutyStart,@班次下班时间 = dDutyOff from hr_tm_dutybasic where cDutyCode = @班次编号
+
+	declare @i下班后加班 int
+
+	--1.	下班后加班单
+	declare @加班结束时间 datetime
+	declare @加班开始时间 datetime
+	select  @加班结束时间 = b.dOffTime ,@加班开始时间 = b.dDutyTime 
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+		and b.dDutyTime >= @班次下班时间
+		and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 0
+
+	select  @i下班后加班 = count(1)
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+		and b.dDutyTime >= @班次下班时间
+		and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 0
+
+	declare @guid uniqueidentifier
+	select @guid = newid()
+	
+	--下班后加班，且刷卡时间晚于加班结束时间
+	if (@i下班后加班 > 0)
+	begin
+		if (DATEPART(hour,@刷卡时间) >  DATEPART(hour,@加班结束时间)
+			or (DATEPART(hour,@刷卡时间) =  DATEPART(hour,@加班结束时间) and DATEPART(MINUTE,@刷卡时间) >  DATEPART(MINUTE,@加班结束时间))
+			)
+		begin
+			select @i下班后加班 = count(1)
+			from [_Get刷卡签卡数据] 
+			where cPsn_Num = @员工编号 and CONVERT(VARCHAR(10),dDateTime,120) = CONVERT(VARCHAR(10),@刷卡时间,120)
+				and DATEPART(hour,dDateTime) = DATEPART(hour,@加班结束时间) and DATEPART(MINUTE,dDateTime) = DATEPART(MINUTE,@加班结束时间)
+
+			if(@i下班后加班 = 0)
+			begin
+				select @guid = newid()
+
+				insert into hr_tm_SignCardData
+				select  @guid, cPsn_Num, vCardNo
+					, cast(year(@刷卡时间) as varchar(4)) + '-' +  cast(month(@刷卡时间) as varchar(2)) + '-' +  cast(day(@刷卡时间) as varchar(2)) + ' ' + cast(DATEPART(hour,@加班结束时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@加班结束时间) as varchar(2))
+					,bDuty, bOverTime
+					,bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason
+					,dOldDateTime, iRecordId, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag
+					,cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+					,cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude,     cSource
+					,VoucherID, cExamineApproveType
+				FROM [_Get刷卡签卡数据]
+				where uRecordId = @uRecordId
+
+				insert into [dbo].[_KQJ](uRecordId,  sType)
+				values(@guid,'上班前加班补签卡')
+			end
+		end
+	end
+
+	--2. 下班后通宵加班,且当天除了上班刷卡没有其他刷卡数据，生成一张当前班次下班刷卡
+	
+
+	declare @i通宵加班 int
+	select @i通宵加班 = count(1)
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+		and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 1 
+		
+	
+	if(@i通宵加班 > 0)
+	begin
+		select @加班结束时间 = b.dOffTime ,@加班开始时间 = b.dDutyTime 
+		from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+		where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+			and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 1 
+
+		declare @通宵加班下班刷卡时间 datetime
+		select @通宵加班下班刷卡时间 = min(dDateTime) from [_Get刷卡签卡数据] where CONVERT(VARCHAR(10),dateadd(day,1,@刷卡时间),120) = CONVERT(VARCHAR(10),dDateTime,120) and cPsn_Num = @员工编号
+
+		select @通宵加班下班刷卡时间
+		-- 插入当天班次下班数据
+		
+		select @i是否存在相同时间卡 = count(1) 
+		from  [_Get刷卡签卡数据] 
+		where cast(year(@刷卡时间) as varchar(4)) + '-' +  cast(month(@刷卡时间) as varchar(2)) + '-' +  cast(day(@刷卡时间) as varchar(2)) + ' ' + cast(DATEPART(hour,@班次下班时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@班次下班时间) as varchar(2)) = dDateTime 
+			and cPsn_Num = @员工编号
+
+		if(@i是否存在相同时间卡 = 0)
+		begin
+			select @guid = newid()
+
+			insert into hr_tm_SignCardData
+			select  @guid, cPsn_Num, vCardNo
+				, cast(year(@刷卡时间) as varchar(4)) + '-' +  cast(month(@刷卡时间) as varchar(2)) + '-' +  cast(day(@刷卡时间) as varchar(2)) + ' ' + cast(DATEPART(hour,@班次下班时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@班次下班时间) as varchar(2))
+				,bDuty, bOverTime
+				,bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason
+				,dOldDateTime, iRecordId, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag
+				,cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+				,cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude,     cSource
+				,VoucherID, cExamineApproveType
+			FROM [_Get刷卡签卡数据]
+			where uRecordId = @uRecordId
+
+			insert into [dbo].[_KQJ](uRecordId,  sType)
+			values(@guid,'上班前加班补签卡')
+		end
+		 --次日刷卡数据如果超过下班时间，增加一条下班时间刷卡
+		--------select * 
+		--------from [_Get刷卡签卡数据] 
+		--------where CONVERT(VARCHAR(10),dDateTime,120) = CONVERT(VARCHAR(10),dateadd(day,1,@刷卡时间),120) and cPsn_Num = @员工编号 
+		--------order by dDateTime
+
+		--插入第二天下班数据
+		select @guid = newid()
+		if(DATEPART(hour,@加班结束时间) = DATEPART(hour,@通宵加班下班刷卡时间) and DATEPART(MINUTE,@加班结束时间) < DATEPART(MINUTE,@通宵加班下班刷卡时间))
+		begin
+			select @guid = newid()
+
+			insert into hr_tm_SignCardData
+			select  @guid, cPsn_Num, vCardNo
+				, CONVERT(VARCHAR(10),dateadd(day,1,@刷卡时间),120)  + ' ' + cast(DATEPART(hour,@加班结束时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@加班结束时间) as varchar(2))
+				,bDuty, bOverTime
+				,bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason
+				,dOldDateTime, iRecordId, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag
+				,cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+				,cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude,     cSource
+				,VoucherID, cExamineApproveType
+			FROM [_Get刷卡签卡数据]
+			where uRecordId = @uRecordId
+
+			insert into [dbo].[_KQJ](uRecordId,  sType)
+			values(@guid,'上班前加班补签卡')
+		end
+	end
+
+	--判断没有当天下班卡，增加一行下班卡
+	--判断次日下班卡时间超过加班结束时间，增加一行下班卡
+
+
+	--3. 上班前加班单
+
+	select  @加班结束时间 = b.dOffTime ,@加班开始时间 = b.dDutyTime 
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+		and b.dOffTime <= @班次上班时间
+		and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 0
+	
+	declare @i上班前加班 int
+	select  @i上班前加班 = count(1)
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+		and  b.dOffTime <= @班次上班时间
+		and isnull(a.bOverDate,0) = 0 and  isnull(a.bOverDate2,0) = 0
+	
+	--上班前加班，且刷卡时间早于加班开始时间
+	if (@i上班前加班 > 0)
+	begin
+		if (DATEPART(hour,@刷卡时间) <  DATEPART(hour,@加班开始时间)
+			or (DATEPART(hour,@刷卡时间) =  DATEPART(hour,@加班开始时间) and DATEPART(MINUTE,@刷卡时间) <  DATEPART(MINUTE,@加班开始时间))
+		)
+		begin
+			select @i是否存在相同时间卡 = count(1)
+			from [_Get刷卡签卡数据] 
+			where cPsn_Num = @员工编号 and CONVERT(VARCHAR(10),dDateTime,120) = CONVERT(VARCHAR(10),@刷卡时间,120)
+				and DATEPART(hour,dDateTime) = DATEPART(hour,@加班开始时间) and DATEPART(MINUTE,dDateTime) = DATEPART(MINUTE,@加班开始时间)
+
+			if(@i是否存在相同时间卡 = 0)
+			begin
+				select @guid = newid()
+
+				insert into hr_tm_SignCardData
+				select  @guid, cPsn_Num, vCardNo
+					, cast(year(@刷卡时间) as varchar(4)) + '-' +  cast(month(@刷卡时间) as varchar(2)) + '-' +  cast(day(@刷卡时间) as varchar(2)) + ' ' + cast(DATEPART(hour,@加班开始时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@加班开始时间) as varchar(2))
+					,bDuty, bOverTime
+					,bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason
+					,dOldDateTime, iRecordId, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag
+					,cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+					,cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude,     cSource
+					,VoucherID, cExamineApproveType
+				FROM [_Get刷卡签卡数据]
+				where uRecordId = @uRecordId
+
+				insert into [dbo].[_KQJ](uRecordId,  sType)
+				values(@guid,'上班前加班补签卡')
+
+			end
+		end
+	end
+end
+else
+begin
+	--休息天有加班费员工加班,填写加班单17:00 实际打卡17:02,直接将数据更新成17:00
+	declare @i是否有加班单 int
+	
+	select  @i是否有加班单 = count(1)
+	from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+	where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+
+	--select @i是否有加班单
+
+	if(@i是否有加班单 > 0)
+	begin
+		select  @加班结束时间 = max(b.dOffTime) ,@加班开始时间 = min(b.dDutyTime )
+		from HR_TM_OverTimeVoucher a inner join  hr_tm_OverTimeresult b on a.VoucherID = b.VoucherID 
+		where a.iComputeType = 5 and cPsn_Num = @员工编号 and a.dJbDate = CONVERT(VARCHAR(10),@刷卡时间,120)
+			
+
+		if (
+			DATEPART(hour,@加班结束时间) < DATEPART(hour,@刷卡时间)
+			or (DATEPART(hour,@加班结束时间) = DATEPART(hour,@刷卡时间) and DATEPART(MINUTE,@加班结束时间) < DATEPART(MINUTE,@刷卡时间))
+			)
+			begin
+				update hr_tm_SignCardData set dDateTime = cast(year(@刷卡时间) as varchar(4)) + '-' +  cast(month(@刷卡时间) as varchar(2)) + '-' +  cast(day(@刷卡时间) as varchar(2)) + ' ' + cast(DATEPART(hour,@加班结束时间) as varchar(2)) + ':' + cast(DATEPART(MINUTE,@加班结束时间) as varchar(2))
+				where  uRecordId = @uRecordId
+			end
+	end
+	else
+	begin
+	--	责任制员工且在休息日上班的，删除刷卡数据
+		declare @是否责任制 varchar(50)
+
+		select @是否责任制 = isnull(chdefine1,'')
+		from hr_hi_person a 
+		where cPsn_Num = @员工编号
+
+		if(@是否责任制 = '是')
+		begin
+			declare @i是否休息日 int
+
+			if(datepart(weekday, @刷卡时间 - 1) = 6 or datepart(weekday, @刷卡时间 - 1) = 7)
+			begin
+				select @i是否休息日 = count(1) from hr_tm_RestDay where cCode = '01' and (rDateProperty = 0) 
+					and CONVERT(VARCHAR(10),@刷卡时间,120) = dRestDate
+				if(@i是否休息日 > 0)
+					set @i是否休息日 = 0 
+				else
+					set @i是否休息日 = 1
+			end
+			
+			if(@i是否休息日 = 1)
+				delete [dbo].[hr_tm_SignCardData] where uRecordId = @uRecordId
+		end
+
+	end
+
+
+end

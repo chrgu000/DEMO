@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "浩辰薪资凭证工具", "信息化管理系统\浩辰薪资凭证工具.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDLL", "ImportDLL\ImportDLL.csproj", "{17100FD5-0EC2-498A-9504-AD654AE90EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameBaseFunction", "FrameBaseFunction\FrameBaseFunction.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FrameBaseFunction\\FrameBaseFunction.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = FrameBaseFunction\\
+		SccProjectUniqueName2 = ImportDLL\\ImportDLL.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = ImportDLL\\
+		SccProjectUniqueName3 = 信息化管理系统\\浩辰薪资凭证工具.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = 信息化管理系统\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17100FD5-0EC2-498A-9504-AD654AE90EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17100FD5-0EC2-498A-9504-AD654AE90EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17100FD5-0EC2-498A-9504-AD654AE90EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17100FD5-0EC2-498A-9504-AD654AE90EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

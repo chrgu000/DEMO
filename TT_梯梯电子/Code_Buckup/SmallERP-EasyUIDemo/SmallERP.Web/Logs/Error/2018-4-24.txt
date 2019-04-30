@@ -1,0 +1,12 @@
+
+http://localhost:60308/WO/UpdateWorksOrders    09时19分03秒
+The UPDATE statement conflicted with the CHECK constraint "ck_wotype". The conflict occurred in database "smallerp", table "dbo.t_o_worksorders", column 'type'.
+The statement has been terminated.
+
+http://localhost:60308/WO/UpdateWorksOrders    09时21分44秒
+The UPDATE statement conflicted with the CHECK constraint "ck_wotype". The conflict occurred in database "smallerp", table "dbo.t_o_worksorders", column 'type'.
+The statement has been terminated.
+
+http://localhost:60308/WO/UpdateWorksOrders    09时23分04秒
+The UPDATE statement conflicted with the FOREIGN KEY SAME TABLE constraint "fk_woparent". The conflict occurred in database "smallerp", table "dbo.t_o_worksorders", column 'id'.
+The statement has been terminated.

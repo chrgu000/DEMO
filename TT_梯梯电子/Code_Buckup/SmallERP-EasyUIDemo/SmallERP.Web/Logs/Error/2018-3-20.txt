@@ -1,0 +1,19 @@
+
+http://localhost:60308/Report/UpdateMetadata    09时55分07秒
+Object reference not set to an instance of an object.
+
+http://localhost:60308/Report/AddMetadata    14时03分21秒
+The INSERT statement conflicted with the FOREIGN KEY constraint "fk_tradad_curr". The conflict occurred in database "smallerp", table "dbo.t_o_currency", column 'currid'.
+The statement has been terminated.
+
+http://localhost:60308/Report/AddMetadata    14时05分35秒
+Violation of UNIQUE KEY constraint 'ck_tauuid'. Cannot insert duplicate key in object 'dbo.t_o_tradersaddresses'. The duplicate key value is ().
+The statement has been terminated.
+
+http://localhost:60308/Report/AddMetadata    15时03分43秒
+The INSERT statement conflicted with the FOREIGN KEY constraint "fk_tradcont_tradad". The conflict occurred in database "smallerp", table "dbo.t_o_tradersaddresses".
+The statement has been terminated.
+
+http://localhost:60308/Report/AddMetadata    15时04分01秒
+The INSERT statement conflicted with the FOREIGN KEY constraint "fk_tradcont_tradad". The conflict occurred in database "smallerp", table "dbo.t_o_tradersaddresses".
+The statement has been terminated.

@@ -1,0 +1,366 @@
+﻿@{
+    ViewBag.Title = "BusinessParmsManage";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@model SmallERP.Web.Controllers.BusinessParmsController.BusinessParmsManageEntity
+@section CSS{
+    <style type="text/css">
+        .table-border {
+            border-top: 1px solid #C7E6CE;
+            border-left: 1px solid #C7E6CE;
+        }
+
+            .table-border td {
+                border-bottom: 1px solid #C7E6CE;
+                border-right: 1px solid #C7E6CE;
+                padding: 5px;
+            }
+
+        .tabler-border td select {
+            border: 1px solid #95B8E7;
+        }
+
+        #tbAdd {
+            border-collapse: collapse;
+        }
+
+            #tbAdd tr td {
+                border: 1px solid #CFCFCF;
+                padding-left: 10px;
+                height: 30px;
+            }
+    </style>
+}
+<body class="easyui-layout">
+    <!-- 查询条件 -->
+    <div data-options="region:'north'" style="height:34px" border="false">
+        <form id="queryform" method="post">
+            <table>
+                <tr>
+                    <td>Category：</td>
+                    <td>
+                        <input class="easyui-combobox" type="text" id="queryCategory" data-options="width:240" />
+                    </td>
+                    <td>Item：</td>
+                    <td>
+                        <input class="easyui-combobox" type="text" id="queryItem" data-options="width:240" />
+                    </td>
+                    <td>
+                        <a id="btnQuery" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                        <a id="btnReload" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px;">Reset</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 分类列表 -->
+    <div data-options="region:'center'" style="padding:2px;" border="false">
+        <table id="businessParms_grid" class="easyui-datagrid" style="border-bottom:none;" fit="true" title="Business Parms" data-options="rownumbers:true,singleSelect:true,collapsible:false"></table>
+    </div>
+    <!-- 弹窗（添加） -->
+    <div id="win_add" class="easyui-window" title="Business Parms" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false" style="width:350px;height:320px;">
+        <form id="form_BusinessParms" method="post">
+            <input type="hidden" id="hfID" name="ID" />
+            <input type="hidden" id="hfUserID" name="UserID" value="@Model.CurrentUserID" />
+            <input type="hidden" id="hfModule" name="hfModule" value="@Model.Module" />
+            <table cellpadding="5">
+                <tr>
+                    <td style="text-align:right;">Category:</td>
+                    <td>
+                        <input class="easyui-combobox" name="category" id="cbCategory" data-options="required:true" style="width:200px;" />
+                        @*<input class="easyui-textbox" maxlength="20" type="text" name="category" id="Category" data-options="required:true,validType:'length[0,16]'" style="width:200px;" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Item:</td>
+                    <td>
+                        <input class="easyui-textbox" maxlength="20" type="text" name="item" id="Item" data-options="required:true,validType:'length[0,50]'" style="width:200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Default Value:</td>
+                    <td>
+                        <input class="easyui-textbox" maxlength="20" type="text" name="defaultval" id="DefaultVal" data-options="validType:'length[0,50]'" style="width:200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Value1:</td>
+                    <td>
+                        <input class="easyui-textbox" maxlength="20" type="text" name="value1" id="Value1" data-options="validType:'length[0,50]'" style="width:200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Value2:</td>
+                    <td>
+                        <input class="easyui-textbox" maxlength="20" type="text" name="value2" id="Value2" data-options="validType:'length[0,50]'" style="width:200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Value3:</td>
+                    <td>
+                        <input class="easyui-textbox" maxlength="20" type="text" name="value3" id="Value3" data-options="validType:'length[0,50]'" style="width:200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Module:</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(Model.Module))
+                        {
+                            <input class="easyui-textbox" maxlength="20" type="text" name="module" id="Module" data-options="validType:'length[0,50]'" style="width:200px;" value="@Model.Module" readonly="readonly" />
+                        }
+                        else
+                        {
+                            <input class="easyui-textbox" maxlength="20" type="text" name="module" id="Module" data-options="validType:'length[0,50]'" style="width:200px;" />
+                        }
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align:center; margin-top:10px;">
+                <a id="btnSubmit" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="width:80px;">Save</a>
+                <a id="btnCancel" href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" style="width:80px;">Close</a>
+            </div>
+        </form>
+    </div>
+</body>
+@section JS{
+    <script src="~/Scripts/Common.js"></script>
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+    <script type="text/javascript">
+
+        //路径地址
+        var actionUrl = {
+            GetList: '/BusinessParms/GetBusinessParmsList',
+            GetCategoryForComboBox: '/BusinessParms/GetCategoryForComboBox',
+            GetItemForComboBox: '/BusinessParms/GetItemForComboBox',
+            AddBusinessParms: '/BusinessParms/AddBusinessParms',
+            UpdateBusinessParms: '/BusinessParms/UpdateBusinessParms',
+            DeleteBusinessParms: '/BusinessParms/DeleteBusinessParms'
+        };
+
+        $(document).ready(function () {
+
+            function StringBuffer() {
+                this.__strings__ = [];
+            };
+            StringBuffer.prototype.append = function (str) {
+                this.__strings__.push(str);
+            };
+            StringBuffer.prototype.toString = function () {
+                return this.__strings__.join('');
+            };
+
+            //初始化Category下拉框
+            $("#queryCategory").combobox({
+                mode: 'remote',
+                editable: true,
+                url: actionUrl.GetCategoryForComboBox,
+                valueField: 'category',
+                textField: 'category',
+                onChange: function () {
+                    //初始化Item下拉框
+                    $("#queryItem").combobox({
+                        mode: 'remote',
+                        editable: true,
+                        url: actionUrl.GetItemForComboBox + "?category=" + $("#queryCategory").combobox('getValue'),
+                        valueField: 'item',
+                        textField: 'item'
+                    });
+                }
+            });
+
+            $("#cbCategory").combobox({
+                mode: 'remote',
+                editable: true,
+                url: actionUrl.GetCategoryForComboBox,
+                valueField: 'category',
+                textField: 'category'
+            });
+
+
+            $('#businessParms_grid').datagrid({
+                url: actionUrl.GetList + "?module=" + $("#hfModule").val(),
+                //idField: 'ID',
+                loadMsg: 'loading...',
+                remoteSort: true,
+                sortName: 'category',
+                sortOrder: 'asc',
+                pagination: true,
+                pageSize: 15,
+                pageList: [15, 20, 30, 50],
+                rowStyler: function (index, row) {
+                },
+                onLoadSuccess: function (data) {
+                    //判断是否禁用Delete按钮
+                    if ($("#hfModule").val() == "" || "@Model.CurrentUserID" == "admin") {
+                        $('#lbDelete').linkbutton('enable');
+                    }
+                    else {
+                        $('#lbDelete').linkbutton('disable');
+                    }
+                },
+                columns: [
+                    [
+                        { field: 'id', checkbox: true, },
+                        { field: 'category', title: 'Category', width: 150, align: 'center', sortable: true },
+                        { field: 'item', title: 'Item', width: 150, align: 'center', sortable: true },
+                        { field: 'defaultval', title: 'Default Value', width: 150, align: 'center', sortable: true },
+                        { field: 'value1', title: 'Value1', width: 120, align: 'center', sortable: true },
+                        { field: 'value2', title: 'Value2', width: 120, align: 'center', sortable: true },
+                        { field: 'value3', title: 'Value3', width: 120, align: 'center', sortable: true },
+                        { field: 'module', title: 'Module', width: 100, align: 'center', sortable: true },
+                        { field: 'createdby', title: 'Created By', width: 150, align: 'center', sortable: true },
+                        {
+                            field: 'createddate',
+                            title: 'Created Date',
+                            width: 175,
+                            formatter: function (value, row, index) {
+                                var otime = Common.formatterDateTime(value);
+                                return otime;
+                            },
+                            align: 'center',
+                            sortable: true
+                        },
+                        { field: 'modifiedby', title: 'Modified By', width: 150, align: 'center' },
+                        {
+                            field: 'modifieddate',
+                            title: 'Modified Date',
+                            width: 175,
+                            formatter: function (value, row, index) {
+                                var otime = Common.formatterDateTime(value);
+                                return otime;
+                            },
+                            align: 'center',
+                            sortable: true
+                        },
+                    ]
+                ],
+                toolbar: [{
+                    iconCls: 'icon-add',
+                    text: 'New',
+                    handler: function () {
+                        $('#win_add').window({
+                            title: 'Add Business Parms',
+                            iconCls: 'icon-add'
+                        });
+                        // 重置form，弹出window
+                        $('#form_BusinessParms').form('reset');
+                        $("#hfID").val("");
+                        $('#win_add').window('open');
+                    }
+                }, '-', {
+                    iconCls: 'icon-edit',
+                    text: 'Edit',
+                    handler: function () {
+                        var row = $('#businessParms_grid').datagrid('getSelected');
+                        if (row == null) {
+                            $.messager.alert('Message', 'Please select the business parm you need to edit.');
+                            return false;
+                        }
+
+                        $('#win_add').window({
+                            title: 'Edit Business Parms',
+                            iconCls: 'icon-edit'
+                        });
+                        $('#form_BusinessParms').form('load', row);
+                        $("#hfID").val(row.id);
+                        // 弹出window
+                        $('#win_add').window('open');
+                    }
+                }, '-', {
+                    iconCls: 'icon-cancel',
+                    id: 'lbDelete',
+                    text: 'Delete',
+                    disabled: true,
+                    handler: function () {
+                        var row = $('#businessParms_grid').datagrid('getSelected');
+                        if (row == null) {
+                            $.messager.alert('Message', 'Please select the business parm you need to delete.');
+                            return false;
+                        }
+
+                        $.messager.confirm('Confirm', 'Are you sure want to delete this business parm?', function (r) {
+                            if (r) {
+                                $.post(actionUrl.DeleteBusinessParms, { id: row.id }, function (data) {
+                                    if (typeof data == 'string') {
+                                        data = $.parseJSON(data);
+                                    }
+                                    console.log(data);
+                                    if (data.success) {
+                                        $.messager.alert('Message', data.rows);
+                                        grid.reloadData();
+                                        $('#businessParms_grid').datagrid('clearSelections');
+                                    } else {
+                                        $.messager.alert('Error', data.message);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }]
+            });
+
+            $('#btnQuery').click(function () {
+                grid.reloadData();
+            });
+
+            $('#btnReload').click(function () {
+                $('#queryform').form('reset');
+                grid.reloadData();
+            });
+
+            var grid = {
+                //页面数据重置
+                resetForm: function () {
+                },
+
+                //重置查询条件
+                reloadData: function () {
+                    $('#businessParms_grid').datagrid('load', {
+                        category: $('#queryCategory').combobox("getValue"),
+                        item: $('#queryItem').combobox("getValue")
+                    });
+                }
+            };
+
+            // 点击窗体的提交按钮
+            $('#btnSubmit').click(function () {
+                $('#form_BusinessParms').form('submit', {
+                    url: $("#hfID").val().length == 0 ? actionUrl.AddBusinessParms : actionUrl.UpdateBusinessParms,
+                    onSubmit: function (param) {
+                        var isValid = $(this).form('validate');
+                        if (!isValid) return false;
+
+                        addMaskIndex = layer.msg('Is being processed, please later...', { icon: 16, time: 0, shade: [0.4, '#ccc'] });
+                    },
+                    success: function (result) {
+                        if (typeof result == 'string') {
+                            result = $.parseJSON(result);
+                        }
+                        if (result.success) {
+                            $('#win_add').dialog('close');
+                            // 刷新数据
+                            $.messager.alert('Message', "Successful.");
+                            grid.reloadData();
+                            layer.close(addMaskIndex);
+                            $("#cbCategory").combobox({
+                                mode: 'remote',
+                                editable: true,
+                                url: actionUrl.GetCategoryForComboBox,
+                                valueField: 'category',
+                                textField: 'category'
+                            });
+                        } else {
+                            layer.close(addMaskIndex);
+                            $.messager.alert('Error', result.message);
+                        }
+                    }
+                });
+            });
+            // 点击窗体的取消按钮，关闭window
+            $('#btnCancel').click(function () {
+                $('#win_add').window('close');
+            });
+
+        });
+    </script>
+}

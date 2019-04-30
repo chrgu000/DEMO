@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>业务</RootNamespace>
+    <AssemblyName>业务</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.Wizard, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v11.1.Designer, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1.Extensions, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1.UI, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\_WorkGroup.cs" />
+    <Compile Include="DAL\工作台测量.cs" />
+    <Compile Include="DAL\检验值.cs" />
+    <Compile Include="DAL\发射器档案设置.cs" />
+    <Compile Include="DAL\检验标准档案.cs" />
+    <Compile Include="Frm图表筛选条件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm图表筛选条件.Designer.cs">
+      <DependentUpon>Frm图表筛选条件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\_WorkGroup.cs" />
+    <Compile Include="Model\工作台测量.cs" />
+    <Compile Include="Model\检验值.cs" />
+    <Compile Include="Model\发射器档案设置.cs" />
+    <Compile Include="Frm检验值.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检验值.designer.cs">
+      <DependentUpon>Frm检验值.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工作台测量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工作台测量.designer.cs">
+      <DependentUpon>Frm工作台测量.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检验标准档案.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检验标准档案.designer.cs">
+      <DependentUpon>Frm检验标准档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\检验标准档案.cs" />
+    <Compile Include="Frm工作台测量数据列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工作台测量数据列表.designer.cs">
+      <DependentUpon>Frm工作台测量数据列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm图表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm图表.designer.cs">
+      <DependentUpon>Frm图表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检验图表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检验图表.designer.cs">
+      <DependentUpon>Frm检验图表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检验图表筛选条件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检验图表筛选条件.Designer.cs">
+      <DependentUpon>Frm检验图表筛选条件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检验图表数据修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检验图表数据修改.Designer.cs">
+      <DependentUpon>Frm检验图表数据修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="基础档案\FrmWorkGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="基础档案\FrmWorkGroup.designer.cs">
+      <DependentUpon>FrmWorkGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="业务\Frm发货计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划.designer.cs">
+      <DependentUpon>Frm发货计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_Add.designer.cs">
+      <DependentUpon>Frm发货计划_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划列表.designer.cs">
+      <DependentUpon>Frm发货计划列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="业务\Frm发货计划_New.designer.cs">
+      <DependentUpon>Frm发货计划_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm发射器档案设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm发射器档案设置.designer.cs">
+      <DependentUpon>Frm发射器档案设置.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm图表筛选条件.resx">
+      <DependentUpon>Frm图表筛选条件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检验值.resx">
+      <DependentUpon>Frm检验值.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工作台测量.resx">
+      <DependentUpon>Frm工作台测量.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检验标准档案.resx">
+      <DependentUpon>Frm检验标准档案.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工作台测量数据列表.resx">
+      <DependentUpon>Frm工作台测量数据列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm图表.resx">
+      <DependentUpon>Frm图表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检验图表.resx">
+      <DependentUpon>Frm检验图表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检验图表筛选条件.resx">
+      <DependentUpon>Frm检验图表筛选条件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检验图表数据修改.resx">
+      <DependentUpon>Frm检验图表数据修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="基础档案\FrmWorkGroup.resx">
+      <DependentUpon>FrmWorkGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划.resx">
+      <DependentUpon>Frm发货计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划_Add.resx">
+      <DependentUpon>Frm发货计划_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划列表.resx">
+      <DependentUpon>Frm发货计划列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="业务\Frm发货计划_New.resx">
+      <DependentUpon>Frm发货计划_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm发射器档案设置.resx">
+      <DependentUpon>Frm发射器档案设置.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxDSOFramer">
+      <Guid>{00460180-9E5E-11D5-B7C8-B8269041DD57}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="DSOFramer">
+      <Guid>{00460180-9E5E-11D5-B7C8-B8269041DD57}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,289 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F0CB293-E8FC-425C-9A07-1195306E50B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BarCode</RootNamespace>
+    <AssemblyName>BarCode</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>条形码货位管理</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>demo.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm材料出库单核查.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm材料出库单核查.Designer.cs">
+      <DependentUpon>Frm材料出库单核查.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm物料查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm物料查询.designer.cs">
+      <DependentUpon>Frm物料查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm登录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm登录.Designer.cs">
+      <DependentUpon>Frm登录.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm货位查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm货位查询.designer.cs">
+      <DependentUpon>Frm货位查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm采购入库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm采购入库单.Designer.cs">
+      <DependentUpon>Frm采购入库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm材料出库单核查.resx">
+      <DependentUpon>Frm材料出库单核查.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm物料查询.resx">
+      <DependentUpon>Frm物料查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm登录.resx">
+      <DependentUpon>Frm登录.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm货位查询.resx">
+      <DependentUpon>Frm货位查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm采购入库单.resx">
+      <DependentUpon>Frm采购入库单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm采购入库单_Edit.resx">
+      <DependentUpon>Frm采购入库单_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm材料出库单.resx">
+      <DependentUpon>Frm材料出库单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm材料出库单_Edit.resx">
+      <DependentUpon>Frm材料出库单_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm产品入库单.resx">
+      <DependentUpon>Frm产品入库单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm产品入库单_Edit.resx">
+      <DependentUpon>Frm产品入库单_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm销售出库单.resx">
+      <DependentUpon>Frm销售出库单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm销售出库单_Edit.resx">
+      <DependentUpon>Frm销售出库单_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm盘点.resx">
+      <DependentUpon>Frm盘点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm盘点_Edit.resx">
+      <DependentUpon>Frm盘点_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm货位调拨.resx">
+      <DependentUpon>Frm货位调拨.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm货位调拨_Edit.resx">
+      <DependentUpon>Frm货位调拨_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm材料出库单行.resx">
+      <DependentUpon>Frm材料出库单行.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Frm采购入库单_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm采购入库单_Edit.Designer.cs">
+      <DependentUpon>Frm采购入库单_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm材料出库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm材料出库单.Designer.cs">
+      <DependentUpon>Frm材料出库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm材料出库单_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm材料出库单_Edit.Designer.cs">
+      <DependentUpon>Frm材料出库单_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm产品入库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm产品入库单.Designer.cs">
+      <DependentUpon>Frm产品入库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm产品入库单_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm产品入库单_Edit.Designer.cs">
+      <DependentUpon>Frm产品入库单_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm销售出库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm销售出库单.Designer.cs">
+      <DependentUpon>Frm销售出库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm销售出库单_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm销售出库单_Edit.Designer.cs">
+      <DependentUpon>Frm销售出库单_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm盘点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm盘点.Designer.cs">
+      <DependentUpon>Frm盘点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm盘点_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm盘点_Edit.Designer.cs">
+      <DependentUpon>Frm盘点_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm货位调拨.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm货位调拨.Designer.cs">
+      <DependentUpon>Frm货位调拨.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm货位调拨_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm货位调拨_Edit.Designer.cs">
+      <DependentUpon>Frm货位调拨_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm材料出库单行.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm材料出库单行.Designer.cs">
+      <DependentUpon>Frm材料出库单行.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="demo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseDllMobile\BaseDllMobile.csproj">
+      <Project>{B3BA5934-13F0-4E05-A963-20273C373009}</Project>
+      <Name>BaseDllMobile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MobileBaseDLL\MobileBaseDLL.csproj">
+      <Project>{E85D0D6A-CA3B-4E3E-99DF-B76B291BDCDD}</Project>
+      <Name>MobileBaseDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

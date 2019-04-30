@@ -1,0 +1,250 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@model SmallERP.Web.Controllers.ManageController.IndexEntity
+@section CSS{
+    <style type="text/css">
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        /** 解决 center 部分引起的纵向滚动条的问题 */
+        .panel-body {
+            overflow-y: hidden;
+        }
+
+        #header-action {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            #header-action li {
+                float: left;
+                margin-left: 10px;
+                line-height: 26px;
+                cursor: pointer;
+                font-family: 黑体;
+                font-size: 14px;
+            }
+
+        .btn {
+            border-radius: 5px;
+            width: 70px;
+            text-align: center;
+        }
+
+        #btn_changepassword {
+            background-color: #d4f0ff;
+            color: #397897;
+        }
+
+        #btn_exit {
+            background-color: #397897;
+            color: white;
+        }
+    </style>
+}
+@section JS{
+    <script type="text/javascript">
+        /**
+         * 添加tab页面
+         * param {string} title tab标题
+         * param {string} url iframe的url地址
+         * param {iconCls} 图标 css 类
+         */
+        function addTab(title, url, iconCls) {
+            if ($('#tabs').tabs('exists', title)) {
+                $('#tabs').tabs('select', title);
+            } else {
+                var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;border:none;"></iframe>';
+                $('#tabs').tabs('add', {
+                    title: title,
+                    content: content,
+                    border: false,
+                    closable: true,
+                    iconCls: iconCls
+                });
+            }
+        }
+
+        //父页面JS方法
+        function closeTab(title) {
+            if ($('#tabs').tabs('exists', title)) {
+                $('#tabs').tabs('close', title)
+            }
+        }
+
+        $(function () {
+            //登陆成功后看到的页面
+
+            var actionUrl = {
+                GetMenus: '/Manage/GetMenus',
+                ChangePassword: '/Manage/ChangePassword',
+                Logout: '/Users/Logout'
+            };
+
+            $.post(actionUrl.GetMenus, function (result) {
+                if (typeof result == 'string')
+                    result = $.parseJSON(result);
+
+                var len = result.length;
+                for (var i = 0; i < len; i++) {
+                    var acc = result[i];
+                    var panelId = "acc-" + acc.id;
+                    var treeId = "t-" + acc.id;
+
+                    $('#menulist').accordion('add', {
+                        title: acc.text,
+                        iconCls: acc.iconCls,
+                        content: '<ul id="' + treeId + '" class="easyui-tree"></ul>',
+                        selected: (i == -1)
+                    });
+
+                    $('#' + treeId).tree({
+                        data: acc.children,
+                        lines: true,
+                        onClick: function (node) {
+                            // 非子节点时，展开或者关闭
+                            if (node.children.length > 0) {
+                                if (node.state == "open") {
+                                    $('#' + treeId).tree('collapse', node.target);
+                                } else {
+                                    $('#' + treeId).tree('expand', node.target);
+                                }
+                            } else {
+                                if (node.attributes.url != null || node.attributes.url != '#') {
+                                    addTab(node.text, node.attributes.url, node.iconCls);
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+
+            $('#dialog_changepwd').dialog({
+                buttons: [{
+                    iconCls: 'icon-ok',
+                    text: 'Submit',
+                    handler: function () {
+                        $('#form_changepwd').form('submit', {
+                            url: actionUrl.ChangePassword,
+                            onSubmit: function () {
+                                var isValid = $('#form_changepwd').form('validate');
+                                if (!isValid) return false;
+
+                                // 密码验证
+                                if ($('#txtOldPwd').val() == null || $('#txtOldPwd').val().length == 0) {
+                                    $.messager.alert('Info', 'Please enter your old password.');
+                                    return false;
+                                }
+
+                                if ($('#txtNewPwd').val().length < 6) {
+                                    $.messager.alert('Info', 'New password lengh must be over 6 numbers including letters.');
+                                    return false;
+                                }
+                                if ($('#txtNewPwd').val() != $('#txtNewPwd2').val()) {
+                                    $.messager.alert('Info', 'The passwords you typed do not match.');
+                                    return false;
+                                }
+                            },
+                            success: function (result) {
+                                result = $.parseJSON(result);
+                                if (result.success) {
+                                    $('#dialog_changepwd').window('close');
+                                    $.messager.alert('信息', result.extraData, 'info');
+                                } else {
+                                    $.messager.alert('Error', result.message);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    iconCls: 'icon-cancel',
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#dialog_changepwd').dialog('close');
+                    }
+                }]
+            });
+
+            // 点击修改密码按钮
+            $('#btn_changepassword').click(function () {
+                $('#form_changepwd').form('reset');
+                $('#dialog_changepwd').dialog('open');
+            });
+
+            // 退出登录
+            $('#btn_exit').click(function () {
+                $.messager.confirm('Confirm', 'Are you sure want to logout?', function (r) {
+                    if (r) {
+                        $.post(actionUrl.Logout, function (result) {
+                            if (result.success) {
+                                window.location.href = "/Users/Login";
+                            } else {
+                                $.messager.alert('Error', result.message);
+                            }
+                        });
+                    }
+                });
+            });
+
+            //判断是否需要打开tab页
+            if ("@Model.TabTitle" != "" && "@Model.TabUrl" != "") {
+                addTab("@Model.TabTitle", "@Model.TabUrl", '');
+            }
+            else {
+                //addTab("Index", "/Manage/TabIndex", '');
+                
+            }
+        });
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height: 50px; background-image: url('../../Images/site_top.png')" border="false">
+        <div style="float:left; margin: 5px 0px 5px 20px; height: 40px; width: 34px; ">
+        </div>
+        <div style="float: left; margin: 5px 0px 5px 70px; height: 40px; color: white; font-family: 黑体; font-size:29px; line-height:40px; ">
+        </div>
+        <div style="float: right; margin:12px 40px 12px 0px; height:30px;">
+            <ul id="header-action">
+                <li style="color: #0d3a4e;">Welcome  @(((FormsIdentity)User.Identity).Ticket.UserData):@(((FormsIdentity)User.Identity).Ticket.Name) </li>
+                <li class="btn" style="width:120px" id="btn_changepassword">change password</li>
+                <li class="btn" id="btn_exit">logout</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 低部 -->
+    @*<div data-options="region:'south'" style="height:22px; text-align:center; line-height:22px;"></div>*@
+    <!-- 左侧菜单导航 -->
+    <div data-options="region:'west',split:true,iconCls:'icon-menu',hideCollapsedContent:false" title="Navigation" style="width:200px;">
+        <div id="menulist" class="easyui-accordion" border="false" fit="true">
+        </div>
+    </div>
+    <!-- tab内容页 -->
+    <div data-options="region:'center'" @*style="background-image: url('/Content/images/welcome.png'); background-size:100% 100%;"*@>
+        <div id="tabs" fit="true" class="easyui-tabs" border="false" style="width: 100%; padding: 0;">
+        </div>
+    </div>
+    <!-- 修改密码 window -->
+    <div id="dialog_changepwd" class="easyui-dialog" title="Change password" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false" style="width:320px;height:200px;padding:10px;">
+        <form id="form_changepwd" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td style="text-align: right;">Old password:</td>
+                    <td><input class="easyui-textbox" maxlength="30" type="password" name="OldPassword" id="txtOldPwd" data-options="required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">New password:</td>
+                    <td><input class="easyui-textbox" maxlength="30" type="password" name="NewPassword" id="txtNewPwd" data-options="required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Confirm new password:</td>
+                    <td><input class="easyui-textbox" maxlength="30" type="password" name="NewPassword2" id="txtNewPwd2" data-options="required:true" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,14 @@
+
+http://localhost:60308/PartMaster/DeletePartMaster    09时53分46秒
+The DELETE statement conflicted with the REFERENCE constraint "fk_stkedpart_pm". The conflict occurred in database "smallerp", table "dbo.t_o_stockedparts", column 'partid'.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/DeletePartMaster    16时05分55秒
+The DELETE statement conflicted with the REFERENCE constraint "fk_stkedpart_pm". The conflict occurred in database "smallerp", table "dbo.t_o_stockedparts", column 'partid'.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时48分18秒
+SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时49分10秒
+SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.

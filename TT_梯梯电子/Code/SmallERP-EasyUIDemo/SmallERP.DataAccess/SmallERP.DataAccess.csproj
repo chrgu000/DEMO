@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80DD938C-3299-43C1-B532-BCCCD7CAECA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmallERP.DataAccess</RootNamespace>
+    <AssemblyName>SmallERP.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminData.cs" />
+    <Compile Include="TK_Trialkit_CalculateData.cs" />
+    <Compile Include="TK_WO_Materials_SumData.cs" />
+    <Compile Include="TK_Trialkitting_ErrorInfoData.cs" />
+    <Compile Include="TK_Trialkit_PartTempData.cs" />
+    <Compile Include="TK_Trialkit_Trial_UploadData.cs" />
+    <Compile Include="TK_Base_ItemNo_ExcludeData.cs" />
+    <Compile Include="TK_CurrentStockData.cs" />
+    <Compile Include="TK_BOMData.cs" />
+    <Compile Include="PublicData.cs" />
+    <Compile Include="TK_ListData.cs" />
+    <Compile Include="TK_Base_ItemNo_CycleData.cs" />
+    <Compile Include="TK_WOData.cs" />
+    <Compile Include="TK_POData.cs" />
+    <Compile Include="TK_NetRequirementData.cs" />
+    <Compile Include="TK_PeriodData.cs" />
+    <Compile Include="TK_Base_Calendar_DayoffData.cs" />
+    <Compile Include="TK_TrialkittingsData.cs" />
+    <Compile Include="TK_TrialkittingData.cs" />
+    <Compile Include="TK_Base_CalendarPeriodData.cs" />
+    <Compile Include="PADData.cs" />
+    <Compile Include="PMGatingData.cs" />
+    <Compile Include="MenuData.cs" />
+    <Compile Include="CurrentStockData.cs" />
+    <Compile Include="BuyerGatingData.cs" />
+    <Compile Include="PermissionData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CycleData.cs" />
+    <Compile Include="RoleData.cs" />
+    <Compile Include="t_business_parmsData.cs" />
+    <Compile Include="t_common_attachmentData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmallERP.Common\SmallERP.Common.csproj">
+      <Project>{24216c39-0517-4aa0-9aa5-bab29b60d3fa}</Project>
+      <Name>SmallERP.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmallERP.DBUtility\SmallERP.DBUtility.csproj">
+      <Project>{de729fba-a050-40a3-ae20-380d3a39263f}</Project>
+      <Name>SmallERP.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmallERP.Domain\SmallERP.Domain.csproj">
+      <Project>{60780769-1f31-4d82-b788-40da7629fbea}</Project>
+      <Name>SmallERP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmallERP.Entity\SmallERP.Entity.csproj">
+      <Project>{eca88ba2-79ff-4861-9a05-b25cb912d202}</Project>
+      <Name>SmallERP.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

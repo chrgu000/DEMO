@@ -1,0 +1,20 @@
+
+服务器administrator 密码 Gionee11 
+
+数据库 SA 密码 Gionee11 
+
+
+服务器 Teamivew ID号： 102460016 密码 Gionee11 
+
+金立服务器固定IP地址：125.25.54.52
+
+远程地址：http://125.25.54.52:8088
+
+anydesk ID :gserver-78@ad  密码 Gionee11 
+
+
+mg0046
+
+rrwvjw8b
+
+

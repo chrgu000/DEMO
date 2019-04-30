@@ -1,0 +1,36 @@
+﻿<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.ASPxGridView.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+<dx:ASPxGridView  runat="server"  CssClass="table"  AutoGenerateColumns="True"   Width="100%"
+            CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
+            <ClientSideEvents Init="OnInit"  EndCallback="OnEndCallback"/><%-- --%>
+            <SettingsBehavior   ConfirmDelete="True" AllowFocusedRow="True"  AllowSelectByRowClick="True" AllowMultiSelection="True" /><%--删除提示  允许选中行  允许选择多行  --%>
+            <SettingsText ConfirmDelete="是否删除?" />
+            <%--<SettingsLoadingPanel ImagePosition="Top" EmptyDataRow="" FilterBarClear="清除"  HeaderFilterShowAll="显示全部" CommandCancel="返回" CommandClearFilter="筛选2" ConfirmDelete="删除"  FilterBarCreateFilter="筛选" FilterControlPopupCaption="筛选页面" /> --%>
+            <SettingsEditing  Mode="Inline" NewItemRowPosition="Bottom"/><%--修改行  在当前行上直接编辑  新增行在最后--%>
+            <Settings ShowHeaderFilterButton="True"  ShowFooter="True" ShowVerticalScrollBar="True" ShowHorizontalScrollBar="True" /><%--VerticalScrollBarStyle="Virtual"--%>
+            <SettingsPager PageSize="50" />
+            <%--ShowEmptyDataRows="True" --%>
+            <%--<Settings ShowTitlePanel="true" />--%>
+
+        <%--样式
+        <Images SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+            <LoadingPanelOnStatusBar Url="~/App_Themes/BlackGlass/GridView/gvLoadingOnStatusBar.gif">
+            </LoadingPanelOnStatusBar>
+            <LoadingPanel Url="~/App_Themes/BlackGlass/GridView/Loading.gif">
+            </LoadingPanel>
+        </Images>
+        <Styles CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" 
+            CssPostfix="BlackGlass">
+            <Header ImageSpacing="5px" SortingImageSpacing="5px">
+            </Header>
+        </Styles>
+        <ImagesFilterControl>
+            <LoadingPanel Url="~/App_Themes/BlackGlass/Editors/Loading.gif">
+            </LoadingPanel>
+        </ImagesFilterControl>
+        <StylesEditors>
+            <CalendarHeader Spacing="1px">
+            </CalendarHeader>
+            <ProgressBar Height="25px">
+            </ProgressBar>
+        </StylesEditors>--%>
+        </dx:ASPxGridView>

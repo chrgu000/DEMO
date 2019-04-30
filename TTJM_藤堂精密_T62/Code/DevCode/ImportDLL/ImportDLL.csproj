@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55BBED3-F371-4D9F-BAF6-30C5AF8BD7F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImportDLL</RootNamespace>
+    <AssemblyName>ImportDLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\out\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEquipment.designer.cs">
+      <DependentUpon>FrmEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产订单列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产订单列表.Designer.cs">
+      <DependentUpon>Frm生产订单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmWorkProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWorkProcess.designer.cs">
+      <DependentUpon>FrmWorkProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessRoute.designer.cs">
+      <DependentUpon>FrmProcessRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWorkGroupPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWorkGroupPeople.designer.cs">
+      <DependentUpon>FrmWorkGroupPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产订单工艺路线.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产订单工艺路线.designer.cs">
+      <DependentUpon>Frm生产订单工艺路线.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm存货工艺路线.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm存货工艺路线.designer.cs">
+      <DependentUpon>Frm存货工艺路线.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产订单中转箱.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产订单中转箱.designer.cs">
+      <DependentUpon>Frm生产订单中转箱.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产日报.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产日报.designer.cs">
+      <DependentUpon>Frm生产日报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产日报订单查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产日报订单查询.designer.cs">
+      <DependentUpon>Frm生产日报订单查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产日报统计表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产日报统计表.designer.cs">
+      <DependentUpon>Frm生产日报统计表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm工序日报.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm工序日报.designer.cs">
+      <DependentUpon>Frm工序日报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm基础档案列表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm基础档案列表.designer.cs">
+      <DependentUpon>Frm基础档案列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm列表参照.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm列表参照.designer.cs">
+      <DependentUpon>Frm列表参照.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BaseDataList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BaseDataList.designer.cs">
+      <DependentUpon>Frm_BaseDataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCostInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCostInfo.designer.cs">
+      <DependentUpon>FrmCostInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCostDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCostDepartment.designer.cs">
+      <DependentUpon>FrmCostDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm成本费用登记_人员工资.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm成本费用登记_人员工资.designer.cs">
+      <DependentUpon>Frm成本费用登记_人员工资.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm成本费用登记_制造费用.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm成本费用登记_制造费用.designer.cs">
+      <DependentUpon>Frm成本费用登记_制造费用.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm成本费用登记_其它.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm成本费用登记_其它.designer.cs">
+      <DependentUpon>Frm成本费用登记_其它.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm成本产品数量核对表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm成本产品数量核对表.designer.cs">
+      <DependentUpon>Frm成本产品数量核对表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm在产品盘点表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm在产品盘点表.designer.cs">
+      <DependentUpon>Frm在产品盘点表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm制造票打印.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm制造票打印.designer.cs">
+      <DependentUpon>Frm制造票打印.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm历史条码打印.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm历史条码打印.designer.cs">
+      <DependentUpon>Frm历史条码打印.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSmartUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSmartUser.designer.cs">
+      <DependentUpon>FrmSmartUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产订单产品工序.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产订单产品工序.designer.cs">
+      <DependentUpon>Frm生产订单产品工序.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm车间看板.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm车间看板.designer.cs">
+      <DependentUpon>Frm车间看板.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm车间工序日报.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm车间工序日报.designer.cs">
+      <DependentUpon>Frm车间工序日报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm产品工序.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm产品工序.designer.cs">
+      <DependentUpon>Frm产品工序.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAccess.designer.cs">
+      <DependentUpon>FrmAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产执行统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产执行统计.designer.cs">
+      <DependentUpon>Frm生产执行统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm生产执行统计_工序.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产执行统计_工序.designer.cs">
+      <DependentUpon>Frm生产执行统计_工序.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmEquipment.resx">
+      <DependentUpon>FrmEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWorkProcess.resx">
+      <DependentUpon>FrmWorkProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcessRoute.resx">
+      <DependentUpon>FrmProcessRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWorkGroupPeople.resx">
+      <DependentUpon>FrmWorkGroupPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单列表.resx">
+      <DependentUpon>Frm生产订单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单工艺路线.resx">
+      <DependentUpon>Frm生产订单工艺路线.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm存货工艺路线.resx">
+      <DependentUpon>Frm存货工艺路线.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单中转箱.resx">
+      <DependentUpon>Frm生产订单中转箱.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产日报.resx">
+      <DependentUpon>Frm生产日报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产日报订单查询.resx">
+      <DependentUpon>Frm生产日报订单查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产日报统计表.resx">
+      <DependentUpon>Frm生产日报统计表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm工序日报.resx">
+      <DependentUpon>Frm工序日报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm基础档案列表.resx">
+      <DependentUpon>Frm基础档案列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm列表参照.resx">
+      <DependentUpon>Frm列表参照.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BaseDataList.resx">
+      <DependentUpon>Frm_BaseDataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCostInfo.resx">
+      <DependentUpon>FrmCostInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCostDepartment.resx">
+      <DependentUpon>FrmCostDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm成本费用登记_人员工资.resx">
+      <DependentUpon>Frm成本费用登记_人员工资.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm成本费用登记_制造费用.resx">
+      <DependentUpon>Frm成本费用登记_制造费用.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm成本费用登记_其它.resx">
+      <DependentUpon>Frm成本费用登记_其它.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm成本产品数量核对表.resx">
+      <DependentUpon>Frm成本产品数量核对表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm在产品盘点表.resx">
+      <DependentUpon>Frm在产品盘点表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm制造票打印.resx">
+      <DependentUpon>Frm制造票打印.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm历史条码打印.resx">
+      <DependentUpon>Frm历史条码打印.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSmartUser.resx">
+      <DependentUpon>FrmSmartUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产订单产品工序.resx">
+      <DependentUpon>Frm生产订单产品工序.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm车间看板.resx">
+      <DependentUpon>Frm车间看板.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm车间工序日报.resx">
+      <DependentUpon>Frm车间工序日报.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm产品工序.resx">
+      <DependentUpon>Frm产品工序.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="FrmAccess.resx">
+      <DependentUpon>FrmAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产执行统计.resx">
+      <DependentUpon>Frm生产执行统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm生产执行统计_工序.resx">
+      <DependentUpon>Frm生产执行统计_工序.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseFunction\BaseFunction.csproj">
+      <Project>{1CA3E2CE-B7C4-4B02-8958-5DC33FEBD65E}</Project>
+      <Name>BaseFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1FE239F7-2CEF-46F5-9C8B-F838A733EC87}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrameBaseFunction\FrameBaseFunction.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>FrameBaseFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{D18D3571-57AD-4CEB-A701-371AC49CD029}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,87 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth5]    Script Date: 09/26/2014 22:29:45 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesAndPlanMonth5]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesAndPlanMonth5]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth5]    Script Date: 09/26/2014 22:29:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+--		exec _GetSalesAndPlanMonth5 '2014'
+
+-----------------------------
+--俞霞
+--2014-9-21
+-----------------------------
+
+
+CREATE Proc [dbo].[_GetSalesAndPlanMonth5](@iYear1 varchar(4))
+as
+
+set nocount on
+
+
+IF Object_id('Tempdb..#SaleMonth') IS NOT NULL   DROP TABLE #SaleMonth
+
+select iyear,c.cDepMemo,f.cInvCName as cInvCName1,e.cInvCName as cInvCName2,a.cInvCode,d.cInvName,g.cInvCCode,g.cInvCName
+	,sum(case when g.cInvCCode='902021' or  g.cInvCCode='902022' then iQuantity end) as iQtySBQ系列,sum(case when g.cInvCCode='902021' or  g.cInvCCode='902022' then iMoney end) as iMoneySBQ系列
+	,sum(case when g.cInvCCode='902014' then iQuantity end) as iQtyH系列,sum(case when g.cInvCCode='902014' then iMoney end) as iMoneyH系列
+	,sum(case when g.cInvCCode='902013' then iQuantity end) as iQtyPLUS系列,sum(case when g.cInvCCode='902013' then iMoney end) as iMoneyPLUS系列
+	,sum(case when g.cInvCCode='902011' then iQuantity end) as iQtyS系列,sum(case when g.cInvCCode='902011' then iMoney end) as iMoneyS系列
+	,sum(case when g.cInvCCode='902012' then iQuantity end) as iQtyW系列,sum(case when g.cInvCCode='902012' then iMoney end) as iMoneyW系列
+	into #SaleMonth
+from (
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+) as a
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = a.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+	inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+	inner join UFDATA_101_2013..InventoryClass g on g.cInvCCode = left(d.cInvCCode,6)
+where 1=1 and iyear=@iYear1 
+group by iyear,c.cDepMemo,f.cInvCName,e.cInvCName,e.cInvCCode,a.cInvCode,d.cInvName,d.cInvCCode,g.cInvCCode,g.cInvCName
+
+--select * from #SaleMonth --where cInvCName='SBQ系列'
+
+select 年份
+	,sum(iQtySBQ系列) as iQtySBQ系列
+	,sum(iQtyH系列) as iQtyH系列
+	,sum(iQtyPLUS系列) as iQtyPLUS系列
+	,sum(iQtyS系列) as iQtyS系列
+	,sum(iQtyW系列) as iQtyW系列
+	from  (
+select iyear as 年份,cInvCCode,cInvCName,cDepMemo as 部门,cInvCName1 as 品名1,cInvCName2 as 品名2
+,iQtySBQ系列,iQtyH系列,iQtyPLUS系列,iQtyS系列,iQtyW系列
+,null as iQtyPlan1,null as iMoneyPlan1,null as iQtyPlan2,null as iMoneyPlan2,null as iQtyPlan3,null as iMoneyPlan3
+,null as iQtyPlan4,null as iMoneyPlan4,null as iQtyPlan5,null as iMoneyPlan5,null as iQtyPlan6,null as iMoneyPlan6
+,null as iQtyPlan7,null as iMoneyPlan7,null as iQtyPlan8,null as iMoneyPlan8,null as iQtyPlan9,null as iMoneyPlan9
+,null as iQtyPlan10,null as iMoneyPlan10,null as iQtyPlan11,null as iMoneyPlan11,null as iQtyPlan12,null as iMoneyPlan12
+from #SaleMonth 
+) a 
+group by 年份
+order by 年份
+
+
+
+
+
+
+GO
+
+

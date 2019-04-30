@@ -1,0 +1,140 @@
+﻿*
+{
+	margin: 0;/*外补丁*/
+	padding: 0;/*内补丁*/
+	font-family: 宋体;
+	font-size: 11px;
+	vertical-align:middle;/*垂直对齐*/
+}
+
+html
+{
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.indextitle
+{
+	text-align:left;
+	color:#015a9d;
+	font-weight:bolder;
+	font-size: 16px;
+}
+
+.title
+{
+	text-align:left;
+	color:#015a9d;
+	font-weight:bolder;
+	font-size: 15px;
+}
+a
+{
+	text-align: center;
+	text-decoration: none;
+	color: #3e8ac3;
+	cursor: hand;
+}
+a:hover
+{
+	color: #86b7e1;
+	text-decoration: none;
+}
+
+.file
+{
+	border:1px solid #000000;
+	color:#000000;
+}
+
+.image
+{
+	cursor:hand;
+	white-space:nowrap;
+}
+
+.panel
+{
+	border-bottom:double 3px #A2C4E2;
+	padding:1px 1px 1px 1px;
+}
+.panel1
+{
+	border:0;
+}
+
+.button
+{
+	background-image: url(../../Images/PublicImages/button.gif);
+	cursor: hand;
+	border:solid 1px #A2C4E2;
+	color:#4086cd;
+	padding:2px 2px 2px 2px;
+	margin:2px 2px 2px 2px;
+}
+
+
+
+/*****************************************old*/
+
+div.divtitle
+{
+	/*border-bottom:double 3px #A2C4E2;*/
+	text-align:left;
+	color:#015a9d;
+	padding:3px 3px 3px 3px;
+	border-bottom:double 3px #A2C4E2;
+	font-weight:bolder;
+	height:16px;
+}
+
+div.divinput
+{
+	/*background-color:#baffb0;*/
+	border-bottom:double 3px #A2C4E2;
+	text-align:right;
+}
+
+div.divbutton
+{
+	text-align:center;
+}
+
+div.divPrintTop
+{
+	font-size:18px;
+	text-align: center;
+}
+div.divPrintTitle
+{
+	font-size:16px;
+	text-align: center;
+}
+
+text
+{
+	padding:3px 3px 3px 3px;
+	margin:3px 3px 3px 3px;
+	width:80%;
+}
+
+.textclick
+{
+	background-color:#A2C4E2;
+}
+
+.readonlytext
+{
+	background-color:#e6e6ef;
+}
+/*
+input
+{
+	border-style:none ;
+}
+*/
+
+.lblwj
+{
+	font-size:20px;
+}

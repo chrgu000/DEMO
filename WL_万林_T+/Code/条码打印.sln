@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDLL", "ImportDLL\ImportDLL.csproj", "{ADE10146-2AFF-46D7-A633-4AC7489084D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameBaseFunction", "FrameBaseFunction\FrameBaseFunction.csproj", "{A5E7FFE0-1AFB-4812-8B54-AC886B900155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "条形码管理", "AppStart\条形码管理.csproj", "{0F26B3DB-094E-4003-A84E-260989FEBC2D}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppStart\\条形码管理.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = AppStart\\
+		SccProjectUniqueName2 = FrameBaseFunction\\FrameBaseFunction.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = FrameBaseFunction\\
+		SccProjectUniqueName3 = ImportDLL\\ImportDLL.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = ImportDLL\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE10146-2AFF-46D7-A633-4AC7489084D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E7FFE0-1AFB-4812-8B54-AC886B900155}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F26B3DB-094E-4003-A84E-260989FEBC2D}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

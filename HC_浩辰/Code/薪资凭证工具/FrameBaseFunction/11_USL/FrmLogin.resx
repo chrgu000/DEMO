@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtPWD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 66</value>
+  </data>
+  <data name="txtPWD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtPWD.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtPWD.Name" xml:space="preserve">
+    <value>txtPWD</value>
+  </data>
+  <data name="&gt;&gt;txtPWD.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtPWD.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtPWD.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 71</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>密  码</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtUID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 35</value>
+  </data>
+  <data name="txtUID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 21</value>
+  </data>
+  <data name="txtUID.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtUID.Name" xml:space="preserve">
+    <value>txtUID</value>
+  </data>
+  <data name="&gt;&gt;txtUID.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtUID.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtUID.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 40</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>帐  号</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lookUpAcc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 93</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v11.1" name="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="lookUpAcc.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v11.1">
+    <value>Combo</value>
+  </data>
+  <data name="lookUpAcc.Properties.Columns" xml:space="preserve">
+    <value>vchrText</value>
+  </data>
+  <data name="lookUpAcc.Properties.Columns1" xml:space="preserve">
+    <value>帐套</value>
+  </data>
+  <data name="lookUpAcc.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lookUpAcc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 21</value>
+  </data>
+  <data name="lookUpAcc.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lookUpAcc.Name" xml:space="preserve">
+    <value>lookUpAcc</value>
+  </data>
+  <data name="&gt;&gt;lookUpAcc.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;lookUpAcc.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lookUpAcc.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="dtmLogin.EditValue" type="System.DateTime, mscorlib">
+    <value>2007-06-12</value>
+  </data>
+  <data name="dtmLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 122</value>
+  </data>
+  <data name="dtmLogin.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v11.1">
+    <value>Combo</value>
+  </data>
+  <data name="dtmLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 21</value>
+  </data>
+  <data name="dtmLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dtmLogin.Name" xml:space="preserve">
+    <value>dtmLogin</value>
+  </data>
+  <data name="&gt;&gt;dtmLogin.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dtmLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dtmLogin.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 97</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>帐  套</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 126</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>日  期</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="chkPWD.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkPWD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 70</value>
+  </data>
+  <data name="chkPWD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="chkPWD.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="chkPWD.Text" xml:space="preserve">
+    <value>改密码</value>
+  </data>
+  <data name="&gt;&gt;chkPWD.Name" xml:space="preserve">
+    <value>chkPWD</value>
+  </data>
+  <data name="&gt;&gt;chkPWD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkPWD.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkPWD.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt</value>
+  </data>
+  <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 169</value>
+  </data>
+  <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>登  陆</value>
+  </data>
+  <data name="&gt;&gt;btnLogin.Name" xml:space="preserve">
+    <value>btnLogin</value>
+  </data>
+  <data name="&gt;&gt;btnLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnSetInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 169</value>
+  </data>
+  <data name="btnSetInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSetInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="btnSetInfo.Text" xml:space="preserve">
+    <value>高级设置↓</value>
+  </data>
+  <data name="btnSetInfo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnSetInfo.Name" xml:space="preserve">
+    <value>btnSetInfo</value>
+  </data>
+  <data name="&gt;&gt;btnSetInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSetInfo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 40</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 114</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>系统登陆</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 139</value>
+  </data>
+  <data name="btnSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="btnSet.TabIndex" type="System.Int32, mscorlib">
+    <value>104</value>
+  </data>
+  <data name="btnSet.Text" xml:space="preserve">
+    <value>设  置</value>
+  </data>
+  <data name="&gt;&gt;btnSet.Name" xml:space="preserve">
+    <value>btnSet</value>
+  </data>
+  <data name="&gt;&gt;btnSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSet.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnSet.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtTimeOut.EditValue" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="txtTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 140</value>
+  </data>
+  <data name="txtTimeOut.Properties.Mask.EditMask" xml:space="preserve">
+    <value>n0</value>
+  </data>
+  <assembly alias="DevExpress.XtraEditors.v11.1" name="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="txtTimeOut.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v11.1">
+    <value>Numeric</value>
+  </data>
+  <data name="txtTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 21</value>
+  </data>
+  <data name="txtTimeOut.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Name" xml:space="preserve">
+    <value>txtTimeOut</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 37</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 64</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>数据库</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 32</value>
+  </data>
+  <data name="txtServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtServer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtServer.Name" xml:space="preserve">
+    <value>txtServer</value>
+  </data>
+  <data name="&gt;&gt;txtServer.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtServer.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtServer.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 145</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>超  时</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtUserID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 86</value>
+  </data>
+  <data name="txtUserID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtUserID.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtUserID.Name" xml:space="preserve">
+    <value>txtUserID</value>
+  </data>
+  <data name="&gt;&gt;txtUserID.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtUserID.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtUserID.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 118</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>密  码</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtPasswd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 113</value>
+  </data>
+  <data name="txtPasswd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtPasswd.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtPasswd.Name" xml:space="preserve">
+    <value>txtPasswd</value>
+  </data>
+  <data name="&gt;&gt;txtPasswd.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtPasswd.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtPasswd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 91</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>帐  号</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtDataBase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 59</value>
+  </data>
+  <data name="txtDataBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtDataBase.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtDataBase.Name" xml:space="preserve">
+    <value>txtDataBase</value>
+  </data>
+  <data name="&gt;&gt;txtDataBase.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtDataBase.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtDataBase.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="radioWindows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 6</value>
+  </data>
+  <data name="radioWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="radioWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="radioWindows.Text" xml:space="preserve">
+    <value>Windows认证</value>
+  </data>
+  <data name="&gt;&gt;radioWindows.Name" xml:space="preserve">
+    <value>radioWindows</value>
+  </data>
+  <data name="&gt;&gt;radioWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioWindows.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;radioWindows.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="radioSQLServer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioSQLServer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioSQLServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 7</value>
+  </data>
+  <data name="radioSQLServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 16</value>
+  </data>
+  <data name="radioSQLServer.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="radioSQLServer.Text" xml:space="preserve">
+    <value>SQL Server认证</value>
+  </data>
+  <data name="&gt;&gt;radioSQLServer.Name" xml:space="preserve">
+    <value>radioSQLServer</value>
+  </data>
+  <data name="&gt;&gt;radioSQLServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioSQLServer.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;radioSQLServer.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 173</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>网络设置</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSetAppConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSetAppConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 129</value>
+  </data>
+  <data name="btnSetAppConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="btnSetAppConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="btnSetAppConfig.Text" xml:space="preserve">
+    <value>设  置</value>
+  </data>
+  <data name="&gt;&gt;btnSetAppConfig.Name" xml:space="preserve">
+    <value>btnSetAppConfig</value>
+  </data>
+  <data name="&gt;&gt;btnSetAppConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetAppConfig.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;btnSetAppConfig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>103</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>公司名称</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 50</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>106</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>系统名称</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtComName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 18</value>
+  </data>
+  <data name="txtComName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtComName.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtComName.Name" xml:space="preserve">
+    <value>txtComName</value>
+  </data>
+  <data name="&gt;&gt;txtComName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtComName.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;txtComName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtSN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 72</value>
+  </data>
+  <data name="txtSN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtSN.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtSN.Name" xml:space="preserve">
+    <value>txtSN</value>
+  </data>
+  <data name="&gt;&gt;txtSN.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtSN.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;txtSN.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 77</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>104</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtProName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 45</value>
+  </data>
+  <data name="txtProName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="txtProName.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtProName.Name" xml:space="preserve">
+    <value>txtProName</value>
+  </data>
+  <data name="&gt;&gt;txtProName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txtProName.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;txtProName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 173</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>系统注册</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 198</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 199</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>436, 401</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAD///////////////////////////////////////////////////////////////////////////7+
+        /v/9/Pr/6dKp/9WnVP/IjB//w4AI/8SDD//NljT/3bl4//Xs2//+/v7/////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ///+/v7/7t2//8qPJ//BfAD/wnwA/8J8AP/CfAD/wnwA/8J8AP/BewD/wn4E/9u1cP/8+vb/////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////v7+/+PGkv/CfQP/wnwA/8F8AP/Dggz/y5Er/86YN//Mky7/xYUT/8F8AP/BfAD/wXwA/86Z
+        Of/69u7///7+////////////////////////////////////////////////////////////////////
+        //////////////7+/v/lypn/wXwA/8mNI//gwYb/8+jT//39/P/+/v7///////7+/v/+/v3/9u7e/+TI
+        lf/MlTH/wnwA/8+cQP/9/Pr/////////////////////////////////////////////////////////
+        ////////////////////////8uXO/8aGFP/kyJX//fz6//7+/v//////////////////////////////
+        /////////v7+//7+/f/p06v/xogY/9++gv//////////////////////////////////////////////
+        //////////////////////////////7+/f/Up1b/9OrW//7+/v//////////////////////////////
+        //////////////////////////////7+/v/38eT/zZc3//fx5P//////////////////////////////
+        ////////////////////////////////////////7t/D//Tr2P//////////////////////////////
+        ///////////////////////////////////////////////////38eX/4sWQ//7+/v//////////////
+        //////////////////////////////////////////////7+/v/28eX//v7+////////////////////
+        //////////////////////////////////////////////////////////////7+/v/v4cf//v38////
+        //////////////////////////////////////////////7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+
+        /v///////v////7+/v/+/v////7+//7//v/+/v7////+//7//v/+/v7//////////////////v7+//7+
+        /f/7+vb////////////d3d7/eHp9/3h6ff95e37/mZud//b29v//////+vbv/8+bPf/Pmz3/z5s9/8+b
+        Pf/Pmz3/27Zy///////+/v7/a21x/42Pkf/9/f3/SUtP/5OUl//9/f3/RUdL/7a3uf///////////+bm
+        5/9sbnH/R0lN/4CChf/29vb//////8TFxv8XGh//Fxof/xcaH/8XGR//VFZa//39/v/+/v3/w38H/8F8
+        AP/CfAD/wnwA/8J8AP/Mkiz////////+//9ISk7/cnR3/+bn5/8WGR//XF5i//z8/P8XGh//paao////
+        ///29vb/Oj1B/xcaH/8XGh//Fhoe/2JkZ//+/v7/xMXG/xcZH/9KTFD/WFpe/yksMf8XGh//vr/B//7+
+        /v/JjSL/y5Ir/9+8ff/fvH3/37x9/+HCiP////////7//0hKTv9ydHf/xsfI/xYZHv88PkP//Pz8/xca
+        H/+lpqj//////5ianP8XGh//Nzo+/3p8f/8nKi7/Fxoe/8nKy//Excb/Fxke/8TFxv/+/v7/4uLj/xwf
+        JP91dnn//v7+/9CcP//QnUD//////////////////////////////v//SEpO/3J0d/+mp6n/Fxof/x4h
+        Jv/6+vv/Fxof/6WmqP/+/v7/SEpO/yEkKf/m5uf//////8LDxP8XGh//eXt9/8TFxv8XGh7/xMXG////
+        ///+/v7/TE5S/0VHTP/+/v7/16tc/8mMIP/+/v7////////////////////////+//9ISk7/cnR3/4aI
+        i/8fIif/Fxkf/+Li4/8XGh//paao//n5+f8bHiP/aWtu//7+/v///////v7+/zo8QP9GSE3/xMXG/xca
+        Hv/Excb///////////9rbXD/Ki0x//7+/v/eunr/wn4E//z8+f/+/v7//v7+//7+/v////////7//0hK
+        Tv9ydHf/Zmhs/1lbX/8XGh//wsLE/xcaH/+lpqj/4ODh/xYZH/+XmJv/////////////////Zmhs/ygr
+        MP/Excb/Fxoe/8TFxv///////////3d4e/8eISb//v7+/+XJl//CfAD/y5Is/8yUMP/MlDD/zZc1//7+
+        /f///v//SEpO/3J0d/9HSU3/h4iL/ywvM/+io6X/Fxof/6WmqP/S0tP/Fxke/6usrv//////////////
+        //96fH//Gh0i/8TFxv8XGh7/xMXG////////////eHp9/x0gJf/+/v7/7Ni0/8J8AP/CfAD/wnwA/8J8
+        AP/BfAD/+fTp///+//9ISk7/cnR3/ycpLv+pqqz/TVBT/4KDhv8XGh//paao/9DR0v8XGR//rq+x////
+        /////////////35/gv8YGyD/xMXG/xcaHv/Excb///////////9xcnb/Jigt//7+/v/z59H/wnwA/9Wo
+        Vv/hw4r/4cOK/+HDiv/59Ov///7//0hKTv9iZGf/Fxof/8rLzP9vcXT/YmRn/xcaH/+lpqj/2trb/xcZ
+        H/+jpKb/////////////////c3R3/yEkKf/Excb/Fxoe/8TFxv///////v7+/1haXv86PUH///7+//r2
+        7v/BfAD/4cGH//7//v/+//7//v/+//7//v///v//SEpO/0JESf8XGR//7O3t/5CSlP9CREj/Fxof/6Wm
+        qP/w8PH/Fxof/4OEh/////////////7+/v9UVln/OTtA/8TFxv8XGh7/xMXG///////29vb/JSgs/2Bi
+        Zf///////v7+/8SCDf/asmr////////////////////////+//9ISk7/IyUq/yYpLv/+/v7/sbK0/yIl
+        Kv8XGh//paao//7+/v8yNTn/P0JG//7+/v//////7/Dw/yAiJ/9jZWj/xMXG/xYZHv+OkJL/sLGz/15g
+        ZP8WGR//nZ6g///////+/v7/y5Eq/8yTLf/hwYj/4cGI/+HBiP/q06v///7//0hKTv8XGh//SEpO///+
+        /v/T09T/Fxkf/xcaH/+lpqj//////3Z4ev8XGh7/hIWI/9nZ2v9hY2f/Fxof/6anqf/Excb/Fxof/xYZ
+        H/8WGR//Fxkf/yYpLv/v7/D///////7//v/SoEf/wXwA/8F8AP/BfAD/wXwA/86XNv/+/v7/SEpO/xca
+        H/9qbG////7///P09P8XGh//Fxof/6WmqP//////2drb/xseI/8WGR//Fhkf/xcZH/8xNDj/9vb2/8bG
+        x/8bHiL/Gx4i/xwfJP85O0D/wcLD/////////////////9+9gP/NljL/zZYy/82WMv/NljL/0aFJ//7+
+        /v90dnn/T1FV/6SmqP///////v7+/15gY/9PUVX/u7u9///////+/v7/oqSm/x0gJf8WGR//LC8z/8zN
+        zv///////v7+//39/P/+/v7//v7+//7+/v///v///////////////////v7+//7+/v/+/v7//v7+//7+
+        /v/+/v7//v7+//7//v/+/////v/+/////////////Pz7//7+/v/+/v7////////////+/v7/7e3u/9HS
+        0//39/f/////////////////+vfw//bu4P/+/v7/////////////////////////////////////////
+        //////////////////////////////////////////////7+/v/w48v//v/+////////////////////
+        ///////////////////////////////////+/v7/4cOM//n17f//////////////////////////////
+        ///////////////////////////////////////////////////+/v7/6dSt//DiyP//////////////
+        //////////////////////////////////////////////7//v/17t//zZc2//Tr2P/+/v7/////////
+        ///////////////////////////////////////////////////+/v7//v7+/+XLmv/VqVr//v7+////
+        //////////////////////////////////////////////////////////////7+/v/kx5T/xIEL/9++
+        gf/69+///v7+/////////////////////////////////////////////v7+//Tq1//TpE7/xocX//jy
+        5v////////////////////////////////////////////////////////////////////////////7+
+        /v/Yr2X/wnwA/8SCDf/XrF//6dKp//Xu3v/9/fv//v7+//7+/v/8/Pj/8+nV/+XKmf/RoEf/wn0C/8OA
+        Cf/v38L/////////////////////////////////////////////////////////////////////////
+        /////////v/+//39/P/atG7/wXwA/8J8AP/CewD/wXwA/8J+Bf/FhRP/xYUR/8F9A//BfAD/wnwA/8J8
+        AP/FhBH/7t2+//7+/v//////////////////////////////////////////////////////////////
+        //////////////////////////////7+/v/q1K3/yIse/8J8AP/CfAD/wnwA/8J8AP/CfAD/wnwA/8J8
+        AP/BfAD/0qFJ//bu3///////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////7+/v/8+/j/59Ck/9SmU//IjCD/w4AI/8SC
+        Df/Lky3/2rJr//DiyP/+/v7//v//////////////////////////////////////////////////////
+        ////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>登陆</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmLogin</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

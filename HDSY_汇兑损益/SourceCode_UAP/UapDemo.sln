@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.BaseClass", "TH.BaseClass\TH.BaseClass.csproj", "{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAP_ClientPlugin_AP", "UAP_ClientPlugin_AP\UAP_ClientPlugin_AP.csproj", "{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAP_ClientPlugin_AR", "UAP_ClientPlugin_AR\UAP_ClientPlugin_AR.csproj", "{E807CA0B-D08A-4091-81A5-5715BBBDD6BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01862D7A-15A2-4B4F-9C25-DF91C7383BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2C9C1A-FDD8-4E62-98C0-98AF8719B162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E807CA0B-D08A-4091-81A5-5715BBBDD6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E807CA0B-D08A-4091-81A5-5715BBBDD6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E807CA0B-D08A-4091-81A5-5715BBBDD6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E807CA0B-D08A-4091-81A5-5715BBBDD6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TH.BaseClass\\TH.BaseClass.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = TH.BaseClass\\
+		SccProjectUniqueName2 = UAP_ClientPlugin_AP\\UAP_ClientPlugin_AP.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = UAP_ClientPlugin_AP\\
+		SccProjectUniqueName3 = UAP_ClientPlugin_AR\\UAP_ClientPlugin_AR.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = UAP_ClientPlugin_AR\\
+	EndGlobalSection
+EndGlobal

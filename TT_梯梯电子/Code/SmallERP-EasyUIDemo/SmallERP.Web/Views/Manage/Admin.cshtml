@@ -1,0 +1,375 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section CSS{
+
+}
+@section JS{
+    <script type="text/javascript">
+        function formatIsDisabled(val, row) {
+            return val ? 'YES' : 'NO';
+        }
+
+        $(function () {
+            var actionUrl = {
+                GetRoles: '/Manage/GetRoles',
+                GetList: '/Manage/GetAdminList',
+                Get: '/Manage/GetAdmin',
+                Add: '/Manage/AddAdmin',
+                Update: '/Manage/UpdateAdmin',
+                Delete: '/Manage/DeleteAdmin',
+                ResetPassword: '/Manage/ResetPassword'
+            }
+
+            // 角色列表对象
+            var roles;
+            $.ajax({
+                url: actionUrl.GetRoles,
+                type: 'POST',
+                async: false,
+                success: function (result) {
+                    if (typeof result == 'string') {
+                        result = $.parseJSON(result);
+                    }
+                    roles = result;
+                }
+            });
+
+            // 含有【全部】选项的列表对象
+            var rolesWithAll = [];
+            rolesWithAll = $.merge([{ id: "", text: '[All]' }], roles);
+
+            // 初始化角色下拉框
+            $('#queryRoleId').combobox({
+                editable: false,
+                data: rolesWithAll
+            });
+            $('#roleid').combobox({
+                editable: false,
+                multiple: true,
+                data: roles
+            });
+            $('#editRoleId').combobox({
+                editable: false,
+                multiple: true,
+                data: roles
+            });
+            // 加载数据
+            function reloadData() {
+                $('#admin_grid').datagrid('load', {
+                    UserId: $('#queryUserId').val(),
+                    Name: $('#queryName').val(),
+                    RoleId: $('#queryRoleId').combobox('getValue')
+                });
+            };
+
+            $('#admin_grid').datagrid({
+                url: actionUrl.GetList,
+                //idField: 'Id',
+                pagination: true,
+                pageSize: 15,
+                pageList: [15, 20, 30, 50],
+                rowStyler: function (index, row) {
+                    if (row.IsDisabled) {
+                        return 'background-color:#AAFFFE;';
+                    }
+                },
+                toolbar: [{
+                    iconCls: 'icon-add',
+                    text: 'Add',
+                    handler: function () {
+                        // 设置当前window的标题及icon
+                        $('#dialog_adminadd').window({
+                            title: 'Create Account',
+                            iconCls: 'icon-add'
+                        });
+                        // 重置form，弹出window
+                        $('#form_adminadd').form('reset');
+                        $('#dialog_adminadd').window('open');
+
+                    }
+                }, {
+                    iconCls: 'icon-edit',
+                    text: 'Edit',
+                    handler: function () {
+                        var row = $('#admin_grid').datagrid('getSelected');
+                        if (row == null) {
+                            $.messager.alert('Info', 'please choose a row of data.');
+                            return false;
+                        }
+
+                        // 设置当前window的标题及icon
+                        $('#dialog_adminedit').window({
+                            title: 'Edit account',
+                            iconCls: 'icon-edit'
+                        });
+                        // 弹出window
+                        $('#dialog_adminedit').window('open');
+                        $('#form_adminedit').form('load', row);
+                        if (row.IsDisabled)
+                            $('#editIsDisabled').switchbutton('check');
+                        else
+                            $('#editIsDisabled').switchbutton('uncheck');
+                    }
+                }, {
+                    iconCls: 'icon-cancel',
+                    text: 'Delete',
+                    handler: function () {
+                        var rows = $('#admin_grid').datagrid('getSelections');
+                        if (rows.length == 0) {
+                            $.messager.alert('Info', 'please choose a row of data.');
+                            return false;
+                        }
+                        $.messager.confirm('Comfirm', 'Are you sure want to delete this account?', function (r) {
+                            if (r) {
+                                $.post(actionUrl.Delete, { Id: rows[0].Id }, function (result) {
+                                    if (result.success) {
+                                        reloadData();
+                                        $('#admin_grid').datagrid('clearSelections');
+                                        $.messager.alert('Info', "deleted successfully.");
+                                    } else {
+                                        $.messager.alert('Error', result.message);
+                                    }
+                                });
+                            }
+
+                        });
+
+                    }
+                }, '-', {
+                    iconCls: 'icon-reload',
+                    text: 'Reset password',
+                    handler: function () {
+                        var row = $('#admin_grid').datagrid('getSelections');
+                        if (row.length == 0) {
+                            $.messager.alert('Info', 'please choose a row of data.');
+                            return;
+                        }
+                        $.messager.confirm('Confirm', 'Are you sure want to reset password for this account?', function (r) {
+                            if (r) {
+                                $.post(actionUrl.ResetPassword, { Id: rows[0].Id }, function (result) {
+                                    if (result.success) {
+                                        $.messager.alert('Info', result.extraData);
+                                    } else {
+                                        $.messager.alert('Error', result.message);
+                                    }
+                                });
+                            }
+
+                        });
+                    }
+                }]
+            });
+
+            // 添加window
+            $('#dialog_adminadd').dialog({
+                buttons: [{
+                    iconCls: 'icon-ok',
+                    text: 'Submit',
+                    handler: function () {
+                        $('#form_adminadd').form('submit', {
+                            url: actionUrl.Add,
+                            onSubmit: function () {
+                                var isValid = $(this).form('validate');
+                                if (!isValid) return false;
+
+                                // 密码验证
+                                if ($('#password').val().length < 6) {
+                                    $.messager.alert('Info', 'the password length must be 6.');
+                                    return false;
+                                }
+                                if ($('#password').val() != $('#password2').val()) {
+                                    $.messager.alert('Info', 'the two passwords are not the same.');
+                                    return false;
+                                }
+                            },
+                            success: function (result) {
+                                if (typeof result == 'string') {
+                                    result = $.parseJSON(result);
+                                }
+                                if (result.success) {
+                                    $('#dialog_adminadd').window('close');
+                                    $.messager.alert('Info', "created successfully.");
+                                    // 刷新数据
+                                    reloadData();
+                                } else {
+                                    $.messager.alert('Error', result.message);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    iconCls: 'icon-cancel',
+                    text: 'Close',
+                    handler: function () {
+                        $('#dialog_adminadd').dialog('close');
+                    }
+                }]
+            });
+
+            // 编辑window
+            $('#dialog_adminedit').dialog({
+                buttons: [{
+                    iconCls: 'icon-ok',
+                    text: 'Submit',
+                    handler: function () {
+                        $('#form_adminedit').form('submit', {
+                            url: actionUrl.Update,
+                            onSubmit: function (param) {
+                                var isValid = $(this).form('validate');
+                                if (!isValid) return false;
+                            },
+                            success: function (result) {
+                                if (typeof result == 'string') {
+                                    result = $.parseJSON(result);
+                                }
+                                if (result.success) {
+                                    $('#dialog_adminedit').window('close');
+                                    $.messager.alert('Info', "updated successfully.");
+                                    // 刷新数据
+                                    reloadData();
+                                } else {
+                                    $.messager.alert('Error', result.message);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    iconCls: 'icon-cancel',
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#dialog_adminedit').dialog('close');
+                    }
+                }]
+            });
+
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+            $('#btnReset').click(function () {
+                $('#queryUserId').textbox('reset');
+                $('#queryName').textbox('reset');
+                $('#queryRoleId').combobox('setValue', '');
+                reloadData();
+            })
+        })
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 查询条件 -->
+    <div data-options="region:'north'" style="height:34px" border="false">
+        <table>
+            <tr>
+                <td>account：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" id="queryUserId" />
+                </td>
+                <td>name：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" id="queryName" />
+                </td>
+                <td>role：</td>
+                <td>
+                    <input class="easyui-combobox" value="" id="queryRoleId" data-options="valueField:'id',textField:'text'">
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 用户列表 -->
+    <div data-options="region:'center'" style="padding:2px;" border="false">
+        <table id="admin_grid" class="easyui-datagrid" style="border-bottom:none;" fit="true" title="Account List" data-options="rownumbers:true,singleSelect:true,collapsible:false">
+            <thead>
+                <tr>
+                    <th data-options="field:'ck',checkbox:true"></th>
+                    <th data-options="field:'UserId',width:100,align:'center'">Account</th>
+                    <th data-options="field:'Name',width:100,align:'center'">Name</th>
+                    <th data-options="field:'Department',width:100,align:'center'">Department</th>
+                    <th data-options="field:'Email',width:250,align:'center'">Email</th>
+                    <th data-options="field:'RoleName',width:200">Role</th>
+                    <th data-options="field:'IsDisabled',width:100,align:'center',formatter:formatIsDisabled">IsDisabled</th>
+                    <th data-options="field:'Sort',width:50,align:'center'">Sort</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- 弹窗 （添加） -->
+    <div id="dialog_adminadd" class="easyui-dialog" title="Create Account" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false,iconCls:'icon-add'" style="width:320px;height:380px;padding:10px;">
+        <form id="form_adminadd" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td style="text-align:right;">Account:</td>
+                    <td><input class="easyui-textbox" maxlength="30" type="text" name="UserId" id="userid" data-options="required:true,validType:'length[0,16]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Name:</td>
+                    <td><input class="easyui-textbox" maxlength="20" type="text" name="Name" id="name" data-options="required:true,validType:'length[0,16]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Password:</td>
+                    <td><input class="easyui-textbox" type="password" name="Password" id="password" data-options="required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Password again:</td>
+                    <td><input class="easyui-textbox" type="password" name="Password2" id="password2" data-options="required:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Department:</td>
+                    <td><input class="easyui-textbox" maxlength="100" type="text" name="Department" id="department" data-options="required:false,validType:'length[0,100]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Email:</td>
+                    <td><input class="easyui-textbox" maxlength="250" type="text" name="Email" id="email" data-options="required:false,validType:'length[0,250]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Role:</td>
+                    <td><input class="easyui-combobox" name="RoleId" id="roleid" data-options="required:true,valueField:'id',textField:'text'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Sort Num:</td>
+                    <td><input class="easyui-numberbox" type="number" value="0" name="Sort" id="sort" data-options="min:0,precision:0,required:true" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 弹窗 （编辑） -->
+    <div id="dialog_adminedit" class="easyui-dialog" title="Edit Account" data-options="modal:true,closed:true,resizable:false,collapsible:false,minimizable:false,maximizable:false,iconCls:'icon-add'" style="width:320px;height:350px;padding:10px;">
+        <form id="form_adminedit" method="post">
+            <!-- 账号Id -->
+            <input type="hidden" id="Id" name="Id" />
+            <table cellpadding="5">
+                <tr>
+                    <td style="text-align:right;">Account:</td>
+                    <td><input class="easyui-textbox" maxlength="30" type="text" name="UserId" id="editUserId" data-options="required:true,readonly:true" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Name:</td>
+                    <td><input class="easyui-textbox" maxlength="20" type="text" name="Name" id="editName" data-options="required:true,validType:'length[0,16]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Department:</td>
+                    <td><input class="easyui-textbox" maxlength="100" type="text" name="Department" id="editDepartment" data-options="required:false,validType:'length[0,100]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Email:</td>
+                    <td><input class="easyui-textbox" maxlength="250" type="text" name="Email" id="editEmail" data-options="required:false,validType:'length[0,250]'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Role:</td>
+                    <td><input class="easyui-combobox" name="RoleId" id="editRoleId" data-options="required:true,valueField:'id',textField:'text'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">IsDisabled:</td>
+                    <td><input class="easyui-switchbutton" name="IsDisabledText" id="editIsDisabled" data-options="onText:'是',offText:'否'" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Sort Num:</td>
+                    <td><input class="easyui-numberbox" type="number" value="0" name="Sort" id="editSort" data-options="min:0,precision:0,required:true" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>

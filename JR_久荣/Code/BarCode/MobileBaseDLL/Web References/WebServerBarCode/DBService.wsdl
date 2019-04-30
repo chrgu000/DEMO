@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="b登陆">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="b登陆Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="b登陆Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s登陆">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="s登陆Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s登陆Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtm当前服务器时间">
+        <s:complexType />
+      </s:element>
+      <s:element name="dtm当前服务器时间Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtm当前服务器时间Result" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtInventoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDoor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPlace" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDoorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDoorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save现品票登记">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save现品票登记Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save现品票登记Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt发货计划">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sQRCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iUsedAutoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dt发货计划Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt发货计划Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chk发货计划">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBarCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chk发货计划Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chk发货计划Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save出库单">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save出库单Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save出库单Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="b登陆SoapIn">
+    <wsdl:part name="parameters" element="tns:b登陆" />
+  </wsdl:message>
+  <wsdl:message name="b登陆SoapOut">
+    <wsdl:part name="parameters" element="tns:b登陆Response" />
+  </wsdl:message>
+  <wsdl:message name="s登陆SoapIn">
+    <wsdl:part name="parameters" element="tns:s登陆" />
+  </wsdl:message>
+  <wsdl:message name="s登陆SoapOut">
+    <wsdl:part name="parameters" element="tns:s登陆Response" />
+  </wsdl:message>
+  <wsdl:message name="dtm当前服务器时间SoapIn">
+    <wsdl:part name="parameters" element="tns:dtm当前服务器时间" />
+  </wsdl:message>
+  <wsdl:message name="dtm当前服务器时间SoapOut">
+    <wsdl:part name="parameters" element="tns:dtm当前服务器时间Response" />
+  </wsdl:message>
+  <wsdl:message name="dtInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:dtInventory" />
+  </wsdl:message>
+  <wsdl:message name="dtInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:dtInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="sDoorSoapIn">
+    <wsdl:part name="parameters" element="tns:sDoor" />
+  </wsdl:message>
+  <wsdl:message name="sDoorSoapOut">
+    <wsdl:part name="parameters" element="tns:sDoorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save现品票登记SoapIn">
+    <wsdl:part name="parameters" element="tns:Save现品票登记" />
+  </wsdl:message>
+  <wsdl:message name="Save现品票登记SoapOut">
+    <wsdl:part name="parameters" element="tns:Save现品票登记Response" />
+  </wsdl:message>
+  <wsdl:message name="dt发货计划SoapIn">
+    <wsdl:part name="parameters" element="tns:dt发货计划" />
+  </wsdl:message>
+  <wsdl:message name="dt发货计划SoapOut">
+    <wsdl:part name="parameters" element="tns:dt发货计划Response" />
+  </wsdl:message>
+  <wsdl:message name="chk发货计划SoapIn">
+    <wsdl:part name="parameters" element="tns:chk发货计划" />
+  </wsdl:message>
+  <wsdl:message name="chk发货计划SoapOut">
+    <wsdl:part name="parameters" element="tns:chk发货计划Response" />
+  </wsdl:message>
+  <wsdl:message name="Save出库单SoapIn">
+    <wsdl:part name="parameters" element="tns:Save出库单" />
+  </wsdl:message>
+  <wsdl:message name="Save出库单SoapOut">
+    <wsdl:part name="parameters" element="tns:Save出库单Response" />
+  </wsdl:message>
+  <wsdl:portType name="DBWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <wsdl:input message="tns:b登陆SoapIn" />
+      <wsdl:output message="tns:b登陆SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <wsdl:input message="tns:s登陆SoapIn" />
+      <wsdl:output message="tns:s登陆SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <wsdl:input message="tns:dtm当前服务器时间SoapIn" />
+      <wsdl:output message="tns:dtm当前服务器时间SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtInventory">
+      <wsdl:input message="tns:dtInventorySoapIn" />
+      <wsdl:output message="tns:dtInventorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sDoor">
+      <wsdl:input message="tns:sDoorSoapIn" />
+      <wsdl:output message="tns:sDoorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save现品票登记">
+      <wsdl:input message="tns:Save现品票登记SoapIn" />
+      <wsdl:output message="tns:Save现品票登记SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dt发货计划">
+      <wsdl:input message="tns:dt发货计划SoapIn" />
+      <wsdl:output message="tns:dt发货计划SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chk发货计划">
+      <wsdl:input message="tns:chk发货计划SoapIn" />
+      <wsdl:output message="tns:chk发货计划SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save出库单">
+      <wsdl:input message="tns:Save出库单SoapIn" />
+      <wsdl:output message="tns:Save出库单SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBWebServiceSoap" type="tns:DBWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <soap:operation soapAction="http://tempuri.org/b登陆" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <soap:operation soapAction="http://tempuri.org/s登陆" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <soap:operation soapAction="http://tempuri.org/dtm当前服务器时间" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtInventory">
+      <soap:operation soapAction="http://tempuri.org/dtInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDoor">
+      <soap:operation soapAction="http://tempuri.org/sDoor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save现品票登记">
+      <soap:operation soapAction="http://tempuri.org/Save现品票登记" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt发货计划">
+      <soap:operation soapAction="http://tempuri.org/dt发货计划" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chk发货计划">
+      <soap:operation soapAction="http://tempuri.org/chk发货计划" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save出库单">
+      <soap:operation soapAction="http://tempuri.org/Save出库单" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBWebServiceSoap12" type="tns:DBWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="b登陆">
+      <soap12:operation soapAction="http://tempuri.org/b登陆" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="s登陆">
+      <soap12:operation soapAction="http://tempuri.org/s登陆" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtm当前服务器时间">
+      <soap12:operation soapAction="http://tempuri.org/dtm当前服务器时间" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtInventory">
+      <soap12:operation soapAction="http://tempuri.org/dtInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDoor">
+      <soap12:operation soapAction="http://tempuri.org/sDoor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save现品票登记">
+      <soap12:operation soapAction="http://tempuri.org/Save现品票登记" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dt发货计划">
+      <soap12:operation soapAction="http://tempuri.org/dt发货计划" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chk发货计划">
+      <soap12:operation soapAction="http://tempuri.org/chk发货计划" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save出库单">
+      <soap12:operation soapAction="http://tempuri.org/Save出库单" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBWebService">
+    <wsdl:port name="DBWebServiceSoap" binding="tns:DBWebServiceSoap">
+      <soap:address location="http://192.168.30.221/webJR/DBService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBWebServiceSoap12" binding="tns:DBWebServiceSoap12">
+      <soap12:address location="http://192.168.30.221/webJR/DBService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+10:50:18   Function:->RunCommand is true   
+10:50:18   objLogin.cAcc_Id    002
+10:50:18   objForm.Name    FrmInv
+10:50:18   objVoucher Is Nothing   
+10:50:18   sKey     _CUSTDEFButtonTest
+10:50:18   VarentValue      物料清单损耗
+10:51:23   Function:->RunCommand is true   
+10:51:23   objLogin.cAcc_Id    002
+10:51:23   objForm.Name    FrmInv
+10:51:23   objVoucher Is Nothing   
+10:51:23   sKey     _CUSTDEFButtonTest
+10:51:23   VarentValue      物料清单损耗
+11:00:04   Function:->RunCommand is true   
+11:00:04   objLogin.cAcc_Id    002
+11:00:04   objForm.Name    FrmInv
+11:00:04   objVoucher Is Nothing   
+11:00:04   sKey     _CUSTDEFButtonTest
+11:00:04   VarentValue      物料清单损耗
+11:04:02   Function:->RunCommand is true   
+11:04:02   objLogin.cAcc_Id    002
+11:04:02   objForm.Name    FrmInv
+11:04:02   objVoucher Is Nothing   
+11:04:02   sKey     _CUSTDEFButtonTest
+11:04:02   VarentValue      物料清单损耗

@@ -1,0 +1,6 @@
+update TK_Base_CalendarPeriod set iWeek1 =  dateadd(day,1,dtmStart)
+	,iWeek2 =  dateadd(day,8,dtmStart)
+	,iWeek3 =  dateadd(day,15,dtmStart)
+	,iWeek4 =  dateadd(day,22,dtmStart)
+	,iWeek5 = case when dateadd(day,29,dtmStart) < dtmEnd then dateadd(day,29,dtmStart) end
+where iYear = year(getdate()) + 1

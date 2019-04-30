@@ -1,0 +1,153 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            var actionUrl = {
+                GetRoleList: '/Manage/GetRoleList',
+                GetAllMenus: '/Manage/GetAllMenus',
+                SavePermission: '/Manage/SavePermission',
+                GetPermission: '/Manage/GetPermission'
+            };
+
+            var currentRoleID = "";
+
+            // 加载角色列表
+            $('#roleList').datalist({
+                url: actionUrl.GetRoleList,
+                valueField: 'ID',
+                textField: 'Name',
+                lines: true,
+                // 切换角色，加载权限数据
+                onSelect: function (index, row) {
+                    // 与前次选择的是相同的角色，则不重新加载角色权限数据
+                    if (currentRoleID != row.ID) {
+                        currentRoleID = row.ID;
+
+                        // 加载角色权限数据
+                        loadPermission(currentRoleID);
+                    }
+                }
+            });
+
+            // 加载菜单树
+            $('#menuTree').tree({
+                url: actionUrl.GetAllMenus
+            });
+
+            // 保存权限设置
+            $('#btn_save').click(function () {
+
+                if (currentRoleID == "") {
+                    $.messager.alert('Info', 'please choose a role');
+                    return false;
+                }
+
+
+                // 取出所有勾选的节点
+                var checkedNodes = $('#menuTree').tree('getChecked', ['checked']);
+
+                // 过滤出子节点
+                var nodes = [];
+                var len = checkedNodes.length;
+                for (var i = 0; i < len; i++) {
+                    if (checkedNodes[i].children.length == 0) {
+                        nodes.push(checkedNodes[i].id);
+                    }
+                }
+
+                // 提交数据
+                $.post(actionUrl.SavePermission, {
+                    RoleId: currentRoleID,
+                    NodeIds: nodes
+                }, function (result) {
+                    if (result.success) {
+                        $.messager.alert('Info', 'successfully.');
+                    } else {
+                        $.messager.alert('Error', result.message);
+                    }
+                });
+            });
+
+            // 全选
+            $('#btn_checkAll').click(function () {
+                var nodes = $('#menuTree').tree('getChildren');
+                for (var i = 0; i < nodes.length; i++) {
+                    $('#menuTree').tree('check', nodes[i].target);
+                }
+            });
+
+            // 全不选
+            $('#btn_uncheckAll').click(function () {
+                clearAllChecked();
+            });
+
+            // 反选
+            $('#btn_reverse').click(function () {
+                var nodes = $('#menuTree').tree('getChildren');
+                for (var i = 0; i < nodes.length; i++) {
+                    if (nodes[i].checked)
+                        $('#menuTree').tree('uncheck', nodes[i].target);
+                    else
+                        $('#menuTree').tree('check', nodes[i].target);
+                }
+            });
+
+
+            // 勾选叶节点
+            function checkLeafNode(nodeId) {
+                var node = $('#menuTree').tree('find', nodeId);
+                // 判断是否含有子节点
+                if (node.children.length == 0) {
+                    $('#menuTree').tree('check', node.target);
+                }
+            }
+
+            // 清除所有勾选
+            function clearAllChecked() {
+                // 获取所有节点
+                var nodes = $('#menuTree').tree('getChildren');
+                for (var i = 0; i < nodes.length; i++) {
+                    $('#menuTree').tree('uncheck', nodes[i].target);
+                }
+            }
+
+            // 加载权限数据
+            function loadPermission(roleID) {
+                $.post(actionUrl.GetPermission, { RoleID: roleID }, function (result) {
+                    // 清除所有勾选
+                    clearAllChecked();
+
+                    // 勾选节点
+                    if (result.length > 0) {
+                        for (var i = 0; i < result.length; i++) {
+                            checkLeafNode(result[i]);
+                        }
+                    }
+                })
+            }
+        });
+    </script>
+}
+<body class="easyui-layout">
+    <div data-options="region:'west',title:'Roles List',split:true" style="width:300px" border="false">
+        <ul id="roleList" class="easyui-datalist" fit="true" border="false"></ul>
+    </div>
+    <div data-options="region:'center',title:'Menu Navigation'" border="false">
+        <div class="easyui-layout" style="height:100%; background-color:rebeccapurple;">
+            <div data-options="region:'north'" style="height:37px; border-bottom:1px solid #95B8E7;" border="false">
+                <div class="easyui-panel" style="padding:5px;" border="false">
+                    <a id="btn_checkAll" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-check'" style="width:100px;">check all</a>
+                    <a id="btn_uncheckAll" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-uncheck'" style="width:100px;">uncheck all</a>
+                    <a id="btn_reverse" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reverse'" style="width:70px;">reverse</a>
+                    <a id="btn_save" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" style="width:70px;">save</a>
+                    <a id="btn_addroot" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" style="width:70px;">add</a>
+                </div>
+            </div>
+            <div data-options="region:'center'" border="false">
+                <ul id="menuTree" class="easyui-tree" data-options="method:'get',animate:true,checkbox:true"></ul>
+            </div>
+        </div>
+    </div>
+</body>

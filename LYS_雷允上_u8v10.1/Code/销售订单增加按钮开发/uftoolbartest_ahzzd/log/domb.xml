@@ -1,0 +1,541 @@
+<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+	<s:Schema id="RowsetSchema">
+		<s:ElementType name="row" content="eltOnly">
+			<s:AttributeType name="autoid" rs:number="1">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="id" rs:number="2" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvcode" rs:number="3" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="bservice" rs:number="4" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvname" rs:number="5" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvaddcode" rs:number="6" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="body_outid" rs:number="7" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="uuid" dt:maxLength="16" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvstd" rs:number="8" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="cunitid" rs:number="9" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="35"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvm_unit" rs:number="10" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="igrouptype" rs:number="11" rs:writeunknown="true">
+				<s:datatype dt:type="ui1" dt:maxLength="1" rs:precision="3" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="cgroupcode" rs:number="12" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="35"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinva_unit" rs:number="13" rs:nullable="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine1" rs:number="14" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine2" rs:number="15" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine3" rs:number="16" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine4" rs:number="17" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine5" rs:number="18" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine6" rs:number="19" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine7" rs:number="20" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine8" rs:number="21" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine9" rs:number="22" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine10" rs:number="23" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine11" rs:number="24" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine12" rs:number="25" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine13" rs:number="26" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine14" rs:number="27" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine15" rs:number="28" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvdefine16" rs:number="29" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iquantity" rs:number="30" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inum" rs:number="31" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iquotedprice" rs:number="32" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iunitprice" rs:number="33" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iinvsprice" rs:number="34" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iinvncost" rs:number="35" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="imoney" rs:number="36" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="itax" rs:number="37" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="isum" rs:number="38" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inatunitprice" rs:number="39" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inatmoney" rs:number="40" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inattax" rs:number="41" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inatsum" rs:number="42" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="inatdiscount" rs:number="43" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="idiscount" rs:number="44" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ifhquantity" rs:number="45" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ifhnum" rs:number="46" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="12" rs:precision="38" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ifhmoney" rs:number="47" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ikpquantity" rs:number="48" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="fsalecost" rs:number="49" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="fsaleprice" rs:number="50" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iexchsum" rs:number="51" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="imoneysum" rs:number="52" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ikpnum" rs:number="53" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ikpmoney" rs:number="54" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="currency" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dpredate" rs:number="55" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cmemo" rs:number="56" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree1" rs:number="57" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree2" rs:number="58" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="iinvexchrate" rs:number="59" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iinvlscost" rs:number="60" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="itaxunitprice" rs:number="61" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree1" rs:number="62" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree2" rs:number="63" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree3" rs:number="64" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree4" rs:number="65" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree5" rs:number="66" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree6" rs:number="67" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree7" rs:number="68" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree8" rs:number="69" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree9" rs:number="70" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bfree10" rs:number="71" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree1" rs:number="72" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree2" rs:number="73" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree3" rs:number="74" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree4" rs:number="75" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree5" rs:number="76" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree6" rs:number="77" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree7" rs:number="78" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree8" rs:number="79" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree9" rs:number="80" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bsalepricefree10" rs:number="81" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="binvtype" rs:number="82" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="itaxrate" rs:number="83" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="kl" rs:number="84" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="kl2" rs:number="85" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="30" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine22" rs:number="86" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine23" rs:number="87" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine24" rs:number="88" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine25" rs:number="89" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine26" rs:number="90" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine27" rs:number="91" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="float" dt:maxLength="8" rs:precision="15" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine28" rs:number="92" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine29" rs:number="93" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine30" rs:number="94" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine31" rs:number="95" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine32" rs:number="96" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine33" rs:number="97" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="120"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine34" rs:number="98" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine35" rs:number="99" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine36" rs:number="100" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdefine37" rs:number="101" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="isosid" rs:number="102" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="citemcode" rs:number="103" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="citem_class" rs:number="104" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10"/>
+			</s:AttributeType>
+			<s:AttributeType name="dkl1" rs:number="105" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="31" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dkl2" rs:number="106" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="31" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="citemname" rs:number="107" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="255"/>
+			</s:AttributeType>
+			<s:AttributeType name="citem_cname" rs:number="108" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree3" rs:number="109" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree4" rs:number="110" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree5" rs:number="111" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree6" rs:number="112" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree7" rs:number="113" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree8" rs:number="114" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree9" rs:number="115" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cfree10" rs:number="116" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="20"/>
+			</s:AttributeType>
+			<s:AttributeType name="cinvauthid" rs:number="117" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cscloser" rs:number="118">
+				<s:datatype dt:type="string" dt:maxLength="20" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="irowno" rs:number="119" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="imoquantity" rs:number="120" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="icusbomid" rs:number="121" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cconfigstatus" rs:number="122">
+				<s:datatype dt:type="string" dt:maxLength="3" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccomunitcode" rs:number="123" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="35"/>
+			</s:AttributeType>
+			<s:AttributeType name="ippartseqid" rs:number="124" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ippartid" rs:number="125" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ippartqty" rs:number="126" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dpremodate" rs:number="127" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iquoid" rs:number="128" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cquocode" rs:number="129" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="cbarcode" rs:number="130" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccontractid" rs:number="131" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="64"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccontracttagcode" rs:number="132" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="150"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccontractrowguid" rs:number="133" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="uuid" dt:maxLength="16" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="batomodel" rs:number="134">
+				<s:datatype dt:type="string" dt:maxLength="1" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="bptomodel" rs:number="135">
+				<s:datatype dt:type="string" dt:maxLength="1" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusinvcode" rs:number="136" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="60"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccusinvname" rs:number="137" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="100"/>
+			</s:AttributeType>
+			<s:AttributeType name="fcusminprice" rs:number="138" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="borderbom" rs:number="139">
+				<s:datatype dt:type="string" dt:maxLength="1" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="borderbomover" rs:number="140">
+				<s:datatype dt:type="ui1" dt:maxLength="1" rs:precision="3" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="idemandtype" rs:number="141" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="i2" dt:maxLength="2" rs:precision="5" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdemandcode" rs:number="142" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="40"/>
+			</s:AttributeType>
+			<s:AttributeType name="cdemandmemo" rs:number="143" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="300"/>
+			</s:AttributeType>
+			<s:AttributeType name="iprekeepquantity" rs:number="144" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iprekeeptotquantity" rs:number="145" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iprekeeptotnum" rs:number="146" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="busecusbom" rs:number="147">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="iprekeepnum" rs:number="148" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="10" rs:precision="38" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="binvmodel" rs:number="149">
+				<s:datatype dt:type="string" dt:maxLength="1" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="csrpolicy" rs:number="150" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="2"/>
+			</s:AttributeType>
+			<s:AttributeType name="fpurquan" rs:number="151" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="28" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="btracksalebill" rs:number="152">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="iadvancedate" rs:number="153" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="i2" dt:maxLength="2" rs:precision="5" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="dreleasedate" rs:number="154" rs:nullable="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="fimquantity" rs:number="155" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="fomquantity" rs:number="156" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bproxyforeign" rs:number="157" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="ballpurchase" rs:number="158" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bspecialorder" rs:number="159" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="binvbatch" rs:number="160" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="btrack" rs:number="161" rs:writeunknown="true">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="dedate" rs:number="162" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="bproductbill" rs:number="163">
+				<s:datatype dt:type="boolean" dt:maxLength="2" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="iaoids" rs:number="164" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="cpreordercode" rs:number="165" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="30"/>
+			</s:AttributeType>
+			<s:AttributeType name="dbclosedate" rs:number="166" rs:nullable="true">
+				<s:datatype dt:type="string" dt:maxLength="10"/>
+			</s:AttributeType>
+			<s:AttributeType name="dbclosesystime" rs:number="167" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="dateTime" rs:dbtype="timestamp" dt:maxLength="16" rs:scale="3" rs:precision="23" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iinvid" rs:number="168" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="finquantity" rs:number="169">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="foutquantity" rs:number="170">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="26" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="fretquantity" rs:number="171">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="6" rs:precision="29" rs:fixedlength="true" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:AttributeType name="fretnum" rs:number="172" rs:nullable="true">
+				<s:datatype dt:type="number" rs:dbtype="numeric" dt:maxLength="19" rs:scale="9" rs:precision="38" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="iimid" rs:number="173" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="i8" dt:maxLength="8" rs:precision="19" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccorvouchtype" rs:number="174" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="10"/>
+			</s:AttributeType>
+			<s:AttributeType name="ccorvouchtypename" rs:number="175" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="string" dt:maxLength="150"/>
+			</s:AttributeType>
+			<s:AttributeType name="icorrowno" rs:number="176" rs:nullable="true" rs:writeunknown="true">
+				<s:datatype dt:type="int" dt:maxLength="4" rs:precision="10" rs:fixedlength="true"/>
+			</s:AttributeType>
+			<s:AttributeType name="editprop" rs:number="177">
+				<s:datatype dt:type="string" dt:maxLength="1" rs:maybenull="false"/>
+			</s:AttributeType>
+			<s:extends type="rs:rowbase"/>
+		</s:ElementType>
+	</s:Schema>
+	<rs:data>
+		<z:row autoid="4370" id="1000001550" cinvcode="ADSGD108B3" bservice="False" cinvname="M18-54059-012  ASSY COVER-PCB" cinvaddcode="M18-54059-012" cinvstd="LTM185AT05-V01" cinvm_unit="PCS" igrouptype="0" cgroupcode="1" iquantity="6.0000000000" iquotedprice=".0000000000" iunitprice=".0000000000" imoney="0" itax="0" isum="0" inatunitprice=".0000000000" inatmoney="0" inattax="0" inatsum="0" inatdiscount="0" idiscount="0" ifhquantity=".0000000000" ifhnum=".000000000000" ifhmoney="0" ikpquantity=".0000000000" fsalecost=".0000000000" fsaleprice=".0000000000" ikpnum=".0000000000" ikpmoney="0" dpredate="2012-08-17T00:00:00" itaxunitprice=".0000000000" bfree1="False" bfree2="False" bfree3="False" bfree4="False" bfree5="False" bfree6="False" bfree7="False" bfree8="False" bfree9="False" bfree10="False" bsalepricefree1="False" bsalepricefree2="False" bsalepricefree3="False" bsalepricefree4="False" bsalepricefree5="False" bsalepricefree6="False" bsalepricefree7="False" bsalepricefree8="False" bsalepricefree9="False" bsalepricefree10="False" binvtype="False" itaxrate=".0000000000" kl="100.0000000000" kl2="100.0000000000" cdefine23="" cdefine24="" cdefine26="0" isosid="1000004369" dkl1=".0000000000" dkl2=".0000000000" cscloser="" irowno="1" cconfigstatus="未选配" ccomunitcode="101" dpremodate="2012-08-17T00:00:00" batomodel="是" bptomodel="否" borderbom="否" borderbomover="0" idemandtype="1" busecusbom="0" binvmodel="否" csrpolicy="PE" btracksalebill="1" iadvancedate="0" dreleasedate="2012-08-17T00:00:00" bproxyforeign="False" bspecialorder="False" binvbatch="True" btrack="False" bproductbill="True" finquantity=".000000000" foutquantity=".000000000" fretquantity=".000000" fretnum=".000000000" editprop=""/>
+	</rs:data>
+</xml>

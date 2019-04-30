@@ -1,0 +1,69 @@
+
+
+IF not EXISTS  (SELECT  * FROM dbo.SysObjects WHERE ID = object_id(N'[_科目对照]') AND OBJECTPROPERTY(ID, 'IsTable') = 1)
+
+	CREATE TABLE [dbo].[_科目对照](
+		[iID] [int] IDENTITY(1,1) NOT NULL,
+		[会计科目] [nvarchar](50) NULL,
+		[对照科目] [nvarchar](50) NULL,
+		[Remark] [nvarchar](200) NULL,
+	 CONSTRAINT [PK__科目对照] PRIMARY KEY CLUSTERED 
+	(
+		[iID] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+
+go
+
+--UA_Menu表开始
+DELETE FROM UA_Menu WHERE  cMenu_Id=N'TH_1' 
+INSERT INTO UA_Menu (cMenu_Id,cMenu_Name,cMenu_Eng,cSub_Id,IGrade,cSupMenu_Id,bEndGrade,cAuth_Id,iOrder,iImgIndex,Paramters,Depends,Flag,IsWebFlag,cImageName,cMenuType) Values (N'TH_1',N'科目对照',N'4',NULL,'1',N'GL','1','','90010000.0000000000','1','',NULL,NULL,NULL,NULL,NULL)
+GO
+--UA_Menu表结束
+
+--UFMenu_Business_Lang表开始
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_1' AND LocaleId=N'EN-US' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_1','',N'EN-US')
+GO
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_1' AND LocaleId=N'ZH-CN' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_1',N'科目对照',N'ZH-CN')
+GO
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_1' AND LocaleId=N'ZH-TW' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_1','',N'ZH-TW')
+GO
+--UFMenu_Business_Lang表结束
+
+--UFSystem..UA_Idt表开始
+DELETE FROM UFSystem..UA_Idt WHERE  id=N'TH_1' 
+INSERT INTO UFSystem..UA_Idt (id,assembly,catalogtype,type,class,entrypoint,parameter,reserved) Values (N'TH_1',N'.\UAP\Runtime\UFIDA.U8.UAP.CustomApp.Entrance.dll','0','2',N'UFIDA.U8.UAP.CustomApp.Entrance.Entrance',NULL,NULL,NULL)
+GO
+--UFSystem..UA_Idt表结束
+
+
+
+
+
+--UA_Menu表开始
+DELETE FROM UA_Menu WHERE  cMenu_Id=N'TH_2' 
+INSERT INTO UA_Menu (cMenu_Id,cMenu_Name,cMenu_Eng,cSub_Id,IGrade,cSupMenu_Id,bEndGrade,cAuth_Id,iOrder,iImgIndex,Paramters,Depends,Flag,IsWebFlag,cImageName,cMenuType) Values (N'TH_2',N'凭证导入',N'4',NULL,'1',N'GL','1','','90010010.0000000000','1','',NULL,NULL,NULL,NULL,NULL)
+GO
+--UA_Menu表结束
+
+--UFMenu_Business_Lang表开始
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_2' AND LocaleId=N'EN-US' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_2','',N'EN-US')
+GO
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_2' AND LocaleId=N'ZH-CN' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_2',N'凭证导入',N'ZH-CN')
+GO
+DELETE FROM UFMenu_Business_Lang WHERE  MenuId=N'TH_2' AND LocaleId=N'ZH-TW' 
+INSERT INTO UFMenu_Business_Lang (MenuId,Caption,LocaleId) Values (N'TH_2','',N'ZH-TW')
+GO
+--UFMenu_Business_Lang表结束
+
+--UFSystem..UA_Idt表开始
+DELETE FROM UFSystem..UA_Idt WHERE  id=N'TH_2' 
+INSERT INTO UFSystem..UA_Idt (id,assembly,catalogtype,type,class,entrypoint,parameter,reserved) Values (N'TH_2',N'.\UAP\Runtime\UFIDA.U8.UAP.CustomApp.Entrance.dll','0','2',N'UFIDA.U8.UAP.CustomApp.Entrance.Entrance',NULL,NULL,NULL)
+GO
+--UFSystem..UA_Idt表结束
+

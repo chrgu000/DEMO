@@ -1,0 +1,36 @@
+<publishData>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webTTJM\">
+    <file relUrl="bin/TH.WebService.BaseClass.pdb" publishTime="07/06/2015 12:53:00" />
+    <file relUrl="bin/TH.WebService.Model.dll" publishTime="07/06/2015 12:53:03" />
+    <file relUrl="bin/TH.WebService.DAL.pdb" publishTime="07/06/2015 13:01:53" />
+    <file relUrl="bin/WSDBScanForCheck.dll" publishTime="07/06/2015 13:01:53" />
+    <file relUrl="Web.config" publishTime="06/16/2015 09:46:52" />
+    <file relUrl="bin/TH.WebService.BaseClass.dll" publishTime="07/06/2015 12:53:00" />
+    <file relUrl="DBScanForCheck.asmx" publishTime="09/03/2014 21:52:18" />
+    <file relUrl="bin/TH.WebService.Model.pdb" publishTime="07/06/2015 12:53:03" />
+    <file relUrl="bin/TH.WebService.DAL.dll" publishTime="07/06/2015 13:01:53" />
+    <file relUrl="bin/WSDBScanForCheck.pdb" publishTime="07/06/2015 13:01:53" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webDMC\">
+    <file relUrl="bin/TH.WebService.BaseClass.pdb" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="bin/TH.WebService.Model.dll" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="bin/TH.WebService.DAL.pdb" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="bin/WSDBScanForCheck.dll" publishTime="06/03/2015 14:57:32" />
+    <file relUrl="web.config" publishTime="05/24/2015 12:46:56" />
+    <file relUrl="bin/TH.WebService.BaseClass.dll" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="DBScanForCheck.asmx" publishTime="09/03/2014 21:52:18" />
+    <file relUrl="bin/TH.WebService.Model.pdb" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="bin/TH.WebService.DAL.dll" publishTime="06/03/2015 14:56:12" />
+    <file relUrl="bin/WSDBScanForCheck.pdb" publishTime="06/03/2015 14:57:31" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webTT\">
+    <file relUrl="bin/WSDBScanForCheck.pdb" publishTime="09/03/2014 21:34:07" />
+    <file relUrl="bin/BaseClass.dll" publishTime="09/03/2014 21:33:59" />
+    <file relUrl="bin/WSDBScanForCheck.dll" publishTime="09/03/2014 21:34:07" />
+    <file relUrl="web.config" publishTime="09/02/2014 01:44:12" />
+    <file relUrl="bin/TH.U8.dll" publishTime="09/03/2014 21:34:02" />
+    <file relUrl="WsBarCode.asmx" publishTime="09/02/2014 01:30:52" />
+    <file relUrl="bin/BaseClass.pdb" publishTime="09/03/2014 21:33:59" />
+    <file relUrl="bin/TH.U8.pdb" publishTime="09/03/2014 21:34:01" />
+  </publishTarget>
+</publishData>

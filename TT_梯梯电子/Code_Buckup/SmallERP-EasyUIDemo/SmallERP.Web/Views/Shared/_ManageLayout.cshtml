@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Plugins/jquery-easyui-1.4.4/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Plugins/jquery-easyui-1.4.4/themes/icon.css" rel="stylesheet" />
+    <link href="~/Plugins/layer-v3.0.3/skin/default/layer.css" rel="stylesheet" />
+    @RenderSection("CSS", false)
+    <script src="~/Plugins/jquery.min.js"></script>
+    <script src="~/Plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Plugins/jquery-easyui-1.4.4/locale/easyui-lang-en.js"></script>
+    <script src="~/Plugins/layer-v3.0.3/layer.js"></script>
+
+    <script src="~/Plugins/datagrid-dnd.js"></script>
+    @RenderSection("JS", false)
+</head>
+@RenderBody()
+</html>

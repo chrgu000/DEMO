@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "自动生成加班单", "自动生成加班单\自动生成加班单.csproj", "{87EEA5B7-3539-4F81-9246-69B57E5E9692}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = 自动生成加班单\\自动生成加班单.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = 自动生成加班单\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87EEA5B7-3539-4F81-9246-69B57E5E9692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EEA5B7-3539-4F81-9246-69B57E5E9692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EEA5B7-3539-4F81-9246-69B57E5E9692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EEA5B7-3539-4F81-9246-69B57E5E9692}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

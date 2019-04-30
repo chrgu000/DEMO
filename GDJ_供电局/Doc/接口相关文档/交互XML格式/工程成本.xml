@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='gb2312' standalone='yes'?>
+<NewDataSet>
+	<ProCost>
+		<AccID>电建公司</AccID>
+		<GCID>工程主键</GCID>
+		<equipment>设备</equipment>
+		<material>材料</material>
+		<cost>费用</cost>
+		<Outsourcing>外包工程款</Outsourcing>
+	</ProCost>
+</NewDataSet>

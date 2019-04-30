@@ -1,0 +1,21 @@
+
+create view [dbo].[_GetË¢¿¨Ç©¿¨Êý¾Ý]
+as
+
+SELECT uRecordId, cPsn_Num, vCardNo, dDateTime, bDuty, bOverTime, 
+		  bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason, 
+		  dOldDateTime, iRecordId, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag, 
+		  cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+		  , cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude,     cSource
+		  , VoucherID, cExamineApproveType
+	FROM hr_tm_SignCardData
+
+	union all
+
+	SELECT uRecordId, cPsn_Num, vCardNo, dDateTime, bDuty, bOverTime, 
+		  bManual, iPeriodId, iFlag, cOptPsn_Num, dSysTime, vRemark, vReason, 
+		  dOldDateTime, iRecordID, bLastFlag, vStatus1, nStatus2, bEffect, bAuditFlag, 
+		  cAuditorNum, dAuditTime, JobNumber, nMachine_Num
+		  , cMobileSiteCode, cMobileSiteAddress, cLongitude, cLatitude, cSource
+		  ,null,null
+	FROM hr_tm_OriCardData

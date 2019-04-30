@@ -1,0 +1,157 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesSum13]    Script Date: 11/06/2014 10:59:50 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesSum13]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesSum13]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesSum13]    Script Date: 11/06/2014 10:59:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+--		exec _GetSalesSum13 '2014'
+
+-----------------------------
+--俞霞
+--2014-9-21
+-----------------------------
+
+
+CREATE Proc [dbo].[_GetSalesSum13](@iYear1 varchar(4))
+as
+
+set nocount on
+
+
+IF Object_id('Tempdb..#SaleMonth') IS NOT NULL   DROP TABLE #SaleMonth
+
+select iyear,cDepMemo,cInvCName1,cInvCName2,cInvCName3,cInvCCode,cInvCCode3,cInvCode,cInvName
+	,sum(case when cInvCCode3='902021' or  cInvCCode3='902022' then iQuantity end) as iQtySBQ系列,sum(case when cInvCCode3='902021' or  cInvCCode3='902022' then iMoney end) as iMoneySBQ系列
+	,sum(case when cInvCCode3='902014' then iQuantity end) as iQtyH系列,sum(case when cInvCCode3='902014' then iMoney end) as iMoneyH系列
+	,sum(case when cInvCCode3='902013' then iQuantity end) as iQtyPLUS系列,sum(case when cInvCCode3='902013' then iMoney end) as iMoneyPLUS系列
+	,sum(case when cInvCCode3='902011' then iQuantity end) as iQtyS系列,sum(case when cInvCCode3='902011' then iMoney end) as iMoneyS系列
+	,sum(case when cInvCCode3='902012' then iQuantity end) as iQtyW系列,sum(case when cInvCCode3='902012' then iMoney end) as iMoneyW系列
+	into #SaleMonth
+from (
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,c.cDepMemo,d.cInvCCode,e.cInvCName as cInvCName1,f.cInvCName as cInvCName2,g.cInvCCode as cInvCCode3,g.cInvCName as cInvCName3,b.cInvCode,d.cInvName,b.iQuantity,b.iMoney 
+from UFDATA_101_2013..DispatchList a 
+inner join UFDATA_101_2013..DispatchLists b on a.DLID = b.DLID 
+inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+inner join UFDATA_101_2013..Inventory d on d.cInvCode = b.cInvCode
+inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,3)
+inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,5)
+inner join UFDATA_101_2013..InventoryClass g on g.cInvCCode = left(d.cInvCCode,8)
+where isnull(cVerifier ,'') <> '' 
+union all 
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,c.cDepMemo,d.cInvCCode,e.cInvCName as cInvCName1,f.cInvCName as cInvCName2,g.cInvCCode as cInvCCode3,g.cInvCName as cInvCName3,b.cInvCode,d.cInvName,b.iQuantity,b.iMoney 
+from UFDATA_102_2014..DispatchList a 
+inner join UFDATA_102_2014..DispatchLists b on a.DLID = b.DLID 
+inner join UFDATA_102_2014..Department c on c.cDepCode = a.cDepCode
+inner join UFDATA_102_2014..Inventory d on d.cInvCode = b.cInvCode
+inner join UFDATA_102_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,3)
+inner join UFDATA_102_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,5)
+inner join UFDATA_102_2014..InventoryClass g on g.cInvCCode = left(d.cInvCCode,8)
+where isnull(cVerifier ,'') <> '' 
+union all 
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,c.cDepMemo,d.cInvCCode,e.cInvCName as cInvCName1,f.cInvCName as cInvCName2,g.cInvCCode as cInvCCode3,g.cInvCName as cInvCName3,b.cInvCode,d.cInvName,b.iQuantity,b.iMoney 
+from UFDATA_103_2014..DispatchList a 
+inner join UFDATA_103_2014..DispatchLists b on a.DLID = b.DLID 
+inner join UFDATA_103_2014..Department c on c.cDepCode = a.cDepCode
+inner join UFDATA_103_2014..Inventory d on d.cInvCode = b.cInvCode
+inner join UFDATA_103_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,3)
+inner join UFDATA_103_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,5)
+inner join UFDATA_103_2014..InventoryClass g on g.cInvCCode = left(d.cInvCCode,6)
+where isnull(cVerifier ,'') <> '' 
+union all 
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,c.cDepMemo,d.cInvCCode,e.cInvCName as cInvCName1,f.cInvCName as cInvCName2,g.cInvCCode as cInvCCode3,g.cInvCName as cInvCName3,b.cInvCode,d.cInvName,b.iQuantity,b.iMoney 
+from UFDATA_104_2014..DispatchList a 
+inner join UFDATA_104_2014..DispatchLists b on a.DLID = b.DLID 
+inner join UFDATA_104_2014..Department c on c.cDepCode = a.cDepCode
+inner join UFDATA_104_2014..Inventory d on d.cInvCode = b.cInvCode
+inner join UFDATA_104_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,3)
+inner join UFDATA_104_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,5)
+inner join UFDATA_104_2014..InventoryClass g on g.cInvCCode = left(d.cInvCCode,6)
+where isnull(cVerifier ,'') <> '' 
+union all 
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,c.cDepMemo,d.cInvCCode,e.cInvCName as cInvCName1,f.cInvCName as cInvCName2,g.cInvCCode as cInvCCode3,g.cInvCName as cInvCName3,b.cInvCode,d.cInvName,b.iQuantity,b.iMoney 
+from UFDATA_201_2014..DispatchList a 
+inner join UFDATA_201_2014..DispatchLists b on a.DLID = b.DLID 
+inner join UFDATA_201_2014..Department c on c.cDepCode = a.cDepCode
+inner join UFDATA_201_2014..Inventory d on d.cInvCode = b.cInvCode
+inner join UFDATA_201_2014..InventoryClass e on e.cInvCCode = left(d.cInvCCode,3)
+inner join UFDATA_201_2014..InventoryClass f on f.cInvCCode = left(d.cInvCCode,5)
+inner join UFDATA_201_2014..InventoryClass g on g.cInvCCode = left(d.cInvCCode,6)
+where isnull(cVerifier ,'') <> '' 
+) as a
+where 1=1 and iyear=@iYear1 
+group by iyear,cDepMemo,cInvCName1,cInvCName2,cInvCName3,cInvCCode,cInvCCode3,cInvCode,cInvName
+
+--select * from #SaleMonth --where cInvCName='SBQ系列'
+
+select 年份
+	,sum(iMoneySBQ系列) as iMoneySBQ系列
+	,sum(iMoneyH系列) as iMoneyH系列
+	,sum(iMoneyPLUS系列) as iMoneyPLUS系列
+	,sum(iMoneyS系列) as iMoneyS系列
+	,sum(iMoneyW系列) as iMoneyW系列 into #SaleMonth2
+	from  (
+select iyear as 年份
+,iMoneySBQ系列,iMoneyH系列,iMoneyPLUS系列,iMoneyS系列,iMoneyW系列
+,null as iQtyPlan1,null as iMoneyPlan1,null as iQtyPlan2,null as iMoneyPlan2,null as iQtyPlan3,null as iMoneyPlan3
+,null as iQtyPlan4,null as iMoneyPlan4,null as iQtyPlan5,null as iMoneyPlan5,null as iQtyPlan6,null as iMoneyPlan6
+,null as iQtyPlan7,null as iMoneyPlan7,null as iQtyPlan8,null as iMoneyPlan8,null as iQtyPlan9,null as iMoneyPlan9
+,null as iQtyPlan10,null as iMoneyPlan10,null as iQtyPlan11,null as iMoneyPlan11,null as iQtyPlan12,null as iMoneyPlan12
+from #SaleMonth 
+) a 
+group by 年份
+order by 年份
+
+select 年份,convert(nvarchar(50),'SBQ系列') as 系列,convert(decimal(18, 6),iMoneySBQ系列) as 金额
+into #SaleMontht
+from #SaleMonth2
+where 年份 = @iYear1	
+
+insert into #SaleMontht(年份,系列,金额)
+select 年份,'H系列',iMoneyH系列 as 金额
+from #SaleMonth2
+where 年份 = @iYear1	
+
+insert into #SaleMontht(年份,系列,金额)
+select 年份,'PLUS系列',iMoneyPLUS系列 as 金额
+from #SaleMonth2
+where 年份 = @iYear1	
+
+insert into #SaleMontht(年份,系列,金额)
+select 年份,'S系列',iMoneyS系列 as 金额
+from #SaleMonth2
+where 年份 = @iYear1	
+
+insert into #SaleMontht(年份,系列,金额)
+select 年份,'W系列',iMoneyW系列 as 金额
+from #SaleMonth2
+where 年份 = @iYear1	
+
+
+select 系列,sum(金额) as 金额 from #SaleMontht  group by 系列 order by 系列
+
+--		exec _GetSalesSum13 '2014'
+
+
+
+
+GO
+
+

@@ -1,0 +1,11 @@
+<publishData>
+  <publishTarget publishUrl="C:\Inetpub\wwwroot\webTT\">
+    <file relUrl="bin/TH.DBWebService.pdb" publishTime="08/21/2009 11:02:43" />
+    <file relUrl="bin/TH.DBWebService.dll" publishTime="08/21/2009 11:02:43" />
+    <file relUrl="DBService.asmx" publishTime="03/17/2009 14:40:40" />
+    <file relUrl="bin/BaseInfo/App.rar" publishTime="10/12/2008 11:51:12" />
+    <file relUrl="bin/BaseInfo/UpdateLocal.xml" publishTime="07/21/2008 09:05:09" />
+    <file relUrl="bin/BaseInfo/App.config" publishTime="08/21/2009 09:14:04" />
+    <file relUrl="web.config" publishTime="08/18/2009 15:36:15" />
+  </publishTarget>
+</publishData>

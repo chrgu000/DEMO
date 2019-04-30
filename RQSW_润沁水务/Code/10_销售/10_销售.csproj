@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42253ED6-A39D-43FD-A46E-1555720967D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>销售</RootNamespace>
+    <AssemblyName>销售</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="客户管理\Frm意向性客户状态查询.cs">
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户状态查询.designer.cs">
+      <DependentUpon>Frm意向性客户状态查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单.cs">
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单.designer.cs">
+      <DependentUpon>Frm销售核销单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单_Add.designer.cs">
+      <DependentUpon>Frm销售核销单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单列表.cs">
+    </Compile>
+    <Compile Include="销售核销单\Frm销售核销单列表.designer.cs">
+      <DependentUpon>Frm销售核销单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售订单4_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售核销单\Frm销售订单4_New.designer.cs">
+      <DependentUpon>Frm销售订单4_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="人员管理\Frm人员调整单.cs">
+    </Compile>
+    <Compile Include="人员管理\Frm人员调整单.designer.cs">
+      <DependentUpon>Frm人员调整单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="人员管理\Frm人员调整单列表.cs">
+    </Compile>
+    <Compile Include="人员管理\Frm人员调整单列表.designer.cs">
+      <DependentUpon>Frm人员调整单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="合同登记\Frm合同登记.cs">
+    </Compile>
+    <Compile Include="合同登记\Frm合同登记.designer.cs">
+      <DependentUpon>Frm合同登记.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单_Add.designer.cs">
+      <DependentUpon>Frm客户调整单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记单.cs">
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记单.designer.cs">
+      <DependentUpon>Frm意向性客户登记单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记单_Add.designer.cs">
+      <DependentUpon>Frm意向性客户登记单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记列表.cs">
+    </Compile>
+    <Compile Include="客户管理\Frm意向性客户登记列表.designer.cs">
+      <DependentUpon>Frm意向性客户登记列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单.cs">
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单.designer.cs">
+      <DependentUpon>Frm客户调整单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单列表.cs">
+    </Compile>
+    <Compile Include="客户管理\Frm客户调整单列表.designer.cs">
+      <DependentUpon>Frm客户调整单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="人员管理\Frm人员调整单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="人员管理\Frm人员调整单_Add.designer.cs">
+      <DependentUpon>Frm人员调整单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="应收期初\Frm应收期初.cs">
+    </Compile>
+    <Compile Include="应收期初\Frm应收期初.designer.cs">
+      <DependentUpon>Frm应收期初.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票.cs">
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票.designer.cs">
+      <DependentUpon>Frm销售发票.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票列表.cs">
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票列表.designer.cs">
+      <DependentUpon>Frm销售发票列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售发票\Frm销售发票_Add.designer.cs">
+      <DependentUpon>Frm销售发票_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售发票\Frm销售订单_New2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售发票\Frm销售订单_New2.designer.cs">
+      <DependentUpon>Frm销售订单_New2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单_Add.designer.cs">
+      <DependentUpon>Frm销售收款单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单.cs">
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单.designer.cs">
+      <DependentUpon>Frm销售收款单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单列表.cs">
+    </Compile>
+    <Compile Include="销售收款\Frm销售收款单列表.designer.cs">
+      <DependentUpon>Frm销售收款单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售收款\Frm销售订单_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售收款\Frm销售订单_New.designer.cs">
+      <DependentUpon>Frm销售订单_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售权限\Frm销售权限.cs">
+    </Compile>
+    <Compile Include="销售权限\Frm销售权限.designer.cs">
+      <DependentUpon>Frm销售权限.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售权限\Frm销售收款权限.cs">
+    </Compile>
+    <Compile Include="销售权限\Frm销售收款权限.designer.cs">
+      <DependentUpon>Frm销售收款权限.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售核销单\Frm未核销收款单_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售核销单\Frm未核销收款单_New.designer.cs">
+      <DependentUpon>Frm未核销收款单_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单_Add.designer.cs">
+      <DependentUpon>Frm销售订单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单列表.cs">
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单列表.designer.cs">
+      <DependentUpon>Frm销售订单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单.cs">
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单.designer.cs">
+      <DependentUpon>Frm销售订单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单子件_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单子件_Add.designer.cs">
+      <DependentUpon>Frm销售订单子件_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单业务费用_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售订单\Frm销售订单业务费用_Add.designer.cs">
+      <DependentUpon>Frm销售订单业务费用_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单历史.cs">
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单历史.designer.cs">
+      <DependentUpon>Frm销售订单历史.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单业务费用历史_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单业务费用历史_Add.designer.cs">
+      <DependentUpon>Frm销售订单业务费用历史_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单子件历史_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售订单历史\Frm销售订单子件历史_Add.designer.cs">
+      <DependentUpon>Frm销售订单子件历史_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单.cs">
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单.designer.cs">
+      <DependentUpon>Frm销售退货单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单_Add.designer.cs">
+      <DependentUpon>Frm销售退货单_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单列表.cs">
+    </Compile>
+    <Compile Include="销售退货单\Frm销售退货单列表.designer.cs">
+      <DependentUpon>Frm销售退货单列表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售订单_New3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售退货单\Frm销售订单_New3.designer.cs">
+      <DependentUpon>Frm销售订单_New3.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="客户管理\Frm意向性客户状态查询.resx">
+      <DependentUpon>Frm意向性客户状态查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售核销单\Frm销售核销单.resx">
+      <DependentUpon>Frm销售核销单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售核销单\Frm销售核销单_Add.resx">
+      <DependentUpon>Frm销售核销单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售核销单\Frm销售核销单列表.resx">
+      <DependentUpon>Frm销售核销单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售核销单\Frm销售订单4_New.resx">
+      <DependentUpon>Frm销售订单4_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="人员管理\Frm人员调整单.resx">
+      <DependentUpon>Frm人员调整单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="人员管理\Frm人员调整单列表.resx">
+      <DependentUpon>Frm人员调整单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="合同登记\Frm合同登记.resx">
+      <DependentUpon>Frm合同登记.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm客户调整单_Add.resx">
+      <DependentUpon>Frm客户调整单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm意向性客户登记单.resx">
+      <DependentUpon>Frm意向性客户登记单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm意向性客户登记单_Add.resx">
+      <DependentUpon>Frm意向性客户登记单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm意向性客户登记列表.resx">
+      <DependentUpon>Frm意向性客户登记列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm客户调整单.resx">
+      <DependentUpon>Frm客户调整单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户管理\Frm客户调整单列表.resx">
+      <DependentUpon>Frm客户调整单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="人员管理\Frm人员调整单_Add.resx">
+      <DependentUpon>Frm人员调整单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="应收期初\Frm应收期初.resx">
+      <DependentUpon>Frm应收期初.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售发票\Frm销售发票.resx">
+      <DependentUpon>Frm销售发票.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售发票\Frm销售发票列表.resx">
+      <DependentUpon>Frm销售发票列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售发票\Frm销售发票_Add.resx">
+      <DependentUpon>Frm销售发票_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售发票\Frm销售订单_New2.resx">
+      <DependentUpon>Frm销售订单_New2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售收款\Frm销售收款单_Add.resx">
+      <DependentUpon>Frm销售收款单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售收款\Frm销售收款单.resx">
+      <DependentUpon>Frm销售收款单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售收款\Frm销售收款单列表.resx">
+      <DependentUpon>Frm销售收款单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售收款\Frm销售订单_New.resx">
+      <DependentUpon>Frm销售订单_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售权限\Frm销售权限.resx">
+      <DependentUpon>Frm销售权限.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售权限\Frm销售收款权限.resx">
+      <DependentUpon>Frm销售收款权限.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售核销单\Frm未核销收款单_New.resx">
+      <DependentUpon>Frm未核销收款单_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单\Frm销售订单_Add.resx">
+      <DependentUpon>Frm销售订单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单\Frm销售订单列表.resx">
+      <DependentUpon>Frm销售订单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单\Frm销售订单.resx">
+      <DependentUpon>Frm销售订单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单\Frm销售订单子件_Add.resx">
+      <DependentUpon>Frm销售订单子件_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单\Frm销售订单业务费用_Add.resx">
+      <DependentUpon>Frm销售订单业务费用_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单历史\Frm销售订单历史.resx">
+      <DependentUpon>Frm销售订单历史.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单历史\Frm销售订单业务费用历史_Add.resx">
+      <DependentUpon>Frm销售订单业务费用历史_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售订单历史\Frm销售订单子件历史_Add.resx">
+      <DependentUpon>Frm销售订单子件历史_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售退货单\Frm销售退货单.resx">
+      <DependentUpon>Frm销售退货单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售退货单\Frm销售退货单_Add.resx">
+      <DependentUpon>Frm销售退货单_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售退货单\Frm销售退货单列表.resx">
+      <DependentUpon>Frm销售退货单列表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售退货单\Frm销售订单_New3.resx">
+      <DependentUpon>Frm销售订单_New3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

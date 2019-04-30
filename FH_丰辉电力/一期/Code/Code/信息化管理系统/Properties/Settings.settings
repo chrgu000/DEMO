@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AppStart.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="杜乐信息化管理系统V2_WebReference_DBWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1/webFH/DBService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

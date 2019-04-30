@@ -1,0 +1,218 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        $(function () {
+            $('#queryDate1').datebox("setValue", new Date(new Date().getTime() - (1000 * 60 * 60 * 24)).format("yyyy-mm-dd"));
+            $('#queryDate2').datebox("setValue", new Date().format("yyyy-mm-dd"));
+            //url定向
+            //var actionUrl = {
+            //    GetList: '/List/GetList',
+            //}
+            
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                reloadData();
+            });
+
+            //初始化按钮
+            $('#btnReset').click(function () {
+                $('#queryDate1').datebox("setValue", new Date(new Date().getTime() - (1000 * 60 * 60 * 24)).format("yyyy-mm-dd"));
+                $('#queryDate2').datebox("setValue", new Date().format("yyyy-mm-dd"));
+                reloadData();
+            });
+
+            //重新加载grid
+            function reloadData() {
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+                $('#grid').datagrid('load', {
+                    queryDate1: $('#queryDate1').datebox('getValue'),
+                    queryDate2: $('#queryDate2').datebox('getValue')
+                });
+            }
+
+            getList();
+
+            
+        });
+
+        //grid
+        function getList() {
+            // grid工具栏添加按钮
+            $('#grid').datagrid({
+                url: '/List/GetList',
+                pagination: true,//分页
+                pageSize: 500,
+                pageList: [500, 1000, 1500, 2000],
+                queryParams: {
+                    queryDate1: $('#queryDate1').datebox('getValue'),
+                    queryDate2: $('#queryDate2').datebox('getValue')
+                },
+                toolbar: [
+                ],
+                columns: [[
+                    { field: 'iID', title: '序号', width: 80, },
+                    { field: 'CreateUid', title: '创建人', width: 80, },
+                    {
+                        field: 'dtmCreate', title: '创建日期', width: 250,
+                        //formatter: function (value, row, index) {
+                        //    return DateTimeFormatter(value);
+                        //},
+                    },
+                    //{
+                    //    field: 'dDate', title: '时间', width: 150,
+                    //},
+                    //{ field: 'ProdGroup', title: '项目组', width: 80, },
+                    {
+                        field: 'sVerTrialkitting', title: '版本', width: 200,
+                        formatter: function (value, row, index) {
+                            var sVerTrialkitting = row.sVerTrialkitting;
+                            if (sVerTrialkitting != null) {
+                                var btn = '<a class="editcls" onclick="openRow(\'' + row.sVerTrialkitting + '\')" href="javascript:void(0)">' + value + '</a>';
+                                //alert(btn);
+                                return btn;
+                            }
+                        }
+                    },
+                    { field: 'sType', title: '类别', width: 200, },
+                    {
+                        field: 'iState', title: '状态', width: 120,
+                        formatter: function (value, row, index) {
+                            //0 待处理；1 正在处理；2 处理完成成功；3 处理完成失败；4 强制取消计算
+                            if (value == "0") {
+                                return "待处理";
+                            }
+                            else if (value == "1") {
+                                return "处理中";
+                            }
+                            else if (value == "2") {
+                                return "成功";
+                            }
+                            else if (value == "3") {
+                                return "失败";
+                            }
+                            else if (value == "4") {
+                                return "强制取消计算";
+                            }
+                            return "";
+                        },
+                    },
+                    { field: 'dtmStart', title: '开始时间', width: 200, },
+                    { field: 'dtmEnd', title: '结束时间', width: 200, },
+                    { field: 'Remark', title: '备注', width: 80, },
+                    {
+                        field: 'Stop', title: '停止', width: 120,
+                        formatter: function (value, rec) {
+                            var btn = '<a class="editcls" onclick="editRow(\'' + rec.iID + '\')" href="javascript:void(0)">Stop</a>';
+                            return btn;
+                        }
+                    },
+                    {
+                        field: 'Delete', title: '作废', width: 120,
+                        formatter: function (value, rec) {
+                            var btn = '<a class="editdel" onclick="delRow(\'' + rec.iID + '\')" href="javascript:void(0)">作废</a>';
+                            return btn;
+                        }
+                    },
+                ]],
+            });
+        }
+        //
+        function openRow(sVerTrialkitting) {
+            window.parent.addTab("Main Calculation", "/Planner/Index?sVerTrialkitting=" + sVerTrialkitting + "", '');
+        }
+
+        //停止
+        function editRow(iID) {
+            $.messager.confirm('提示', '确认是否要停止？', function (r) {
+                if (r) {
+                    $.ajax({
+                        type: "post",
+                        url: '/List/Stop',
+                        cache: false,
+                        data: { iID: iID },
+                        datatype: "json",
+                        async: false,
+                        success: function (data) {
+                            if (data["Result"] === "1") {
+                                $.messager.alert('信息', data["Msg"]);
+                                getList();
+                            } else {
+                                $.messager.alert('信息', data["Msg"]);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        //停止
+        function delRow(iID) {
+            $.messager.confirm('提示', '确认是否要作废？', function (r) {
+                if (r) {
+                    $.ajax({
+                        type: "post",
+                        url: '/List/Delete',
+                        cache: false,
+                        data: { iID: iID },
+                        datatype: "json",
+                        async: false,
+                        success: function (data) {
+                            if (data["Result"] === "1") {
+                                $.messager.alert('信息', data["Msg"]);
+                                getList();
+                            } else {
+                                $.messager.alert('信息', data["Msg"]);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        //格式化日期
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>开始时间：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate1" id="queryDate1" />
+                </td>
+                <td>结束时间：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate2" id="queryDate2" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false,fit:true"></table>
+    </div>
+</body>

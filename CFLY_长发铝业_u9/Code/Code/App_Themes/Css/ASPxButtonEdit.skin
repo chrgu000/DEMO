@@ -1,0 +1,11 @@
+﻿<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+<dx:ASPxButtonEdit  runat="server" Width="100px" ClientInstanceName="ASPxButtonEditcCus"
+                        RightToLeft="False" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" 
+                        CssPostfix="BlackGlass" 
+                        SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+
+<ValidationSettings ErrorText="Error has occurred">
+                        </ValidationSettings>
+                        
+                        
+                        </dx:ASPxButtonEdit>

@@ -1,0 +1,7 @@
+Module1 = 81, 81, 1190, 602, C
+voucherinterface = 44, 44, 1190, 621, Z
+FrmReport = 0, 0, 0, 0, C, 66, 66, 1212, 643, C
+PrintPU_ArrivalVouch = 30, 30, 1183, 673, 
+PrintDispatchList = 125, 125, 1206, 786, 
+PrintWork1 = 100, 100, 982, 631, 
+PrintWork2 = 125, 125, 1277, 786, 

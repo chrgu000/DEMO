@@ -1,0 +1,44 @@
+
+http://localhost:60308/PartMaster/AddPartMaster    16时10分32秒
+Cannot insert the value NULL into column 'partnum', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时10分53秒
+Cannot insert the value NULL into column 'partnum', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时11分10秒
+Cannot insert the value NULL into column 'adatepm', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时13分22秒
+Cannot insert the value NULL into column 'dbmethdate', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时15分10秒
+Cannot insert the value NULL into column 'drmethdate', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时15分52秒
+Cannot insert the value NULL into column 'pricedate', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时16分32秒
+Cannot insert the value NULL into column 'curdate', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时17分20秒
+Cannot insert the value NULL into column 'standate', table 'smallerp.dbo.t_o_allpartmaster'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时18分44秒
+Cannot insert the value NULL into column 'partid', table 'smallerp.dbo.t_o_stockedparts'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时20分09秒
+Violation of PRIMARY KEY constraint 'pk_allpartmaster'. Cannot insert duplicate key in object 'dbo.t_o_allpartmaster'. The duplicate key value is (21f05d88-fe8f-4e9d-927e-cdff2a).
+The statement has been terminated.
+
+http://localhost:60308/PartMaster/AddPartMaster    16时20分13秒
+Violation of PRIMARY KEY constraint 'pk_allpartmaster'. Cannot insert duplicate key in object 'dbo.t_o_allpartmaster'. The duplicate key value is (21f05d88-fe8f-4e9d-927e-cdff2a).
+The statement has been terminated.

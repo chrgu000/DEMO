@@ -1,0 +1,160 @@
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth7]    Script Date: 09/26/2014 22:47:39 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[_GetSalesAndPlanMonth7]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[_GetSalesAndPlanMonth7]
+GO
+
+USE [UFDATA_101_2013]
+GO
+
+/****** Object:  StoredProcedure [dbo].[_GetSalesAndPlanMonth7]    Script Date: 09/26/2014 22:47:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+--		exec _GetSalesAndPlanMonth7 '2014' 
+
+-----------------------------
+--俞霞
+--2014-9-21
+-----------------------------
+
+
+CREATE Proc [dbo].[_GetSalesAndPlanMonth7](@iYear1 varchar(4))
+--,@iYear2 varchar(4),@DepName varchar(50)
+as
+
+set nocount on
+
+IF Object_id('Tempdb..#SaleMonth') IS NOT NULL   DROP TABLE #SaleMonth
+IF Object_id('Tempdb..#SaleMonth1') IS NOT NULL   DROP TABLE #SaleMonth1
+IF Object_id('Tempdb..#SaleMonth3') IS NOT NULL   DROP TABLE #SaleMonth3
+
+select iyear,c.cDepMemo,f.cInvCName as cInvCName1,e.cInvCName as cInvCName2,a.cInvCode,d.cInvName,d.cInvCCode
+	,sum(case when imonth=1 then iQuantity end) as iQty1,sum(case when imonth=1 then iMoney end) as iMoney1
+	,sum(case when imonth=2 then iQuantity end) as iQty2,sum(case when imonth=2 then iMoney end) as iMoney2
+	,sum(case when imonth=3 then iQuantity end) as iQty3,sum(case when imonth=3 then iMoney end) as iMoney3
+	,sum(case when imonth=4 then iQuantity end) as iQty4,sum(case when imonth=4 then iMoney end) as iMoney4
+	,sum(case when imonth=5 then iQuantity end) as iQty5,sum(case when imonth=5 then iMoney end) as iMoney5
+	,sum(case when imonth=6 then iQuantity end) as iQty6,sum(case when imonth=6 then iMoney end) as iMoney6
+	,sum(case when imonth=7 then iQuantity end) as iQty7,sum(case when imonth=7 then iMoney end) as iMoney7
+	,sum(case when imonth=8 then iQuantity end) as iQty8,sum(case when imonth=8 then iMoney end) as iMoney8
+	,sum(case when imonth=9 then iQuantity end) as iQty9,sum(case when imonth=9 then iMoney end) as iMoney9
+	,sum(case when imonth=10 then iQuantity end) as iQty10,sum(case when imonth=10 then iMoney end) as iMoney10
+	,sum(case when imonth=11 then iQuantity end) as iQty11,sum(case when imonth=11 then iMoney end) as iMoney11
+	,sum(case when imonth=12 then iQuantity end) as iQty12,sum(case when imonth=12 then iMoney end) as iMoney12
+	,sum(iQuantity) as iQuantitySum,sum(iMoney) as iMoneySum
+	into #SaleMonth
+from (
+select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_101_2013..SaleBillVouch a inner join UFDATA_101_2013..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_102_2014..SaleBillVouch a inner join UFDATA_102_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_103_2014..SaleBillVouch a inner join UFDATA_103_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_104_2014..SaleBillVouch a inner join UFDATA_104_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+union all select datepart(YEAR,a.dDate) as iyear,datepart(MONTH,a.dDate) as imonth,a.dDate,a.cDepCode,b.cInvCode,b.iQuantity,b.iMoney from UFDATA_201_2014..SaleBillVouch a inner join UFDATA_201_2014..SaleBillVouchs  b on a.SBVID = b.SBVID where isnull(cChecker ,'') <> '' and ISNULL(cInvalider ,'') = ''
+) as a
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory d on d.cInvCode = a.cInvCode
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(d.cInvCCode,5)
+	inner join UFDATA_101_2013..InventoryClass f on f.cInvCCode = left(d.cInvCCode,3)
+where 1=1 and iyear=@iYear1 
+group by iyear,c.cDepMemo,f.cInvCName,e.cInvCName,e.cInvCCode,a.cInvCode,d.cInvName,d.cInvCCode
+
+select iyear,c.cDepMemo,d.cInvCName as cInvCName1,e.cInvCName as cInvCName2,i.cInvName,g.cInvCCode,g.cInvCName
+	,case when iMonth=1 then iQuantity end as iQty1,case when iMonth=1 then iMoney end as iMoney1
+	,case when iMonth=2 then iQuantity end as iQty2,case when iMonth=2 then iMoney end as iMoney2
+	,case when iMonth=3 then iQuantity end as iQty3,case when iMonth=3 then iMoney end as iMoney3
+	,case when iMonth=4 then iQuantity end as iQty4,case when iMonth=4 then iMoney end as iMoney4
+	,case when iMonth=5 then iQuantity end as iQty5,case when iMonth=5 then iMoney end as iMoney5
+	,case when iMonth=6 then iQuantity end as iQty6,case when iMonth=6 then iMoney end as iMoney6
+	,case when iMonth=7 then iQuantity end as iQty7,case when iMonth=7 then iMoney end as iMoney7
+	,case when iMonth=8 then iQuantity end as iQty8,case when iMonth=8 then iMoney end as iMoney8
+	,case when iMonth=9 then iQuantity end as iQty9,case when iMonth=9 then iMoney end as iMoney9
+	,case when iMonth=10 then iQuantity end as iQty10,case when iMonth=10 then iMoney end as iMoney10
+	,case when iMonth=11 then iQuantity end as iQty11,case when iMonth=11 then iMoney end as iMoney11
+	,case when iMonth=12 then iQuantity end as iQty12,case when iMonth=12 then iMoney end as iMoney12
+	,iQuantity as iQuantitySum,iMoney as iMoneySum
+	into #SaleMonth3
+from UFDATA_101_2013.._SalesHistory a 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..Inventory i on i.cInvCode = a.cInvCode
+	inner join UFDATA_101_2013..InventoryClass d on d.cInvCCode = left(a.cInvCCode,3)
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(a.cInvCCode,5)
+	inner join UFDATA_101_2013..InventoryClass g on g.cInvCCode = left(a.cInvCCode,8)
+where 1=1 and iyear=(@iYear1-1) 
+
+select iyear,c.cDepMemo,d.cInvCName as cInvCName1,e.cInvCName as cInvCName2
+	,case when iMonth=1 then iQuantity end as iQtyPlan1,case when iMonth=1 then iMoney end as iMoneyPlan1
+	,case when iMonth=2 then iQuantity end as iQtyPlan2,case when iMonth=2 then iMoney end as iMoneyPlan2
+	,case when iMonth=3 then iQuantity end as iQtyPlan3,case when iMonth=3 then iMoney end as iMoneyPlan3
+	,case when iMonth=4 then iQuantity end as iQtyPlan4,case when iMonth=4 then iMoney end as iMoneyPlan4
+	,case when iMonth=5 then iQuantity end as iQtyPlan5,case when iMonth=5 then iMoney end as iMoneyPlan5
+	,case when iMonth=6 then iQuantity end as iQtyPlan6,case when iMonth=6 then iMoney end as iMoneyPlan6
+	,case when iMonth=7 then iQuantity end as iQtyPlan7,case when iMonth=7 then iMoney end as iMoneyPlan7
+	,case when iMonth=8 then iQuantity end as iQtyPlan8,case when iMonth=8 then iMoney end as iMoneyPlan8
+	,case when iMonth=9 then iQuantity end as iQtyPlan9,case when iMonth=9 then iMoney end as iMoneyPlan9
+	,case when iMonth=10 then iQuantity end as iQtyPlan10,case when iMonth=10 then iMoney end as iMoneyPlan10
+	,case when iMonth=11 then iQuantity end as iQtyPlan11,case when iMonth=11 then iMoney end as iMoneyPlan11
+	,case when iMonth=12 then iQuantity end as iQtyPlan12,case when iMonth=12 then iMoney end as iMoneyPlan12
+	,iQuantity as iQuantitySum,iMoney as iMoneySum
+	into #SaleMonth1
+from UFDATA_101_2013.._SalesPlan a 
+	inner join UFDATA_101_2013..Department c on c.cDepCode = a.cDepCode
+	inner join UFDATA_101_2013..InventoryClass d on d.cInvCCode = left(a.cInvCCode,3)
+	inner join UFDATA_101_2013..InventoryClass e on e.cInvCCode = left(a.cInvCCode,5)
+where 1=1 and iyear=(@iYear1) 
+
+select 品名1,品名2,品名3
+	,sum(去年销售数量) as 去年销售数量,sum(去年销售金额) as 去年销售金额
+	,sum(iQty1) as iQty1,sum(iMoney1) as iMoney1
+	,sum(iQty2) as iQty2,sum(iMoney2) as iMoney2
+	,sum(iQty3) as iQty3,sum(iMoney3) as iMoney3
+	,sum(iQty4) as iQty4,sum(iMoney4) as iMoney4
+	,sum(iQty5) as iQty5,sum(iMoney5) as iMoney5
+	,sum(iQty6) as iQty6,sum(iMoney6) as iMoney6
+	,sum(iQty7) as iQty7,sum(iMoney7) as iMoney7
+	,sum(iQty8) as iQty8,sum(iMoney8) as iMoney8
+	,sum(iQty9) as iQty9,sum(iMoney9) as iMoney9
+	,sum(iQty10) as iQty10,sum(iMoney10) as iMoney10
+	,sum(iQty11) as iQty11,sum(iMoney11) as iMoney11
+	,sum(iQty12) as iQty12,sum(iMoney12) as iMoney12
+	from  (
+select cDepMemo as 部门,cInvCName1 as 品名1,cInvCName2 as 品名2,cInvName as 品名3
+,iQty1,iMoney1,iQty2,iMoney2,iQty3,iMoney3,iQty4,iMoney4,iQty5,iMoney5,iQty6,iMoney6
+,iQty7,iMoney7,iQty8,iMoney8,iQty9,iMoney9,iQty10,iMoney10,iQty11,iMoney11,iQty12,iMoney12,
+0 as 年度计划数量,0 as 年度计划金额,0 as 去年销售数量,0 as 去年销售金额
+,null as iQtyPlan1,null as iMoneyPlan1,null as iQtyPlan2,null as iMoneyPlan2,null as iQtyPlan3,null as iMoneyPlan3
+,null as iQtyPlan4,null as iMoneyPlan4,null as iQtyPlan5,null as iMoneyPlan5,null as iQtyPlan6,null as iMoneyPlan6
+,null as iQtyPlan7,null as iMoneyPlan7,null as iQtyPlan8,null as iMoneyPlan8,null as iQtyPlan9,null as iMoneyPlan9
+,null as iQtyPlan10,null as iMoneyPlan10,null as iQtyPlan11,null as iMoneyPlan11,null as iQtyPlan12,null as iMoneyPlan12
+from #SaleMonth
+union all 
+select cDepMemo as 部门,cInvCName1 as 品名1,cInvCName2 as 品名2,cInvName as 品名3
+,0 as iQty1,0 as iMoney1,0 as iQty2,0 as iMoney2,0 as iQty3,0 as iMoney3,0 as iQty4,0 as iMoney4,0 as iQty5,0 as iMoney5,0 as iQty6,0 as iMoney6
+,0 as iQty7,0 as iMoney7,0 as iQty8,0 as iMoney8,0 as iQty9,0 as iMoney9,0 as iQty10,0 as iMoney10,0 as iQty11,0 as iMoney11,0 as iQty12,0 as iMoney12
+,0,0,iQuantitySum,iMoneySum
+,null as iQtyPlan1,null as iMoneyPlan1,null as iQtyPlan2,null as iMoneyPlan2,null as iQtyPlan3,null as iMoneyPlan3
+,null as iQtyPlan4,null as iMoneyPlan4,null as iQtyPlan5,null as iMoneyPlan5,null as iQtyPlan6,null as iMoneyPlan6
+,null as iQtyPlan7,null as iMoneyPlan7,null as iQtyPlan8,null as iMoneyPlan8,null as iQtyPlan9,null as iMoneyPlan9
+,null as iQtyPlan10,null as iMoneyPlan10,null as iQtyPlan11,null as iMoneyPlan11,null as iQtyPlan12,null as iMoneyPlan12
+from #SaleMonth3
+) a 
+group by 品名1,品名2,品名3
+order by 品名1,品名2,品名3
+
+
+
+
+
+GO
+
+

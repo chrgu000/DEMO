@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "BarCode", "WinCE\WinCE.vddproj", "{2689B89A-8B19-4E1D-A8E1-82A21CEA6C13}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = WinCE\\WinCE.vddproj
+		SccLocalPath0 = ..\\..\\..\\..
+		SccProjectFilePathRelativizedFromConnection0 = 工作项目\\YT_亚太金属_u8v11.0\\Code\\BarCodeSetup\\WinCE\\
+		SccProjectName1 = \u0022$/YT_亚太金属/BarCodeSetUp/WinCE.root/WinCE\u0022,\u0020ASIBAAAA
+		SccLocalPath1 = ..\\..\\..\\..
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection1 = 工作项目\\YT_亚太金属_u8v11.0\\Code\\BarCodeSetup\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2689B89A-8B19-4E1D-A8E1-82A21CEA6C13}.Debug|Default.ActiveCfg = Debug
+		{2689B89A-8B19-4E1D-A8E1-82A21CEA6C13}.Debug|Default.Build.0 = Debug
+		{2689B89A-8B19-4E1D-A8E1-82A21CEA6C13}.Release|Default.ActiveCfg = Release
+		{2689B89A-8B19-4E1D-A8E1-82A21CEA6C13}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

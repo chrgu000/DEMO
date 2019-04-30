@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B52AC607-B773-4166-B401-A1A5F732CFF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>clsU8</RootNamespace>
+    <AssemblyName>clsU8</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>clsU8.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Interop.MSXML2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\U8SOFT\Interop\Interop.MSXML2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.U8Login, Version=1.14.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\U8SOFT\Interop\Interop.U8Login.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.U8.MomServiceCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.MomServiceCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.U8APIFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.U8APIFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U8.U8MOMAPIFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\U8SOFT\UFMOM\U8APIFramework\UFIDA.U8.U8MOMAPIFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass\BaseFunction.cs" />
+    <Compile Include="BaseClass\ClsDES.cs" />
+    <Compile Include="BaseClass\ClsExcel.cs" />
+    <Compile Include="BaseClass\GetBaseData.cs" />
+    <Compile Include="BaseClass\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClass\MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dal\SO_SODetails.cs" />
+    <Compile Include="Dal\SO_SOMain.cs" />
+    <Compile Include="Dal\CurrentStock.cs" />
+    <Compile Include="Dal\SO_SODetails_extradefine.cs" />
+    <Compile Include="Dal\rdrecords10.cs" />
+    <Compile Include="Dal\rdrecord10.cs" />
+    <Compile Include="Dal\PO_Pomain.cs" />
+    <Compile Include="Dal\PO_Podetails.cs" />
+    <Compile Include="Dal\RdRecord01.cs" />
+    <Compile Include="Dal\rdrecords01.cs" />
+    <Compile Include="Dal\DispatchList.cs" />
+    <Compile Include="Dal\DispatchLists.cs" />
+    <Compile Include="Model\DispatchList.cs" />
+    <Compile Include="Model\SO_SODetails.cs" />
+    <Compile Include="Model\SO_SOMain.cs" />
+    <Compile Include="Model\CurrentStock.cs" />
+    <Compile Include="Model\SO_SODetails_extradefine.cs" />
+    <Compile Include="Model\rdrecord10.cs" />
+    <Compile Include="Model\rdrecords10.cs" />
+    <Compile Include="Model\PO_Pomain.cs" />
+    <Compile Include="Model\PO_Podetails.cs" />
+    <Compile Include="Model\RdRecord01.cs" />
+    <Compile Include="Model\rdrecords01.cs" />
+    <Compile Include="Model\DispatchLists.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseClass\DbHelperSQL.cs" />
+    <Compile Include="Frm销售订单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm销售订单导入.Designer.cs">
+      <DependentUpon>Frm销售订单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm产成品入库单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm产成品入库单导入.Designer.cs">
+      <DependentUpon>Frm产成品入库单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm采购订单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm采购订单导入.Designer.cs">
+      <DependentUpon>Frm采购订单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm采购入库单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm采购入库单导入.Designer.cs">
+      <DependentUpon>Frm采购入库单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm发货单导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm发货单导入.Designer.cs">
+      <DependentUpon>Frm发货单导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm销售订单导入_上海.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm销售订单导入_上海.Designer.cs">
+      <DependentUpon>Frm销售订单导入_上海.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseClass\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm销售订单导入.resx">
+      <DependentUpon>Frm销售订单导入.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm产成品入库单导入.resx">
+      <DependentUpon>Frm产成品入库单导入.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm采购订单导入.resx">
+      <DependentUpon>Frm采购订单导入.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm采购入库单导入.resx">
+      <DependentUpon>Frm采购入库单导入.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm发货单导入.resx">
+      <DependentUpon>Frm发货单导入.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm销售订单导入_上海.resx">
+      <DependentUpon>Frm销售订单导入_上海.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="clsU8.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5F65471-087C-4808-91CA-8D5DAFC54A70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Purchase</RootNamespace>
+    <AssemblyName>Purchase</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.CodeParser.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Reports.v11.2.Designer, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.2.Extensions, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.2.Extensions, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\ClsPurBillVouch.cs" />
+    <Compile Include="Dal\ClsPurBillVouchs.cs" />
+    <Compile Include="Dal\PU_PriceJustDetail.cs" />
+    <Compile Include="Dal\PU_PriceJustMain.cs" />
+    <Compile Include="Dal\Ven_Inv_Price.cs" />
+    <Compile Include="FrmImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImport.Designer.cs">
+      <DependentUpon>FrmImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRDInChkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRDInChkOrder.Designer.cs">
+      <DependentUpon>FrmRDInChkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrder.designer.cs">
+      <DependentUpon>FrmStockOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrder2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrder2.designer.cs">
+      <DependentUpon>FrmStockOrder2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderAudit.Designer.cs">
+      <DependentUpon>FrmStockOrderAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderAutoMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderAutoMail.Designer.cs">
+      <DependentUpon>FrmStockOrderAutoMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderCreate.Designer.cs">
+      <DependentUpon>FrmStockOrderCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderCreateSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderCreateSel.Designer.cs">
+      <DependentUpon>FrmStockOrderCreateSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderEdit.Designer.cs">
+      <DependentUpon>FrmStockOrderEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderReturn.Designer.cs">
+      <DependentUpon>FrmStockOrderReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderReturnLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderReturnLock.Designer.cs">
+      <DependentUpon>FrmStockOrderReturnLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockOrderReturnUnLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOrderReturnUnLock.Designer.cs">
+      <DependentUpon>FrmStockOrderReturnUnLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVendOrderPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVendOrderPrice.Designer.cs">
+      <DependentUpon>FrmVendOrderPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_SEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_SEL.Designer.cs">
+      <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm订单评审_采购.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm订单评审_采购.Designer.cs">
+      <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ClsPurBillVouch.cs" />
+    <Compile Include="Model\ClsPurBillVouchs.cs" />
+    <Compile Include="Model\PU_PriceJustMain.cs" />
+    <Compile Include="Model\PU_PriceJustDetail.cs" />
+    <Compile Include="Model\Ven_Inv_Price.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RdInReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RdInReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RdInReportLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepOMPlanDay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepOMPlanDay2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepOMPlanVen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepProcessOrderReturn2-del.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepQMREJECT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepRDInChk.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepStockOrderReturn2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frm采购调价单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm采购调价单.Designer.cs">
+      <DependentUpon>Frm采购调价单.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmImport.resx">
+      <DependentUpon>FrmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRDInChkOrder.resx">
+      <DependentUpon>FrmRDInChkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrder.resx">
+      <DependentUpon>FrmStockOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrder2.resx">
+      <DependentUpon>FrmStockOrder2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderAudit.resx">
+      <DependentUpon>FrmStockOrderAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderAutoMail.resx">
+      <DependentUpon>FrmStockOrderAutoMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderCreate.resx">
+      <DependentUpon>FrmStockOrderCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderCreateSel.resx">
+      <DependentUpon>FrmStockOrderCreateSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderEdit.resx">
+      <DependentUpon>FrmStockOrderEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderReturn.resx">
+      <DependentUpon>FrmStockOrderReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderReturnLock.resx">
+      <DependentUpon>FrmStockOrderReturnLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOrderReturnUnLock.resx">
+      <DependentUpon>FrmStockOrderReturnUnLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVendOrderPrice.resx">
+      <DependentUpon>FrmVendOrderPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_SEL.resx">
+      <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm订单评审_采购.resx">
+      <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RdInReport.resx">
+      <DependentUpon>RdInReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RdInReport2.resx">
+      <DependentUpon>RdInReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RdInReportLabel.resx">
+      <DependentUpon>RdInReportLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepOMPlanDay.resx">
+      <DependentUpon>RepOMPlanDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepOMPlanDay2.resx">
+      <DependentUpon>RepOMPlanDay2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepOMPlanVen.resx">
+      <DependentUpon>RepOMPlanVen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepProcessOrderReturn2-del.resx">
+      <DependentUpon>RepProcessOrderReturn2-del.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepQMREJECT.resx">
+      <DependentUpon>RepQMREJECT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepRDInChk.resx">
+      <DependentUpon>RepRDInChk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepStockOrderReturn2.resx">
+      <DependentUpon>RepStockOrderReturn2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm采购调价单.resx">
+      <DependentUpon>Frm采购调价单.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrameBaseFunction\FrameBaseFunction.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>FrameBaseFunction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <storeout>
+    <header>
+      <date></date>
+      <code></code>
+      <departmentcode />
+      <personcode />
+      <maker>demo</maker>
+      <memory />
+      <define1 />
+      <define2 />
+      <define3 />
+      <define4 />
+      <define5 />
+    </header>
+    <body>
+      <entry>
+        <inventorycode></inventorycode>
+        <quantity>1</quantity>
+        <number />
+        
+      </entry>
+    </body>
+  </storeout>
+<!--
+
+出库单主表
+date	单据日期	datetime	8	非空	出、入库日期必须大于等于当前会计月的第一天
+code	单据号	varchar	10	非空	出、入库单号必须符合用户设置的单据编号规则
+departmentcode	部门编码	varchar	12	可空	必须是部门档案中已有的部门
+personcode	职员编码	varchar	8	可空	必须是职员档案中已有的职员
+memory	备注	varchar	60	可空	
+maker	制单人	varchar	20	非空	
+	
+define1	合同编号	[varchar] (30) NULL	可空
+define2	合同名称	[varchar] (30) NULL	可空
+define3	项目编号	[varchar] (30) NULL	可空
+define4	项目名称	[varchar] (30) NULL	可空
+define5	请购单号	[varchar] (30) NULL	可空
+
+出库单子表
+
+inventorycode	存货编码	varchar	10	非空
+quantity	数量（主记量数量）	float	8	可空	应收（发）数量和数量不能同时为空。
+number	件数	float	8	可空
+			
+-->

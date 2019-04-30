@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ShowAppStart2]
+@="ShowAppStart2"
+"URL Protocol"="D:\\Work\\丰辉电力\\Code\\out\\AppStart.exe"
+ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ShowAppStart2\DefaultIcon]
+@="%SystemRoot%\\system32\\url.dll,0"
+ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ShowAppStart2\Shell]
+ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ShowAppStart2\Shell\open]
+ 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ShowAppStart2\Shell\open\command]
+@="D:\\Work\\丰辉电力\\Code\\out\\AppStart.exe"

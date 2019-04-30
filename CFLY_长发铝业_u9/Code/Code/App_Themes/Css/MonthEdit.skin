@@ -1,0 +1,6 @@
+﻿<%@ Register Assembly="DevExpress.Web.ASPxEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+    <dx:MonthEdit  runat="server" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass" 
+                         SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css" 
+                        >
+                    </dx:MonthEdit>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MachineName>
+  <Item Text="10m" Value="10m" />
+  <Item Text="10m7" Value="10m7" />
+  <Item Text="16m" Value="16m" />
+  <Item Text="2m3" Value="2m3" />
+  <Item Text="3m5" Value="3m5" />
+  <Item Text="5m1" Value="5m1" />
+  <Item Text="5m2" Value="5m2" />
+  <Item Text="6m3_fanuc" Value="6m3_fanuc" />
+  <Item Text="6m3_num" Value="6m3_num" />
+  <Item Text="7mDorry" Value="7mDorry" />
+  <Item Text="AFP180C1_1" Value="AFP180C1_1" />
+  <Item Text="AFP180C1_2" Value="AFP180C1_2" />
+  <Item Text="AFP180C2" Value="AFP180C2" />
+  <Item Text="AFP200" Value="AFP200" />
+  <Item Text="BPAMA" Value="BPAMA" />
+  <Item Text="HBM130" Value="HBM130" />
+  <Item Text="HBM150_1" Value="HBM150_1" />
+  <Item Text="HBM150_2" Value="HBM150_2" />
+  <Item Text="HBM160_1" Value="HBM160_1" />
+  <Item Text="HBM160_2" Value="HBM160_2" />
+  <Item Text="NEW_PAMA1" Value="NEW_PAMA1" />
+  <Item Text="NEW_PAMA2" Value="NEW_PAMA2" />
+  <Item Text="SHW" Value="SHW" />
+  <Item Text="SPAMA" Value="SPAMA" />
+  <Item Text="W200HC" Value="W200HC" />
+</MachineName>

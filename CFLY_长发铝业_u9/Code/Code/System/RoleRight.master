@@ -1,0 +1,40 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="RoleRight.master.cs" MasterPageFile="~/Frame/MasterPage.master"
+    Inherits="CreateFormMenu" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CenterContent" runat="server">
+<div class="container" style="width: 100%">
+    <table border="0" width="98%" cellpadding="0" cellspacing="0" class="InputFrameMain">
+        <tr>
+            <td class="InputFrameMain" style="vertical-align: top; width: 50%">
+                <asp:HiddenField ID="hidid" runat="server" />
+                <dx:ASPxGridView ID="ASPxGridView1" runat="server" KeyFieldName="vchrRoleID"
+                     DataSourceID="ObjectDataSource1"  EnableCallBacks="False" OnDataBound="ASPxGridView1_DataBound"
+                    OnFocusedRowChanged="ASPxGridView1_FocusedRowChanged" Width="100%">
+                    <Columns>
+                        <dx:GridViewDataColumn FieldName="vchrRoleID" Caption="角色编码">
+                        </dx:GridViewDataColumn>
+                        <dx:GridViewDataColumn FieldName="vchrRoleText" Caption="角色名称">
+                        </dx:GridViewDataColumn>
+                        <dx:GridViewDataColumn FieldName="vchrRemark" Caption="备注">
+                        </dx:GridViewDataColumn>
+                    </Columns>
+                    <SettingsPager Mode="ShowAllRecords"/>
+                    <SettingsBehavior ConfirmDelete="True" AllowFocusedRow="True" ProcessFocusedRowChangedOnServer="True" />
+                </dx:ASPxGridView>
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetUserRole"
+                    TypeName="OjbData" >
+                    <SelectParameters>
+                        <asp:Parameter Name="sUid" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </td>
+            <td style="width: 50%">
+            <asp:HiddenField ID="hidCheck" runat="server" />
+                <asp:ContentPlaceHolder ID="CenterRightContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+</div>
+</asp:Content>

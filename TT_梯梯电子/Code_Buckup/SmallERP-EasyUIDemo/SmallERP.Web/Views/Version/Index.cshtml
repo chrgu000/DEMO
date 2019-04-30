@@ -1,0 +1,314 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+@section JS{
+    <script type="text/javascript">
+        var actionUrl = {
+            GetList: '/Version/GetList',
+            GetQty: '/Version/GetQty',
+            GetVersion: '/Version/GetVersionList',
+            GetPlanner: '/Version/GetPlanner',
+            GetGroup: '/Version/GetProductGroupList',
+        }
+
+        $(function () {
+            //加载版本
+            $('#queryVersion').combobox({
+                url: actionUrl.GetVersion,
+                valueField: 'iID',
+                textField: 'iText',
+                multiple: true,//设置可以多选
+                formatter: function (row) { //formatter方法就是实现了在每个下拉选项前面增加checkbox框的方法
+                    var opts = $(this).combobox('options');
+                    return '<input type="checkbox" class="combobox-checkbox">' + row[opts.textField] + '</input>'
+                },
+                onLoadSuccess: function () {  //下拉框数据加载成功调用
+                    var opts = $(this).combobox('options');
+                    var target = this;
+                    var values = $(target).combobox('getValues');//获取选中的值的values
+                    $.map(values, function (value) {
+                        var el = opts.finder.getEl(target, value);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    })
+                },
+                onSelect: function (row) { //选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryVersion").val($(this).combobox('getValues'));
+
+                    //设置选中值所对应的复选框为选中状态
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', true);
+                },
+                onUnselect: function (row) {//不选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryVersion").val($(this).combobox('getValues'));
+
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', false);
+                }
+
+            });
+
+            //加载项目组
+            $('#queryGroup').combobox({
+                url: actionUrl.GetGroup,
+                valueField: 'iID',
+                textField: 'iText',
+                multiple: true,//设置可以多选
+                formatter: function (row) { //formatter方法就是实现了在每个下拉选项前面增加checkbox框的方法
+                    var opts = $(this).combobox('options');
+                    return '<input type="checkbox" class="combobox-checkbox">' + row[opts.textField] + '</input>'
+                },
+                onLoadSuccess: function () {  //下拉框数据加载成功调用
+                    var opts = $(this).combobox('options');
+                    var target = this;
+                    var values = $(target).combobox('getValues');//获取选中的值的values
+                    $.map(values, function (value) {
+                        var el = opts.finder.getEl(target, value);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    })
+                },
+                onSelect: function (row) { //选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryGroup").val($(this).combobox('getValues'));
+
+                    //设置选中值所对应的复选框为选中状态
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', true);
+                },
+                onUnselect: function (row) {//不选中一个选项时调用
+                    var opts = $(this).combobox('options');
+                    //获取选中的值的values
+                    $("#queryGroup").val($(this).combobox('getValues'));
+
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', false);
+                }
+            });
+
+            //加载计划员
+            $('#queryPlanner').combobox({
+                url: actionUrl.GetPlanner,
+                valueField: 'iID',
+                textField: 'iText'
+            });
+
+
+
+            // 查询按钮
+            $('#btnQuery').click(function () {
+                //alert($('#queryVersion').val());
+                getList();
+            });
+
+            $('#btnReset').click(function () {
+                $('#queryVersion').combobox('clear');//清空选中项
+                $('#queryVersion').val('');
+                $('#queryVersion').combobox('loadData', {});
+                $('#queryVersion').combobox('reload');
+
+                $('#queryPlanner').combobox('reset');
+
+                $('#queryGroup').combobox('clear');//清空选中项
+                $('#queryGroup').val('');
+                $('#queryGroup').combobox('loadData', {});
+                $('#queryGroup').combobox('reload');
+
+                $('#queryDate1').datebox('reset');
+                $('#queryDate2').datebox('reset');
+                $('#queryName').textbox('reset');
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+            });
+
+            getList();
+
+            function getList() {
+                
+
+                var Period01;
+                var Period02;
+                var Period03;
+                var Period04;
+                var Period05;
+                var Period06;
+                var Period07;
+                var Period08;
+                var Period09;
+                var Period10;
+                var Period11;
+                var Period12;
+                var Period13;
+                var Period14;
+                var Period15;
+                var Period16;
+                var Period17;
+                $.ajax({
+                    type: "get",
+                    url: actionUrl.GetQty,
+                    cache: false,
+                    data: { queryVersion: $('#queryVersion').val() },
+                    datatype: "json",
+                    async: false,
+                    success: function (data) {
+                        $.each(data, function (index, result) {
+                            Period01 = DateTimeFormatter(data[index].Period01);
+                            Period02 = DateTimeFormatter(data[index].Period02);
+                            Period03 = DateTimeFormatter(data[index].Period03);
+                            Period04 = DateTimeFormatter(data[index].Period04);
+                            Period05 = DateTimeFormatter(data[index].Period05);
+                            Period06 = DateTimeFormatter(data[index].Period06);
+                            Period07 = DateTimeFormatter(data[index].Period07);
+                            Period08 = DateTimeFormatter(data[index].Period08);
+                            Period09 = DateTimeFormatter(data[index].Period09);
+                            Period10 = DateTimeFormatter(data[index].Period10);
+                            Period11 = DateTimeFormatter(data[index].Period11);
+                            Period12 = DateTimeFormatter(data[index].Period12);
+                            Period13 = DateTimeFormatter(data[index].Period13);
+                            Period14 = DateTimeFormatter(data[index].Period14);
+                            Period15 = DateTimeFormatter(data[index].Period15);
+                            Period16 = DateTimeFormatter(data[index].Period16);
+                            Period17 = DateTimeFormatter(data[index].Period17);
+                        });
+                    }
+                });
+
+                $('#grid').datagrid('loadData', { total: 0, rows: [] });
+
+                $('#grid').datagrid({
+                    url: actionUrl.GetList,
+                    pagination: true,//分页
+                    pageSize: 500,
+                    pageList: [500, 1000, 1500, 2000],
+                    queryParams: {
+                        queryVersion: $('#queryVersion').val(),
+                        queryPlanner: $('#queryPlanner').combobox('getValue'),
+                        queryGroup: $('#queryGroup').val(),
+                        queryDate1: $('#queryDate1').datebox('getValue'),
+                        queryDate2: $('#queryDate2').datebox('getValue'),
+                        queryName: $('#queryName').val(),
+                    },
+                    toolbar: [
+                    ],
+                    columns: [
+                        [
+                            { field: 'cInvCode', title: '制造件编码', width: 150, align: 'center', sortable: true, rowspan: 2 },
+                            { field: 'sTKVersion', title: '版本号', width: 150, align: 'center', sortable: true, rowspan: 2 },
+                            { field: 'NetQty', title: '需求量', width: 80, align: 'center', sortable: true, rowspan: 2 },
+                            { field: 'NotNCOUNT', title: '未齐套', width: 80, align: 'center', sortable: true, rowspan: 2 },
+                            { title: "Week1" },
+                            { title: "Week2" },
+                            { title: "Week3" },
+                            { title: "Week4" },
+                            { title: "Week5" },
+                            { title: "Week6" },
+                            { title: "Week7" },
+                            { title: "Week8" },
+                            { title: "Week9" },
+                            { title: "Week10" },
+                            { title: "Week11" },
+                            { title: "Week12" },
+                            { title: "Week13" },
+                            { title: "Month1" },
+                            { title: "Month2" },
+                            { title: "Month3" },
+                            { title: "Month4" },
+                            { title: "" },
+                        ],
+                        [
+                            { field: 'Period01', title: Period01, width: 150, align: 'center', sortable: true },
+                            { field: 'Period02', title: Period02, width: 150, align: 'center', sortable: true },
+                            { field: 'Period03', title: Period03, width: 150, align: 'center', sortable: true },
+                            { field: 'Period04', title: Period04, width: 150, align: 'center', sortable: true },
+                            { field: 'Period05', title: Period05, width: 150, align: 'center', sortable: true },
+                            { field: 'Period06', title: Period06, width: 150, align: 'center', sortable: true },
+                            { field: 'Period07', title: Period07, width: 150, align: 'center', sortable: true },
+                            { field: 'Period08', title: Period08, width: 150, align: 'center', sortable: true },
+                            { field: 'Period09', title: Period09, width: 150, align: 'center', sortable: true },
+                            { field: 'Period10', title: Period10, width: 150, align: 'center', sortable: true },
+                            { field: 'Period11', title: Period11, width: 150, align: 'center', sortable: true },
+                            { field: 'Period12', title: Period12, width: 150, align: 'center', sortable: true },
+                            { field: 'Period13', title: Period13, width: 150, align: 'center', sortable: true },
+                            { field: 'Period14', title: Period14, width: 150, align: 'center', sortable: true },
+                            { field: 'Period15', title: Period15, width: 150, align: 'center', sortable: true },
+                            { field: 'Period16', title: Period16, width: 150, align: 'center', sortable: true },
+                            { field: 'Period17', title: Period17, width: 150, align: 'center', sortable: true },
+                        ],
+                    ],
+                });
+            }
+        });
+
+        function DateTimeFormatter(value) {
+            if (value == undefined) {
+                return "";
+            }
+            if (value.length == 10) {
+                return value;
+            }
+            value = value.substr(1, value.length - 2);
+            var obj = eval('(' + "{Date: new " + value + "}" + ')');
+            var dateValue = obj["Date"];
+            return dateValue.format("yyyy-mm-dd");
+        }
+
+        Date.prototype.format = function (fmt) { //author: meizz
+            var o = {
+                "m+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "M+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+    </script>
+}
+<body class="easyui-layout">
+    <!-- 顶部 -->
+    <div data-options="region:'north'" style="height:34px" >
+        <table>
+            <tr>
+                <td>开始日期：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate1" id="queryDate1" />
+                </td>
+                <td>结束日期：</td>
+                <td>
+                    <input class="easyui-datebox" type="text" name="queryDate2" id="queryDate2"  / >
+                </td>
+                <td>版本：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryVersion" id="queryVersion" editable="false" />
+                </td>
+                <td>计划员：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryPlanner" id="queryPlanner" >
+                </td>
+                <td>项目组：</td>
+                <td>
+                    <input class="easyui-combobox" name="queryGroup" id="queryGroup" >
+                </td>
+                <td>制造件编码：</td>
+                <td>
+                    <input class="easyui-textbox" type="text" name="queryName" id="queryName" />
+                </td>
+                <td>
+                    <a id="btnQuery" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+                    <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reset</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 列表 -->
+    <div data-options="region:'center'" style="padding:2px;">
+        <table id="grid" class="easyui-datagrid" style="border-bottom:none;" fit="true" title="List" data-options="rownumbers:true,singleSelect:true,collapsible:false"></table>
+    </div>
+</body>

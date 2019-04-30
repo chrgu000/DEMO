@@ -1,0 +1,10 @@
+{
+  "name": "map-search",
+  "version": "0.1.2",
+  "main": "js/map-search.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

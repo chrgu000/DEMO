@@ -1,0 +1,7 @@
+
+http://localhost:60308/WO/AddWorksOrders    16时57分33秒
+SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+
+http://localhost:60308/WO/AddWorksOrders    16时58分33秒
+Cannot insert the value NULL into column 'duedate', table 'smallerp.dbo.t_o_worksorders'; column does not allow nulls. INSERT fails.
+The statement has been terminated.

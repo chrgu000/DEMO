@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="成衣生产.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="成衣生产_WebReference_DBWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://zhiyifang.ticp.net:18080/DBService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

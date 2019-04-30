@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<configuration>
+  <appSettings>
+    <add key="UFDatabase" value="UFDATA_001_2017" />
+    <add key="ServerInfo" value="120.77.22.161" />
+    <add key="SQLUID" value="sa" />
+    <add key="SQLPWD" value="kino@2017" />
+    <add key="SQLConnTimeOut" value="200" />
+  </appSettings>
+</configuration>

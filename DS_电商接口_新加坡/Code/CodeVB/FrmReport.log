@@ -1,0 +1,5 @@
+行 21: 控件 RichTextBox1 的类 RichTextLib.RichTextBox 不是一个已加载的控件类。
+行 27: 属性名 _ExtentX 在 RichTextBox1 中是无效的。
+行 28: 属性名 _ExtentY 在 RichTextBox1 中是无效的。
+行 29: 属性名 _Version 在 RichTextBox1 中是无效的。
+行 32: 属性名 TextRTF 在 RichTextBox1 中是无效的。

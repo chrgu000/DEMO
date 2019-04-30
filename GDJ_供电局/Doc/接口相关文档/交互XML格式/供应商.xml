@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Vendor>
+    <AccID>电建公司</AccID>
+    <cVenCode>3001</cVenCode>
+    <cVenName>test01</cVenName>
+    <cVCCode>1</cVCCode>
+    <cVCName>1</cVCName>
+  </Vendor>
+  <Vendor>
+    <AccID>电建公司</AccID>
+    <cVenCode>3002</cVenCode>
+    <cVenName>test02</cVenName>
+    <cVCCode>1</cVCCode>
+    <cVCName>1</cVCName>
+  </Vendor>
+  <Vendor>
+    <AccID>电建公司</AccID>
+    <cVenCode>3003</cVenCode>
+    <cVenName>test03</cVenName>
+    <cVCCode>1</cVCCode>
+    <cVCName>1</cVCName>
+  </Vendor>
+</NewDataSet>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "定时任务", "定时任务.csproj", "{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = 定时任务.csproj
+		SccProjectName0 = \u0022$/SGZH_上港正和/定时任务.root/定时任务/Code\u0022,\u0020VVDBAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Debug|x86.ActiveCfg = Debug|x86
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Debug|x86.Build.0 = Debug|x86
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Release|x86.ActiveCfg = Release|x86
+		{637EAC9E-9952-4D0D-8B22-9B6F7FFE7F9E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

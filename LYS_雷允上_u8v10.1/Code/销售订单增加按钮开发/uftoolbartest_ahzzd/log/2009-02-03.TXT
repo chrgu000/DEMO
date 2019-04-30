@@ -1,0 +1,129 @@
+14:41:46   Function:->RunCommand is true   
+14:41:46   objLogin.cAcc_Id    002
+14:41:46   objForm.Name    FrmBill
+14:41:46   domh: <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA          domb:  <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA
+14:41:46   headertext name DRowIsEmptySign    Value:0
+14:41:46   headertext name VTid    Value:1
+14:41:46   headertext name Define_1    Value:2
+14:41:46   headertext name Define_2    Value:3
+14:41:46   headertext name Define_3    Value:4
+14:41:46   headertext name Define_4    Value:1900-01-04
+14:41:46   headertext name Define_5    Value:6
+14:41:46   headertext name Define_6    Value:1900-01-06
+14:41:46   headertext name Define_7    Value:8.000000
+14:41:46   headertext name Define_8    Value:9
+14:41:46   headertext name Define_9    Value:10
+14:41:46   headertext name Define_10    Value:11
+14:41:46   headertext name Define_11    Value:12
+14:41:46   headertext name Define_12    Value:13
+14:41:46   headertext name Define_13    Value:14
+14:41:46   headertext name Define_14    Value:15
+14:41:46   headertext name Define_15    Value:16
+14:41:46   headertext name Define_16    Value:17.000000
+14:41:46   headertext name PlanCode    Value:18
+14:41:46   headertext name PlanDesc    Value:19
+14:41:46   headertext name ProjectId    Value:20
+14:41:46   headertext name DemandId    Value:21
+14:41:46   headertext name ReasonCode    Value:22
+14:41:46   headertext name ReasonDesc    Value:23
+14:41:46   headertext name ActiveFlag    Value:24
+14:41:46   headertext name IsActiveFlagWarning    Value:25
+14:41:46   headertext name CreateUser    Value:26
+14:41:46   headertext name CreateDate    Value:1900-01-26
+14:41:46   headertext name ModifyUser    Value:28
+14:41:46   headertext name ModifyDate    Value:1900-01-28
+14:41:46   sKey     _CUSTDEFButtonTest
+14:41:46   VarentValue      自定义菜单cVariant
+14:59:14   Function:->RunCommand is true   
+14:59:14   objLogin.cAcc_Id    002
+14:59:14   objForm.Name    FrmBill
+14:59:14   domh: <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA          domb:  <xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA
+14:59:14   headertext name DRowIsEmptySign    Value:
+14:59:14   headertext name VTid    Value:30373
+14:59:14   headertext name Define_1    Value:
+14:59:14   headertext name Define_2    Value:
+14:59:14   headertext name Define_3    Value:
+14:59:14   headertext name Define_4    Value:
+14:59:14   headertext name Define_5    Value:
+14:59:14   headertext name Define_6    Value:
+14:59:14   headertext name Define_7    Value:
+14:59:14   headertext name Define_8    Value:
+14:59:14   headertext name Define_9    Value:
+14:59:14   headertext name Define_10    Value:
+14:59:14   headertext name Define_11    Value:
+14:59:14   headertext name Define_12    Value:
+14:59:14   headertext name Define_13    Value:
+14:59:14   headertext name Define_14    Value:
+14:59:14   headertext name Define_15    Value:
+14:59:14   headertext name Define_16    Value:
+14:59:14   headertext name PlanCode    Value:1
+14:59:14   headertext name PlanDesc    Value:1
+14:59:14   headertext name ProjectId    Value:1
+14:59:14   headertext name DemandId    Value:
+14:59:14   headertext name ReasonCode    Value:
+14:59:14   headertext name ReasonDesc    Value:
+14:59:14   headertext name ActiveFlag    Value:1
+14:59:14   headertext name IsActiveFlagWarning    Value:0
+14:59:14   headertext name CreateUser    Value:ahzzdname
+14:59:14   headertext name CreateDate    Value:2009-01-01
+14:59:14   headertext name ModifyUser    Value:ahzzdname
+14:59:14   headertext name ModifyDate    Value:2009-01-01
+14:59:14   sKey     _CUSTDEFButtonTest
+14:59:14   VarentValue      自定义菜单cVariant
+15:11:46   Function:->Init is true   
+15:11:46   msbar.buttons(1).Key   tlbPrint
+15:11:46   msbar.buttons(1).Caption   打印
+15:11:46   msbar.buttons(2).Key   tlbPreview
+15:11:46   msbar.buttons(2).Caption   预览
+15:11:46   msbar.buttons(3).Key   tlbExport
+15:11:46   msbar.buttons(3).Caption   输出
+15:11:46   msbar.buttons(4).Key   tlbSeparator1
+15:11:46   msbar.buttons(4).Caption   
+15:11:46   msbar.buttons(5).Key   tlbAdd
+15:11:46   msbar.buttons(5).Caption   增加
+15:11:46   msbar.buttons(6).Key   tlbModify
+15:11:46   msbar.buttons(6).Caption   修改
+15:11:46   msbar.buttons(7).Key   tlbDelete
+15:11:46   msbar.buttons(7).Caption   删除
+15:11:46   msbar.buttons(8).Key   tlbSave
+15:11:46   msbar.buttons(8).Caption   保存
+15:11:46   msbar.buttons(9).Key   tlbUndo
+15:11:46   msbar.buttons(9).Caption   放弃
+15:11:46   msbar.buttons(10).Key   tlbSeparator5
+15:11:46   msbar.buttons(10).Caption   
+15:11:46   msbar.buttons(11).Key   tlbAddLine
+15:11:46   msbar.buttons(11).Caption   增行
+15:11:46   msbar.buttons(12).Key   tlbDelLine
+15:11:46   msbar.buttons(12).Caption   删行
+15:11:46   msbar.buttons(13).Key   tlbSeparator2
+15:11:46   msbar.buttons(13).Caption   
+15:11:46   msbar.buttons(14).Key   tlbLock
+15:11:46   msbar.buttons(14).Caption   锁定
+15:11:46   msbar.buttons(15).Key   tlbUnLock
+15:11:46   msbar.buttons(15).Caption   弃锁
+15:11:46   msbar.buttons(16).Key   tlbGraph
+15:11:46   msbar.buttons(16).Caption   图形
+15:11:46   msbar.buttons(17).Key   tlbSeparator3
+15:11:46   msbar.buttons(17).Caption   
+15:11:46   msbar.buttons(18).Key   tlbLocal
+15:11:46   msbar.buttons(18).Caption   查询
+15:11:46   msbar.buttons(19).Key   tlbFirst
+15:11:46   msbar.buttons(19).Caption   首张
+15:11:46   msbar.buttons(20).Key   tlbPrevious
+15:11:46   msbar.buttons(20).Caption   上张
+15:11:46   msbar.buttons(21).Key   tlbNext
+15:11:46   msbar.buttons(21).Caption   下张
+15:11:46   msbar.buttons(22).Key   tlbLast
+15:11:46   msbar.buttons(22).Caption   末张
+15:11:46   msbar.buttons(23).Key   tlbSeparator4
+15:11:46   msbar.buttons(23).Caption   
+15:11:46   msbar.buttons(24).Key   tlbRefresh
+15:11:46   msbar.buttons(24).Caption   刷新
+15:11:46   msbar.buttons(25).Key   tlbAttached
+15:11:46   msbar.buttons(25).Caption   附件
+15:11:46   msbar.buttons(26).Key   tlbHelp
+15:11:46   msbar.buttons(26).Caption   帮助
+15:11:46   msbar.buttons(27).Key   _CUSTDEFButtonTest
+15:11:46   msbar.buttons(27).Caption   测试发货单
+15:11:46   msbar.buttons(28).Key   tlbExit
+15:11:46   msbar.buttons(28).Caption   退出

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "DMCBarcode", "DMCBarcode\DMCBarcode.vddproj", "{2213BD49-A98D-41D9-A882-18FDB71BAA85}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022$/DMC_多摩川/WinCESetup/DMCBarcode.root/DMCBarcode\u0022,\u0020ITIBAAAA
+		SccLocalPath0 = ..\\..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = WinCESetup\\DMCBarcode\\
+		SccProjectUniqueName1 = DMCBarcode\\DMCBarcode.vddproj
+		SccLocalPath1 = ..\\..
+		SccProjectFilePathRelativizedFromConnection1 = WinCESetup\\DMCBarcode\\DMCBarcode\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2213BD49-A98D-41D9-A882-18FDB71BAA85}.Debug|Default.ActiveCfg = Debug
+		{2213BD49-A98D-41D9-A882-18FDB71BAA85}.Debug|Default.Build.0 = Debug
+		{2213BD49-A98D-41D9-A882-18FDB71BAA85}.Release|Default.ActiveCfg = Release
+		{2213BD49-A98D-41D9-A882-18FDB71BAA85}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

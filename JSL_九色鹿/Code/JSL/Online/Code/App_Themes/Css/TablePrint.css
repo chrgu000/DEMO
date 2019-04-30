@@ -1,0 +1,31 @@
+﻿.TablePrint
+{
+	border:0;
+	font-size: 14px;
+	margin-left:auto;
+	margin-right:auto;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+.TablePrint .tdPrintTop
+{
+	font-size: 20px;
+	text-align:center;
+	padding-top:5px;
+}
+
+.TablePrint .tdPrintTop2
+{
+	font-size: 18px;
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px
+}
+.TablePrint .tdPrintTop3
+{
+	font-size: 14px;
+	text-align:center;
+}
+
+

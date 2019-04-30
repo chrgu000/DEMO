@@ -1,0 +1,436 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Web.Configuration;
+using System.Configuration;
+using System.Collections;
+
+    /// <summary>
+    /// 
+    /// </summary>
+public class AspTable : Page
+{
+    #region 新增表头
+    public static void AddRowTh(System.Web.UI.WebControls.Table table, string[] str, int[] colspan)
+    {
+        TableHeaderRow tr = new TableHeaderRow();
+        tr.ID = "tr_" + table.Rows.Count;
+        for (int i = 0; i < str.Length; i++)
+        {
+            TableCell tc = new TableCell();
+            tc.ColumnSpan = colspan[i];
+            tc.Text = str[i];
+            tc.CssClass = "HeaderRow";
+            tc.Font.Bold = true;
+            tr.Cells.Add(tc);
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+    #region 新增交替表头
+    public static void AddRowTh2(System.Web.UI.WebControls.Table table, string[] str, int[] colspan)
+    {
+        TableHeaderRow tr = new TableHeaderRow();
+        tr.ID = "tr_" + table.Rows.Count;
+        tr.BackColor = System.Drawing.Color.FromName("#90c9f4");
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            TableCell tc = new TableCell();
+            tc.ColumnSpan = colspan[i];
+            tc.Text = str[i];
+            tc.CssClass = "HeaderRow";
+            tc.Font.Bold = true;
+            tr.Cells.Add(tc);
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+
+    #region 新增行
+    /// <summary>
+    /// 新增行
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="str"></param>
+    /// <param name="colspan"></param>
+    /// <param name="controlname"></param>
+    /// <param name="controlstr"></param>
+    public static void AddRowTd(System.Web.UI.WebControls.Table table, string[] str, int[] colspan, string[] controltype, string controlname, string controlstr)
+    {
+        TableRow tr = new TableRow();
+        tr.ID = "tr_" + table.Rows.Count;
+        //tr.Attributes.Add("onclick", "javascript:doOpenAndClose(this)");
+        //tr.Attributes.Add("onmouseover", "this.style.cursor=hand");
+        tr.BackColor = System.Drawing.Color.FromName("#90c9f4");
+
+        int r = table.Rows.Count;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            TableCell tc = new TableCell();
+
+            if (i == 0)
+            {
+                HiddenField hid = new HiddenField();
+                hid.ID = "hid_" + r + "_" + i;
+                hid.Value = controlstr;
+                tc.Controls.Add(hid);
+
+                Image im = new Image();
+                im.ID = "im_" + r + "_" + i;
+                im.ImageUrl = "../Images/PublicImages/menu_open.gif";
+                im.ToolTip = "历史时间记录";
+                im.Attributes.Add("onclick", "javascript:doOpenAndClose(" + "im_" + r + "_" + i + "," + "tr_" + (table.Rows.Count + 1) + ")");
+                tc.Controls.Add(im);
+            }
+
+            switch (controltype[i])
+            {
+                case "Label":
+                    Label lbl = new Label();
+                    lbl.ID = controlname + "_" + r + "_" + i;
+                    lbl.Text = str[i];
+                    lbl.Font.Bold = true;
+                    tc.Controls.Add(lbl);
+                    break;
+                case "Calender":
+                    Label lbl1 = new Label();
+                    lbl1.ID = controlname + "_tag" + "_" + r + "_" + i;
+                    lbl1.Font.Bold = true;
+                    tc.Controls.Add(lbl1);
+
+                    TextBox cal = new TextBox();
+                    cal.ID = controlname + "_" + r + "_" + i;
+                    cal.Text = str[i];
+                    cal.Attributes.Add("onfocus", "javascript:SelectDate(this)");
+                    cal.Attributes.Add("onkeypress", "javascript:KeyPressEmpty()");
+                    cal.Width = 70;
+
+                    tc.Controls.Add(cal);
+                    break;
+                default:
+                    break;
+            }
+
+            tc.ColumnSpan = colspan[i];
+            tc.Wrap = true;
+            tr.Cells.Add(tc);
+
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+    #region 新增行
+    /// <summary>
+    /// 新增行
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="str"></param>
+    /// <param name="colspan"></param>
+    /// <param name="controlname"></param>
+    /// <param name="controlstr"></param>
+    public static void AddRowTd(System.Web.UI.WebControls.Table table, string[] str, int[] colspan, string[] controltype)
+    {
+        TableRow tr = new TableRow();
+        tr.ID = "tr_" + table.Rows.Count;
+        //tr.Attributes.Add("onclick", "javascript:doOpenAndClose(this)");
+        //tr.Attributes.Add("onmouseover", "this.style.cursor=hand");
+        tr.BackColor = System.Drawing.Color.FromName("#90c9f4");
+
+        int r = table.Rows.Count;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            TableCell tc = new TableCell();
+
+            switch (controltype[i])
+            {
+                case "Label":
+                    Label lbl = new Label();
+                    //lbl.ID = controlname + "_" + r + "_" + i;
+                    lbl.Text = str[i];
+                    lbl.Font.Bold = true;
+                    tc.Controls.Add(lbl);
+                    break;
+                case "Calender":
+                    Label lbl1 = new Label();
+                    //lbl1.ID = controlname + "_tag" + "_" + r + "_" + i;
+                    lbl1.Font.Bold = true;
+                    tc.Controls.Add(lbl1);
+
+                    TextBox cal = new TextBox();
+                    //cal.ID = controlname + "_" + r + "_" + i;
+                    cal.Text = str[i];
+                    cal.Attributes.Add("onfocus", "javascript:SelectDate(this)");
+                    cal.Attributes.Add("onkeypress", "javascript:KeyPressEmpty()");
+                    cal.Width = 70;
+
+                    tc.Controls.Add(cal);
+                    break;
+                default:
+                    break;
+            }
+
+            tc.ColumnSpan = colspan[i];
+            tc.Wrap = true;
+            tr.Cells.Add(tc);
+
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+    #region 新增交替行
+    /// <summary>
+    /// 新增交替行
+    /// </summary>
+    /// <param name="table"></param>
+    /// <param name="rowname"></param>
+    /// <param name="str"></param>
+    /// <param name="controlname"></param>
+    /// <param name="controltype"></param>
+    public static void AddRowTd2(System.Web.UI.WebControls.Table table, string rowname, string[] str, string controlname, string controltype)
+    {
+        TableRow tr = new TableRow();
+        tr.ID = "tr_" + table.Rows.Count;
+
+        TableCell tc = new TableCell();
+        tc.Text = rowname;
+        tc.Font.Bold = true;
+        tr.Cells.Add(tc);
+
+        int r = table.Rows.Count;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            switch (controltype)
+            {
+                case "TextBoxNum":
+                    TextBox txt = new TextBox();
+                    txt.ID = controlname + "_" + r + "_" + i;
+                    txt.Text = str[i];
+                    txt.Width = 100;
+                    txt.AutoCompleteType = AutoCompleteType.Disabled;
+                    txt.Attributes.Add("onkeypress", "javascript:KeyPressNumber('" + txt.ClientID + "')");
+
+                    TableCell tc0 = new TableCell();
+                    tc0.Controls.Add(txt);
+                    tr.Cells.Add(tc0);
+                    break;
+                case "DropDownList":
+                    DropDownList ddl = new DropDownList();
+                    ddl.ID = controlname + "_" + r + "_" + i;
+                    ControlsClass cs = new ControlsClass();
+                    cs.BindParameter(ddl, 25);
+                    cs.Select(ddl, str[i]);
+
+                    TableCell tc1 = new TableCell();
+                    tc1.Controls.Add(ddl);
+                    tr.Cells.Add(tc1);
+                    break;
+                case "Calender":
+                    TextBox cal = new TextBox();
+                    cal.ID = controlname + "_" + r + "_" + i;
+                    cal.Text = str[i];
+                    cal.Attributes.Add("onfocus", "javascript:SelectDate(this)");
+                    cal.Attributes.Add("onkeypress", "javascript:KeyPressEmpty()");
+                    cal.Width = 70;
+
+                    TableCell tc2 = new TableCell();
+                    tc2.Controls.Add(cal);
+                    tr.Cells.Add(tc2);
+                    break;
+                //case "Label":
+                //    Label lbl = new Label();
+                //    lbl.ID = controlname + "_" + r + "_" + c;
+                //    lbl.Text = str[i];
+
+                //    TableCell tc3 = new TableCell();
+                //    tc3.Controls.Add(lbl);
+                //    tr.Cells.Add(tc3);
+                //    break;
+                default:
+                    break;
+            }
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+
+
+    #region 新增交替行
+    public static void AddRowTd2(System.Web.UI.WebControls.Table table, string rowname, string[] str, string controlname, string controltype, int type)
+    {
+        TableRow tr = new TableRow();
+        tr.ID = "tr_" + table.Rows.Count;
+
+        TableCell tc = new TableCell();
+        tc.Text = rowname;
+        tc.Font.Bold = true;
+        tr.Cells.Add(tc);
+
+        int r = table.Rows.Count;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            switch (controltype)
+            {
+                case "DropDownList":
+                    DropDownList ddl = new DropDownList();
+                    ddl.ID = controlname + "_" + r + "_" + i;
+                    if (type == 1)
+                    {
+                        ControlsClass cs = new ControlsClass();
+                        cs.BindParameter(ddl, 25);
+                        cs.Select(ddl, str[i]);
+                    }
+                    TableCell tc1 = new TableCell();
+                    tc1.Controls.Add(ddl);
+                    tr.Cells.Add(tc1);
+                    break;
+                default:
+                    break;
+            }
+        }
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+    #region 新增交替行
+    public static void AddRowTdHistory(System.Web.UI.WebControls.Table table, DataTable dtper, DataTable dthis)
+    {
+        TableRow tr = new TableRow();
+        tr.ID = "tr_" + table.Rows.Count;
+
+
+        TableCell tc = new TableCell();
+        tc.ColumnSpan = 10;
+
+        System.Web.UI.WebControls.Table tables = new System.Web.UI.WebControls.Table();
+
+        TableHeaderRow hr = new TableHeaderRow();
+        for (int i = 0; i < dtper.Rows.Count; i++)
+        {
+            TableCell tcs = new TableCell();
+            tcs.Text = dtper.Rows[i]["PSName"].ToString();
+            tcs.ColumnSpan = 2;
+            hr.Cells.Add(tcs);
+        }
+        tables.Rows.Add(hr);
+
+        TableRow tr2 = new TableRow();
+        for (int i = 0; i < dtper.Rows.Count; i++)
+        {
+            TableCell tcs = new TableCell();
+            tcs.Text = "日期";
+            tr2.Cells.Add(tcs);
+
+            TableCell tcs1 = new TableCell();
+            tcs1.Text = "修改时间";
+            tr2.Cells.Add(tcs1);
+        }
+        tables.Rows.Add(tr2);
+
+        for (int i = 0; i < dthis.Rows.Count; i++)
+        {
+            TableRow tr3 = new TableRow();
+
+
+            TableCell t1 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "1")
+            {
+                t1.Text = dthis.Rows[i]["DDate"].ToString();
+            }
+            tr3.Cells.Add(t1);
+
+            TableCell s1 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "1")
+            {
+                s1.Text = dthis.Rows[i]["AddTime"].ToString();
+            }
+            tr3.Cells.Add(s1);
+
+
+            TableCell t2 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "2")
+            {
+                t2.Text = dthis.Rows[i]["DDate"].ToString();
+            }
+            tr3.Cells.Add(t2);
+
+            TableCell s2 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "2")
+            {
+                s2.Text = dthis.Rows[i]["AddTime"].ToString();
+            }
+            tr3.Cells.Add(s2);
+
+
+
+            TableCell t3 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "3")
+            {
+                t3.Text = dthis.Rows[i]["DDate"].ToString();
+            }
+            tr3.Cells.Add(t3);
+
+            TableCell s3 = new TableCell();
+            if (dthis.Rows[i]["Type"].ToString() == "3")
+            {
+                s3.Text = dthis.Rows[i]["AddTime"].ToString();
+            }
+            tr3.Cells.Add(s3);
+
+            tables.Rows.Add(tr3);
+        }
+
+
+
+
+
+
+
+        tc.Controls.Add(tables);
+
+        tr.Cells.Add(tc);
+        table.Rows.Add(tr);
+    }
+    #endregion
+
+    public static void Bind(System.Web.UI.WebControls.Table table, DataTable dt)
+    {
+        string[] str = new string[dt.Columns.Count];
+        int[] strcolspan = new int[dt.Columns.Count];
+        string[] strtype = new string[dt.Columns.Count];
+        for (int j = 0; j < dt.Columns.Count; j++)
+        {
+            str[j] = dt.Columns[j].ColumnName;
+            strcolspan[j] = 1;
+            strtype[j] = "Label";
+        }
+        AddRowTh(table, str, strcolspan);
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            string[] strnew = new string[dt.Columns.Count];
+
+            for (int j = 0; j < dt.Columns.Count; j++)
+            {
+                strnew[j] = dt.Rows[i][j].ToString();
+            }
+            AddRowTd(table, strnew, strcolspan, strtype);
+        }
+    }
+
+}

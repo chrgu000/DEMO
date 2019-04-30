@@ -1,0 +1,482 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+/// <summary>
+/// DroupDownListClass 的摘要说明
+/// </summary>
+public class ControlsClass
+{
+    string sql;
+    DataTable dt;
+    
+
+    public ControlsClass()
+	{
+		//
+		// TODO: 在此处添加构造函数逻辑
+		//
+        
+	}
+
+
+    #region 下拉列表框选中
+    public void Select(DropDownList e, string id)
+    {
+        e.ClearSelection();
+        for (int i = 0; i < e.Items.Count; i++)
+        {
+            if (e.Items[i].Value == id)
+            {
+                e.Items[i].Selected = true;
+            }
+        }
+    }
+    #endregion
+
+    #region 下拉列表框选中
+    public void Select(RadioButtonList e, string id)
+    {
+        e.ClearSelection();
+        for (int i = 0; i < e.Items.Count; i++)
+        {
+            if (e.Items[i].Value == id)
+            {
+                e.Items[i].Selected = true;
+            }
+        }
+    }
+    #endregion
+
+    public void BindAll(DropDownList ddl)
+    {
+        ddl.Items.Insert(0, new ListItem("全部", ""));
+    }
+
+    public void BindAll(RadioButtonList rdo)
+    {
+        rdo.Items.Insert(0, new ListItem("全部", ""));
+    }
+    public void BindAll(CheckBoxList chk)
+    {
+        chk.Items.Insert(0, new ListItem("全部", ""));
+    }
+
+    public void BindPerformanceEvaluationType(DropDownList ddl)
+    {
+        sql = "select * from PerformanceEvaluationType";
+        ddl.DataSource = Conn.DataTable(sql);
+        ddl.DataTextField = "TName";
+        ddl.DataValueField = "TID";
+        ddl.DataBind();
+    }
+
+    #region 下拉列表框选中
+    public void RadioButtonListSelect(RadioButtonList e, string id)
+    {
+        e.ClearSelection();
+        for (int i = 0; i < e.Items.Count; i++)
+        {
+            if (e.Items[i].Value == id)
+            {
+                e.Items[i].Selected = true;
+            }
+        }
+    }
+    #endregion
+
+    #region 下拉列表框的值
+    public string GetDropDownListValue(DropDownList ddl)
+    {
+        for (int i = 0; i < ddl.Items.Count; i++)
+        {
+            if (ddl.Items[i].Selected == true)
+            {
+                return ddl.Items[i].Value;
+            }
+        }
+        return "";
+    }
+    public string GetDropDownListText(DropDownList ddl)
+    {
+        for (int i = 0; i < ddl.Items.Count; i++)
+        {
+            if (ddl.Items[i].Selected == true)
+            {
+                return ddl.Items[i].Text;
+            }
+        }
+        return "";
+    }
+    public void SetDropDownListValue(DropDownList ddl,string txt)
+    {
+        for (int i = 0; i < ddl.Items.Count; i++)
+        {
+            if (ddl.Items[i].Value == txt.Trim())
+            {
+                ddl.Items[i].Selected = true;
+            }
+        }
+    }
+
+    #endregion
+
+    #region 单选框的值
+    public string GetRadioButtonListValue(RadioButtonList rdo)
+    {
+        for (int i = 0; i < rdo.Items.Count; i++)
+        {
+            if (rdo.Items[i].Selected == true)
+            {
+                return rdo.Items[i].Value;
+            }
+        }
+        return "";
+    }
+    public string GetRadioButtonListText(RadioButtonList rdo)
+    {
+        for (int i = 0; i < rdo.Items.Count; i++)
+        {
+            if (rdo.Items[i].Selected == true)
+            {
+                return rdo.Items[i].Text;
+            }
+        }
+        return "";
+    }
+    public void SetRadioButtonListValue(RadioButtonList rdo, string txt)
+    {
+        for (int i = 0; i < rdo.Items.Count; i++)
+        {
+            if (rdo.Items[i].Value == txt.Trim())
+            {
+                rdo.Items[i].Selected = true;
+            }
+        }
+    }
+    #endregion
+
+    /// <summary>
+    /// 得到参数
+    /// </summary>
+    /// <param name="ddl"></param>
+    /// <param name="pid"></param>
+    public void BindParameter(DropDownList ddl, int pid)
+    {
+        sql = "select * from _Parameters where PID='" + pid + "' and IsOpen='Y'";
+        ddl.DataSource = Conn.DataTable(sql);
+        ddl.DataTextField = "PSName";
+        ddl.DataValueField = "PSID";
+        ddl.DataBind();
+    }
+
+    public void BindParameter(CheckBoxList chk, int pid)
+    {
+        sql = "select * from _Parameters where PID='" + pid + "' and IsOpen='Y'";
+        chk.DataSource = Conn.DataTable(sql);
+        chk.DataTextField = "PSName";
+        chk.DataValueField = "PSID";
+        chk.DataBind();
+    }
+
+    /// <summary>
+    /// 得到参数
+    /// </summary>
+    /// <param name="ddl"></param>
+    /// <param name="pid"></param>
+    public void BindParameter(RadioButtonList rdo, int pid)
+    {
+        sql = "select * from _Parameters where PID='" + pid + "' and IsOpen='Y'";
+        rdo.DataSource = Conn.DataTable(sql);
+        rdo.DataTextField = "PSName";
+        rdo.DataValueField = "PSID";
+        rdo.DataBind();
+    }
+
+
+    public  DataTable ColumnInGrid(DataTable dt, YYControls.SmartGridView sg)
+    {
+        for (int i = (dt.Columns.Count - 1); i >= 0; i--)
+        {
+            bool b = false;
+            for (int j = 0; j < sg.Columns.Count; j++)
+            {
+                if (dt.Columns[i].ColumnName == sg.Columns[j].SortExpression)
+                {
+                    dt.Columns[i].ColumnName = sg.Columns[j].HeaderText;
+                    b = true;
+                }
+            }
+            if (b == false)
+            {
+                dt.Columns.Remove(dt.Columns[i]);
+            }
+
+        }
+        return dt;
+    }
+
+    public void BindMultirowHead(GridView gv, string strname)
+    {
+        GridViewRow rowHeader = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Normal);//表头行
+        TableHeaderCell cell = new TableHeaderCell();
+        cell.ColumnSpan = gv.Columns.Count;
+        cell.Text = strname;
+        cell.CssClass = "MultirowHead";
+        rowHeader.Cells.Add(cell);
+        gv.Controls[0].Controls.AddAt(0, rowHeader);//加到最前面
+    }
+
+    /// <summary>
+    /// 动态绑定GridView，绑定隐藏控件
+    /// </summary>
+    /// <param name="hid">隐藏列的名称</param>
+    /// <param name="gv">传入GridView</param>
+    /// <param name="title">绑定列的名称</param>
+    public void BindNewColumns(string hid, GridView gv, string title)
+    {
+        TemplateField tf = new TemplateField();
+        tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title);
+        tf.ItemTemplate = new GridViewTemplate(hid, DataControlRowType.DataRow, title);
+        gv.Columns.Add(tf);
+    }
+
+    /// <summary>
+    /// 动态绑定GridView，需要控件名
+    /// </summary>
+    /// <param name="gv">传入GridView</param>
+    /// <param name="title">绑定列的名称</param>
+    /// <param name="conname">绑定控件的名称</param>
+    /// <param name="dtype">控件类型</param>
+    public void BindNewColumns(GridView gv, string title, string conname, DataType.ControlsType dtype)
+    {
+        TemplateField tf = new TemplateField();
+        tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title, conname);
+        tf.ItemTemplate = new GridViewTemplate(DataControlRowType.DataRow, title, conname, dtype);
+        gv.Columns.Add(tf);
+    }
+
+    /// <summary>
+    /// 动态绑定GridView
+    /// </summary>
+    /// <param name="gv">传入GridView</param>
+    /// <param name="title">绑定列的名称</param>
+    /// <param name="dtype">控件类型</param>
+    public void BindNewColumns(GridView gv, string title, DataType.ControlsType dtype)
+    {
+        TemplateField tf = new TemplateField();
+        tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title);
+        tf.ItemTemplate = new GridViewTemplate(DataControlRowType.DataRow, title, dtype);
+        gv.Columns.Add(tf);
+    }
+
+    /// <summary>
+    /// 动态绑定GridView，默认为Label
+    /// </summary>
+    /// <param name="gv">传入GridView</param>
+    /// <param name="title">绑定列的名称</param>
+    public void BindNewColumns(GridView gv, string title)
+    {
+        TemplateField tf = new TemplateField();
+        tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title);
+        tf.ItemTemplate = new GridViewTemplate(DataControlRowType.DataRow, title, DataType.ControlsType.Label);
+        gv.Columns.Add(tf);
+    }
+
+    /// <summary>
+    /// 动态绑定GridView，绑定HtmlAnchor
+    /// </summary>
+    /// <param name="gv">传入GridView</param>
+    /// <param name="title">绑定列的名称</param>
+    public void BindNewColumns(GridView gv, string title, string path, string pathid, string idtitle, string idid)
+    {
+        TemplateField tf = new TemplateField();
+        tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title);
+        tf.ItemTemplate = new GridViewTemplate(DataControlRowType.DataRow, title, path,pathid,idtitle, idid);
+        gv.Columns.Add(tf);
+    }
+
+    //public void BindNewColumnsTwo(YYControls.SmartGridView gv, string title,string h)
+    //{
+    //    TemplateField tf = new TemplateField();
+    //    tf.HeaderTemplate = new GridViewTemplate(DataControlRowType.Header, title);
+    //    tf.ItemTemplate = new GridViewTemplate(DataControlRowType.DataRow, title, dtype);
+    //    gv.Columns.Add(tf);
+    //}
+
+    public class GridViewTemplate : ITemplate
+    {
+        private DataControlRowType dcrType;
+        private string columnName;
+        private DataType.ControlsType datatype;
+        private string controlname;
+        private string hidid;
+        private string spath;
+        private string spathid;
+        private string sidtitle;
+        private string sidid;
+
+        public GridViewTemplate(DataControlRowType type, string colname,string conname)
+        {
+            dcrType = type;
+            columnName = colname;
+            controlname = conname;
+        }
+        public GridViewTemplate(DataControlRowType type, string colname)
+        {
+            dcrType = type;
+            columnName = colname;
+        }
+        public GridViewTemplate(string hid, DataControlRowType type, string colname)
+        {
+            dcrType = type;
+            columnName = colname;
+            hidid = hid;
+        }
+        public GridViewTemplate(DataControlRowType type, string colname, string conname, DataType.ControlsType dtype)
+        {
+            dcrType = type;
+            columnName = colname;
+            controlname = conname;
+            datatype = dtype;
+        }
+        public GridViewTemplate(DataControlRowType type, string colname, DataType.ControlsType dtype)
+        {
+            dcrType = type;
+            columnName = colname;
+            datatype = dtype;
+        }
+
+        public GridViewTemplate(DataControlRowType type, string colname, string path,string pathid, string idtitle, string idid)
+        {
+            dcrType = type;
+            datatype = DataType.ControlsType.HtmlAnchor;
+            columnName = colname;
+            spath = path;
+            spathid = pathid;
+            sidtitle = idtitle;
+            sidid = idid;
+        }
+        
+
+        public void InstantiateIn(System.Web.UI.Control container)
+        {
+            switch (dcrType)
+            {
+                case DataControlRowType.Header:
+                    Label l = new Label();
+                    l.Text = columnName;
+                    l.ID = controlname;
+                    l.ToolTip = columnName;
+                    container.Controls.Add(l);
+                    break;
+                case DataControlRowType.DataRow:
+                    switch (datatype)
+                    {
+                        case DataType.ControlsType.Label:
+                            Label lbl = new Label();
+                            lbl.ID = controlname;
+                            lbl.DataBinding += new EventHandler(AddLabel);
+                            if (controlname != "")
+                            {
+                                lbl.ID = controlname;
+                            }
+                            container.Controls.Add(lbl);
+                            break;
+                        case DataType.ControlsType.TextBox:
+                            TextBox txt = new TextBox();
+                            txt.ID = controlname;
+                            txt.DataBinding += new EventHandler(AddTextBox);
+                            if (controlname != "")
+                            {
+                                txt.ID = controlname;
+                            }
+                            container.Controls.Add(txt);
+                            break;
+                        case DataType.ControlsType.RadioButton:
+                            RadioButton rdo = new RadioButton();
+                            rdo.ID = controlname;
+                            rdo.DataBinding += new EventHandler(AddRadioButton);
+                            container.Controls.Add(rdo);
+                            break;
+                        case DataType.ControlsType.HtmlAnchor:
+                            HtmlAnchor a = new HtmlAnchor();
+                            a.DataBinding += new EventHandler(AddHtmlAnchor);
+                            container.Controls.Add(a);
+                            break;
+
+                    }
+                    break;
+                default:
+                    break;
+            }
+            if (hidid != "" && hidid != null)//有隐藏列
+            {
+                HiddenField hf = new HiddenField();
+                hf.DataBinding += new EventHandler(AddHid);
+                container.Controls.Add(hf);
+            }
+        }
+
+        private void AddHid(object sender, EventArgs e)
+        {
+            HiddenField l = (HiddenField)sender;
+            GridViewRow row = (GridViewRow)l.NamingContainer;
+            l.Value = DataBinder.Eval(row.DataItem, hidid).ToString();
+            l.ID = "Hid" + row.RowIndex.ToString();
+        }
+
+        //private void AddHids(object sender, EventArgs e)
+        //{
+        //    HiddenField l = (HiddenField)sender;
+        //    GridViewRow row = (GridViewRow)l.NamingContainer;
+        //    l.Value = DataBinder.Eval(row.DataItem, hids).ToString();
+        //    l.ID = "Hids" + row.RowIndex.ToString();
+        //}
+
+        private void AddLabel(object sender, EventArgs e)
+        {
+            Label l = (Label)sender;
+            GridViewRow row = (GridViewRow)l.NamingContainer;
+            l.Text = DataBinder.Eval(row.DataItem, columnName).ToString();
+            
+        }
+
+        private void AddTextBox(object sender, EventArgs e)
+        {
+            TextBox l = (TextBox)sender;
+            GridViewRow row = (GridViewRow)l.NamingContainer;
+            l.Text=DataBinder.Eval(row.DataItem, columnName).ToString();
+        }
+
+        private void AddRadioButton(object sender, EventArgs e)
+        {
+            RadioButton l = (RadioButton)sender;
+            GridViewRow row = (GridViewRow)l.NamingContainer;
+            l.GroupName = "rdogroup" + row.RowIndex.ToString();
+            l.Text = DataBinder.Eval(row.DataItem, columnName).ToString();
+            if (controlname != "")
+            {
+                l.ID = controlname + "_" + row.RowIndex.ToString();
+            }
+        }
+
+        private void AddHtmlAnchor(object sender, EventArgs e)
+        {
+            HtmlAnchor l = (HtmlAnchor)sender;
+            GridViewRow row = (GridViewRow)l.NamingContainer;
+            l.InnerText = DataBinder.Eval(row.DataItem, sidid).ToString();
+            l.HRef = spath + "?" + spathid + "=" + DataBinder.Eval(row.DataItem, sidtitle).ToString();
+            if (controlname != "")
+            {
+                l.ID = controlname + "_" + row.RowIndex.ToString();
+            }
+        }
+    } 
+}

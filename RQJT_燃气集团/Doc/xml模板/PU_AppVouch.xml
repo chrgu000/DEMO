@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <purchaseapp>
+    <header>
+      <code>Test001</code>
+      <date>2019-01-01</date>
+      <departmentcode>00</departmentcode>
+      <personcode>0007</personcode>
+      <maker>th</maker>
+      <memory>memory</memory>
+      <define1>合同编号</define1>
+      <define2>合同名称</define2>
+      <define3>项目编号</define3>
+      <define4>项目名称</define4>
+    </header>
+    <body>
+      <entry>
+        <inventorycode>B10101001</inventorycode>
+        <quantity>10</quantity>
+        <requiredate>2019-05-01</requiredate>
+        <num />
+      </entry>
+      <entry>
+        <inventorycode>B10101003</inventorycode>
+        <quantity>20</quantity>
+        <requiredate>2019-05-05</requiredate>
+        <num />
+      </entry>
+    </body>
+  </purchaseapp>

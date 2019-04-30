@@ -1,0 +1,24 @@
+KST SERVER   固定IP: 119.46.187.228
+
+TeamviewID: 565925028 PS: Kst2016
+AnydeskID: kstserver@ad PS: Kst123456
+
+选：远程控制
+
+进入后会看到windows锁定的界面，按crtl+ alt+ delete输入
+
+windows 管理员：administrator
+
+管理员PS：Kst2016
+
+demo  DEMO
+
+
+
+
+左下角右键可以选择：关机和重启
+
+录入销售订单的时候，如果同一客户，某种产品的本次的价格比上一次的价格差价超过10%，就弹出提醒窗口
+
+
+

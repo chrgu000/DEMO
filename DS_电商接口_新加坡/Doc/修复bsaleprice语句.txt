@@ -1,0 +1,7 @@
+
+
+
+update diss set diss.bsaleprice = sos.bsaleprice
+from SO_SOMain so inner join SO_SODetails sos on so.ID = sos.ID
+	left join DispatchLists diss on sos.iSOsID = diss.iSOsID
+where so.ddate >= '2018-11-01' and sos.bsaleprice <> diss.bsaleprice 

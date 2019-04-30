@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Ap_CloseBill>
+    <AccID></AccID>
+    <ddbill_date></dbill_date>
+    <cdigest></cdigest>
+    <dMoney></dMoney>
+    <cCusCode></cCusCode>
+    <cCusName></cCusName>
+  </Ap_CloseBill>
+</NewDataSet>

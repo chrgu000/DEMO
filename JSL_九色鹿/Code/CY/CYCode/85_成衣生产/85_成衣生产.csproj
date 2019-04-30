@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42CB38B1-E9C8-4A80-A110-591E4821B68C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>成衣生产</RootNamespace>
+    <AssemblyName>成衣生产</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsUseWebService.cs" />
+    <Compile Include="Dal\产品档案.cs" />
+    <Compile Include="Dal\生产计划.cs" />
+    <Compile Include="Dal\成品出入库.cs" />
+    <Compile Include="Dal\材料出入库.cs" />
+    <Compile Include="Dal\订单.cs" />
+    <Compile Include="Dal\尺码信息.cs" />
+    <Compile Include="Model\产品档案.cs" />
+    <Compile Include="Model\生产计划.cs" />
+    <Compile Include="Model\成品出入库.cs" />
+    <Compile Include="Model\材料出入库.cs" />
+    <Compile Include="Model\订单.cs" />
+    <Compile Include="Model\尺码信息.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="基础档案\Frm纱种.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="基础档案\Frm纱种.designer.cs">
+      <DependentUpon>Frm纱种.cs</DependentUpon>
+    </Compile>
+    <Compile Include="完工入库\Frm完工入库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="完工入库\Frm完工入库.designer.cs">
+      <DependentUpon>Frm完工入库.cs</DependentUpon>
+    </Compile>
+    <Compile Include="完工入库\Frm完工入库_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="完工入库\Frm完工入库_New.designer.cs">
+      <DependentUpon>Frm完工入库_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="材料出入库单\Frm材料入库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="材料出入库单\Frm材料入库单.designer.cs">
+      <DependentUpon>Frm材料入库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="材料出入库单\Frm材料出库单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="材料出入库单\Frm材料出库单.designer.cs">
+      <DependentUpon>Frm材料出库单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="生产管理\Frm产品档案.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="生产管理\Frm产品档案.designer.cs">
+      <DependentUpon>Frm产品档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="基础档案\Frm尺寸档案.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="基础档案\Frm尺寸档案.designer.cs">
+      <DependentUpon>Frm尺寸档案.cs</DependentUpon>
+    </Compile>
+    <Compile Include="生产管理\Frm产品档案_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="生产管理\Frm产品档案_Add.designer.cs">
+      <DependentUpon>Frm产品档案_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="生产计划\Frm生产计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="生产计划\Frm生产计划.designer.cs">
+      <DependentUpon>Frm生产计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="订单\Frm订单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="订单\Frm订单.designer.cs">
+      <DependentUpon>Frm订单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售出库\Frm销售出库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售出库\Frm销售出库.designer.cs">
+      <DependentUpon>Frm销售出库.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="基础档案\Frm纱种.resx">
+      <DependentUpon>Frm纱种.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="完工入库\Frm完工入库.resx">
+      <DependentUpon>Frm完工入库.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="完工入库\Frm完工入库_New.resx">
+      <DependentUpon>Frm完工入库_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="材料出入库单\Frm材料入库单.resx">
+      <DependentUpon>Frm材料入库单.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="材料出入库单\Frm材料出库单.resx">
+      <DependentUpon>Frm材料出库单.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="生产管理\Frm产品档案.resx">
+      <DependentUpon>Frm产品档案.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="基础档案\Frm尺寸档案.resx">
+      <DependentUpon>Frm尺寸档案.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="生产管理\Frm产品档案_Add.resx">
+      <DependentUpon>Frm产品档案_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="生产计划\Frm生产计划.resx">
+      <DependentUpon>Frm生产计划.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="订单\Frm订单.resx">
+      <DependentUpon>Frm订单.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售出库\Frm销售出库.resx">
+      <DependentUpon>Frm销售出库.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\90_系统服务\90_系统服务.csproj">
+      <Project>{A5E7FFE0-1AFB-4812-8B54-AC886B900155}</Project>
+      <Name>90_系统服务</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\DBService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://zhiyifang.ticp.net:18080/DBService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://zhiyifang.ticp.net:18080/DBService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>成衣生产_WebReference_DBWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WebReference\DBService.disco" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

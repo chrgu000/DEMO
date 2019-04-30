@@ -1,0 +1,6 @@
+Module1 = 81, 81, 1190, 602, C
+voucherinterface = 44, 44, 1190, 621, 
+FrmReport = 0, 0, 0, 0, C, 66, 66, 1212, 643, C
+PrintBarCodeRD01 = 30, 30, 1183, 673, 
+PrintBarCodeRD08 = 60, 60, 1213, 703, 
+PrintBarCodeRD10 = 90, 90, 1243, 733, 
