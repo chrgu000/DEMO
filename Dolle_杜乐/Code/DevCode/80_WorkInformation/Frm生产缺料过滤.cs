@@ -294,7 +294,7 @@ namespace WorkInformation
             string sSQL = @"
 
 select distinct a.产品编码,a.出货周,a.销售订单号,a.销售订单行号,b.制造令号码,b.物料编码,h.cInvName as 物料名称, b.数量,b.制造令数量
-	,d.累计入库,d.子件编码,f.cInvName as 子件名称,f.bPurchase as 采购,f.bProxyForeign as 委外,f.bSelf as 生产, d.子件数量,d.已领数量,d.子件数量-isnull(d.已领数量,0) as 待领数量
+	,d.累计入库,d.子件编码,f.cInvName as 子件名称,f.bPurchase as 采购,f.bProxyForeign as 委外,f.bSelf as 生产, d.子件数量,d.已领数量,d.子件数量-isnull(d.已领数量,0) as 待领数量,pur.iQtyUnRD as 到货未入库,pur.dDate 到货日期
 	,e.iQuantity as 原料库现存量,g.iQuantity as 现场库现存量,isnull(e.iQuantity,0)  + isnull(g.iQuantity,0) as 现存量, cast (null as decimal(18,6)) as 缺料数量
 from dbo.生产计划 a inner join dbo.生产计划明细 b on a.单据号 = b.表头单据号 and a.帐套号 = b.帐套号 and a.帐套号 ='444444' 
 	inner join 
@@ -317,6 +317,13 @@ from dbo.生产计划 a inner join dbo.生产计划明细 b on a.单据号 = b.�
 	left join @u8.CurrentStock g on g.cInvCode = d.子件编码 and g.cWhCode = '0F'
     inner join @u8.Inventory f on f.cInvCode = d.子件编码 
     inner join  @u8.Inventory h on h.cInvCode = b.物料编码 
+    left join
+    (
+    select b.cInvCode ,max(a.dDate) as dDate, cast(sum(b.iQuantity) - sum(isnull(b.fRealQuantity,0)) as decimal(12,4)) as iQtyUnRD
+        from @u8.PU_ArrivalVouch a inner join @u8.PU_ArrivalVouchs b on a.ID = b.ID
+        where  1=1
+        group by b.cInvCode
+    )pur on pur.cInvCode = d.子件编码
 order by a.出货周,d.子件编码,b.制造令号码,b.物料编码,a.销售订单号,a.销售订单行号
 
 ";

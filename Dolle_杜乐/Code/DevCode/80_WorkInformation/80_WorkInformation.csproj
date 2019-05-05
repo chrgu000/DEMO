@@ -334,10 +334,10 @@
     <EmbeddedResource Include="Frm生产订单执行情况.resx">
       <DependentUpon>Frm生产订单执行情况.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Frm生产计划批量关闭.resx">
       <DependentUpon>Frm生产计划批量关闭.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
