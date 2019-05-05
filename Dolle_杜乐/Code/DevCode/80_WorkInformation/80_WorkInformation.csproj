@@ -13,10 +13,14 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -233,6 +237,12 @@
     <Compile Include="Frm生产订单执行情况.designer.cs">
       <DependentUpon>Frm生产订单执行情况.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm生产计划批量关闭.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm生产计划批量关闭.Designer.cs">
+      <DependentUpon>Frm生产计划批量关闭.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\01_BasicInformation\01_BasicInformation.csproj">
@@ -325,6 +335,9 @@
       <DependentUpon>Frm生产订单执行情况.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Frm生产计划批量关闭.resx">
+      <DependentUpon>Frm生产计划批量关闭.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
