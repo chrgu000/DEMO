@@ -200,21 +200,32 @@ select count(1) as iCou from [dbo].[_高开返利单_SZ] where cSBVCode = '{0}'
                             continue;
                         }
 
-
+                        //未做高开返利单的当月发票全部删除
                         sSQL = @"
-select count(1) as iCou from [_发票_sap] where 发票号码 = '{0}'
-                        ";
-                        sSQL = string.Format(sSQL, gridView1.GetRowCellValue(i, gridCol发票号码).ToString().Trim());
-                        l = BaseFunction.ReturnLong(DbHelperSQL.ExecuteDataset(tran, CommandType.Text, sSQL).Tables[0].Rows[0][0]);
+delete 
+from [dbo].[_发票_sap] 
+where year([发票日期]) = {0} and month([发票日期]) = {1}
+	and 发票号码 not in (
+			select DISTINCT 发票号码 from [_发票_sap] where year([发票日期]) = {0} and month([发票日期]) = {1} and iID in (select FPIDs from [dbo].[_高开返利单_SZ])
+			)
+";
+                        sSQL = string.Format(sSQL, BaseFunction.ReturnInt(lookUpEditYear.EditValue).ToString().Trim(), BaseFunction.ReturnInt(lookUpEditMonth.EditValue).ToString().Trim());
+                        DbHelperSQL.ExecuteNonQuery(tran, CommandType.Text, sSQL);
 
-                        if (l > 0)
-                        {
-                            sSQL = @"
-delete  [_发票_sap] where 发票号码 = '{0}'
-                        ";
-                            sSQL = string.Format(sSQL, gridView1.GetRowCellValue(i, gridCol发票号码).ToString().Trim());
-                            DbHelperSQL.ExecuteNonQuery(tran, CommandType.Text, sSQL);
-                        }
+//                        sSQL = @"
+//select count(1) as iCou from [_发票_sap] where 发票号码 = '{0}'
+//                        ";
+//                        sSQL = string.Format(sSQL, gridView1.GetRowCellValue(i, gridCol发票号码).ToString().Trim());
+//                        l = BaseFunction.ReturnLong(DbHelperSQL.ExecuteDataset(tran, CommandType.Text, sSQL).Tables[0].Rows[0][0]);
+
+//                        if (l > 0)
+//                        {
+//                            sSQL = @"
+//delete  [_发票_sap] where 发票号码 = '{0}'
+//                        ";
+//                            sSQL = string.Format(sSQL, gridView1.GetRowCellValue(i, gridCol发票号码).ToString().Trim());
+//                            DbHelperSQL.ExecuteNonQuery(tran, CommandType.Text, sSQL);
+//                        }
 
                     }
 
@@ -324,9 +335,6 @@ delete  [_发票_sap] where 发票号码 = '{0}'
                     {
                         throw new Exception(sErr.Trim());
                     }
-
-                  
-
 
                     b编辑 = false;
 
