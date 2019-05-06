@@ -92,7 +92,7 @@ namespace SaleOrder
                         btnLast();
                         break;
                     case "lock":
-                        btnLock();
+                        btnLock(false);
                         break;
                     case "next":
                         btnNext();
@@ -401,7 +401,7 @@ namespace SaleOrder
         /// <summary>
         /// 锁定
         /// </summary>
-        private void btnLock()
+        private void btnLock(bool bChooseAll)
         {
             try
             {
@@ -412,6 +412,87 @@ namespace SaleOrder
                 }
                 catch { }
 
+                //FrameBaseFunction.ClsSqlHelper DBSQL = new ClsSqlHelper();
+
+                string sErr = "";
+                int iCount = 0;
+
+                DateTime dLogDate = BaseFunction.ReturnDate(FrameBaseFunction.ClsBaseDataInfo.sLogDate);
+                SqlConnection conn = new SqlConnection(FrameBaseFunction.ClsBaseDataInfo.sConnString);
+                conn.Open();
+                //启用事务
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    string sSQL = "select * from 订单评审运算1 where 销售订单ID = '" + txt销售订单ID.Text.Trim() + "' and 帐套号 = " + (FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3)).Trim();
+                    DataTable dt订单评审运算1 = ClsSqlHelper.ExecuteDataset(tran, CommandType.Text, sSQL).Tables[0];
+
+                    if (dt订单评审运算1 == null || dt订单评审运算1.Rows.Count < 1)
+                    {
+                        throw new Exception("请选择需要保存的单据");
+                    }
+                    if (dt订单评审运算1.Rows[0]["维护审核人"].ToString().Trim() != "")
+                    {
+                        throw new Exception("已经审核，不能维护");
+                    }
+                    if (dt订单评审运算1.Rows[0]["关闭人"].ToString().Trim() != "")
+                    {
+                        throw new Exception("已经关闭，不能维护");
+                    }
+
+                    for (int i = 0; i < gridView评审维护.RowCount; i++)
+                    {
+                        if (!bChooseAll)
+                        {
+                            if (gridView评审维护.GetRowCellValue(i, gridCol选择).ToString().Trim() == "√")
+                            {
+
+                                sSQL = "update 订单评审运算3 set 锁定人 = '" + FrameBaseFunction.ClsBaseDataInfo.sUserName + "',锁定日期 = getdate() where iID = " + gridView评审维护.GetRowCellValue(i, gridColiID) + " ";
+                                iCount += ClsSqlHelper.ExecuteNonQuery(tran, CommandType.Text, sSQL);
+                            }
+                        }
+                        else
+                        {
+                            sSQL = "update 订单评审运算3 set 锁定人 = '" + FrameBaseFunction.ClsBaseDataInfo.sUserName + "',锁定日期 = getdate() where iID = " + gridView评审维护.GetRowCellValue(i, gridColiID) + " ";
+                            iCount += ClsSqlHelper.ExecuteNonQuery(tran, CommandType.Text, sSQL);
+                        }
+                    }
+
+                    if (iCount > 0)
+                    {
+                        tran.Commit();
+                        MessageBox.Show("锁定成功！\n合计执行语句:" + iCount + "条");
+                        SetColEdit(false);
+
+                        GetGrid(Convert.ToInt64(txt销售订单ID.Text));
+
+                        sState = "lock";
+                    }
+                    else
+                    {
+                        throw new Exception("请选择需要锁定的数据");
+                    }
+
+                }
+                catch (Exception ee)
+                {
+                    tran.Rollback();
+
+                    throw new Exception(ee.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                    tran = null;
+                }
+
+                #region del
+
+                /*
                 sSQL = "select * from 订单评审运算1 where 销售订单ID = '" + txt销售订单ID.Text.Trim() + "' and 帐套号 = " + (FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3)).Trim();
                 DataTable dt订单评审运算1 = clsSQLCommond.ExecQuery(sSQL);
                 if (dt订单评审运算1 == null || dt订单评审运算1.Rows.Count < 1)
@@ -452,6 +533,8 @@ namespace SaleOrder
                 {
                     throw new Exception("请选择需要锁定的数据");
                 }
+                 * */
+                #endregion
             }
             catch (Exception ee)
             {
@@ -546,6 +629,8 @@ namespace SaleOrder
         {
             try
             {
+                btnLock(true);
+
                 sSQL = "select * from 订单评审运算1 where 销售订单ID = '" + txt销售订单ID.Text.Trim() + "' and 帐套号 = " + (FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3)).Trim();
                 DataTable dt订单评审运算1 = clsSQLCommond.ExecQuery(sSQL);
                 if (dt订单评审运算1 == null || dt订单评审运算1.Rows.Count < 1)
@@ -580,7 +665,6 @@ namespace SaleOrder
                     gridView评审维护.SetRowCellValue(i, gridCol选择, "√");
                 }
 
-                btnLock();
 
                 SetColEdit(true);
             }

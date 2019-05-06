@@ -87,13 +87,11 @@
     <Compile Include="Bll\Cls到货.cs" />
     <Compile Include="Bll\Cls材料检验合格入库.cs" />
     <Compile Include="FrmArrivalVouchIn.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmArrivalVouchIn.Designer.cs">
       <DependentUpon>FrmArrivalVouchIn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDB.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDB.Designer.cs">
       <DependentUpon>FrmDB.cs</DependentUpon>
@@ -105,43 +103,36 @@
       <DependentUpon>FrmDBEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTransVouchAudit.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTransVouchAudit.Designer.cs">
       <DependentUpon>FrmTransVouchAudit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTrans生产收料.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTrans生产收料.Designer.cs">
       <DependentUpon>FrmTrans生产收料.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkProcedureBarCode.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkProcedureBarCode.Designer.cs">
       <DependentUpon>FrmWorkProcedureBarCode.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkProcedureRep.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkProcedureRep.Designer.cs">
       <DependentUpon>FrmWorkProcedureRep.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm库龄分析.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm库龄分析.designer.cs">
       <DependentUpon>Frm库龄分析.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm材料检验合格入库.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm材料检验合格入库.designer.cs">
       <DependentUpon>Frm材料检验合格入库.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产材料调拨.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产材料调拨.designer.cs">
       <DependentUpon>Frm生产材料调拨.cs</DependentUpon>
@@ -161,7 +152,6 @@
       <DependentUpon>FrmClosedPoSel.cs</DependentUpon>
     </Compile>
     <Compile Include="OMBack\FrmDealBackBill.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OMBack\FrmDealBackBill.Designer.cs">
       <DependentUpon>FrmDealBackBill.cs</DependentUpon>
@@ -179,7 +169,6 @@
       <DependentUpon>FrmProxyDoType.cs</DependentUpon>
     </Compile>
     <Compile Include="OMBack\FrmVenBack.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OMBack\FrmVenBack.Designer.cs">
       <DependentUpon>FrmVenBack.cs</DependentUpon>
@@ -191,7 +180,6 @@
       <DependentUpon>FrmVenSel.cs</DependentUpon>
     </Compile>
     <Compile Include="OMBack\FrmWHBack.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OMBack\FrmWHBack.designer.cs">
       <DependentUpon>FrmWHBack.cs</DependentUpon>
@@ -203,73 +191,61 @@
     <Compile Include="OMBack\U8ImportUtis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frm物料货位档案.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm物料货位档案.designer.cs">
       <DependentUpon>Frm物料货位档案.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm检验合格单列表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm检验合格单列表.designer.cs">
       <DependentUpon>Frm检验合格单列表.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产材料货位调拨.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产材料货位调拨.designer.cs">
       <DependentUpon>Frm生产材料货位调拨.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外材料发出.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外材料发出.designer.cs">
       <DependentUpon>Frm委外材料发出.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm调拨材料出库.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm调拨材料出库.designer.cs">
       <DependentUpon>Frm调拨材料出库.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm产品入库货位.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm产品入库货位.designer.cs">
       <DependentUpon>Frm产品入库货位.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm其他入库货位.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm其他入库货位.designer.cs">
       <DependentUpon>Frm其他入库货位.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm其他出库货位.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm其他出库货位.designer.cs">
       <DependentUpon>Frm其他出库货位.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm货位条形码.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm货位条形码.designer.cs">
       <DependentUpon>Frm货位条形码.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm不良品调拨列表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm不良品调拨列表.designer.cs">
       <DependentUpon>Frm不良品调拨列表.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产材料调拨2.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产材料调拨2.designer.cs">
       <DependentUpon>Frm生产材料调拨2.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm栈板存量表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm栈板存量表.designer.cs">
       <DependentUpon>Frm栈板存量表.cs</DependentUpon>
@@ -281,31 +257,26 @@
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
     <Compile Include="厂商仓库\Frm厂商仓库结存.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="厂商仓库\Frm厂商仓库结存.designer.cs">
       <DependentUpon>Frm厂商仓库结存.cs</DependentUpon>
     </Compile>
     <Compile Include="厂商仓库\Frm厂商进出库明细.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="厂商仓库\Frm厂商进出库明细.designer.cs">
       <DependentUpon>Frm厂商进出库明细.cs</DependentUpon>
     </Compile>
     <Compile Include="栈板\Frm栈板仓库收发登记表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="栈板\Frm栈板仓库收发登记表.Designer.cs">
       <DependentUpon>Frm栈板仓库收发登记表.cs</DependentUpon>
     </Compile>
     <Compile Include="栈板\Frm栈板厂商收发登记表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="栈板\Frm栈板厂商收发登记表.Designer.cs">
       <DependentUpon>Frm栈板厂商收发登记表.cs</DependentUpon>
     </Compile>
     <Compile Include="栈板\Frm栈板存量.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="栈板\Frm栈板存量.Designer.cs">
       <DependentUpon>Frm栈板存量.cs</DependentUpon>
@@ -314,7 +285,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="生产缴库审批\FrmWorkProcedureList.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="生产缴库审批\FrmWorkProcedureList.Designer.cs">
       <DependentUpon>FrmWorkProcedureList.cs</DependentUpon>

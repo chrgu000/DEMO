@@ -337,7 +337,6 @@
     <EmbeddedResource Include="Frm订单评审运算_SEL2.resx">
       <DependentUpon>Frm订单评审运算_SEL2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

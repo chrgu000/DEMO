@@ -86,13 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="8D报告\Frm杜乐8D改进报告.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="8D报告\Frm杜乐8D改进报告.Designer.cs">
       <DependentUpon>Frm杜乐8D改进报告.cs</DependentUpon>
     </Compile>
     <Compile Include="8D报告\Frm杜乐8D改进报告Edit.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="8D报告\Frm杜乐8D改进报告Edit.Designer.cs">
       <DependentUpon>Frm杜乐8D改进报告Edit.cs</DependentUpon>
@@ -102,7 +100,6 @@
     </Compile>
     <Compile Include="DAL\Inventory_History.cs" />
     <Compile Include="FrmVendUid.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVendUid.Designer.cs">
       <DependentUpon>FrmVendUid.cs</DependentUpon>
@@ -110,7 +107,6 @@
     <Compile Include="Model\Inventory_History.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="不良品列表\FrmQMREJECT.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="不良品列表\FrmQMREJECT.Designer.cs">
       <DependentUpon>FrmQMREJECT.cs</DependentUpon>
@@ -119,7 +115,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="公告\Frm杜乐公告.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="公告\Frm杜乐公告.Designer.cs">
       <DependentUpon>Frm杜乐公告.cs</DependentUpon>
@@ -131,7 +126,6 @@
       <DependentUpon>Frm杜乐公告Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="公告\Frm杜乐公告供应商查看.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="公告\Frm杜乐公告供应商查看.Designer.cs">
       <DependentUpon>Frm杜乐公告供应商查看.cs</DependentUpon>
@@ -143,13 +137,11 @@
       <DependentUpon>Frm杜乐公告供应商查看Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInvUpdate.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmInvUpdate.Designer.cs">
       <DependentUpon>FrmInvUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材供应商.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材供应商.Designer.cs">
       <DependentUpon>Frm杜乐耗材供应商.cs</DependentUpon>
@@ -161,13 +153,11 @@
       <DependentUpon>Frm杜乐耗材供应商Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材分类.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材分类.Designer.cs">
       <DependentUpon>Frm杜乐耗材分类.cs</DependentUpon>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材档案.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="耗材\Frm杜乐耗材档案.Designer.cs">
       <DependentUpon>Frm杜乐耗材档案.cs</DependentUpon>
@@ -179,7 +169,6 @@
       <DependentUpon>Frm杜乐耗材档案Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单.Designer.cs">
       <DependentUpon>Frm询价单.cs</DependentUpon>
@@ -191,7 +180,6 @@
       <DependentUpon>Frm询价单Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单供应商.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单供应商.Designer.cs">
       <DependentUpon>Frm询价单供应商.cs</DependentUpon>
@@ -203,25 +191,21 @@
       <DependentUpon>Frm询价单供应商Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单查看.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单查看.Designer.cs">
       <DependentUpon>Frm询价单查看.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布.Designer.cs">
       <DependentUpon>Frm询价单结论公布.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布sel.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布sel.Designer.cs">
       <DependentUpon>Frm询价单结论公布sel.cs</DependentUpon>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布内部.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="询价单\Frm询价单结论公布内部.Designer.cs">
       <DependentUpon>Frm询价单结论公布内部.cs</DependentUpon>
