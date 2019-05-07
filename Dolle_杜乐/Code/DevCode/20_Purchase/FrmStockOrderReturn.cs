@@ -1188,7 +1188,7 @@ where  1=1 ";
                             if (b)
                             {
                                 sSQL = "update UFDLImport..PO_Podetails_Import set bAgain=1,ReturnAudit = 0,ReturnAuditUID = null,ReturnAuditDate= null " +
-                                       "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = 200 and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
+                                       "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3) + "' and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
                                 aList.Add(sSQL);
 
                                 sSQL = "update @u8.PO_Podetails set cDefine37 = null where ID= " + gridView2.GetRowCellValue(i, gridColID);
@@ -1197,7 +1197,7 @@ where  1=1 ";
                             else
                             {
                                 sSQL = "update UFDLImport..PO_Podetails_Import set bAgain=0,ReturnAudit = 0,ReturnAuditUID = null,ReturnAuditDate= null " +
-                                         "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = 200 and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
+                                         "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3) + "' and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
                                 aList.Add(sSQL);
 
                                 sSQL = "update @u8.PO_Podetails set cDefine36 = null,cDefine37 = null where ID= " + gridView2.GetRowCellValue(i, gridColID);
@@ -1207,7 +1207,7 @@ where  1=1 ";
                         if (!radioApply.Checked)
                         {
                             sSQL = "update UFDLImport..PO_Podetails_Import set ReturnAudit = 0,ReturnAuditUID = null,ReturnAuditDate= null " +
-                                         "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = 200 and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
+                                         "where PO_PodetailsID = " + gridView2.GetRowCellValue(i, gridColID) + " and accid = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(7, 3) + "' and accyear = '" + FrameBaseFunction.ClsBaseDataInfo.sUFDataBaseName.Substring(11, 4) + "' ";
                             aList.Add(sSQL);
 
 
@@ -1220,6 +1220,44 @@ where  1=1 ";
                             {
                                 sSQL = "update @u8.PO_Podetails set cDefine36 = null,cDefine37 = null where ID= " + gridView2.GetRowCellValue(i, gridColID);
                                 aList.Add(sSQL);
+                            }
+
+
+                            sSQL = @"
+select cInvCode,iQuantity,cItemCode,cDefine36,cDefine37 
+from @u8.PO_Podetails 
+where ID= {0}
+";
+                            sSQL = string.Format(sSQL, gridView2.GetRowCellValue(i, gridColID).ToString().Trim());
+                            DataTable dtTemp = clsSQLCommond.ExecQuery(sSQL);
+
+                            if (dtTemp.Rows[0]["cDefine36"].ToString().Trim() != "" && BaseFunction.ReturnDate(dtTemp.Rows[0]["cDefine36"]) > Convert.ToDateTime("2018-01-01"))
+                            {
+
+                            }
+                            else
+                            {
+
+                                string sInvCode = dtTemp.Rows[0]["cInvCode"].ToString().Trim();
+                                decimal dQty = BaseFunction.ReturnDecimal(dtTemp.Rows[0]["iQuantity"]);
+                                string scSOCode = dtTemp.Rows[0]["cItemCode"].ToString().Trim();
+
+                                sSQL = @"
+select iID,子件编码,回签日期,回签日期2,本次下单数量 
+from XWSystemDB_DL..订单评审运算3 a left join @u8.so_somain b on a.销售订单ID = b.id
+where 子件编码 = '{0}' and b.cSOCODE = '{1}'
+";
+                                sSQL = string.Format(sSQL, sInvCode, scSOCode);
+                                dtTemp = clsSQLCommond.ExecQuery(sSQL);
+                                if (dtTemp != null && dtTemp.Rows.Count == 1)
+                                {
+                                    if (dtTemp.Rows[0]["子件编码"].ToString().Trim() == sInvCode && BaseFunction.ReturnDecimal(dtTemp.Rows[0]["本次下单数量"]) == dQty)
+                                        sSQL = @"
+update XWSystemDB_DL..订单评审运算3 set 回签日期2 = null,回签人 = null,回签日期 = null where iID = {0}
+";
+                                    sSQL = string.Format(sSQL, dtTemp.Rows[0]["iID"].ToString().Trim());
+                                    aList.Add(sSQL);
+                                }
                             }
                         }
                         sSQL = "insert into UFDLImport.._Table_TempTH(a1,a2,a3,a4,a5)values('" + sTempKey + "','" + gridView2.GetRowCellValue(i, gridColcPOID).ToString() + "','" + gridView2.GetRowCellValue(i, gridColcInvCode).ToString() + "--" + gridView2.GetRowCellValue(i, gridColcInvName).ToString() + "','" + gridView2.GetRowCellValue(i, gridColcVenCode).ToString() + "','" + gridView2.GetRowCellValue(i, gridColcVenName).ToString() + "')";
@@ -1653,7 +1691,7 @@ where  1=1 ";
                                 sErr = sErr + " 订单：" + gridView2.GetRowCellValue(i, gridColcPOID).ToString() + " 物料：" + gridView2.GetRowCellValue(i, gridColcInvCode).ToString() + " 未设定回签日期！\n";
                                 continue;
                             }
-                            if (Convert.ToDateTime( gridView2.GetRowCellValue(i, gridColReturnDate1)) < DateTime.Parse(FrameBaseFunction.ClsBaseDataInfo.sLogDate) )
+                            if (Convert.ToDateTime(gridView2.GetRowCellValue(i, gridColReturnDate1)) < DateTime.Parse(FrameBaseFunction.ClsBaseDataInfo.sLogDate))
                             {
                                 sErr = sErr + " 订单：" + gridView2.GetRowCellValue(i, gridColcPOID).ToString() + " 物料：" + gridView2.GetRowCellValue(i, gridColcInvCode).ToString() + " 回签日期不能在今天之前！\n";
                                 continue;
@@ -1678,12 +1716,46 @@ where  1=1 ";
 
                                 sSQL = "update @u8.PO_Podetails set cDefine37 = '" + gridView2.GetRowCellValue(i, gridColReturnDate1) + "' where ID= " + gridView2.GetRowCellValue(i, gridColID);
                                 aList.Add(sSQL);
+
+                                sSQL = @"
+select cInvCode,iQuantity,cItemCode,* 
+from @u8.PO_Podetails 
+where ID= {0}
+";
+                                sSQL = string.Format(sSQL, gridView2.GetRowCellValue(i, gridColID).ToString().Trim());
+                                DataTable dtTemp = clsSQLCommond.ExecQuery(sSQL);
+                                //for (int ii = 0; ii < dtTemp.Rows.Count; ii++)
+                                //{
+                                string sInvCode = dtTemp.Rows[0]["cInvCode"].ToString().Trim();
+                                decimal dQty = BaseFunction.ReturnDecimal(dtTemp.Rows[0]["iQuantity"]);
+                                string scSOCode = dtTemp.Rows[0]["cItemCode"].ToString().Trim();
+
+                                sSQL = @"
+select iID,子件编码,回签日期,回签日期2,本次下单数量 
+from XWSystemDB_DL..订单评审运算3 a left join @u8.so_somain b on a.销售订单ID = b.id
+where 子件编码 = '{0}' and b.cSOCODE = '{1}'
+";
+                                sSQL = string.Format(sSQL, sInvCode, scSOCode);
+                                dtTemp = clsSQLCommond.ExecQuery(sSQL);
+                                if (dtTemp != null && dtTemp.Rows.Count == 1)
+                                {
+                                    if (dtTemp.Rows[0]["子件编码"].ToString().Trim() == sInvCode && BaseFunction.ReturnDecimal(dtTemp.Rows[0]["本次下单数量"]) == dQty)
+                                        sSQL = @"
+update XWSystemDB_DL..订单评审运算3 set 回签日期2 = '{0}',回签人 = '{1}',回签日期 =getdate() where iID = {2}
+";
+                                    sSQL = string.Format(sSQL, BaseFunction.ReturnDate(gridView2.GetRowCellValue(i, gridColReturnDate1)).ToString("yyyy-MM-dd"), sUserName, dtTemp.Rows[0]["iID"].ToString().Trim());
+                                    aList.Add(sSQL);
+                                }
+                                //}
                             }
                             else
                             {
                                 sSQL = "insert into UFDLImport.._Table_TempTH(a1,a2,a3,a4)values('" + sTempKey + "','" + gridView2.GetRowCellValue(i, gridColcPOID).ToString() + "','" + gridView2.GetRowCellValue(i, gridColcInvCode).ToString() + "--" + gridView2.GetRowCellValue(i, gridColcInvName).ToString() + "','" + gridView2.GetRowCellValue(i, gridColcMaker).ToString() + "')";
                                 aListMail.Add(sSQL);
                             }
+
+                            //    sSQL = "update XWSystemDB_DL..订单评审运算3 set 回签日期2 = '" + gridView2.GetRowCellValue(i, gridColReturnDate1).ToString().Trim() + "',回签人 = '" + gridView评审.GetRowCellValue(i, gridCol回签人1).ToString().Trim() + "',回签日期 = '" + gridView评审.GetRowCellValue(i, gridCol回签日期1).ToString().Trim() + "' where iID = " + gridView评审.GetRowCellValue(i, gridColiID1).ToString().Trim();
+                            //  aList.Add(sSQL);
                         }
                         else
                         {
