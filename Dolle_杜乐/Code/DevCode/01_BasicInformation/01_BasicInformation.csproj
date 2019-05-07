@@ -96,13 +96,11 @@
   <ItemGroup>
     <Compile Include="ClsGetInvPrice.cs" />
     <Compile Include="FrmStockOrderAuditGrade.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderAuditGrade.Designer.cs">
       <DependentUpon>FrmStockOrderAuditGrade.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm压铸件评审档案.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm压铸件评审档案.designer.cs">
       <DependentUpon>Frm压铸件评审档案.cs</DependentUpon>
@@ -114,98 +112,82 @@
       <DependentUpon>FrmProProcess_Formula.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkProcess.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkProcess.designer.cs">
       <DependentUpon>FrmWorkProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmProProcess.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProProcess.designer.cs">
       <DependentUpon>FrmProProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMachine.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMachine.designer.cs">
       <DependentUpon>FrmMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProWood.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProWood.designer.cs">
       <DependentUpon>FrmProWood.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产部员工人数.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产部员工人数.designer.cs">
       <DependentUpon>Frm生产部员工人数.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm物料允许BOM核查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm物料允许BOM核查.designer.cs">
       <DependentUpon>Frm物料允许BOM核查.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外计划执行核查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外计划执行核查.designer.cs">
       <DependentUpon>Frm委外计划执行核查.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外计划执行核查明细.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外计划执行核查明细.designer.cs">
       <DependentUpon>Frm委外计划执行核查明细.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外计划尾数核查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外计划尾数核查.designer.cs">
       <DependentUpon>Frm委外计划尾数核查.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm开发需求列表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm开发需求列表.designer.cs">
       <DependentUpon>Frm开发需求列表.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm程序优化建议.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm程序优化建议.designer.cs">
       <DependentUpon>Frm程序优化建议.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm单据价格核查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm单据价格核查.designer.cs">
       <DependentUpon>Frm单据价格核查.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInventory_Define.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmInventory_Define.designer.cs">
       <DependentUpon>FrmInventory_Define.cs</DependentUpon>
     </Compile>
     <Compile Include="报表\Frm工序检查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="报表\Frm工序检查.designer.cs">
       <DependentUpon>Frm工序检查.cs</DependentUpon>
     </Compile>
     <Compile Include="报表\Frm产品入库倒冲检查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="报表\Frm产品入库倒冲检查.designer.cs">
       <DependentUpon>Frm产品入库倒冲检查.cs</DependentUpon>
     </Compile>
     <Compile Include="报表\Frm订单评审原始数据.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="报表\Frm订单评审原始数据.designer.cs">
       <DependentUpon>Frm订单评审原始数据.cs</DependentUpon>

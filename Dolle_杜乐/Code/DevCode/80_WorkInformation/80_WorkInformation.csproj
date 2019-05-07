@@ -87,19 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrmWorkPer.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkPer.Designer.cs">
       <DependentUpon>FrmWorkPer.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkProcedure.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkProcedure.Designer.cs">
       <DependentUpon>FrmWorkProcedure.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkProcedureBarCode.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkProcedureBarCode.Designer.cs">
       <DependentUpon>FrmWorkProcedureBarCode.cs</DependentUpon>
@@ -129,13 +126,11 @@
       <DependentUpon>Frm工时计算.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产手工计划.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产手工计划.designer.cs">
       <DependentUpon>Frm生产手工计划.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkPlan.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkPlan.designer.cs">
       <DependentUpon>FrmWorkPlan.cs</DependentUpon>
@@ -153,38 +148,32 @@
       <DependentUpon>FrmWorkPlan_SEL.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产部人员日登记.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产部人员日登记.designer.cs">
       <DependentUpon>Frm生产部人员日登记.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmWorkPlanDay.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkPlanDay.designer.cs">
       <DependentUpon>FrmWorkPlanDay.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm设备日登记.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm设备日登记.designer.cs">
       <DependentUpon>Frm设备日登记.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产缺料过滤.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产缺料过滤.designer.cs">
       <DependentUpon>Frm生产缺料过滤.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产完工情况核查.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产完工情况核查.designer.cs">
       <DependentUpon>Frm生产完工情况核查.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm工时统计.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm工时统计.designer.cs">
       <DependentUpon>Frm工时统计.cs</DependentUpon>
@@ -196,13 +185,11 @@
       <DependentUpon>Frm物料计算.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产计划条码打印.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产计划条码打印.designer.cs">
       <DependentUpon>Frm生产计划条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产计划缴库流转.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产计划缴库流转.designer.cs">
       <DependentUpon>Frm生产计划缴库流转.cs</DependentUpon>
@@ -214,31 +201,26 @@
       <DependentUpon>Frm列表参照.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWorkPlanDay折线图.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmWorkPlanDay折线图.designer.cs">
       <DependentUpon>FrmWorkPlanDay折线图.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产完工工时统计.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产完工工时统计.designer.cs">
       <DependentUpon>Frm生产完工工时统计.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm报工统计列表.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm报工统计列表.designer.cs">
       <DependentUpon>Frm报工统计列表.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产订单执行情况.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产订单执行情况.designer.cs">
       <DependentUpon>Frm生产订单执行情况.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm生产计划批量关闭.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm生产计划批量关闭.Designer.cs">
       <DependentUpon>Frm生产计划批量关闭.cs</DependentUpon>
