@@ -188,7 +188,7 @@ namespace SaleOrder
                         dtBom = new DataTable();
                         dtBom = GetBomSQL(tran, dt.Rows[i]["存货编码"].ToString().Trim(), ReturnObjectToInt(dt.Rows[i]["销售订单行号"]), Convert.ToInt64(dt.Rows[i]["订单子表ID"]));
 
-                        if (dtBom == null || dtBom.Rows.Count ==0)
+                        if (dtBom == null || dtBom.Rows.Count == 0)
                         {
                             sErrInfo = sErrInfo + "物料" + dt.Rows[i]["存货编码"].ToString().Trim() + " 未设置BOM，不能展开\n";
                         }
@@ -209,7 +209,7 @@ namespace SaleOrder
                                 string s母件2 = dtBom.Rows[k]["母件编码"].ToString().Trim();
                                 string s子件2 = dtBom.Rows[k]["子件编码"].ToString().Trim();
                                 string s母子对应2 = s母子对应 + "→" + s母件2;
-                              
+
                                 dtBom.Rows[k]["母子对应"] = s母子对应2;
                             }
                         }
@@ -313,7 +313,7 @@ namespace SaleOrder
                     }
 
                     bool b执行 = true;
-                    if(sErrInfo.Trim().Length > 0)
+                    if (sErrInfo.Trim().Length > 0)
                     {
                         if (DialogResult.OK == MsgBox("提示", sErrInfo))
                         {
@@ -338,6 +338,15 @@ namespace SaleOrder
                 {
                     tran.Rollback();
                     throw new Exception(error.Message);
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+
+                    tran = null;
                 }
 
                 txt备注.Text = dt.Rows[0]["备注"].ToString().Trim();

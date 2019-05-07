@@ -440,10 +440,9 @@ namespace SaleOrder
                     {
                         throw new Exception("已经关闭，不能维护");
                     }
-
-                    for (int i = 0; i < gridView评审维护.RowCount; i++)
+                    if (!bChooseAll)
                     {
-                        if (!bChooseAll)
+                        for (int i = 0; i < gridView评审维护.RowCount; i++)
                         {
                             if (gridView评审维护.GetRowCellValue(i, gridCol选择).ToString().Trim() == "√")
                             {
@@ -452,7 +451,10 @@ namespace SaleOrder
                                 iCount += ClsSqlHelper.ExecuteNonQuery(tran, CommandType.Text, sSQL);
                             }
                         }
-                        else
+                    }
+                    else
+                    {
+                        for (int i = 0; i < gridView评审维护.RowCount; i++)
                         {
                             sSQL = "update 订单评审运算3 set 锁定人 = '" + FrameBaseFunction.ClsBaseDataInfo.sUserName + "',锁定日期 = getdate() where iID = " + gridView评审维护.GetRowCellValue(i, gridColiID) + " ";
                             iCount += ClsSqlHelper.ExecuteNonQuery(tran, CommandType.Text, sSQL);

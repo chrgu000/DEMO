@@ -83,76 +83,91 @@
     <Compile Include="Dal\PU_PriceJustMain.cs" />
     <Compile Include="Dal\Ven_Inv_Price.cs" />
     <Compile Include="FrmJW.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmJW.Designer.cs">
       <DependentUpon>FrmJW.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOMPlanAudit.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOMPlanAudit.Designer.cs">
       <DependentUpon>FrmOMPlanAudit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOMPlanDayCreate.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOMPlanDayCreate.Designer.cs">
       <DependentUpon>FrmOMPlanDayCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOMPlanDayExecute.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOMPlanDayExecute.Designer.cs">
       <DependentUpon>FrmOMPlanDayExecute.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOMPlanImport.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOMPlanImport.Designer.cs">
       <DependentUpon>FrmOMPlanImport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOMPlanVen.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOMPlanVen.Designer.cs">
       <DependentUpon>FrmOMPlanVen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProcessOrder.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProcessOrder.Designer.cs">
       <DependentUpon>FrmProcessOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProcessOrder2.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProcessOrder2.Designer.cs">
       <DependentUpon>FrmProcessOrder2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProcessOrderOut.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProcessOrderOut.Designer.cs">
       <DependentUpon>FrmProcessOrderOut.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProcessOrderReturn.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProcessOrderReturn.Designer.cs">
       <DependentUpon>FrmProcessOrderReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProcessOrderReturnLock.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProcessOrderReturnLock.Designer.cs">
       <DependentUpon>FrmProcessOrderReturnLock.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRDInChkOM.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRDInChkOM.Designer.cs">
       <DependentUpon>FrmRDInChkOM.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVendOMPrice.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVendOMPrice.Designer.cs">
       <DependentUpon>FrmVendOMPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外日计划.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外日计划.Designer.cs">
       <DependentUpon>Frm委外日计划.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm委外调价单.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm委外调价单.Designer.cs">
       <DependentUpon>Frm委外调价单.cs</DependentUpon>
@@ -188,6 +203,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FrmRDInChkOM_Red.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRDInChkOM_Red.Designer.cs">
       <DependentUpon>FrmRDInChkOM_Red.cs</DependentUpon>
