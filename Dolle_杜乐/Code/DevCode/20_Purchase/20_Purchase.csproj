@@ -97,31 +97,37 @@
       <DependentUpon>FrmImport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRDInChkOrder.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRDInChkOrder.Designer.cs">
       <DependentUpon>FrmRDInChkOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrder.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrder.designer.cs">
       <DependentUpon>FrmStockOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrder2.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrder2.designer.cs">
       <DependentUpon>FrmStockOrder2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderAudit.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderAudit.Designer.cs">
       <DependentUpon>FrmStockOrderAudit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderAutoMail.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderAutoMail.Designer.cs">
       <DependentUpon>FrmStockOrderAutoMail.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderCreate.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderCreate.Designer.cs">
       <DependentUpon>FrmStockOrderCreate.cs</DependentUpon>
@@ -133,26 +139,31 @@
       <DependentUpon>FrmStockOrderCreateSel.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderEdit.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderEdit.Designer.cs">
       <DependentUpon>FrmStockOrderEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderReturn.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderReturn.Designer.cs">
       <DependentUpon>FrmStockOrderReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderReturnLock.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderReturnLock.Designer.cs">
       <DependentUpon>FrmStockOrderReturnLock.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStockOrderReturnUnLock.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStockOrderReturnUnLock.Designer.cs">
       <DependentUpon>FrmStockOrderReturnUnLock.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVendOrderPrice.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVendOrderPrice.Designer.cs">
       <DependentUpon>FrmVendOrderPrice.cs</DependentUpon>
@@ -164,6 +175,7 @@
       <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_采购.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_采购.Designer.cs">
       <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
@@ -210,6 +222,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Frm采购调价单.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm采购调价单.Designer.cs">
       <DependentUpon>Frm采购调价单.cs</DependentUpon>

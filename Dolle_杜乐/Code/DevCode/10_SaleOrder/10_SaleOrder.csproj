@@ -94,36 +94,43 @@
       <DependentUpon>Frm订单评审_SEL.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_生产.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_生产.designer.cs">
       <DependentUpon>Frm订单评审_生产.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_委外.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_委外.designer.cs">
       <DependentUpon>Frm订单评审_委外.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_下达采购计划.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_下达采购计划.designer.cs">
       <DependentUpon>Frm订单评审_下达采购计划.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_采购.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_采购.designer.cs">
       <DependentUpon>Frm订单评审_采购.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_维护.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_维护.designer.cs">
       <DependentUpon>Frm订单评审_维护.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_下达委外计划.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_下达委外计划.designer.cs">
       <DependentUpon>Frm订单评审_下达委外计划.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm订单评审_下达生产计划.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审_下达生产计划.designer.cs">
       <DependentUpon>Frm订单评审_下达生产计划.cs</DependentUpon>
@@ -135,11 +142,13 @@
       <DependentUpon>Frm物料供需分析.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBOM单阶展开.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBOM单阶展开.designer.cs">
       <DependentUpon>FrmBOM单阶展开.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBOM单阶展开列表.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBOM单阶展开列表.designer.cs">
       <DependentUpon>FrmBOM单阶展开列表.cs</DependentUpon>
@@ -151,16 +160,19 @@
       <DependentUpon>Frm物料时间检查.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm外销订单总表.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm外销订单总表.designer.cs">
       <DependentUpon>Frm外销订单总表.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm销售订单导入.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm销售订单导入.designer.cs">
       <DependentUpon>Frm销售订单导入.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm评审状态查看.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm评审状态查看.designer.cs">
       <DependentUpon>Frm评审状态查看.cs</DependentUpon>
@@ -215,6 +227,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frm订单评审运算.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm订单评审运算.designer.cs">
       <DependentUpon>Frm订单评审运算.cs</DependentUpon>
@@ -324,6 +337,7 @@
     <EmbeddedResource Include="Frm订单评审运算_SEL2.resx">
       <DependentUpon>Frm订单评审运算_SEL2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

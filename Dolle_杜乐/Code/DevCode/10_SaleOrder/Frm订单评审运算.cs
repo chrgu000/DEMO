@@ -2496,7 +2496,7 @@ select distinct c.cCode,fqty,a.cItemCode from
 (                                  
     select cDefine11,cinvcode,sum(b.fQuantity) as fQty,cItemCode,a.ccode
     from @u8.PU_AppVouch a inner join @u8.PU_AppVouchs b on a.id = b.id 
-    where b.cinvcode = '111111111111' and isnull(b.cbcloser,'') <> '' and isnull(a.cCloser,'') <> '' and b.dArriveDate > '333333'
+    where b.cinvcode = '111111111111' and isnull(b.cbcloser,'') <> '' and isnull(a.cCloser,'') <> '' and b.dRequirDate > '333333'
     group by cDefine11,cinvcode,cItemCode,a.ccode
 ) a left join 
 (
