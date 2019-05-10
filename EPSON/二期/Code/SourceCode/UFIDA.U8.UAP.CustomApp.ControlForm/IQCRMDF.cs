@@ -943,12 +943,13 @@ order by iRow
                             throw new Exception("Please set aql level");
                         }
 
-                        if (BaseFunction.ReturnDecimal(txtLotQty.Text) == 1)
-                        {
-                            txtSampleSize.Text = "1";
-                        }
-                        else
-                        {
+                        //if (BaseFunction.ReturnDecimal(txtLotQty.Text) == 1)
+                        //{
+                        //    txtSampleSize.Text = "1";
+                        //    dtmReceived.DateTime = BaseFunction.ReturnDate(dt.Rows[0]["CreateDate"]);
+                        //}
+                        //else
+                        //{
                             txtcCusCode.Text = dt.Rows[0]["cCusCode"].ToString().Trim();
                             txtcCusName.Text = dt.Rows[0]["cCusName"].ToString().Trim();
 
@@ -960,23 +961,31 @@ order by iRow
                             lookUpEditFeedback.EditValue = dt.Rows[0]["Feedback"].ToString().Trim();
 
                             dtmReceived.DateTime = BaseFunction.ReturnDate(dt.Rows[0]["CreateDate"]);
+                            if (BaseFunction.ReturnDecimal(txtLotQty.Text) == 1)
+                            {
+                                txtSampleSize.Text = "1";
+                            }
+                            else
+                            {
 
-                            sSQL = @"
+                                sSQL = @"
 exec _GetAQL {0},0,N'{1}'
 ";
-                            sSQL = string.Format(sSQL, BaseFunction.ReturnDecimal(txtLotQty.Text.Trim()), txtcInvCode.Text.Trim());
-                            DataTable dtAQL = DbHelperSQL.ExecuteDataset(tran, CommandType.Text, sSQL).Tables[0];
-                            if (dtAQL == null || dtAQL.Rows.Count == 0)
-                            {
-                                txtAccept.EditValue = DBNull.Value;
-                                txtReject.EditValue = DBNull.Value;
-                                txtSampleSize.EditValue = DBNull.Value;
+                                sSQL = string.Format(sSQL, BaseFunction.ReturnDecimal(txtLotQty.Text.Trim()), txtcInvCode.Text.Trim());
+                                DataTable dtAQL = DbHelperSQL.ExecuteDataset(tran, CommandType.Text, sSQL).Tables[0];
+                                if (dtAQL == null || dtAQL.Rows.Count == 0)
+                                {
+                                    txtAccept.EditValue = DBNull.Value;
+                                    txtReject.EditValue = DBNull.Value;
+                                    txtSampleSize.EditValue = DBNull.Value;
 
-                                throw new Exception("Please set aql inspection level");
+                                    throw new Exception("Please set aql inspection level");
+                                }
+
+                                txtSampleSize.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["SampleSize"]);
+                                txtAccept.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["Accept"].ToString().Trim(), 2);
+                                txtReject.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["Reject"].ToString().Trim(), 2);
                             }
-                            txtSampleSize.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["SampleSize"]);
-                            txtAccept.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["Accept"].ToString().Trim(), 2);
-                            txtReject.EditValue = BaseFunction.ReturnDecimal(dtAQL.Rows[0]["Reject"].ToString().Trim(), 2);
 
                             sSQL = @"
 select *
@@ -991,7 +1000,8 @@ where 1=-1
                                 gridView1.AddNewRow();
                             }
                             gridView1.FocusedRowHandle = 0;
-                        }
+
+                        //}
 
                         sSQL = @"
 select distinct a.DefectCode ,b.DefectName
