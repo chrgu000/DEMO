@@ -596,7 +596,7 @@
             this.Controls.Add(this.txt单据号);
             this.Controls.Add(this.label4);
             this.Name = "Frm高开返利核销单窗体";
-            this.Text = "高开返利核销单";
+            this.Text = "江西高开返利核销单";
             this.Load += new System.EventHandler(this.Frm高开返利核销单窗体_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);

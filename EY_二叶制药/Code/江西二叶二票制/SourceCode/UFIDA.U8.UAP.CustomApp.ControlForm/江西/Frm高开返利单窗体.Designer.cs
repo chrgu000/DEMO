@@ -54,7 +54,7 @@
             this.ClientSize = new System.Drawing.Size(990, 570);
             this.Controls.Add(this.高开返利单1);
             this.Name = "Frm高开返利单窗体";
-            this.Text = "高开返利单";
+            this.Text = "江西高开返利单";
             this.ResumeLayout(false);
 
         }

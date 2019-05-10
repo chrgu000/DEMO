@@ -153,7 +153,7 @@ select cCusCode,cCusName,cCusAbbName from Customer order by cCusCode
 
             sSQL = @"
 select distinct a.DLS,cus.cCusName as DLSName
-FROM _TH_GET_FLD a left join Customer cus on a.DLS = cus.cCusCode
+FROM [218.64.122.137].[UFDATA_008_2018].dbo.[_TH_GET_FLD]  a left join Customer cus on a.DLS = cus.cCusCode
 order by a.DLS
 ";
             dt = DbHelperSQL.Query(sSQL);
@@ -514,7 +514,7 @@ select max(cCode) as cCodeMax from [dbo].[_高开返利单] where cCode like '{0
 
             string sSQL = @"
 select cast(0 as bit) as choose, * 
-from _TH_GET_FLD 
+from [218.64.122.137].[UFDATA_008_2018].dbo.[_TH_GET_FLD]  
 where 1=1
 	and FPIDs not in (select [FPIDs] from [dbo].[_高开返利单])
 order by FPIDs

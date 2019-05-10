@@ -20,14 +20,14 @@ namespace UFIDA.U8.UAP.CustomApp.Entrance
 
             #region 江西
             
-            if (cMenuId.Trim().ToLower() == "TH_FLD_01".ToLower())
+            if (cMenuId.Trim().ToLower() == "TH_FLD_JX_01".ToLower())
             {
                 //根据菜单读取自定义控件
                 INetUserControl mycontrol = new 高开返利单Creater();
 
                 base.ShowEmbedControl(mycontrol, cMenuId, true);
             }
-            if (cMenuId.Trim().ToLower() == "TH_FLD_02".ToLower())
+            if (cMenuId.Trim().ToLower() == "TH_FLD_JX_02".ToLower())
             {
                 //根据菜单读取自定义控件
                 INetUserControl mycontrol = new 高开返利单列表Creater();
@@ -35,14 +35,14 @@ namespace UFIDA.U8.UAP.CustomApp.Entrance
                 base.ShowEmbedControl(mycontrol, cMenuId, true);
             }
 
-            if (cMenuId.Trim().ToLower() == "TH_FLD_03".ToLower())
+            if (cMenuId.Trim().ToLower() == "TH_FLD_JX_03".ToLower())
             {
                 //根据菜单读取自定义控件
                 INetUserControl mycontrol = new 高开返利核销单Creater();
 
                 base.ShowEmbedControl(mycontrol, cMenuId, true);
             }
-            if (cMenuId.Trim().ToLower() == "TH_FLD_04".ToLower())
+            if (cMenuId.Trim().ToLower() == "TH_FLD_JX_04".ToLower())
             {
                 //根据菜单读取自定义控件
                 INetUserControl mycontrol = new 高开返利核销单列表Creater();

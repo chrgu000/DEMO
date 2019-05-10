@@ -167,9 +167,9 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Location = new System.Drawing.Point(407, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(105, 25);
+            this.labelControl1.Size = new System.Drawing.Size(189, 25);
             this.labelControl1.TabIndex = 190;
-            this.labelControl1.Text = "高开返利单";
+            this.labelControl1.Text = "高开返利单（江西）";
             // 
             // gridControl1
             // 
